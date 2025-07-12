@@ -30,14 +30,6 @@
 
 BotBrowser is a cross-platform stealth browser designed to defeat modern antibot systems. By directly modifying Chromium's C++ source code, BotBrowser eliminates the fingerprint leaks and automation traces left behind by [CDP](https://chromedevtools.github.io/devtools-protocol/)-based solutions, enabling true undetectable browsing and automation.
 
-## Simplified Management
-
-Streamline your automation with [BotBrowserConsole](console), a free and open-source GUI tool designed to:
-- Easily launch multiple browser instances
-- Seamlessly manage different environments
-- Efficiently handle multiple accounts
-
-
 ---
 
 ## 🚀 Core Features
@@ -184,7 +176,12 @@ await page.goto("https://abrahamjuliot.github.io/creepjs/");
 
 #### 3. [BotBrowserConsole](console) (GUI)
 
-Use the open-source GUI to select your profile and start browsing without code.
+Streamline your automation with [BotBrowserConsole](console), a free and open-source GUI tool designed to:
+- Select your profile and start browsing without code
+- Easily launch multiple browser instances
+- Seamlessly manage different environments
+- Efficiently handle multiple accounts
+
 
 
 #### 4. 🐳 Docker Deployment
