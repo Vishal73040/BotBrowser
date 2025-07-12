@@ -111,6 +111,9 @@ BotBrowser is a cross-platform stealth browser designed to defeat modern antibot
 
 ### Profiles Configuration
 
+> 📢 In BotBrowser, everything starts with a profile. Your stealth, reliability, and success depend on it.
+
+
 - **Demo Profiles**: located in the [profiles](profiles) directory of the repository.
 - **Cross-Platform**:
 
