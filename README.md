@@ -129,7 +129,7 @@ BotBrowser is a cross-platform stealth browser designed to defeat modern antibot
 **Windows (CMD)**
 
 ```cmd
-chrome.exe --no-sandbox --bot-profile="C:\\path\\to\\chrome136_win11_x64.enc" --user-data-dir="%TEMP%\\botprofile_%RANDOM%"
+chrome.exe --no-sandbox --bot-profile="C:\\path\\to\\chrome137_win11_x64.enc" --user-data-dir="%TEMP%\\botprofile_%RANDOM%"
 ```
 
 **macOS**
@@ -138,7 +138,7 @@ chrome.exe --no-sandbox --bot-profile="C:\\path\\to\\chrome136_win11_x64.enc" --
 /Applications/Chromium.app/Contents/MacOS/Chromium \
   --no-sandbox \
   --user-data-dir="$(mktemp -d)" \
-  --bot-profile="/path/to/chrome136_win11_x64.enc"
+  --bot-profile="/path/to/chrome137_win11_x64.enc"
 ```
 
 **Ubuntu**
@@ -147,7 +147,7 @@ chrome.exe --no-sandbox --bot-profile="C:\\path\\to\\chrome136_win11_x64.enc" --
 chromium-browser \
   --no-sandbox \
   --user-data-dir="$(mktemp -d)" \
-  --bot-profile="/path/to/chrome136_win11_x64.enc"
+  --bot-profile="/path/to/chrome137_win11_x64.enc"
 ```
 
 > Use `--user-data-dir` with a unique temporary folder to avoid conflicts with any running Chromium instances. It ensures BotBrowser launches cleanly without interfering with your normal browser profiles.  
@@ -161,7 +161,7 @@ const browser = await chromium.launch({
   executablePath: BOTBROWSER_EXEC_PATH, // Absolute path to the BotBrowser executable
   args: [
     `--bot-profile=${BOT_PROFILE_PATH}`, // Absolute or relative path to the bot profile
-    '--proxy-server="socks5://127.0.0.1"',
+    '--proxy-server="socks5://127.0.0.1:8989"',
     '--proxy-username=""',
     '--proxy-password=""',
   ],
