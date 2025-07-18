@@ -1,5 +1,44 @@
 # CHANGELOG
 
+## [2025-07-18]
+
+### Improved
+- **macOS Auto-Quit on Last Tab**  
+  When the final tab closes on macOS, BotBrowser now quits automatically.  
+  *Ensures native macOS behavior and resource cleanup.*
+
+### Fixed
+- **WebRTC SDP IPv6 Bypass**  
+  Resolved an issue where IPv6 addresses in SDP prevented evasion of antibot checks. Now successfully bypasses Kasada and similar services.  
+  *Fixes SDP parsing to correctly spoof IPv6 candidate addresses.*
+
+- **Locale Crash Fix (#52)**  
+  Fixed a crash that occurred when `configs.locale` was set to `en-CA`.  
+  *Ensures valid locale strings load without causing rendering errors.*
+
+### Added
+- **Credentials in Proxy URLs (#50)**  
+  `--proxy-server` and `configs.proxy.server` now accept URLs with embedded credentials (e.g., `http://user:pass@ip:port`, `socks5://user:pass@ip:port`).  
+  *Simplifies secure proxy configuration with standard URI formats.*
+
+- **Auto Language Detection**  
+  `configs.languages` now supports `"auto"` to set browser languages based on proxy IP’s country and timezone.  
+  *Automatically syncs Accept-Language and navigator.languages with location.*
+
+- **Google Header Simulation**  
+  Automatically injects `X-Browser-Validation` and related headers for google domains, emulating Chrome’s behavior to bypass Google anti-scraping.  
+  *Mimics Chrome’s network validation for seamless access.*
+
+- **Bookmarks Loader**  
+  Introduced `--bot-bookmarks` flag to load bookmarks from a specified JSON file at startup.  
+  *Allows pre-populating bookmarks for testing and automation.*
+
+- **Custom Browser Title**  
+  Added `--bot-title` flag to set the browser window title and display it on the dock/taskbar icon.  
+  *Enhances session identification and UI branding.*
+
+---
+
 ## [2025-07-09]
 
 ### Added
