@@ -26,7 +26,7 @@
   *Automatically syncs Accept-Language and navigator.languages with location.*
 
 - **Google Header Simulation**  
-  Automatically injects `X-Browser-Validation` and related headers for google domains, emulating Chrome’s behavior to bypass Google anti-scraping.  
+  Automatically injects [X-Browser-Validation](https://news.ycombinator.com/item?id=44527739) and related headers for google domains, emulating Chrome’s behavior to bypass Google anti-scraping.  
   *Mimics Chrome’s network validation for seamless access.*
 
 - **Bookmarks Loader**  
