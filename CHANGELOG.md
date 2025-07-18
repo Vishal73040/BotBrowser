@@ -19,7 +19,7 @@
 ### Added
 - **Credentials in Proxy URLs**  
   (https://github.com/botswin/BotBrowser/issues/50) `--proxy-server` and `configs.proxy.server` now accept URLs with embedded credentials (e.g., `http://user:pass@ip:port`, `socks5://user:pass@ip:port`).  
-  *Simplifies secure proxy configuration with standard URI formats.*
+  *Simplifies secure proxy configuration with standard URI formats, no longer need to set `proxy-username` and `proxy-password`.*
 
 - **Auto Language Detection**  
   `configs.languages` now supports `"auto"` to set browser languages based on proxy IP’s country and timezone.  
