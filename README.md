@@ -61,7 +61,7 @@ BotBrowser is a cross-platform stealth browser designed to defeat modern antibot
 
 - [x] **On-Demand Geo & Language Detection**: Automatically sets timezone, geolocation, and browser languages based on proxy IP.
 
-- [x] **WebRTC Leak Protection**: Full IPv4/IPv6 SDP refactor and candidate spoofing to prevent local IP exposure and bypass Kasada and similar antibots.
+- [x] **WebRTC Leak Protection**: Full IPv4/IPv6 SDP refactor and candidate spoofing to prevent local IP exposure.
 
 - [x] **Chrome Behavior Emulation**: Fully emulate Chrome, including Google `X-Browser-*` headers, Widevine CDM, and other Chrome-specific features.
 
