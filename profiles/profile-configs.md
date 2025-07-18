@@ -20,8 +20,8 @@ All configurations are embedded in the `configs` field inside your profile JSON 
 
 | Field                           | Description                                                                               | Default     |
 | ------------------------------- | ----------------------------------------------------------------------------------------- | ----------- |
-| `locale`                        | Browser locale (e.g., `"en-US"`, `"ru-RU"`).                                              | `"en-US"`   |
-| `languages`                     | HTTP `Accept-Language` header values and `navigator.languages`.                           | `["en-US"]` |
+| `languages`                     | HTTP `Accept-Language` header values and `navigator.languages`. `"auto"` = IP-based       | `"auto"`    |
+| `locale`                        | Browser locale (e.g., `"en-US"`, `"ru-RU"`). It will be set automatically when languages="auto".                                             | `"en-US"`   |
 | `colorScheme`                   | Preferred color scheme: `'light'` or `'dark'`.                                            | `"light"`   |
 | `disableDeviceScaleFactorOnGUI` | If `true`, ignore device scale factor for GUI elements (disable DPI-based UI scaling).    | `false`     |
 | `timezone`                      | `"auto"` = IP-based; `"real"` = system timezone; any other string = custom timezone name. | `"auto"`    |
@@ -31,11 +31,15 @@ All configurations are embedded in the `configs` field inside your profile JSON 
 
 | Field            | Description                               | Default |
 | ---------------- | ----------------------------------------- | ------- |
-| `proxy.server`   | Proxy server address (`scheme://hostname:port`).   | `""`    |
+| `proxy.server`   | Proxy server address (`scheme://username:password@hostname:port`).   | `""`    |
 | `proxy.username` | Proxy username for basic auth (optional). | `""`    |
 | `proxy.password` | Proxy password for basic auth (optional). | `""`    |
 
 > 💡 **Tip:** If you prefer not to embed proxy settings in your profile, you can use BotBrowser’s CLI parameters instead:
+> ```bash
+> --proxy-server <username:password@hostname:port>
+> ```
+> or
 >
 > ```bash
 > --proxy-server <hostname:port>
