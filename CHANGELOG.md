@@ -12,13 +12,13 @@
   Resolved an issue where IPv6 addresses in SDP prevented evasion of antibot checks. Now successfully bypasses Kasada and similar services.  
   *Fixes SDP parsing to correctly spoof IPv6 candidate addresses.*
 
-- **Locale Crash Fix (#52)**  
-  Fixed a crash that occurred when `configs.locale` was set to `en-CA`.  
+- **Locale Crash Fix**  
+  (https://github.com/botswin/BotBrowser/issues/52) Fixed a crash that occurred when `configs.locale` was set to `en-CA`.  
   *Ensures valid locale strings load without causing rendering errors.*
 
 ### Added
-- **Credentials in Proxy URLs (#50)**  
-  `--proxy-server` and `configs.proxy.server` now accept URLs with embedded credentials (e.g., `http://user:pass@ip:port`, `socks5://user:pass@ip:port`).  
+- **Credentials in Proxy URLs**  
+  (https://github.com/botswin/BotBrowser/issues/50) `--proxy-server` and `configs.proxy.server` now accept URLs with embedded credentials (e.g., `http://user:pass@ip:port`, `socks5://user:pass@ip:port`).  
   *Simplifies secure proxy configuration with standard URI formats.*
 
 - **Auto Language Detection**  
