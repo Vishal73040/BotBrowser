@@ -51,25 +51,33 @@ BotBrowser is a cross-platform stealth browser designed to defeat modern antibot
 
 ## 🛡️ Advanced Capabilities
 
-- [x] **Bypass headless and incognito checks**: Enables undetectable automation by seamlessly evading detection in both headless and incognito modes.
+- [x] **Headless & Incognito Evasion**: Seamlessly bypasses detection in both headless and incognito modes.
+    
+- [x] **Proxy Authentication**: Supports embedding credentials in proxy URLs (e.g., `http://user:pass@host:port`, `socks5://user:pass@host:port`).
 
-- [x] **Noise injection**: Randomizes 2D canvas, WebGL, emoji, fonts, text metrics, and audio fingerprints.
+- [x] **Custom Flags for Cookies, Bookmarks & Title**: Use startup flags (`--bot-cookies`, `--bot-bookmarks`, `--bot-title`) for session restoration and UI enhancements.
 
-- [x] **Simulated OS-specific properties**: Adjusts scrollbar, BarcodeDetector, and system-specific settings for enhanced authenticity.
+- [x] **Fingerprint Noise & Spoof Control**: Unified real/noise toggles and noise injection for Canvas, WebGL, audio, text metrics, and headless GPU simulation.
 
-- [x] **WebRTC leak protection**: Prevents exposure of real IPs during WebRTC communication.
+- [x] **On-Demand Geo & Language Detection**: Automatically sets timezone, geolocation, and browser languages based on proxy IP.
 
-- [x] **Comprehensive fingerprints spoofing**:
+- [x] **WebRTC Leak Protection**: Full IPv4/IPv6 SDP refactor and candidate spoofing to prevent local IP exposure and bypass Kasada and similar antibots.
 
-| Category        | Details |
-|-----------------|---------|
-| **Browser**     | Version, userAgentData, userAgent |
-| **OS**          | Windows, macOS, Ubuntu, Android simulation, Fonts, Colors |
-| **Navigator**   | Languages, Plugins, Permissions, Battery, Keyboard |
-| **Graphics**    | WebGL, WebGL2, GPUAdapter, GPUDevice |
-| **Hardware**    | Screen, CPU |
-| **Media**       | MediaDevices, MimeTypes, AudioContext |
-| **Other**       | Emoji, Unicode, matchMedia control |
+- [x] **Chrome Behavior Emulation**: Fully emulate Chrome, including Google `X-Browser-*` headers, Widevine CDM, and other Chrome-specific features.
+
+- [x] **Comprehensive Fingerprint Spoofing**:
+
+  | Category     | Details                                                                               |
+  |--------------|---------------------------------------------------------------------------------------|
+  | **Browser**  | Version, userAgentData, userAgent                                                     |
+  | **OS**       | Windows, macOS, Ubuntu, Android emulation; Fonts (UI/System); Colors                               |
+  | **Navigator**| Languages, Plugins, Permissions, Battery, Keyboard                                    |
+  | **Network**  | Proxy auth, WebRTC SDP spoofing, Google headers                                       |
+  | **Graphics** | Canvas noise, WebGL/WebGL2, GPUAdapter, GPUDevice                                     |
+  | **Hardware** | Screen resolution, devicePixelRatio, CPU architecture                                 |
+  | **Media**    | MediaDevices, MimeTypes, AudioContext                                                 |
+  | **Other**    | Emoji, Unicode, matchMedia control, client rects, bookmarks                           |
+
 
 
 
