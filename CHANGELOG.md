@@ -1,40 +1,51 @@
 # CHANGELOG
 
+## [2025-07-21]
+
+### Major Update
+- **Upgraded to Chromium 138**: BotBrowser now runs on **Chromium 138**, matching the latest Chrome release for up‑to‑date features and security patches. (Ensures continued stealth and compatibility.)
+
+### Fixed
+- **System UI Font Simulation Crash**: Resolved an issue where simulating system UI fonts would crash the rendering process. (Improves stability when spoofing UI fonts.)
+
+---
+
+
 ## [2025-07-18]
 
 ### Improved
-- **macOS Auto-Quit on Last Tab**  
-  When the final tab closes on macOS, BotBrowser now quits automatically.  
+- **macOS Auto-Quit on Last Tab**
+  When the final tab closes on macOS, BotBrowser now quits automatically.
   *Ensures native macOS behavior and resource cleanup.*
 
 ### Fixed
-- **WebRTC SDP IPv6 Bypass**  
-  Resolved an issue where IPv6 addresses in SDP prevented evasion of antibot checks. Now successfully bypasses Kasada and similar services.  
+- **WebRTC SDP IPv6 Bypass**
+  Resolved an issue where IPv6 addresses in SDP prevented evasion of antibot checks. Now successfully bypasses Kasada and similar services.
   *Fixes SDP parsing to correctly spoof IPv6 candidate addresses.*
 
-- **Locale Crash Fix**  
-  (https://github.com/botswin/BotBrowser/issues/52) Fixed a crash that occurred when `configs.locale` was set to `en-CA`.  
+- **Locale Crash Fix**
+  (https://github.com/botswin/BotBrowser/issues/52) Fixed a crash that occurred when `configs.locale` was set to `en-CA`.
   *Ensures valid locale strings load without causing rendering errors.*
 
 ### Added
-- **Credentials in Proxy URLs**  
-  (https://github.com/botswin/BotBrowser/issues/50) `--proxy-server` and `configs.proxy.server` now accept URLs with embedded credentials (e.g., `http://user:pass@ip:port`, `socks5://user:pass@ip:port`).  
+- **Credentials in Proxy URLs**
+  (https://github.com/botswin/BotBrowser/issues/50) `--proxy-server` and `configs.proxy.server` now accept URLs with embedded credentials (e.g., `http://user:pass@ip:port`, `socks5://user:pass@ip:port`).
   *Simplifies secure proxy configuration with standard URI formats, no longer need to set `proxy-username` and `proxy-password`.*
 
-- **Auto Language Detection**  
-  `configs.languages` now supports `"auto"` to set browser languages based on proxy IP’s country and timezone.  
+- **Auto Language Detection**
+  `configs.languages` now supports `"auto"` to set browser languages based on proxy IP’s country and timezone.
   *Automatically syncs Accept-Language and navigator.languages with location.*
 
-- **Google Header Simulation**  
-  Automatically injects [X-Browser-Validation](https://news.ycombinator.com/item?id=44527739) and related headers for google domains, emulating Chrome’s behavior to bypass Google anti-scraping.  
+- **Google Header Simulation**
+  Automatically injects [X-Browser-Validation](https://news.ycombinator.com/item?id=44527739) and related headers for google domains, emulating Chrome’s behavior to bypass Google anti-scraping.
   *Mimics Chrome’s network validation for seamless access.*
 
-- **Bookmarks Loader**  
-  Introduced `--bot-bookmarks` flag to load bookmarks from a specified JSON file at startup.  
+- **Bookmarks Loader**
+  Introduced `--bot-bookmarks` flag to load bookmarks from a specified JSON file at startup.
   *Allows pre-populating bookmarks for testing and automation.*
 
-- **Custom Browser Title**  
-  Added `--bot-title` flag to set the browser window title and display it on the dock/taskbar icon.  
+- **Custom Browser Title**
+  Added `--bot-title` flag to set the browser window title and display it on the dock/taskbar icon.
   *Enhances session identification and UI branding.*
 
 ---
@@ -42,51 +53,51 @@
 ## [2025-07-09]
 
 ### Added
-1. **SOCKS5 Proxy Authentication**  
+1. **SOCKS5 Proxy Authentication**
    Support for SOCKS5 proxies with username/password to secure authentication.
 
-2. **Proxy Credentials CLI Flags**  
+2. **Proxy Credentials CLI Flags**
    New `--proxy-username` and `--proxy-password` flags allow passing credentials at startup, eliminating the need to embed them in profiles.
 
-3. **Bot Cookies Flag**  
+3. **Bot Cookies Flag**
    Added `--bot-cookies` startup parameter to load cookies from a file or inline specification at launch.
 
-4. **Real/Noise Config Toggles**  
+4. **Real/Noise Config Toggles**
    (https://github.com/botswin/BotBrowser/issues/44) Completed support for toggling fingerprint vectors between `real` and `noise` modes via profile configs.
 
 ### Improved
-5. **Proxy IP & WebRTC Refactor**  
+5. **Proxy IP & WebRTC Refactor**
    Overhauled the logic for retrieving and spoofing proxy exit IPs in automation contexts, ensuring reliable public-IP simulation in WebRTC and preventing leaks.
 
-6. **autoTimezone Consistency**  
+6. **autoTimezone Consistency**
    Fixed cases where automatic timezone detection (`configs.autoTimezone`) did not apply, ensuring accurate time and locale behavior.
 
-7. **WebGL Version Forgery**  
+7. **WebGL Version Forgery**
    Now forges both `shadingLanguageVersion` and `version` in WebGL and WebGL2 contexts to avoid fingerprint signature checks.
 
-8. **Imperva Strict Mode Compatibility**  
+8. **Imperva Strict Mode Compatibility**
    Adjusted noise injection to satisfy Imperva’s strict fingerprint detection without false positives.
 
-9. **configs.languages Fix**  
+9. **configs.languages Fix**
    Ensured `configs.languages` array applies correctly to HTTP `Accept-Language` headers and `navigator.languages`.
 
-10. **Relative Path Support for --bot-profile**  
+10. **Relative Path Support for --bot-profile**
     Fixed issue preventing relative file paths from working with `--bot-profile`, improving CLI flexibility.
 
-11. **User-Data-Dir Mount Stability**  
+11. **User-Data-Dir Mount Stability**
     Resolved intermittent failures mounting the specified `--user-data-dir` directory for profile persistence.
 
-12. **WebGL Extension Parameter Refactor**  
+12. **WebGL Extension Parameter Refactor**
     Reorganized extraction and spoofing logic for WebGL/WebGL2 extension parameters to bypass FingerprintJS Pro checks.
 
-13. **Cross-Platform Feature Toggles**  
+13. **Cross-Platform Feature Toggles**
     Added granular OS-specific toggles for features like audio latency on Windows, macOS, and Android, avoiding "browser tampering" flags in FPJS Pro.
 
-14. **System Default Fonts Optimization**  
+14. **System Default Fonts Optimization**
     Updated default font families per OS (Windows: Times New Roman; macOS: Times; Android: Times New Roman), defeating advanced font-based detection in Default Fonts, Emoji, and MathML tests.
 
 ### Fixed
-15. **Screenshot Clip Respect**  
+15. **Screenshot Clip Respect**
     Fixed a bug where `Page.captureScreenshot` clip parameters were ignored when using profile-defined window and screen sizes.
 
 ---
