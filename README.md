@@ -53,7 +53,7 @@ BotBrowser is a cross-platform stealth browser designed to defeat modern antibot
 
 - [x] **Headless & Incognito Evasion**: Seamlessly bypasses detection in both headless and incognito modes.
     
-- [x] **Proxy Authentication**: Supports embedding credentials in proxy URLs (e.g., `http://user:pass@host:port`, `socks5://user:pass@host:port`).
+- [x] **Proxy Authentication**: Supports embedding credentials in proxy URLs (e.g., `http://usr:pwd@host:port`, `socks5://usr:pwd@host:port`).
 
 - [x] **Custom Flags for Cookies, Bookmarks & Title**: Use startup flags (`--bot-cookies`, `--bot-bookmarks`, `--bot-title`) for session restoration and UI enhancements.
 
