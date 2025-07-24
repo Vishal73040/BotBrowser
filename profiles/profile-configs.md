@@ -8,9 +8,10 @@ This document explains how to configure custom browser properties inside a **Bot
 
 All configurations are embedded in the `configs` field inside your profile JSON structure. 
 
-**None of the fields in configs are required. Set only the properties you need for your use case.**
+**Profile data comes from real users; unless you are certain about the impact of a change, do not override any fingerprint property - keeping the defaults ensures the most authentic behavior.**
 
-> 💡 **Important Note:** BotBrowser only accepts profile input as a file. While you may want to pass a profile via shell command (e.g., `--bot-profile=<(echo '{"x": 1}')`), this is **not** supported due to CLI argument length and file descriptor limitations.  
+> 💡 **Important Note:** BotBrowser only accepts profile input as a file. While you may want to pass a profile via shell command (e.g., `--bot-profile=<(echo '{"x": 1}')`), this is **not** supported due to CLI argument length and file descriptor limitations.
+> 
 > ✅ **Best practice:** Build your profile JSON dynamically in your code, write it to a temporary file (e.g., `/tmp/myprofile.json`), and pass the path to `--bot-profile`. The file can be deleted afterward.  
 
 
@@ -189,6 +190,7 @@ All configurations are embedded in the `configs` field inside your profile JSON 
 ---
 
 ## 📌 Notes
+- Profile data comes from real users; change only if necessary and you understand the impact.
 - All string fields support multi-purpose values: string literal (`"auto"`, `"real"`, or custom), or object schema when more parameters are needed.
 - If a field is omitted, BotBrowser uses profile defaults where appropriate.
 - Values in the `configs` block **override** equivalent command-line arguments like `--window-size`, `--window-position`, etc.
