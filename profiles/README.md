@@ -42,6 +42,12 @@ Launch BotBrowser with a profile:
 chromium --bot-profile="/absolute/path/to/chrome135_win11_x64.enc"
 ```
 
+ >  **Note:**
+ >  - Ensure the BotBrowser binary major version matches the profile’s version.  
+ >    For example, BotBrowser v138 only supports profiles created for version 138 and cannot load profiles from version 137 or 139.
+ >  - If a profile fails to load using a relative path, specify the full absolute path with the `--bot-profile` flag to guarantee correct loading.
+
+
 #### 2. [Playwright](demo/playwright) / [Puppeteer](demo/puppeteer) Demos
 
 ```javascript
