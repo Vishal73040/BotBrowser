@@ -12,7 +12,7 @@ By using a profile, BotBrowser can launch sessions that mimic real human devices
 ### ⚠️ Important Notice About Profiles
 
 #### 🚨 Demo Profile Warning
-> **Note**: Public demo profiles are for limited-time testing only. To prevent abuse they can't be used in headless mode, and can't load extensions.  
+> **Note**: Public demo profiles are for limited-time testing only. To prevent abuse they can't be used in headless mode, can't connect to automation framework, and can't load extensions.  
 > ⚠️ Using them in production environments **will result in immediate account bans**, as they’re widely circulated and easily flagged.  
 >  🔒 Protect your operations by using **Premium Profiles**, authentic profiles with proper access controls.  
 
