@@ -25,6 +25,7 @@ All configurations are embedded in the `configs` field inside your profile JSON 
 | ------------------------------- | ----------------------------------------------------------------------------------------- | ----------- |
 | `languages`                     | HTTP `Accept-Language` header values and `navigator.languages`. `"auto"` = IP-based       | `"auto"`    |
 | `locale`                        | Browser locale (e.g., `"en-US"`, `"ru-RU"`). It will be set automatically when languages="auto".                                             | `"en-US"`   |
+| `uaFullVersion`                 | Overrides the full browser version returned by `navigator.userAgentData.fullVersion`; must match the Chromium major version (e.g. for major version 138, the full version must start with “138.”). | `""`        |
 | `colorScheme`                   | Preferred color scheme: `'light'` or `'dark'`.                                            | `"light"`   |
 | `disableDeviceScaleFactorOnGUI` | If `true`, ignore device scale factor for GUI elements (disable DPI-based UI scaling).    | `false`     |
 | `timezone`                      | `"auto"` = IP-based; `"real"` = system timezone; any other string = custom timezone name. | `"auto"`    |
@@ -194,6 +195,7 @@ All configurations are embedded in the `configs` field inside your profile JSON 
 - All string fields support multi-purpose values: string literal (`"auto"`, `"real"`, or custom), or object schema when more parameters are needed.
 - If a field is omitted, BotBrowser uses profile defaults where appropriate.
 - Values in the `configs` block **override** equivalent command-line arguments like `--window-size`, `--window-position`, etc.
+- **uaFullVersion Tip**: When JavaScript calls `navigator.userAgentData.fullVersion`, BotBrowser will replace the default value with this field. Ensure that the specified full version corresponds to the Chromium engine’s major version (e.g., Chromium 138 → full version should begin with “138.”). You can look up the latest full version for each major release on https://chromiumdash.appspot.com/releases.
 
 ---
 
