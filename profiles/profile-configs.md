@@ -24,7 +24,7 @@ All configurations are embedded in the `configs` field inside your profile JSON 
 | Field                           | Description                                                                               | Default     |
 | ------------------------------- | ----------------------------------------------------------------------------------------- | ----------- |
 | `languages`                     | HTTP `Accept-Language` header values and `navigator.languages`. `"auto"` = IP-based       | `"auto"`    |
-| `locale`                        | Browser locale (e.g., `"en-US"`, `"ru-RU"`). It will be set automatically when languages="auto".                                             | `"en-US"`   |
+| `locale`                        | Browser locale (e.g., `"en-US"`, `"ru-RU"`).                                              | `"en-US"`   |
 | `uaFullVersion`                 | Overrides the full browser version returned by `navigator.userAgentData.fullVersion`; must match the Chromium major version (e.g. for major version 138, the full version must start with “138.”). | `""`        |
 | `colorScheme`                   | Preferred color scheme: `'light'` or `'dark'`.                                            | `"light"`   |
 | `disableDeviceScaleFactorOnGUI` | If `true`, ignore device scale factor for GUI elements (disable DPI-based UI scaling).    | `false`     |
