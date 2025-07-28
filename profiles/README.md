@@ -48,7 +48,7 @@ chromium --bot-profile="/absolute/path/to/chrome135_win11_x64.enc"
  >  - If a profile fails to load using a relative path, specify the full absolute path with the `--bot-profile` flag to guarantee correct loading.
 
 
-#### 2. [Playwright](demo/playwright) / [Puppeteer](demo/puppeteer) Demos
+#### 2. [Playwright](examples/playwright) / [Puppeteer](examples/puppeteer) Examples
 
 ```javascript
 const browser = await chromium.launch({

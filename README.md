@@ -44,7 +44,7 @@ BotBrowser is a cross-platform stealth browser designed to defeat modern antibot
   > Emulate Android devices (metrics, UA, touch & sensors, etc.) flawlessly and undetectably. [▶️ creepjs test](//botswin.github.io/BotBrowser/video_player/index.html?video=antibots-creepjs-creepjs-Android), [▶️ iphey test](//botswin.github.io/BotBrowser/video_player/index.html?video=antibots-iphey-iphey-Android), [▶️ pixelscan test](//botswin.github.io/BotBrowser/video_player/index.html?video=antibots-pixelscan-pixelscan-Android)
 
  **Advanced Programmatic Control**
-  > Harness CDP through [Playwright](demo/playwright) and [Puppeteer](demo/puppeteer) alongside deep C++ modifications that block CDP leak detection, delivering both powerful automation and rock‑solid stealth.
+  > Harness CDP through [Playwright](examples/playwright) and [Puppeteer](examples/puppeteer) alongside deep C++ modifications that block CDP leak detection, delivering both powerful automation and rock‑solid stealth.
 
  **Success & Performance**
   > Proven **98%+ success** against sophisticated antibot measures, powering over 350,000 daily account registrations with exceptional stability and speed under heavy loads.
@@ -161,7 +161,7 @@ chromium-browser \
 > Use `--user-data-dir` with a unique temporary folder to avoid conflicts with any running Chromium instances. It ensures BotBrowser launches cleanly without interfering with your normal browser profiles.
 > Use `--proxy-server`, `--proxy-username`, `--proxy-password` to connect to a proxy server, we support http, https, socks5 protocol.
 
-#### 2. [Playwright](demo/playwright) / [Puppeteer](demo/puppeteer) Demos
+#### 2. [Playwright](examples/playwright) / [Puppeteer](examples/puppeteer) Examples
 
 ```javascript
 const browser = await chromium.launch({
