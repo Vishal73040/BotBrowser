@@ -30,6 +30,8 @@ All configurations are embedded in the `configs` field inside your profile JSON 
 | `disableDeviceScaleFactorOnGUI` | If `true`, ignore device scale factor for GUI elements (disable DPI-based UI scaling).    | `false`     |
 | `timezone`                      | `"auto"` = IP-based; `"real"` = system timezone; any other string = custom timezone name. | `"auto"`    |
 | `location`                      | `"auto"` = IP-based; `"real"` = system (GPS); object = custom coordinates (`lat`, `lon`). | `"auto"`    |
+| `browserBrand`                  | override for `navigator.userAgentData.brands` and related UA fields. Supports "chromium", "chrome", "edge", "brave". | `"chrome"`    |
+| `injectRandomHistory`           | If `true`, BotBrowser will simulate prior navigation by injecting a random number of history entries when opening a new tab (fake `history.back()`, etc.). | `false`    |
 
 ### Proxy Settings
 
@@ -154,7 +156,13 @@ All configurations are embedded in the `configs` field inside your profile JSON 
     "noiseClientRects": false,
 
     // noiseTextRects: true adds noise to TextRects fingerprint; false disables it
-    "noiseTextRects": true
+    "noiseTextRects": true,
+
+    // browserBrand: override for `navigator.userAgentData.brands` and related UA fields. Supports "chromium", "chrome", "edge", "brave"
+    "browserBrand": "chrome",
+
+    // injectRandomHistory: true will simulate prior navigation by injecting a random number of history entries when opening a new tab
+    "injectRandomHistory": false,  
   }
 }
 
