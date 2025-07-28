@@ -269,7 +269,7 @@
 ---
 
 ## [Unreleased]
-- Chromium Extension fingerprint spoofing. [#3](https://github.com/MiddleSchoolStudent/BotBrowser/issues/3)
+- Chromium Extension fingerprint spoofing. [#3](https://github.com/botswin/BotBrowser/issues/3)
 
 ---
 
@@ -278,7 +278,7 @@
 ### Added
 - **Auto Timezone via IP Lookup**
   - Introduced built-in IP geolocation detection based on proxy exit IP, allowing automatic adjustment of timezone and location.
-  - Controlled via the `configs.autoTimezone` flag (enabled by default). See [profile-configs.md](https://github.com/MiddleSchoolStudent/BotBrowser/blob/main/profiles/profile-configs.md) for details.
+  - Controlled via the `configs.autoTimezone` flag (enabled by default). See [profile-configs.md](https://github.com/botswin/BotBrowser/blob/main/profiles/profile-configs.md) for details.
 
 - **Theme Control via `configs.colorScheme`**
   - Users can now specify browser color scheme (`dark` or `light`) through profile configuration. If omitted, the profile's native scheme is used.
@@ -618,7 +618,7 @@ Example:
 
 ### Fixed
 - **Mimetypes, MediaRecorder, and MediaSource Fingerprints:** Fixed issues where fingerprints were not correctly recognized under certain conditions. Optimized handling to ignore spaces after `;` in mimetypes, addressing antifraud tricks that exploit this discrepancy.
-  [Issue Reference: #8](https://github.com/MiddleSchoolStudent/BotBrowser/issues/8)
+  [Issue Reference: #8](https://github.com/botswin/BotBrowser/issues/8)
 
 ### Improved
 - **Removed RLZ Support:** RLZ support has been removed as it is unnecessary for our product and caused issues in some scenarios.
@@ -628,7 +628,7 @@ Example:
 ### Added
 - **Bluetooth Support:** Added support for **Bluetooth emulation**, enabling realistic behavior even on Linux data center servers.
 - **HarfBuzz Modification:** Made significant modifications to Chromium's **HarfBuzz** text shaping library, introducing factors that make fingerprint measurements more challenging to detect. This enhancement ensures diversity and undetectability for **canvas text fingerprints**, **DOM rects**, **SVG rects**, **emojis**, and **text metrics** through a single configuration.
-  [Issue Reference: #6](https://github.com/MiddleSchoolStudent/BotBrowser/issues/6)
+  [Issue Reference: #6](https://github.com/botswin/BotBrowser/issues/6)
   [Reference Documentation](https://chromium.googlesource.com/chromium/src/+/refs/heads/main/docs/ui/text_rendering/render_text_overview.md#text-shaping)
 
 
@@ -653,16 +653,16 @@ Example:
 ## [2024-12-29]
 
 ### Fixed
-- **Pixelscan PDF Viewer Detection Bypass:** Successfully bypassed PDF viewer leakage detection in **Pixelscan**. This issue was categorized as **P0 severity**.  [#11](https://github.com/MiddleSchoolStudent/BotBrowser/issues/11)
+- **Pixelscan PDF Viewer Detection Bypass:** Successfully bypassed PDF viewer leakage detection in **Pixelscan**. This issue was categorized as **P0 severity**.  [#11](https://github.com/botswin/BotBrowser/issues/11)
 
 ### Changed
 - **WebPreferences Update:** Updated **WebPreferences** based on the `ostype` specified in the profile, replacing the previous `BUILDFLAG()` logic for improved flexibility and accuracy.
 
 ### Added
 - **SelectionDirection Simulation:** Implemented **SelectionDirection** simulation to prevent detection by antibot systems.
- [#9](https://github.com/MiddleSchoolStudent/BotBrowser/issues/9)
+ [#9](https://github.com/botswin/BotBrowser/issues/9)
 - **GPU Optimization:** Updated compilation parameters for better **GPU** performance and enhanced compatibility.
-- **BarcodeDetector Simulation:** Simulated **BarcodeDetector** behavior to mimic macOS characteristics, even when running on **Windows** or **Ubuntu**, as long as the profile specifies `macOS` as the `ostype`.  [#10](https://github.com/MiddleSchoolStudent/BotBrowser/issues/10)
+- **BarcodeDetector Simulation:** Simulated **BarcodeDetector** behavior to mimic macOS characteristics, even when running on **Windows** or **Ubuntu**, as long as the profile specifies `macOS` as the `ostype`.  [#10](https://github.com/botswin/BotBrowser/issues/10)
 - **Runtime Feature Simulation:** Added simulation support for the following **Runtime Features**, allowing their activation via profile configuration:
    - `CookieDeprecationFacilitatedTesting`
    - `AdInterestGroupAPI`
@@ -691,14 +691,14 @@ Example:
 
 ### Changed
 - **args.gn Adjustments:** Modified `args.gn` to allow access to `navigator.getInterestGroupAdAuctionData` and `navigator.cookieDeprecationLabel`, aligning behavior with standard browser environments.
-  [Commit Reference](https://github.com/MiddleSchoolStudent/BotBrowser/commit/e17e1746439d6ddc3d07e621d90aaf78ea847a2d)
+  [Commit Reference](https://github.com/botswin/BotBrowser/commit/e17e1746439d6ddc3d07e621d90aaf78ea847a2d)
 
 ### Fixed
 - **WebGL2 Renderer and Vendor Bug:** Fixed an issue where `renderer` and `vendor` could not be retrieved under **WebGL2** environments.
 
 ### Improved
 - **WebGL Parameters Simulation:** Inspired by **FakeVision**, refined WebGL parameters simulation to minimize detection risks through more cautious handling.
-  [FakeVision Decompiled Source Code](https://github.com/MiddleSchoolStudent/FakeVision-Reverse)
+  [FakeVision Decompiled Source Code](https://github.com/botswin/FakeVision-Reverse)
 
 
 ---
@@ -708,4 +708,4 @@ Example:
 - Resolved **CDM issue**, enhancing browser environment security.
 
 ### Added
-- Successfully bypassed **[Fake Vision](https://fv.pro)** detection mechanisms, improving undetectable browsing capabilities. [Test Code](tests/tests/antibots/fvpro.spec.ts), [▶️ Test Result (fv.pro)](https://botswin.github.io/BotBrowser/video_player/index.html?video=https://raw.githubusercontent.com/MiddleSchoolStudent/BotBrowser/main/tests/test-results/fvpro-test-fv-pro-BotBrowser-antibots/video.webm)
+- Successfully bypassed **[Fake Vision](https://fv.pro)** detection mechanisms, improving undetectable browsing capabilities. [Test Code](tests/tests/antibots/fvpro.spec.ts), [▶️ Test Result (fv.pro)](https://botswin.github.io/BotBrowser/video_player/index.html?video=https://raw.githubusercontent.com/botswin/BotBrowser/main/tests/test-results/fvpro-test-fv-pro-BotBrowser-antibots/video.webm)

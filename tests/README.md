@@ -61,7 +61,7 @@ npx playwright show-report  # (Optional) Generate a detailed HTML report
 ## 📖 Further Reading
 
 - Playwright docs: https://playwright.dev/docs/writing-tests
-- BotBrowser profiles & configs: https://github.com/MiddleSchoolStudent/BotBrowser/blob/main/profiles/profile-configs.md
+- BotBrowser profiles & configs: https://github.com/botswin/BotBrowser/blob/main/profiles/profile-configs.md
 
 ---
 

@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "type": "module",
   "main": "index.js",
-  "author": "MiddleSchoolStudent",
+  "author": "BotBrowser",
   "dependencies": {
     "puppeteer-core": "^23.9.0"
   }

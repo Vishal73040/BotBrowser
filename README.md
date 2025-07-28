@@ -3,20 +3,20 @@
 <h4 align="center">The Ultimate Solution for Undetectable Automated Browsing 🚀</h4>
 
 <p align="center">
-  <a href="https://github.com/MiddleSchoolStudent/BotBrowser/releases">
-    <img src="https://img.shields.io/github/v/release/MiddleSchoolStudent/BotBrowser?style=flat-square" alt="Latest Release">
+  <a href="https://github.com/botswin/BotBrowser/releases">
+    <img src="https://img.shields.io/github/v/release/botswin/BotBrowser?style=flat-square" alt="Latest Release">
   </a>
-  <a href="https://github.com/MiddleSchoolStudent/BotBrowser/commits/main/">
-    <img src="https://img.shields.io/github/commit-activity/m/MiddleSchoolStudent/BotBrowser?style=flat-square" alt="Commit Activity">
+  <a href="https://github.com/botswin/BotBrowser/commits/main/">
+    <img src="https://img.shields.io/github/commit-activity/m/botswin/BotBrowser?style=flat-square" alt="Commit Activity">
   </a>
-  <a href="https://github.com/MiddleSchoolStudent/BotBrowser/issues">
-    <img src="https://img.shields.io/github/issues/MiddleSchoolStudent/BotBrowser?style=flat-square" alt="Issues">
+  <a href="https://github.com/botswin/BotBrowser/issues">
+    <img src="https://img.shields.io/github/issues/botswin/BotBrowser?style=flat-square" alt="Issues">
   </a>
-  <a href="https://github.com/MiddleSchoolStudent/BotBrowser/fork">
-    <img src="https://img.shields.io/github/forks/MiddleSchoolStudent/BotBrowser?style=flat-square" alt="GitHub Forks">
+  <a href="https://github.com/botswin/BotBrowser/fork">
+    <img src="https://img.shields.io/github/forks/botswin/BotBrowser?style=flat-square" alt="GitHub Forks">
   </a>
-  <a href="https://github.com/MiddleSchoolStudent/BotBrowser">
-    <img src="https://img.shields.io/github/stars/MiddleSchoolStudent/BotBrowser" alt="GitHub Stars">
+  <a href="https://github.com/botswin/BotBrowser">
+    <img src="https://img.shields.io/github/stars/botswin/BotBrowser" alt="GitHub Stars">
   </a>
 </p>
 
@@ -52,7 +52,7 @@ BotBrowser is a cross-platform stealth browser designed to defeat modern antibot
 ## 🛡️ Advanced Capabilities
 
 - [x] **Headless & Incognito Evasion**: Seamlessly bypasses detection in both headless and incognito modes.
-    
+
 - [x] **Proxy Authentication**: Supports embedding credentials in proxy URLs (e.g., `http://usr:pwd@host:port`, `socks5://usr:pwd@host:port`).
 
 - [x] **Custom Flags for Cookies, Bookmarks & Title**: Use startup flags (`--bot-cookies`, `--bot-bookmarks`, `--bot-title`) for session restoration and UI enhancements.
@@ -88,7 +88,7 @@ BotBrowser is a cross-platform stealth browser designed to defeat modern antibot
 ### Download & Installation
 
 1. **Download Installer**
-  Get the BotBrowser installer for your OS from the [Releases](https://github.com/MiddleSchoolStudent/BotBrowser/releases) page.
+  Get the BotBrowser installer for your OS from the [Releases](https://github.com/botswin/BotBrowser/releases) page.
 
 2. **Windows**
 - Extract the downloaded `.7z` archive.
@@ -126,7 +126,7 @@ BotBrowser is a cross-platform stealth browser designed to defeat modern antibot
 - **Cross-Platform**:
 
   > 🔥 A *macOS profile* works on Ubuntu; a *Windows profile* works on macOS; an *Android profile* can be fully emulated on macOS, Windows, and Ubuntu.
-- **Configuration Options**: see the [📚 profile-configs guide](https://github.com/MiddleSchoolStudent/BotBrowser/blob/main/profiles/profile-configs.md).
+- **Configuration Options**: see the [📚 profile-configs guide](https://github.com/botswin/BotBrowser/blob/main/profiles/profile-configs.md).
 
 ---
 
@@ -158,7 +158,7 @@ chromium-browser \
   --bot-profile="/path/to/chrome137_win11_x64.enc"
 ```
 
-> Use `--user-data-dir` with a unique temporary folder to avoid conflicts with any running Chromium instances. It ensures BotBrowser launches cleanly without interfering with your normal browser profiles.  
+> Use `--user-data-dir` with a unique temporary folder to avoid conflicts with any running Chromium instances. It ensures BotBrowser launches cleanly without interfering with your normal browser profiles.
 > Use `--proxy-server`, `--proxy-username`, `--proxy-password` to connect to a proxy server, we support http, https, socks5 protocol.
 
 #### 2. [Playwright](demo/playwright) / [Puppeteer](demo/puppeteer) Demos
@@ -287,9 +287,9 @@ These test scripts are provided for **educational purposes** and to **demonstrat
 We do not provide the private key required to generate new profiles. If you need additional profiles, please contact us directly. We maintain over **300,000 real user browser fingerprints** to support your needs.
 
 
-| 📧 Email    | [middleschoolstudent@mail.ru](mailto:middleschoolstudent@mail.ru) |
+| 📧 Email    | [botbrowser@bk.ru](mailto:botbrowser@bk.ru) |
 |-------------|--------------------------------------------------|
-| 📱 Telegram | [middle_student](https://t.me/middle_student)   |
+| 📱 Telegram | [@botbrowser_support](https://t.me/botbrowser_support)   |
 
 
 ### Building from Source

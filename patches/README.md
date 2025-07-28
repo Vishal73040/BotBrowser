@@ -4,31 +4,31 @@
 
 BotBrowser is **100% proprietary** - built entirely on top of **Chromium**, with **no third-party code** involved.
 
-Only the GUI ([BotBrowserConsole](https://github.com/MiddleSchoolStudent/BotBrowser/tree/main/console)) is open-sourced.  
+Only the GUI ([BotBrowserConsole](https://github.com/botswin/BotBrowser/tree/main/console)) is open-sourced.
 The patches here are **select examples**, published to illustrate techniques without exposing the full engine.
 
 ---
 
 ## 🔍 What’s Inside
 
-- **Proprietary Foundation**  
+- **Proprietary Foundation**
   BotBrowser’s engine is entirely homegrown—no forks, no references to external projects.
 
-- **Selective Open-Source**  
+- **Selective Open-Source**
   We publish only a handful of patches in this folder. The rest stay private to prevent antibots from zeroing in on every leak point.
 
-- **Comprehensive Leak Coverage**  
+- **Comprehensive Leak Coverage**
   Our patches plug gaps at every conceivable fingerprinting surface. Crafted through:
-  1. Hands-on reverse engineering of antibot defenses  
-  2. V8-level analysis of how antibots collect and validate fingerprints  
+  1. Hands-on reverse engineering of antibot defenses
+  2. V8-level analysis of how antibots collect and validate fingerprints
   3. Real-world automation experience at scale
 
-- **Get the Full Engine**  
+- **Get the Full Engine**
   Interested in the complete core source? Reach out for licensing or private review:
 
-  | 📧 Email    | [middleschoolstudent@mail.ru](mailto:middleschoolstudent@mail.ru) |
+  | 📧 Email    | [botbrowser@bk.ru](mailto:botbrowser@bk.ru) |
   |------------|--------------------------------------------------------------|
-  | 📱 Telegram | [@middle_student](https://t.me/middle_student)               |
+  | 📱 Telegram | [@botbrowser_support](https://t.me/botbrowser_support)               |
 
 ---
 

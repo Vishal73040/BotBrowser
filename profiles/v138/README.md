@@ -1,1 +1,1 @@
-Please download the 138 kernel BotBrowser from [this release](https://github.com/MiddleSchoolStudent/BotBrowser/releases/tag/20250721).
+Please download the 138 kernel BotBrowser from [this release](https://github.com/botswin/BotBrowser/releases/tag/20250721).

@@ -2,8 +2,8 @@
 
 > 📢 In BotBrowser, everything starts with a profile. Your stealth, reliability, and success depend on it.
 
-Profiles in BotBrowser are encrypted files that define the complete environment a browser instance should emulate.  
-They not only include detailed **browser fingerprint** information (like user agent, WebGL, screen size, and more), but also extend to **system-level settings** such as proxy configuration, timezone, language preferences, window size, screen properties, device memory, CPU architecture, and even platform-specific features like Android behavior simulation.  
+Profiles in BotBrowser are encrypted files that define the complete environment a browser instance should emulate.
+They not only include detailed **browser fingerprint** information (like user agent, WebGL, screen size, and more), but also extend to **system-level settings** such as proxy configuration, timezone, language preferences, window size, screen properties, device memory, CPU architecture, and even platform-specific features like Android behavior simulation.
 
 By using a profile, BotBrowser can launch sessions that mimic real human devices and browsing patterns across different operating systems and devices, achieving maximum stealth against even the most sophisticated antifraud and antibot detection systems.
 
@@ -12,9 +12,9 @@ By using a profile, BotBrowser can launch sessions that mimic real human devices
 ### ⚠️ Important Notice About Profiles
 
 #### 🚨 Demo Profile Warning
-> **Note**: Public demo profiles are for limited-time testing only. To prevent abuse they can't be used in headless mode, can't connect to automation framework, and can't load extensions.  
-> ⚠️ Using them in production environments **will result in immediate account bans**, as they’re widely circulated and easily flagged.  
->  🔒 Protect your operations by using **Premium Profiles**, authentic profiles with proper access controls.  
+> **Note**: Public demo profiles are for limited-time testing only. To prevent abuse they can't be used in headless mode, can't connect to automation framework, and can't load extensions.
+> ⚠️ Using them in production environments **will result in immediate account bans**, as they’re widely circulated and easily flagged.
+>  🔒 Protect your operations by using **Premium Profiles**, authentic profiles with proper access controls.
 
 #### 🌟 Premium Profile Service
 > Access our exclusive pool of **300,000+ authentic browser fingerprints** sourced from real users (not algorithm-generated). Each profile is:
@@ -24,9 +24,9 @@ By using a profile, BotBrowser can launch sessions that mimic real human devices
 > - 🛡️ Safe for production and scalable automation
 
 #### 📬 How to Get Premium Profiles
-| 📧 Email | [middleschoolstudent@mail.ru](mailto:middleschoolstudent@mail.ru) |
+| 📧 Email | [botbrowser@bk.ru](mailto:botbrowser@bk.ru) |
 |----------|-----------------------------------------------------------|
-| 📱 Telegram | [middle_student](https://t.me/middle_student) |
+| 📱 Telegram | [@botbrowser_support](https://t.me/botbrowser_support) |
 
 *We ensure fast delivery, confidentiality, and professional support for all clients.*
 
@@ -43,7 +43,7 @@ chromium --bot-profile="/absolute/path/to/chrome135_win11_x64.enc"
 ```
 
  >  **Note:**
- >  - Ensure the BotBrowser binary major version matches the profile’s version.  
+ >  - Ensure the BotBrowser binary major version matches the profile’s version.
  >    For example, BotBrowser v138 only supports profiles created for version 138 and cannot load profiles from version 137 or 139.
  >  - If a profile fails to load using a relative path, specify the full absolute path with the `--bot-profile` flag to guarantee correct loading.
 
@@ -74,7 +74,7 @@ await page.goto("https://abrahamjuliot.github.io/creepjs/");
 
 Starting from 2025, BotBrowser now supports **full environment customization directly inside profiles** — including proxy, timezone, screen size, device pixel ratio, and more.
 
-👉 **Please read** [`profile-configs.md`](https://github.com/MiddleSchoolStudent/BotBrowser/blob/main/profiles/profile-configs.md) **for full configuration options.**
+👉 **Please read** [`profile-configs.md`](https://github.com/botswin/BotBrowser/blob/main/profiles/profile-configs.md) **for full configuration options.**
 
 You no longer need CDP to set these fields manually!
 

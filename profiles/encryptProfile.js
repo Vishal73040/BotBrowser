@@ -20,7 +20,6 @@ const fs = require("fs");
   aesEncryptedProfile += aesCipher.final("base64");
 
   // Шифрує aesKey за допомогою RSA.
-  // I do not provide PrivateKey, please contact me if the Profile has expired: middleschoolstudent@mail.ru
   const rsaPrivateKey = await fs.promises.readFile("privateKey.pem", "utf-8");
   const rsaEncryptedAESInfo = crypto
     .privateEncrypt(
