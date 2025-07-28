@@ -1,5 +1,29 @@
 # CHANGELOG
 
+---
+
+## [2025-07-28]
+
+### Added
+- **Browser Brand Config**: New `configs.browserBrand` option for `chromium`, `chrome`, `brave`, or `edge`, enabling perfect brand emulation.
+- **Brave Simulation**: Full Brave browser emulation including `userAgent`, `userAgentData`, and `navigator.brave.isBrave` properties.
+- **Edge Simulation**: Full Microsoft Edge emulation covering `userAgent`, `userAgentData`, and Edge-specific APIs.
+- **WebKit Emulation**: Preliminary WebKit engine simulation for basic Safari-like behaviors.
+- **Random History Injection**: `configs.injectRandomHistory` injects realistic history entries (URLs, timestamps) on new page loads without an opener.
+
+### Improved
+- **CPU Core Count Simulation**: More precise spoofing of logical CPU cores based on profile to evade advanced detection.
+- **WebGPU Limits Simulation**: Emulates `maxStorageBuffersInFragmentStage`, `maxStorageTexturesInFragmentStage`, `maxStorageBuffersInVertexStage`, and `maxStorageTexturesInVertexStage` parameters.
+- **Android Window Defaults**: Android device simulation now defaults to `"window": "profile"`, using profile-defined screen and window dimensions for pixel-perfect accuracy.
+- **Debugger Statement Blocking**: Blocks `debugger` statements by default to prevent DevTools detection by antibot scripts.
+
+### Fixed
+- **Android DevTools Window Mode**: Ensures DevTools open in a separate window (not docked) during Android simulation to avoid UI rendering issues.
+- **Auto Language/Locale Sync**: Fixed issue where `configs.languages = "auto"` sometimes failed to update the browser’s locale automatically.
+
+
+---
+
 ## [2025-07-21]
 
 ### Major Update
