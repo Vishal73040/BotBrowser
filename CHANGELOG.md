@@ -20,6 +20,7 @@
 ### Fixed
 - **Android DevTools Window Mode**: Ensures DevTools open in a separate window (not docked) during Android simulation to avoid UI rendering issues.
 - **Auto Language/Locale Sync**: Fixed issue where `configs.languages = "auto"` sometimes failed to update the browser’s locale automatically.
+- **Iframe WebRTC IP Leak**: Fixed a WebRTC local IP leak when running inside iframes.
 
 
 ---
