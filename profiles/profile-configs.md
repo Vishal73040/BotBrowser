@@ -44,6 +44,7 @@ All configurations are embedded in the `configs` field inside your profile JSON 
 > 💡 **Tip:** If you prefer not to embed proxy settings in your profile, you can use BotBrowser’s CLI parameters instead:
 > ```bash
 > --proxy-server=<username:password@hostname:port>
+> --proxy-server=<scheme://username:password@hostname:port>
 > ```
 > or
 >
