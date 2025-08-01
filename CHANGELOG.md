@@ -2,7 +2,7 @@
 
 ---
 
-## [2025-07-29]
+## [2025-07-31]
 
 ### Added
 - **Browser Brand Config**: New `configs.browserBrand` option for `chromium`, `chrome`, `brave`, or `edge`, enabling perfect brand emulation.
