@@ -2,6 +2,15 @@
 
 ---
 
+## [2025-08-07]
+
+### Major Update
+- **Upgraded to Chromium 139**
+  Synced BotBrowser to **Chromium 139**, bringing the newest web platform features, performance improvements, and security patches.
+  Aligns rendering, networking, and fingerprint surfaces with upstream Chrome 139 to reduce detection risk and maintain site compatibility.
+
+---
+
 ## [2025-07-31]
 
 ### Added
