@@ -213,7 +213,6 @@ export class BrowserLauncherService {
             '--no-first-run',
             '--password-store=basic',
             '--use-mock-keychain',
-            '--disable-features=AcceptCHFrame,MediaRouter,OptimizationHints,ProcessPerSiteUpToMainFrameThreshold,IsolateSandboxedIframes',
             '--no-sandbox',
             '--restore-last-session',
             '--disable-blink-features=AutomationControlled',
