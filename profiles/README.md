@@ -18,10 +18,10 @@ By using a profile, BotBrowser can launch sessions that mimic real human devices
 
 #### 🌟 Premium Profile Service
 > Access our exclusive pool of **300,000+ authentic browser fingerprints** sourced from real users (not algorithm-generated). Each profile is:  
-> ✅ Unique and never reused  
-> 🔒 Private and secure  
-> 👤 Based on genuine device/browser data  
-> 🛡️ Safe for production and scalable automation  
+> ✅ Unique and never reused.  
+> 🔒 Private and secure.  
+> 👤 Based on genuine device/browser data.  
+> 🛡️ Safe for production and scalable automation.  
 
 #### 📬 How to Get Premium Profiles
 | 📧 Email | [botbrowser@bk.ru](mailto:botbrowser@bk.ru) |
