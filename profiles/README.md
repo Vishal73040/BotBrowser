@@ -13,15 +13,15 @@ By using a profile, BotBrowser can launch sessions that mimic real human devices
 
 #### 🚨 Demo Profile Warning
 > **Note**: Public demo profiles are for limited-time testing only. To prevent abuse they can't be used in headless mode, can't connect to automation framework, and can't load extensions.  
-> ⚠️ Using them in production environments **will result in immediate account bans**, as they’re widely circulated and easily flagged.  
-> 🔒 Protect your operations by using **Premium Profiles**, authentic profiles with proper access controls.
+> - Using them in production environments **will result in immediate account bans**, as they’re widely circulated and easily flagged.  
+> - Protect your operations by using **Premium Profiles**, authentic profiles with proper access controls.
 
 #### 🌟 Premium Profile Service
 > Access our exclusive pool of **300,000+ authentic browser fingerprints** sourced from real users (not algorithm-generated). Each profile is:  
-> ✅ Unique and never reused.  
-> 🔒 Private and secure.  
-> 👤 Based on genuine device/browser data.  
-> 🛡️ Safe for production and scalable automation.  
+> - Unique and never reused.  
+> - Private and secure.  
+> - Based on genuine device/browser data.  
+> - Safe for production and scalable automation.  
 
 #### 📬 How to Get Premium Profiles
 | 📧 Email | [botbrowser@bk.ru](mailto:botbrowser@bk.ru) |
@@ -39,12 +39,12 @@ By using a profile, BotBrowser can launch sessions that mimic real human devices
 Launch BotBrowser with a profile:
 
 ```bash
-chromium --bot-profile="/absolute/path/to/chrome135_win11_x64.enc"
+chromium --bot-profile="/absolute/path/to/chrome139_win11_x64.enc"
 ```
 
  >  **Note:**
  >  - Ensure the BotBrowser binary major version matches the profile’s version.
- >    For example, BotBrowser v138 only supports profiles created for version 138 and cannot load profiles from version 137 or 139.
+ >    For example, BotBrowser v139 only supports profiles created for version 139 and cannot load profiles from version 138 or 140.
  >  - If a profile fails to load using a relative path, specify the full absolute path with the `--bot-profile` flag to guarantee correct loading.
 
 
@@ -53,8 +53,13 @@ chromium --bot-profile="/absolute/path/to/chrome135_win11_x64.enc"
 ```javascript
 const browser = await chromium.launch({
   headless: true,
-  executablePath: BOTBROWSER_EXEC_PATH, // Absolute path to the BotBrowser executable
-  args: [`--bot-profile=${BOT_PROFILE_PATH}`], // Absolute path to the bot profile
+  executablePath: BOTBROWSER_EXEC_PATH,   // Absolute path to the BotBrowser executable
+  args: [
+    `--bot-profile=${BOT_PROFILE_PATH}`,  // Absolute or relative path to the bot profile
+    '--proxy-server="socks5://127.0.0.1:8989"',  // or: "socks5://usr:pwd@127.0.0.1:8989"
+    '--proxy-username="usr"',
+    '--proxy-password="pwd"',
+  ],
 });
 
 const page = await browser.newPage();
