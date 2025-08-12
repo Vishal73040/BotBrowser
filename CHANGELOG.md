@@ -2,6 +2,18 @@
 
 ---
 
+## [2025-08-12]
+
+### Added
+- **Built-in H.264/H.265 (AVC/HEVC) Decoders**  
+  Enabled AVC/H.264 and HEVC/H.265 decoding out of the box (no external OS codecs required). Improves HTML5 video, MSE/EME playback compatibility, reduces codec-missing fallbacks, and keeps media behavior aligned with stock Chrome.
+
+### Fixed
+- **RFC 6381–Compliant MIME Codec Parsing**  
+  Reworked `mimeTypes` codec-string parser to follow RFC 6381 (e.g., `avc1.42E01E`, `mp4a.40.2`, `hvc1.1.6.L93.B0`), including case/spacing tolerance and multi-codec lists. Prevents inaccurate results in `canPlayType` and MSE SourceBuffer checks that could trigger antifraud heuristics.
+
+---
+
 ## [2025-08-07]
 
 ### Major Update
