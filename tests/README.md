@@ -1,74 +1,84 @@
 
-# 🚀 BotBrowser-tests
+# 🚀 BotBrowser Tests
 
-> 📢 Showcase how BotBrowser powers real-world automation tests with [Playwright](https://playwright.dev/docs/writing-tests).
+Showcase how BotBrowser powers real-world automation tests with [Playwright](https://playwright.dev/docs/writing-tests).
 
-All tests in this repo run under **Sticky Rotating Residential IPs** to mimic genuine user behavior.
-If you’re blocked when using data-center proxies, switch to **Sticky Rotating Residential IPs**.
+## 🌐 Network Setup
+
+All tests in this repository run under **Sticky Rotating Residential IPs** to mimic genuine user behavior. If you're experiencing blocks with data-center proxies, switch to **Sticky Rotating Residential IPs**.
 
 ---
 
-⚠️ **DISCLAIMER**
+## ⚠️ Disclaimer
 
-These test scripts are provided for **educational purposes** and to **demonstrate** the capabilities of BotBrowser. They are intended solely for **legal use cases** that comply with all applicable laws and regulations. **Any misuse**—such as violating website terms of service or engaging in unlawful activities—**is strictly prohibited.**
+These test scripts are provided for **educational purposes** and to **demonstrate** BotBrowser capabilities. They are intended solely for **legal use cases** that comply with all applicable laws and regulations.
+
+**Any misuse**—such as violating website terms of service or engaging in unlawful activities—**is strictly prohibited.**
 
 ---
 
 ## 🔧 Getting Started
 
-### 1. Prepare Your Environment
+### Step 1: Environment Setup
 
-1. **Create a `.env` file** in the project root:
-
-   ```bash
-   BOTBROWSER_EXEC_PATH=/absolute/path/to/botbrowser
-   BOT_PROFILE_PATH=/absolute/path/to/bot-profile.enc
-   ```
-
-2. **Example**:
-
-   ```bash
-   BOTBROWSER_EXEC_PATH=/usr/local/bin/chromium
-   BOT_PROFILE_PATH=/home/user/bot_profiles/chrome137_win11_x64.enc
-   ```
-
-3. **Verify** both paths:
-   - `BOTBROWSER_EXEC_PATH` → BotBrowser executable
-   - `BOT_PROFILE_PATH` → BotBrowser profile
-
----
-
-### 2. Install & Run Tests
+Create a `.env` file in the project root with your BotBrowser configuration:
 
 ```bash
-npm install           # Install dependencies
-npx playwright test   # Execute all tests
-npx playwright show-report  # (Optional) Generate a detailed HTML report
+BOTBROWSER_EXEC_PATH=/absolute/path/to/botbrowser
+BOT_PROFILE_PATH=/absolute/path/to/bot-profile.enc
+```
+
+**Example configuration:**
+```bash
+BOTBROWSER_EXEC_PATH=/usr/local/bin/chromium
+BOT_PROFILE_PATH=/home/user/bot_profiles/chrome139_win11_x64.enc
+```
+
+**Required paths:**
+- `BOTBROWSER_EXEC_PATH` → BotBrowser executable
+- `BOT_PROFILE_PATH` → BotBrowser profile (.enc file)
+
+### Step 2: Install & Run
+
+```bash
+# Install dependencies
+npm install
+
+# Run all tests
+npx playwright test
+
+# Generate detailed HTML report (optional)
+npx playwright show-report
 ```
 
 ---
 
-## ⚠️ Important Notes
+## 📝 Test Information
 
-1. **Demo-only tests** — these are proof-of-concept scripts to illustrate BotBrowser’s capabilities.
-2. **No Responsibility Assumed** — this project does not assume responsibility for any misuse of these tests. Users must comply with relevant laws and target sites’ terms of service.
+**Test Purpose:** These are proof-of-concept scripts demonstrating BotBrowser's capabilities.
 
-| 🛑 Blocks with Data-Center Proxies? | 🔄 Use Sticky-Session Rotating Residential IPs |
-|-------------------------------------|-----------------------------------------------|
+**Responsibility:** Users must comply with relevant laws and target sites' terms of service.
 
----
+### Troubleshooting
 
-## 📖 Further Reading
+| Issue | Solution |
+|-------|----------|
+| 🛑 Blocked by data-center proxies | 🔄 Switch to Sticky-Session Rotating Residential IPs |
+| ❌ Tests failing | ✅ Verify `.env` file paths and profile compatibility |
+| 🐛 Browser crashes | 🔧 Check BotBrowser executable permissions |
 
-- Playwright docs: https://playwright.dev/docs/writing-tests
-- BotBrowser profiles & configs: https://github.com/botswin/BotBrowser/blob/main/profiles/profile-configs.md
+## 📚 Resources
 
----
+- [Playwright Documentation](https://playwright.dev/docs/writing-tests)
+- [BotBrowser Profile Configs](https://github.com/botswin/BotBrowser/blob/main/profiles/profile-configs.md)
+- [Test Results & Reports](./test-results/)
 
-## 🙏 Acknowledgements
+## 🙏 Dependencies
 
-This project utilizes the following open-source libraries:
+This project uses the following open-source libraries:
 
-- [dotenv](https://www.npmjs.com/package/dotenv)
-- [ghost-cursor](https://www.npmjs.com/package/ghost-cursor)
-- [ghost-cursor-playwright](https://www.npmjs.com/package/ghost-cursor-playwright)
+| Package | Purpose |
+|---------|---------|
+| [dotenv](https://www.npmjs.com/package/dotenv) | Environment variable management |
+| [ghost-cursor](https://www.npmjs.com/package/ghost-cursor) | Human-like cursor movements |
+| [ghost-cursor-playwright](https://www.npmjs.com/package/ghost-cursor-playwright) | Playwright integration for realistic interactions |
