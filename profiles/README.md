@@ -1,62 +1,100 @@
 # BotBrowser Profiles
 
-> 📢 In BotBrowser, everything starts with a profile. Your stealth, reliability, and success depend on it.
+In BotBrowser, everything starts with a profile. Your stealth, reliability, and success depend on it.
 
-Profiles in BotBrowser are encrypted files that define the complete environment a browser instance should emulate.
-They not only include detailed **browser fingerprint** information (like user agent, WebGL, screen size, and more), but also extend to **system-level settings** such as proxy configuration, timezone, language preferences, window size, screen properties, device memory, CPU architecture, and even platform-specific features like Android behavior simulation.
+## What Are Profiles?
 
-By using a profile, BotBrowser can launch sessions that mimic real human devices and browsing patterns across different operating systems and devices, achieving maximum stealth against even the most sophisticated antifraud and antibot detection systems.
+Profiles are encrypted files that define the complete environment a browser instance should emulate. They include:
 
-👉 **In short: A profile = a complete, customizable virtual browser identity.**
+- **Browser fingerprint** information (user agent, WebGL, screen size)
+- **System-level settings** (proxy, timezone, language, window size)
+- **Hardware emulation** (device memory, CPU architecture, screen properties)
+- **Platform simulation** (Android behavior, OS-specific features)
 
-### ⚠️ Important Notice About Profiles
+By using a profile, BotBrowser launches sessions that mimic real human devices and browsing patterns across different operating systems, achieving maximum stealth against sophisticated antifraud and antibot detection systems.
 
-#### 🚨 Demo Profile Warning
-> **Note**: Public demo profiles are for limited-time testing only. To prevent abuse they can't be used in headless mode, can't connect to automation framework, and can't load extensions.  
-> - Using them in production environments **will result in immediate account bans**, as they’re widely circulated and easily flagged.  
-> - Protect your operations by using **Premium Profiles**, authentic profiles with proper access controls.
+**💡 Profile = Complete Virtual Browser Identity**
 
-#### 🌟 Premium Profile Service
-> Access our exclusive pool of **300,000+ authentic browser fingerprints** sourced from real users (not algorithm-generated). Each profile is:  
-> - Unique and never reused.  
-> - Private and secure.  
-> - Based on genuine device/browser data.  
-> - Safe for production and scalable automation.  
+## 🤔 Understanding BotBrowser Profiles
 
-#### 📬 How to Get Premium Profiles
+**Important:** BotBrowser profiles work differently from typical browser fingerprinting tools.
+
+### 💻 What BotBrowser Profiles Actually Are:
+**Device Models** - Think of them as specific hardware configurations.
+
+**Real-world analogy:**
+- Profile = "MacBook Pro M4 Max" (the device type)
+- You can simulate User A in USA using this "M4 Max" profile
+- You can simulate User B in Europe using the same "M4 Max" profile  
+- Same device hardware, but different users and environments
+
+### 🔧 How Profiles Work:
+- **Profile defines the device fingerprint** (hardware, browser capabilities)
+- **Environment settings differentiate users** (proxy, timezone, language, cookies)
+- **Each session can have unique characteristics** while maintaining device consistency
+
+**Example:** Using a "MacBook Pro M3" profile:
+- User A: US proxy + English + EST timezone
+- User B: Germany proxy + German + CET timezone
+- User C: Japan proxy + Japanese + JST timezone
+
+All appear as different users on the same device type.
+
+## ⚠️ Profile Types
+
+### 🚨 Demo Profiles (Testing Only)
+
+**Limitations:**
+- Limited-time testing only
+- No headless mode support
+- No automation framework connection
+- No extension loading
+- **Production use results in immediate bans** (widely circulated and flagged)
+
+### 🌟 Premium Profiles (Production Ready)
+
+**Features:**
+- **300,000+ authentic fingerprints** from real users
+- Unique and never reused
+- Private and secure
+- Based on genuine device/browser data
+- Production-safe for scalable automation
+
+### 📬 Get Premium Profiles
+
+| Contact Method | Link |
+|----------------|------|
 | 📧 Email | [botbrowser@bk.ru](mailto:botbrowser@bk.ru) |
-|----------|-----------------------------------------------------------|
 | 📱 Telegram | [@botbrowser_support](https://t.me/botbrowser_support) |
 
-*We ensure fast delivery, confidentiality, and professional support for all clients.*
+*Fast delivery, confidentiality, and professional support guaranteed.*
 
 ---
 
-### 📚 How to Use Profiles
+## 📚 Using Profiles
 
-#### 1. CLI
-
-Launch BotBrowser with a profile:
+### CLI Usage
 
 ```bash
 chromium --bot-profile="/absolute/path/to/chrome139_win11_x64.enc"
 ```
 
- >  **Note:**
- >  - Ensure the BotBrowser binary major version matches the profile’s version.
- >    For example, BotBrowser v139 only supports profiles created for version 139 and cannot load profiles from version 138 or 140.
- >  - If a profile fails to load using a relative path, specify the full absolute path with the `--bot-profile` flag to guarantee correct loading.
+**⚠️ Version Compatibility:**
+- BotBrowser binary version must match profile version
+- Example: BotBrowser v139 only supports v139 profiles
+- Use absolute paths if relative paths fail to load
 
+### Automation Framework Integration
 
-#### 2. [Playwright](examples/playwright) / [Puppeteer](examples/puppeteer) Examples
+**[Playwright](examples/playwright) / [Puppeteer](examples/puppeteer) Example:**
 
 ```javascript
 const browser = await chromium.launch({
   headless: true,
-  executablePath: BOTBROWSER_EXEC_PATH,   // Absolute path to the BotBrowser executable
+  executablePath: BOTBROWSER_EXEC_PATH,
   args: [
-    `--bot-profile=${BOT_PROFILE_PATH}`,  // Absolute or relative path to the bot profile
-    '--proxy-server="socks5://127.0.0.1:8989"',  // or: "socks5://usr:pwd@127.0.0.1:8989"
+    `--bot-profile=${BOT_PROFILE_PATH}`,
+    '--proxy-server="socks5://127.0.0.1:8989"',
     '--proxy-username="usr"',
     '--proxy-password="pwd"',
   ],
@@ -69,25 +107,32 @@ await page.addInitScript(() => {
   delete window.__playwright__binding__;
   delete window.__pwInitScripts;
 });
+
 await page.goto("https://abrahamjuliot.github.io/creepjs/");
 ```
 
 
 ---
 
-### 📖 Important: Customize Your Profile Configurations
+## ⚙️ Profile Configuration
 
-Starting from 2025, BotBrowser now supports **full environment customization directly inside profiles** — including proxy, timezone, screen size, device pixel ratio, and more.
+**2025 Update:** Full environment customization now supported directly inside profiles.
 
-👉 **Please read** [`profile-configs.md`](https://github.com/botswin/BotBrowser/blob/main/profiles/profile-configs.md) **for full configuration options.**
+**Configurable Settings:**
+- Proxy configuration
+- Timezone and language
+- Screen size and device pixel ratio
+- System properties
 
-You no longer need CDP to set these fields manually!
+👉 **See [`profile-configs.md`](https://github.com/botswin/BotBrowser/blob/main/profiles/profile-configs.md) for complete configuration options.**
+
+*No more manual CDP configuration required!*
 
 ---
 
-### ✨ Major Features (Updated 2025)
+## ✨ Key Features
 
-#### 🛠️ Unique Capabilities
+### 🛠️ Unique Capabilities
 
 - [x] **Bypass Incognito mode checks**
 - [x] **Avoid CDP leaks** — native CDP fingerprint protection
@@ -108,23 +153,22 @@ You no longer need CDP to set these fields manually!
 
 ---
 
-#### 🧐 Fingerprints Covered
+## 📊 Fingerprint Coverage
 
-| Category        | Details |
-|-----------------|---------|
-| **Browser**     | Version, userAgentData, userAgent |
-| **OS**          | Windows, macOS, Ubuntu, Android simulation |
-| **Navigator**   | Languages, Plugins, Permissions, Battery, Keyboard |
-| **Graphics**    | WebGL, WebGL2, GPUAdapter, GPUDevice |
-| **Hardware**    | Screen, CPU, System Fonts, System Colors |
-| **Media**       | MediaDevices, MimeTypes, AudioContext |
-| **Other**       | Emoji, Unicode, matchMedia control |
+| Category | Covered Elements |
+|----------|------------------|
+| **Browser** | Version, userAgentData, userAgent |
+| **Operating System** | Windows, macOS, Ubuntu, Android simulation |
+| **Navigator** | Languages, plugins, permissions, battery, keyboard |
+| **Graphics** | WebGL, WebGL2, GPUAdapter, GPUDevice |
+| **Hardware** | Screen, CPU, system fonts, system colors |
+| **Media** | MediaDevices, MimeTypes, AudioContext |
+| **Advanced** | Emoji, Unicode, matchMedia control |
 
----
+## 📌 Best Practices
 
-### 📌 Best Practices
-
-- Use **Premium Profiles** for any production traffic.
-- Set realistic **screen size, devicePixelRatio, proxy settings** inside your profile.
-- Use updated **Android profiles** for mobile-specific operations.
-- Regularly update your profiles to stay synchronized with Chrome’s latest versions.
+✅ **Use Premium Profiles** for production traffic  
+✅ **Configure realistic settings** (screen size, devicePixelRatio, proxy)  
+✅ **Choose appropriate profiles** (Android for mobile operations)  
+✅ **Keep profiles updated** with latest Chrome versions  
+✅ **Test thoroughly** before production deployment
