@@ -2,17 +2,23 @@
 
 This document explains how to configure custom browser properties inside a **BotBrowser profile**, without relying on CDP.
 
----
-
-## ⚠️ How to Apply Configuration
-
-All configurations are embedded in the `configs` field inside your profile JSON structure. 
+## ⚠️ Important: Profile Data Integrity
 
 **Profile data comes from real users; unless you are certain about the impact of a change, do not override any fingerprint property - keeping the defaults ensures the most authentic behavior.**
 
-> 💡 **Important Note:** BotBrowser only accepts profile input as a file. While you may want to pass a profile via shell command (e.g., `--bot-profile=<(echo '{"x": 1}')`), this is **not** supported due to CLI argument length and file descriptor limitations.
-> 
-> ✅ **Best practice:** Build your profile JSON dynamically in your code, write it to a temporary file (e.g., `/tmp/myprofile.json`), and pass the path to `--bot-profile`. The file can be deleted afterward.  
+## 🔧 How to Apply Configuration
+
+All configurations are embedded in the `configs` field inside your profile JSON structure.
+
+### 📁 File-Based Configuration Only
+
+> 💡 **Important:** BotBrowser only accepts profile input as a file. Shell command piping (e.g., `--bot-profile=<(echo '{"x": 1}')`) is **not supported** due to CLI argument length and file descriptor limitations.
+
+**✅ Best Practice:**
+1. Build your profile JSON dynamically in your code
+2. Write it to a temporary file (e.g., `/tmp/myprofile.json`) 
+3. Pass the path to `--bot-profile`
+4. Delete the file afterward if needed  
 
 
 ---
@@ -199,7 +205,9 @@ All configurations are embedded in the `configs` field inside your profile JSON 
 
 ---
 
-## 📌 Notes
+## 📌 Important Notes
+
+### Configuration Behavior
 - Profile data comes from real users; change only if necessary and you understand the impact.
 - All string fields support multi-purpose values: string literal (`"auto"`, `"real"`, or custom), or object schema when more parameters are needed.
 - If a field is omitted, BotBrowser uses profile defaults where appropriate.
@@ -208,9 +216,20 @@ All configurations are embedded in the `configs` field inside your profile JSON 
 
 ---
 
-## 🔥 Best Practice
-- Always adjust **window size** and **screen size** together to avoid suspicious fingerprint gaps.
-- Match `timezone` and `location` to your proxy’s region to avoid fingerprint inconsistencies.
-- Set a realistic **devicePixelRatio** based on the system being emulated (e.g., 2 for macOS Retina, 1 for standard monitors).
-- Always define proxy credentials if using authenticated proxies to avoid connection leaks.
-- 🗂️ If you're generating a profile in code, **save it as a temporary file** (e.g., `/tmp/myprofile.json`) and pass the file path via `--bot-profile`. Avoid piping large JSON blobs via `echo`, as this is unsupported and unstable.
+## 🔥 Best Practices
+
+### Fingerprint Consistency
+- **Screen coordination:** Always adjust **window size** and **screen size** together to avoid suspicious fingerprint gaps
+- **Geographic alignment:** Match `timezone` and `location` to your proxy's region to avoid fingerprint inconsistencies
+- **Display accuracy:** Set a realistic **devicePixelRatio** based on the system being emulated:
+  - `2` for macOS Retina displays
+  - `1` for standard monitors
+  - `1.5` for some high-DPI Windows displays
+
+### Connection Security
+- **Proxy authentication:** Always define proxy credentials if using authenticated proxies to avoid connection leaks
+- **Protocol consistency:** Ensure proxy protocol matches your network requirements
+
+### File Management
+- **Dynamic generation:** If you're generating a profile in code, **save it as a temporary file** (e.g., `/tmp/myprofile.json`) and pass the file path via `--bot-profile`
+- **Avoid piping:** Never pipe large JSON blobs via `echo`, as this is unsupported and unstable
