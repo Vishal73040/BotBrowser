@@ -37,154 +37,111 @@ The patches here are **select examples**, published to illustrate techniques wit
 Below is the structure patches-showing which Chromium source files we’ve tweaked:
 
 ```
-Directory tree for patches_v2/136.0.7103.49:
-|-- base
-|   |-- android
-|   |   |-- java
-|   |       |-- src
-|   |           |-- org
-|   |               |-- chromium
-|   |                   |-- base
-|   |                       |-- process_launcher
-|   |-- version_info
-|-- botbrowser
-|-- build
-|   |-- linux
-|       |-- sysroot_scripts
-|-- chrome
-|   |-- android
-|   |   |-- java
-|   |-- app
-|   |-- browser
-|   |   |-- ash
-|   |   |   |-- login
-|   |   |-- devtools
-|   |   |-- ui
-|   |       |-- startup
-|   |-- common
-|   |-- installer
-|   |   |-- linux
-|   |       |-- debian
-|   |-- renderer
-|-- chromecast
-|   |-- browser
-|-- components
-|   |-- component_updater
-|   |-- crash
-|   |   |-- core
-|   |       |-- app
-|   |-- embedder_support
-|   |-- gwp_asan
-|   |   |-- client
-|   |-- language
-|   |   |-- core
-|   |       |-- browser
-|   |-- nacl
-|   |   |-- zygote
-|   |-- password_manager
-|   |   |-- core
-|   |       |-- browser
-|   |-- payments
-|   |   |-- core
-|   |-- policy
-|   |   |-- core
-|   |       |-- common
-|   |           |-- cloud
-|   |-- prefs
-|   |-- update_client
-|   |   |-- net
-|   |-- version_info
-|-- content
-|   |-- app
-|   |-- browser
-|   |   |-- bluetooth
-|   |   |-- client_hints
-|   |   |-- devtools
-|   |   |   |-- protocol
-|   |   |-- gpu
-|   |   |-- quota
-|   |   |-- renderer_host
-|   |   |-- speech
-|   |   |-- web_contents
-|   |-- child
-|   |-- gpu
-|   |-- public
-|   |   |-- browser
-|   |-- shell
-|   |   |-- browser
-|   |-- zygote
-|-- gpu
-|   |-- command_buffer
-|   |   |-- client
-|   |-- config
-|-- media
-|   |-- capture
-|       |-- video
-|-- pdf
-|-- services
-|   |-- network
-|   |   |-- p2p
-|   |-- passage_embeddings
-|-- third_party
-|   |-- blink
-|   |   |-- common
-|   |   |   |-- device_memory
-|   |   |   |-- web_preferences
-|   |   |-- public
-|   |   |   |-- common
-|   |   |       |-- web_preferences
-|   |   |-- renderer
-|   |       |-- core
-|   |       |   |-- css
-|   |       |   |-- dom
-|   |       |   |-- events
-|   |       |   |-- execution_context
-|   |       |   |-- exported
-|   |       |   |-- frame
-|   |       |   |-- html
-|   |       |   |-- inspector
-|   |       |   |-- layout
-|   |       |   |-- loader
-|   |       |   |-- permissions_policy
-|   |       |   |-- timezone
-|   |       |   |-- timing
-|   |       |-- modules
-|   |       |   |-- battery
-|   |       |   |-- canvas
-|   |       |   |-- encoding
-|   |       |   |-- encryptedmedia
-|   |       |   |-- keyboard
-|   |       |   |-- mediarecorder
-|   |       |   |-- mediasource
-|   |       |   |-- mediastream
-|   |       |   |-- peerconnection
-|   |       |   |-- plugins
-|   |       |   |-- quota
-|   |       |   |-- webaudio
-|   |       |   |-- webgl
-|   |       |   |-- webgpu
-|   |       |-- platform
-|   |           |-- fonts
-|   |           |-- media
-|   |-- crashpad
-|   |   |-- crashpad
-|   |       |-- client
-|   |-- harfbuzz-ng
-|       |-- src
-|           |-- src
-|-- tools
-|   |-- gritsettings
-|-- ui
-|   |-- base
-|   |   |-- l10n
-|   |-- resources
-|       |-- fonts
-|-- v8
-    |-- src
-        |-- execution
-        |-- heap
-        |-- inspector
-        |-- numbers
+patches_v2/136.0.7103.49/
+│
+├─ base/
+│  ├─ android/java/src/org/chromium/base/process_launcher/
+│  └─ version_info/
+│
+├─ botbrowser/
+│
+├─ build/
+│  └─ linux/sysroot_scripts/
+│
+├─ chrome/
+│  ├─ android/java/
+│  ├─ app/
+│  ├─ browser/
+│  │  ├─ ash/login/
+│  │  ├─ devtools/
+│  │  └─ ui/startup/
+│  ├─ common/
+│  ├─ installer/linux/debian/
+│  └─ renderer/
+│
+├─ chromecast/
+│  └─ browser/
+│
+├─ components/
+│  ├─ component_updater/
+│  ├─ crash/core/app/
+│  ├─ embedder_support/
+│  ├─ gwp_asan/client/
+│  ├─ language/core/browser/
+│  ├─ nacl/zygote/
+│  ├─ password_manager/core/browser/
+│  ├─ payments/core/
+│  ├─ policy/core/common/cloud/
+│  ├─ prefs/
+│  ├─ update_client/net/
+│  └─ version_info/
+│
+├─ content/
+│  ├─ app/
+│  ├─ browser/
+│  │  ├─ bluetooth/
+│  │  ├─ client_hints/
+│  │  ├─ devtools/protocol/
+│  │  ├─ gpu/
+│  │  ├─ quota/
+│  │  ├─ renderer_host/
+│  │  ├─ speech/
+│  │  └─ web_contents/
+│  ├─ child/
+│  ├─ gpu/
+│  ├─ public/browser/
+│  ├─ shell/browser/
+│  └─ zygote/
+│
+├─ gpu/
+│  ├─ command_buffer/client/
+│  └─ config/
+│
+├─ media/
+│  └─ capture/video/
+│
+├─ pdf/
+│
+├─ services/
+│  ├─ network/p2p/
+│  └─ passage_embeddings/
+│
+├─ third_party/
+│  ├─ blink/
+│  │  ├─ common/
+│  │  │  ├─ device_memory/
+│  │  │  └─ web_preferences/
+│  │  ├─ public/common/web_preferences/
+│  │  └─ renderer/
+│  │     ├─ core/
+│  │     │  ├─ css/, dom/, events/, execution_context/
+│  │     │  ├─ exported/, frame/, html/, inspector/
+│  │     │  ├─ layout/, loader/, permissions_policy/
+│  │     │  └─ timezone/, timing/
+│  │     ├─ modules/
+│  │     │  ├─ battery/, canvas/, encoding/, encryptedmedia/
+│  │     │  ├─ keyboard/, mediarecorder/, mediasource/
+│  │     │  ├─ mediastream/, peerconnection/, plugins/
+│  │     │  └─ quota/, webaudio/, webgl/, webgpu/
+│  │     └─ platform/
+│  │        ├─ fonts/
+│  │        └─ media/
+│  ├─ crashpad/crashpad/client/
+│  └─ harfbuzz-ng/src/src/
+│
+├─ tools/
+│  └─ gritsettings/
+│
+├─ ui/
+│  ├─ base/l10n/
+│  └─ resources/fonts/
+│
+└─ v8/
+   └─ src/
+      ├─ execution/
+      ├─ heap/
+      ├─ inspector/
+      └─ numbers/
 ```
 
 
