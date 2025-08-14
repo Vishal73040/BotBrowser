@@ -34,20 +34,25 @@ BotBrowser is a cross-platform stealth browser designed to defeat modern antibot
 
 ## 🚀 Core Features
 
- **Cross-Platform OS Simulation**
-  > Use distinct cross-platform profiles to emulate Windows, macOS, Ubuntu, or Android on any host-undetectable even in **headless** mode.
+### 🌍 Cross-Platform OS Simulation
+Use distinct cross-platform profiles to emulate Windows, macOS, Ubuntu, or Android on any host—undetectable even in **headless** mode.
 
- **Latest Chromium Base**
-  > Always aligned with the newest stable Chromium release, ensuring cutting‑edge compatibility with today's most advanced antibot defenses.
+### 🔄 Latest Chromium Base
+Always aligned with the newest stable Chromium release, ensuring cutting‑edge compatibility with today's most advanced antibot defenses.
 
- **Unlimited Android Chrome Emulation**
-  > Emulate Android devices (metrics, UA, touch & sensors, etc.) flawlessly and undetectably. [▶️ creepjs test](//botswin.github.io/BotBrowser/video_player/index.html?video=antibots-creepjs-creepjs-Android), [▶️ iphey test](//botswin.github.io/BotBrowser/video_player/index.html?video=antibots-iphey-iphey-Android), [▶️ pixelscan test](//botswin.github.io/BotBrowser/video_player/index.html?video=antibots-pixelscan-pixelscan-Android)
+### 📱 Unlimited Android Chrome Emulation
+Emulate Android devices (metrics, UA, touch & sensors, etc.) flawlessly and undetectably.
 
- **Advanced Programmatic Control**
-  > Harness CDP through [Playwright](examples/playwright) and [Puppeteer](examples/puppeteer) alongside deep C++ modifications that block CDP leak detection, delivering both powerful automation and rock‑solid stealth.
+**Test Results:**
+- [▶️ CreepJS Test](//botswin.github.io/BotBrowser/video_player/index.html?video=antibots-creepjs-creepjs-Android)
+- [▶️ Iphey Test](//botswin.github.io/BotBrowser/video_player/index.html?video=antibots-iphey-iphey-Android)
+- [▶️ Pixelscan Test](//botswin.github.io/BotBrowser/video_player/index.html?video=antibots-pixelscan-pixelscan-Android)
 
- **Success & Performance**
-  > Proven **98%+ success** against sophisticated antibot measures, powering over 350,000 daily account registrations with exceptional stability and speed under heavy loads.
+### 🤖 Advanced Programmatic Control
+Harness CDP through [Playwright](examples/playwright) and [Puppeteer](examples/puppeteer) alongside deep C++ modifications that block CDP leak detection, delivering both powerful automation and rock‑solid stealth.
+
+### 📊 Success & Performance
+Proven **98%+ success** against sophisticated antibot measures, powering over 350,000 daily account registrations with exceptional stability and speed under heavy loads.
 
 ## 🛡️ Advanced Capabilities
 
@@ -87,18 +92,18 @@ BotBrowser is a cross-platform stealth browser designed to defeat modern antibot
 
 ### Download & Installation
 
-1. **Download Installer**
-  Get the BotBrowser installer for your OS from the [Releases](https://github.com/botswin/BotBrowser/releases) page.
+#### 1. Download Installer
+Get the BotBrowser installer for your OS from the [Releases](https://github.com/botswin/BotBrowser/releases) page.
 
-2. **Windows**
-- Extract the downloaded `.7z` archive.
-- Run `chrome.exe` from the extracted folder.
-- If you encounter `STATUS_ACCESS_VIOLATION`, launch with [--no-sandbox](https://peter.sh/experiments/chromium-command-line-switches/#no-sandbox).
+#### 2. Windows Installation
+1. Extract the downloaded `.7z` archive
+2. Run `chrome.exe` from the extracted folder
+3. If you encounter `STATUS_ACCESS_VIOLATION`, launch with [--no-sandbox](https://peter.sh/experiments/chromium-command-line-switches/#no-sandbox)
 
-3. **macOS**
-- Open the downloaded `.dmg` file.
-- Drag `Chromium.app` into your Applications folder or any desired location.
-- If you see the error:
+#### 3. macOS Installation
+1. Open the downloaded `.dmg` file
+2. Drag `Chromium.app` into your Applications folder or any desired location
+3. If you see the error:
    ```
    "Chromium" is damaged and can't be opened
    ```
@@ -107,12 +112,12 @@ BotBrowser is a cross-platform stealth browser designed to defeat modern antibot
    xattr -rd com.apple.quarantine /Applications/Chromium.app
    ```
 
-4. **Ubuntu**
-- Install via `dpkg`:
+#### 4. Ubuntu Installation
+1. Install via `dpkg`:
    ```bash
    sudo dpkg -i botbrowser_<version>_amd64.deb
    ```
-- If dependencies are missing, run:
+2. If dependencies are missing, run:
    ```bash
    sudo apt-get install -f
    ```
@@ -121,27 +126,23 @@ BotBrowser is a cross-platform stealth browser designed to defeat modern antibot
 
 > 📢 In BotBrowser, everything starts with a profile. Your stealth, reliability, and success depend on it.
 
-
-- **Demo Profiles**: located in the [profiles](profiles) directory of the repository.
-- **Cross-Platform**:
-
-  > 🔥 A *macOS profile* works on Ubuntu; a *Windows profile* works on macOS; an *Android profile* can be fully emulated on macOS, Windows, and Ubuntu.
-- **Configuration Options**: see the [📚 profile-configs guide](https://github.com/botswin/BotBrowser/blob/main/profiles/profile-configs.md).
+**Key Points:**
+- **Demo Profiles:** Located in the [profiles](profiles) directory of the repository
+- **Cross-Platform Compatibility:** 🔥 A *macOS profile* works on Ubuntu; a *Windows profile* works on macOS; an *Android profile* can be fully emulated on macOS, Windows, and Ubuntu
+- **Configuration Options:** See the [📚 profile-configs guide](https://github.com/botswin/BotBrowser/blob/main/profiles/profile-configs.md)
 
 ---
 
 ### Quick Start Examples
 
-#### 1. CLI (Windows / macOS / Ubuntu)
+#### 1. CLI Usage
 
-**Windows (CMD)**
-
+**Windows (CMD):**
 ```cmd
 chrome.exe --no-sandbox --bot-profile="C:\\path\\to\\chrome137_win11_x64.enc" --user-data-dir="%TEMP%\\botprofile_%RANDOM%"
 ```
 
-**macOS**
-
+**macOS:**
 ```bash
 /Applications/Chromium.app/Contents/MacOS/Chromium \
   --no-sandbox \
@@ -149,8 +150,7 @@ chrome.exe --no-sandbox --bot-profile="C:\\path\\to\\chrome137_win11_x64.enc" --
   --bot-profile="/path/to/chrome137_win11_x64.enc"
 ```
 
-**Ubuntu**
-
+**Ubuntu:**
 ```bash
 chromium-browser \
   --no-sandbox \
@@ -158,8 +158,11 @@ chromium-browser \
   --bot-profile="/path/to/chrome137_win11_x64.enc"
 ```
 
-> Use `--user-data-dir` with a unique temporary folder to avoid conflicts with any running Chromium instances. It ensures BotBrowser launches cleanly without interfering with your normal browser profiles.
-> Use `--proxy-server`, `--proxy-username`, `--proxy-password` to connect to a proxy server, we support http, https, socks5 protocol.
+**Important Notes:**
+- Use `--user-data-dir` with a unique temporary folder to avoid conflicts with running Chromium instances
+- This ensures BotBrowser launches cleanly without interfering with your normal browser profiles
+- Use `--proxy-server`, `--proxy-username`, `--proxy-password` to connect to proxy servers
+- Supported protocols: HTTP, HTTPS, SOCKS5
 
 #### 2. [Playwright](examples/playwright) / [Puppeteer](examples/puppeteer) Examples
 
@@ -185,13 +188,15 @@ await page.addInitScript(() => {
 await page.goto("https://abrahamjuliot.github.io/creepjs/");
 ```
 
-#### 3. [BotBrowserConsole](console) (GUI)
+#### 3. BotBrowserConsole (GUI)
 
 Streamline your automation with [BotBrowserConsole](console), a free and open-source GUI tool designed to:
-- Select your profile and start browsing without code
-- Easily launch multiple browser instances
-- Seamlessly manage different environments
-- Efficiently handle multiple accounts
+
+**Features:**
+- ✅ Select your profile and start browsing without code
+- ✅ Easily launch multiple browser instances  
+- ✅ Seamlessly manage different environments
+- ✅ Efficiently handle multiple accounts
 
 
 
@@ -220,10 +225,9 @@ For a complete Docker setup and usage guide, please see [docker/README.md](docke
 
 Use our detailed test scripts to explore real-world use cases and implementation examples: **[Tests](tests)**.
 
+### ⚠️ Disclaimer
 
-⚠️ **DISCLAIMER**
-
-These test scripts are provided for **educational purposes** and to **demonstrate** the capabilities of BotBrowser. They are intended solely for **legal use cases** that comply with all applicable laws and regulations.  **Any misuse**-such as violating website terms of service or engaging in unlawful activities-**is strictly prohibited.**
+These test scripts are provided for **educational purposes** and to **demonstrate** the capabilities of BotBrowser. They are intended solely for **legal use cases** that comply with all applicable laws and regulations. **Any misuse**—such as violating website terms of service or engaging in unlawful activities—**is strictly prohibited.**
 
 
 
@@ -286,11 +290,12 @@ These test scripts are provided for **educational purposes** and to **demonstrat
 
 We do not provide the private key required to generate new profiles. If you need additional profiles, please contact us directly. We maintain over **300,000 real user browser fingerprints** to support your needs.
 
+**Contact Information:**
 
-| 📧 Email    | [botbrowser@bk.ru](mailto:botbrowser@bk.ru) |
-|-------------|--------------------------------------------------|
-| 📱 Telegram | [@botbrowser_support](https://t.me/botbrowser_support)   |
-
+| Contact Method | Link |
+|----------------|------|
+| 📧 Email | [botbrowser@bk.ru](mailto:botbrowser@bk.ru) |
+| 📱 Telegram | [@botbrowser_support](https://t.me/botbrowser_support) |
 
 ### Building from Source
 
