@@ -176,3 +176,24 @@ test('titan22', async ({ page }) => {
     await clickWithCursor(cursor, 'button[type="submit"]');
     await page.locator('a.account-button[href*="/account"]').waitFor({ state: 'visible' });
 });
+
+test('habbo', async ({ page }) => {
+    test.setTimeout(0);
+    const email = generateRandomEmail();
+    const password = generateRandomPassword();
+
+    await page.goto('https://www.habbo.com/');
+    await page.locator('button#onetrust-accept-btn-handler').click();
+    await page.locator('button >> text="Play Now!"').click();
+    await page.locator('input[name="email"]').pressSequentially(email, { delay: 20 });
+    await page.keyboard.press('Tab');
+    await page.locator('input[name="password"]').pressSequentially(password, { delay: 20 });
+
+    const apiResponsePromise = page.waitForResponse((response) =>
+        response.url().endsWith('/api/public/authentication/loginv2')
+    );
+    await page.keyboard.press('Enter');
+
+    const apiResponse = await apiResponsePromise;
+    expect((await apiResponse.json()).message).toBe('login.invalid_password');
+});
