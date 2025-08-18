@@ -49,7 +49,7 @@ All configurations are embedded in the `configs` field inside your profile JSON 
 | `proxy.username` | Proxy username for basic auth (optional). | `""`    |
 | `proxy.password` | Proxy password for basic auth (optional). | `""`    |
 
-> 💡 **Tip:** If you prefer not to embed proxy settings in your profile, you can use BotBrowser’s CLI parameters instead:
+> 💡 **Tip:** If you prefer not to embed proxy settings in your profile, you can use BotBrowser's CLI parameters instead:
 > ```bash
 > --proxy-server=<username:password@hostname:port>
 > --proxy-server=<scheme://username:password@hostname:port>
@@ -61,6 +61,8 @@ All configurations are embedded in the `configs` field inside your profile JSON 
 > --proxy-username=<user>
 > --proxy-password=<pass>
 > ```
+>
+> 📖 **For complete CLI flags documentation**, see [CLI Flags Reference](../cli-flags.md)
 
 
 ### Window & Screen Settings

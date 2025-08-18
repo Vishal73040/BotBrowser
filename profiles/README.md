@@ -84,6 +84,8 @@ chromium --bot-profile="/absolute/path/to/chrome139_win11_x64.enc"
 - Example: BotBrowser v139 only supports v139 profiles
 - Use absolute paths if relative paths fail to load
 
+> 📖 **For all available CLI flags**, see [CLI Flags Reference](../cli-flags.md)
+
 ### Automation Framework Integration
 
 **[Playwright](examples/playwright) / [Puppeteer](examples/puppeteer) Example:**

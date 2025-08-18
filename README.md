@@ -184,6 +184,8 @@ await page.goto("https://abrahamjuliot.github.io/creepjs/");
 - Use `--user-data-dir` with a unique temporary folder to avoid conflicts with running Chromium instances
 - Use `--proxy-server` to connect to proxy servers, supported protocols: HTTP, HTTPS, SOCKS5
 
+> 📖 **For a complete list of BotBrowser-specific CLI flags**, see [CLI Flags Reference](cli-flags.md)
+
 #### 3. BotBrowserConsole (GUI)
 
 Streamline your automation with [BotBrowserConsole](console), a free and open-source GUI tool designed to:
