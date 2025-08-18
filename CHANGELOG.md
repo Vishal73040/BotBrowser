@@ -1,5 +1,32 @@
 # CHANGELOG
 
+## [2025-08-17]
+
+### Added
+- **`configs.disableDebugger` (default: `true`)**  
+  Prevents JavaScript `debugger` statements from pausing execution, keeping flows non-interactive during automation.
+
+- **New Start Page (New Tab)**  
+  Replaced new-tab page to display live environment data: Proxy IP, Timezone, Latitude/Longitude, User-Agent, WebGL, etc., giving instant visibility into the BotBrowser context.
+
+- **`configs.keyboard`**  
+  Choose keyboard fingerprint source: `"profile"` (emulated from profile) or `"real"` (use system keyboard).
+
+### Optimized
+- **Binary Size Reduction (Windows/macOS)**  
+  Removed unnecessary font assets; reduced binary size from ~**600 MB** to **< 300 MB**. Faster downloads and smaller disk footprint.
+
+### Improved
+- **TextMetrics Noise Stabilization**  
+  Switched from per-string noise to a unified, stable noise model and preserved floating‑point precision after noise injection—better resilience against **hCaptcha** text-metrics checks.
+
+- **Dynamic Blink Feature Loading**  
+  Parses and applies Blink features at runtime based on the emulated environment (**Windows / macOS / Android**), improving realism and compatibility.
+
+- **`--bot-title` UI Enhancement**  
+  Beyond window/icon labels, the custom title now also appears as a label to the right of the toolbar **Refresh** button, improving multi-window recognition.
+
+
 ---
 
 ## [2025-08-12]
