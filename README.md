@@ -139,7 +139,7 @@ Get the BotBrowser installer for your OS from the [Releases](https://github.com/
 
 **Windows (CMD):**
 ```cmd
-chrome.exe --no-sandbox --bot-profile="C:\\path\\to\\chrome137_win11_x64.enc" --user-data-dir="%TEMP%\\botprofile_%RANDOM%"
+chrome.exe --no-sandbox --bot-profile="C:\\path\\to\\chrome139_win11_x64.enc" --user-data-dir="%TEMP%\\botprofile_%RANDOM%"
 ```
 
 **macOS:**
@@ -147,7 +147,7 @@ chrome.exe --no-sandbox --bot-profile="C:\\path\\to\\chrome137_win11_x64.enc" --
 /Applications/Chromium.app/Contents/MacOS/Chromium \
   --no-sandbox \
   --user-data-dir="$(mktemp -d)" \
-  --bot-profile="/path/to/chrome137_win11_x64.enc"
+  --bot-profile="/path/to/chrome139_win11_x64.enc"
 ```
 
 **Ubuntu:**
@@ -155,7 +155,7 @@ chrome.exe --no-sandbox --bot-profile="C:\\path\\to\\chrome137_win11_x64.enc" --
 chromium-browser \
   --no-sandbox \
   --user-data-dir="$(mktemp -d)" \
-  --bot-profile="/path/to/chrome137_win11_x64.enc"
+  --bot-profile="/path/to/chrome139_win11_x64.enc"
 ```
 
 #### 2. [Playwright](examples/playwright) / [Puppeteer](examples/puppeteer) Examples
