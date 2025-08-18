@@ -172,9 +172,7 @@ const browser = await chromium.launch({
   executablePath: BOTBROWSER_EXEC_PATH,   // Absolute path to the BotBrowser executable
   args: [
     `--bot-profile=${BOT_PROFILE_PATH}`,  // Absolute or relative path to the bot profile
-    '--proxy-server="socks5://127.0.0.1:8989"',  // or: "socks5://usr:pwd@127.0.0.1:8989"
-    '--proxy-username="usr"',
-    '--proxy-password="pwd"',
+    '--proxy-server="socks5://usr:pwd@127.0.0.1:8989"',  // or: "http://usr:pwd@127.0.0.1:8989"
   ],
 });
 
