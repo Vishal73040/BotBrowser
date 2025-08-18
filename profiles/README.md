@@ -96,9 +96,7 @@ const browser = await chromium.launch({
   executablePath: BOTBROWSER_EXEC_PATH,
   args: [
     `--bot-profile=${BOT_PROFILE_PATH}`,
-    '--proxy-server="socks5://127.0.0.1:8989"',
-    '--proxy-username="usr"',
-    '--proxy-password="pwd"',
+    '--proxy-server="socks5://usr:pwd@127.0.0.1:8989"',
   ],
 });
 
