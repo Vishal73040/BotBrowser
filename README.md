@@ -158,11 +158,6 @@ chromium-browser \
   --bot-profile="/path/to/chrome137_win11_x64.enc"
 ```
 
-**Important Notes:**
-- Use `--user-data-dir` with a unique temporary folder to avoid conflicts with running Chromium instances
-- This ensures BotBrowser launches cleanly without interfering with your normal browser profiles
-- Use `--proxy-server` to connect to proxy servers, supported protocols: HTTP, HTTPS, SOCKS5
-
 #### 2. [Playwright](examples/playwright) / [Puppeteer](examples/puppeteer) Examples
 
 ```javascript
@@ -184,6 +179,10 @@ await page.addInitScript(() => {
 });
 await page.goto("https://abrahamjuliot.github.io/creepjs/");
 ```
+
+**Important Notes:**
+- Use `--user-data-dir` with a unique temporary folder to avoid conflicts with running Chromium instances
+- Use `--proxy-server` to connect to proxy servers, supported protocols: HTTP, HTTPS, SOCKS5
 
 #### 3. BotBrowserConsole (GUI)
 
