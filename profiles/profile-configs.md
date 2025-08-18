@@ -2,6 +2,17 @@
 
 This document explains how to configure custom browser properties inside a **BotBrowser profile**, without relying on CDP.
 
+## 📋 Table of Contents
+
+- [⚠️ Important: Profile Data Integrity](#️-important-profile-data-integrity)
+- [🔧 How to Apply Configuration](#-how-to-apply-configuration)
+- [🛠️ Configurable Fields](#️-configurable-fields)
+- [✨ Example Profile `configs` Block](#-example-profile-configs-block)
+- [📌 Important Notes](#-important-notes)  
+- [🔥 Best Practices](#-best-practices)
+
+---
+
 ## ⚠️ Important: Profile Data Integrity
 
 **Profile data comes from real users; unless you are certain about the impact of a change, do not override any fingerprint property - keeping the defaults ensures the most authentic behavior.**
