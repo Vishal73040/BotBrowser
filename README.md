@@ -161,8 +161,7 @@ chromium-browser \
 **Important Notes:**
 - Use `--user-data-dir` with a unique temporary folder to avoid conflicts with running Chromium instances
 - This ensures BotBrowser launches cleanly without interfering with your normal browser profiles
-- Use `--proxy-server`, `--proxy-username`, `--proxy-password` to connect to proxy servers
-- Supported protocols: HTTP, HTTPS, SOCKS5
+- Use `--proxy-server` to connect to proxy servers, supported protocols: HTTP, HTTPS, SOCKS5
 
 #### 2. [Playwright](examples/playwright) / [Puppeteer](examples/puppeteer) Examples
 
