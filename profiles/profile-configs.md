@@ -38,6 +38,8 @@ All configurations are embedded in the `configs` field inside your profile JSON 
 | `location`                      | `"auto"` = IP-based; `"real"` = system (GPS); object = custom coordinates (`lat`, `lon`). | `"auto"`    |
 | `browserBrand`                  | override for `navigator.userAgentData.brands` and related UA fields. Supports "chromium", "chrome", "edge", "brave". | `"chrome"`    |
 | `injectRandomHistory`           | If `true`, BotBrowser will simulate prior navigation by injecting a random number of history entries when opening a new tab (fake `history.back()`, etc.). | `false`    |
+| `disableDebugger`               | If `true`, prevents JavaScript `debugger` statements from pausing execution, keeping flows non-interactive during automation. | `true`     |
+| `keyboard`                      | Choose keyboard fingerprint source: `"profile"` (emulated from profile) or `"real"` (use system keyboard). | `"profile"` |
 
 ### Proxy Settings
 
@@ -169,7 +171,13 @@ All configurations are embedded in the `configs` field inside your profile JSON 
     "browserBrand": "chrome",
 
     // injectRandomHistory: true will simulate prior navigation by injecting a random number of history entries when opening a new tab
-    "injectRandomHistory": false,  
+    "injectRandomHistory": false,
+
+    // disableDebugger: true prevents JavaScript debugger statements from pausing execution, keeping flows non-interactive during automation
+    "disableDebugger": true,
+
+    // keyboard: choose keyboard fingerprint source: "profile" (emulated from profile) or "real" (use system keyboard)
+    "keyboard": "profile",
   }
 }
 
