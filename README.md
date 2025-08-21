@@ -158,6 +158,25 @@ chromium-browser \
   --bot-profile="/path/to/chrome139_win11_x64.enc"
 ```
 
+#### Flexible Configuration with CLI Flags
+```bash
+# Keep profile integrity, override only what you need
+chrome.exe --bot-profile="authentic_user.enc" \
+           --proxy-server="http://user:pass@proxy.com:8080" \
+           --bot-title="Session-A"
+
+# Same profile, different runtime settings
+chrome.exe --bot-profile="authentic_user.enc" \
+           --proxy-server="socks5://user:pass@proxy2.com:1080" \
+           --bot-title="Session-B"
+```
+
+> 💡 **CLI flags override profile settings without modifying the encrypted profile file**
+> 
+> This approach preserves authentic user fingerprints while enabling runtime flexibility.
+> 
+> 📖 **For all available CLI flags**, see [CLI Flags Reference](cli-flags.md)
+
 #### 2. [Playwright](examples/playwright) / [Puppeteer](examples/puppeteer) Examples
 
 ```javascript

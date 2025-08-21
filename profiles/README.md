@@ -114,19 +114,36 @@ await page.goto("https://abrahamjuliot.github.io/creepjs/");
 
 ---
 
-## ⚙️ Profile Configuration
+## 🎛️ Configuration Approaches
 
-**2025 Update:** Full environment customization now supported directly inside profiles.
+### Profile-Based Configuration
+- **Purpose**: Stores authentic user fingerprints and base settings
+- **When to use**: For core browser identity and fingerprint data
+- **Limitation**: Encrypted files are difficult to modify
 
-**Configurable Settings:**
-- Proxy configuration
-- Timezone and language
-- Screen size and device pixel ratio
-- System properties
+### CLI-Based Configuration  
+- **Purpose**: Runtime overrides without modifying profile files
+- **When to use**: For session-specific settings like proxy, title, cookies
+- **Advantage**: Preserves profile integrity while enabling flexibility
+
+### Best Practice: Hybrid Approach
+```bash
+# Keep authentic fingerprint data in profile
+# Override session-specific settings via CLI
+--bot-profile="real_user_fingerprint.enc" \
+--proxy-server="session_specific_proxy" \
+--bot-title="current_session_id"
+```
+
+## ⚡ Why CLI Flags Matter
+- **🔒 Preserve authenticity**: Don't modify real user fingerprint data
+- **🚀 Runtime flexibility**: Adjust settings per session without file edits  
+- **💼 Session isolation**: Multiple instances with different settings
+- **🛡️ Security**: Keep sensitive data (like proxy credentials) out of profile files
+
+📖 **For complete CLI flags documentation**, see [CLI Flags Reference](../cli-flags.md)
 
 👉 **See [`profile-configs.md`](https://github.com/botswin/BotBrowser/blob/main/profiles/profile-configs.md) for complete configuration options.**
-
-*No more manual CDP configuration required!*
 
 ---
 

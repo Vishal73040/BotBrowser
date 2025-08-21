@@ -1,15 +1,48 @@
 # 📚 BotBrowser Profile Configuration Guide
 
-This document explains how to configure custom browser properties inside a **BotBrowser profile**, without relying on CDP.
+This document explains how to configure custom browser properties using **BotBrowser profiles** and **CLI configuration flags**.
+
+> 💡 **Recommended Approach:** Use CLI `--bot-config-*` flags instead of modifying profile files. CLI flags have the highest priority and don't require editing profile JSON files. See [CLI Flags Reference](../cli-flags.md#⚙️-profile-configuration-override-flags).
 
 ## 📋 Table of Contents
 
+- [⚙️ Configuration Priority System](#️-configuration-priority-system)
 - [⚠️ Important: Profile Data Integrity](#️-important-profile-data-integrity)
 - [🔧 How to Apply Configuration](#-how-to-apply-configuration)
 - [🛠️ Configurable Fields](#️-configurable-fields)
 - [✨ Example Profile `configs` Block](#-example-profile-configs-block)
 - [📌 Important Notes](#-important-notes)  
 - [🔥 Best Practices](#-best-practices)
+
+---
+
+## ⚙️ Configuration Priority System
+
+BotBrowser uses a three-tier priority system for configuration:
+
+### Priority Order (Highest to Lowest)
+
+1. **🥇 CLI `--bot-config-*` flags** - Highest priority, overrides everything
+2. **🥈 Profile `configs` settings** - Medium priority, overrides profile defaults  
+3. **🥉 Profile default values** - Lowest priority, built-in profile data
+
+### 💡 Why CLI Flags Are Recommended
+
+**✅ Highest Priority:** Always takes precedence over profile settings  
+**✅ No Profile Editing:** Avoid modifying complex encrypted profile files  
+**✅ Dynamic Configuration:** Perfect for automation and different environments  
+**✅ Session Isolation:** Different settings per browser instance without conflicts  
+
+**Example:**
+```bash
+# Use CLI flags to override profile settings dynamically
+chromium-browser \
+  --bot-profile="./profiles/profile.enc" \
+  --bot-config-browser-brand="edge" \
+  --bot-config-timezone="Europe/London"
+```
+
+> 📖 **Complete CLI flags reference:** [CLI Flags Reference](../cli-flags.md#⚙️-profile-configuration-override-flags)
 
 ---
 
@@ -60,17 +93,15 @@ All configurations are embedded in the `configs` field inside your profile JSON 
 | `proxy.username` | Proxy username for basic auth (optional). | `""`    |
 | `proxy.password` | Proxy password for basic auth (optional). | `""`    |
 
-> 💡 **Tip:** If you prefer not to embed proxy settings in your profile, you can use BotBrowser's CLI parameters instead:
+> 💡 **Better Approach:** Use CLI flags for proxy configuration:
 > ```bash
-> --proxy-server=<username:password@hostname:port>
-> --proxy-server=<scheme://username:password@hostname:port>
-> ```
-> or
->
-> ```bash
-> --proxy-server=<hostname:port>
-> --proxy-username=<user>
-> --proxy-password=<pass>
+> # Embedded credentials (recommended)
+> --proxy-server="http://username:password@proxy.example.com:8080"
+> 
+> # Separate credentials
+> --proxy-server="proxy.example.com:8080"
+> --proxy-username="username"
+> --proxy-password="password"
 > ```
 >
 > 📖 **For complete CLI flags documentation**, see [CLI Flags Reference](../cli-flags.md)
@@ -232,7 +263,7 @@ All configurations are embedded in the `configs` field inside your profile JSON 
 - Profile data comes from real users; change only if necessary and you understand the impact.
 - All string fields support multi-purpose values: string literal (`"auto"`, `"real"`, or custom), or object schema when more parameters are needed.
 - If a field is omitted, BotBrowser uses profile defaults where appropriate.
-- Values in the `configs` block **override** equivalent command-line arguments like `--window-size`, `--window-position`, etc.
+- CLI `--bot-config-*` flags **override** profile `configs` settings with highest priority
 - **uaFullVersion Tip**: When JavaScript calls `navigator.userAgentData.fullVersion`, BotBrowser will replace the default value with this field. Ensure that the specified full version corresponds to the Chromium engine’s major version (e.g., Chromium 138 → full version should begin with “138.”). You can look up the latest full version for each major release on https://chromiumdash.appspot.com/releases.
 
 ---
