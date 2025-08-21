@@ -1,5 +1,5 @@
 import { expect, test } from '../global-setup';
-import { generateRandomEmail, generateRandomPassword, getDateFormatted, sleep } from '../utils';
+import { generateRandomEmail, generateRandomPassword, generateRandomUsername, getDateFormatted, sleep } from '../utils';
 
 test('southwest', async ({ page }) => {
     const tomorrowDate = getDateFormatted(1);
@@ -46,4 +46,25 @@ test('target', async ({ page }) => {
     await sleep(2000);
     await page.locator('button#createAccount').click();
     await page.locator('h1 >> text=Verification code sent').waitFor();
+});
+
+test('nordstrom', async ({ page }) => {
+    test.setTimeout(120_000);
+    await page.goto('https://www.nordstrom.com/');
+    await sleep(3_000);
+    await page.goto('https://www.nordstrom.com/signin');
+    const email = generateRandomEmail();
+    await page.locator('input[name="email"]').pressSequentially(email, { delay: 20 });
+    await page.keyboard.press('Enter');
+    const firstName = generateRandomUsername();
+    await page.locator('input[name="firstName"]').pressSequentially(firstName, { delay: 20 });
+    const lastName = generateRandomUsername();
+    await page.locator('input[name="lastName"]').pressSequentially(lastName, { delay: 20 });
+    const password = generateRandomPassword();
+    await page.locator('input[name="password"]').pressSequentially(password, { delay: 20 });
+    await page.locator('button[alt="create account button"]').click();
+    await page.locator("h1 >> text=Get rewarded—it's free").waitFor();
+    await page.goto(
+        'https://www.nordstrom.com/s/the-perfect-t-shirt/7031683?origin=category-personalizedsort&breadcrumb=Home%2FNew%20Arrivals%2FWomen%2FClothing&color=019'
+    );
 });
