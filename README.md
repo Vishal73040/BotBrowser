@@ -122,14 +122,19 @@ Get the BotBrowser installer for your OS from the [Releases](https://github.com/
    sudo apt-get install -f
    ```
 
-### Profiles Configuration
+### Configuration & Profiles
 
-> 📢 In BotBrowser, everything starts with a profile. Your stealth, reliability, and success depend on it.
+> 📢 BotBrowser combines authentic user profiles with flexible runtime configuration. Your stealth capabilities come from real user fingerprints, enhanced by dynamic CLI settings.
 
 **Key Points:**
-- **Demo Profiles:** Located in the [profiles](profiles) directory of the repository
+- **Profile Foundation:** Authentic user fingerprints ensure undetectable browsing behavior
+- **CLI Flexibility:** Override profile settings at runtime without modifying encrypted files
 - **Cross-Platform Compatibility:** 🔥 A *macOS profile* works on Ubuntu; a *Windows profile* works on macOS; an *Android profile* can be fully emulated on macOS, Windows, and Ubuntu
-- **Configuration Options:** See the [📚 profile-configs guide](https://github.com/botswin/BotBrowser/blob/main/profiles/profile-configs.md)
+- **Demo Profiles:** Located in the [profiles](profiles) directory of the repository
+
+**Configuration Options:**
+- **CLI Flags:** See the [⚙️ CLI flags reference](cli-flags.md) - *Recommended for most users*
+- **Profile Settings:** See the [📚 profile-configs guide](https://github.com/botswin/BotBrowser/blob/main/profiles/profile-configs.md) - *Advanced configuration*
 
 ---
 
@@ -175,7 +180,7 @@ chrome.exe --bot-profile="authentic_user.enc" \
 > 
 > This approach preserves authentic user fingerprints while enabling runtime flexibility.
 > 
-> 📖 **For all available CLI flags**, see [CLI Flags Reference](cli-flags.md)
+> 📖 **For all available CLI flags**, see [⚙️ CLI Flags Reference](cli-flags.md)
 
 #### 2. [Playwright](examples/playwright) / [Puppeteer](examples/puppeteer) Examples
 
@@ -203,7 +208,7 @@ await page.goto("https://abrahamjuliot.github.io/creepjs/");
 - Use `--user-data-dir` with a unique temporary folder to avoid conflicts with running Chromium instances
 - Use `--proxy-server` to connect to proxy servers, supported protocols: HTTP, HTTPS, SOCKS5
 
-> 📖 **For a complete list of BotBrowser-specific CLI flags**, see [CLI Flags Reference](cli-flags.md)
+> 📖 **For a complete list of BotBrowser-specific CLI flags**, see [⚙️ CLI Flags Reference](cli-flags.md)
 
 #### 3. BotBrowserConsole (GUI)
 

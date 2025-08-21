@@ -104,7 +104,7 @@ All configurations are embedded in the `configs` field inside your profile JSON 
 > --proxy-password="password"
 > ```
 >
-> 📖 **For complete CLI flags documentation**, see [CLI Flags Reference](../cli-flags.md)
+> 📖 **For complete CLI flags documentation**, see [⚙️ CLI Flags Reference](../cli-flags.md)
 
 
 ### Window & Screen Settings
