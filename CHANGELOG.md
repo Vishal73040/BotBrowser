@@ -1,29 +1,82 @@
 # CHANGELOG
 
+## [2025-08-22]
+
+### Major Update
+- **Chromium 139.0.7258.139**
+Synced BotBrowser to the latest stable Chrome build for feature parity, security patches, and minimized fingerprint drift.
+
+### Major Improvement — CLI Configuration Overrides
+- **Configure fingerprints via startup flags (no profile edits required)**
+New `--bot-config-*` flags override corresponding `configs` fields at runtime, enabling per-instance tuning in CI/CD and scripts.
+
+#### Available Configuration Override Flags
+```bash
+--bot-config-browser-brand="chrome" # Browser brand: chrome, chromium, edge, brave
+--bot-config-color-scheme="light" # Color scheme: light, dark
+--bot-config-disable-debugger=true # Disable JavaScript debugger: true, false
+--bot-config-disable-device-scale-factor=true # Disable device scale factor: true, false
+--bot-config-fonts="profile" # Font settings: profile (use profile fonts), real (system fonts)
+--bot-config-inject-random-history=true # Inject random history: true, false
+--bot-config-keyboard="profile" # Keyboard settings: profile (emulated), real (system keyboard)
+--bot-config-languages="en-US,en" # Languages: "lang1,lang2" or "auto" (IP-based)
+--bot-config-locale="en-US" # Browser locale: e.g. en-US, zh-CN, fr-FR
+--bot-config-location="40.7128,-74.0060" # Location: "lat,lon" or "auto" (IP-based)
+--bot-config-media-devices="profile" # Media devices: profile (fake), real (system)
+--bot-config-noise-audio-context=true # AudioContext noise: true, false
+--bot-config-noise-canvas=true # Canvas fingerprint noise: true, false
+--bot-config-noise-client-rects=false # Client rects noise: true, false
+--bot-config-noise-text-rects=true # Text rects noise: true, false
+--bot-config-noise-webgl-image=true # WebGL image noise: true, false
+--bot-config-screen="profile" # Screen: profile (use profile), real (system screen)
+--bot-config-speech-voices="profile" # Speech voices: profile (synthetic), real (system)
+--bot-config-timezone="auto" # Timezone: auto (IP-based), real (system), or TZ name
+--bot-config-ua-full-version="139.0.6778.85" # UA full version string matching Chromium major
+--bot-config-webgl="profile" # WebGL: profile, real, disabled
+--bot-config-webgpu="profile" # WebGPU: profile, real, disabled
+--bot-config-webrtc="profile" # WebRTC: profile, real, disabled
+--bot-config-window="profile" # Window: profile (use profile), real (system window)
+```
+
+**Benefits:** Highest priority (overrides profiles) · No JSON editing · Dynamic per-run configuration · Clean session isolation.
+See **`cli-flags.md`** for details.
+
+### Added
+- **Android touch simulation**
+Automatically enables `setEmitTouchEventsForMouse` when using an Android profile to better emulate touch input.
+
+### Improved
+- **Cross‑platform fidelity**
+Refined per‑OS rendering differences (fonts, CSS, anti‑aliasing, text sizing) so profiles behave consistently across Windows/macOS/Android.
+- **Locale auto‑adapt**
+`locale: "auto"` now lets BotBrowser derive `locale` from proxy IP and language settings for realistic regional behavior.
+
+---
+
 ## [2025-08-17]
 
 ### Added
-- **`configs.disableDebugger` (default: `true`)**  
+- **`configs.disableDebugger` (default: `true`)**
   Prevents JavaScript `debugger` statements from pausing execution, keeping flows non-interactive during automation.
 
-- **New Start Page (New Tab)**  
+- **New Start Page (New Tab)**
   Replaced new-tab page to display live environment data: Proxy IP, Timezone, Latitude/Longitude, User-Agent, WebGL, etc., giving instant visibility into the BotBrowser context.
 
-- **`configs.keyboard`**  
+- **`configs.keyboard`**
   Choose keyboard fingerprint source: `"profile"` (emulated from profile) or `"real"` (use system keyboard).
 
 ### Optimized
-- **Binary Size Reduction (Windows/macOS)**  
+- **Binary Size Reduction (Windows/macOS)**
   Removed unnecessary font assets; reduced binary size from ~**600 MB** to **< 300 MB**. Faster downloads and smaller disk footprint.
 
 ### Improved
-- **TextMetrics Noise Stabilization**  
+- **TextMetrics Noise Stabilization**
   Switched from per-string noise to a unified, stable noise model and preserved floating‑point precision after noise injection—better resilience against **hCaptcha** text-metrics checks.
 
-- **Dynamic Blink Feature Loading**  
+- **Dynamic Blink Feature Loading**
   Parses and applies Blink features at runtime based on the emulated environment (**Windows / macOS / Android**), improving realism and compatibility.
 
-- **`--bot-title` UI Enhancement**  
+- **`--bot-title` UI Enhancement**
   Beyond window/icon labels, the custom title now also appears as a label to the right of the toolbar **Refresh** button, improving multi-window recognition.
 
 
@@ -32,11 +85,11 @@
 ## [2025-08-12]
 
 ### Added
-- **Built-in H.264/H.265 (AVC/HEVC) Decoders**  
+- **Built-in H.264/H.265 (AVC/HEVC) Decoders**
   Enabled AVC/H.264 and HEVC/H.265 decoding out of the box (no external OS codecs required). Improves HTML5 video, MSE/EME playback compatibility, reduces codec-missing fallbacks, and keeps media behavior aligned with stock Chrome.
 
 ### Fixed
-- **RFC 6381–Compliant MIME Codec Parsing**  
+- **RFC 6381–Compliant MIME Codec Parsing**
   Reworked `mimeTypes` codec-string parser to follow RFC 6381 (e.g., `avc1.42E01E`, `mp4a.40.2`, `hvc1.1.6.L93.B0`), including case/spacing tolerance and multi-codec lists. Prevents inaccurate results in `canPlayType` and MSE SourceBuffer checks that could trigger antifraud heuristics.
 
 ---
