@@ -128,7 +128,8 @@ Get the BotBrowser installer for your OS from the [Releases](https://github.com/
 
 Get started in 3 simple steps:
 
-**Step 1:** Download a profile from the [profiles](profiles) directory
+**Step 1:** Download a profile from the [profiles](profiles) directory.
+
 **Step 2:** Launch BotBrowser with your profile:
 
 **Windows (CMD):**
