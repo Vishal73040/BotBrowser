@@ -74,7 +74,7 @@ All configurations are embedded in the `configs` field inside your profile JSON 
 | Field                           | Description                                                                               | Default     |
 | ------------------------------- | ----------------------------------------------------------------------------------------- | ----------- |
 | `languages`                     | HTTP `Accept-Language` header values and `navigator.languages`. `"auto"` = IP-based       | `"auto"`    |
-| `locale`                        | Browser locale (e.g., `"en-US"`, `"ru-RU"`).                                              | `"en-US"`   |
+| `locale`                        | Browser locale (e.g., `"en-US"`, `"fr-FR"`, `"de-DE"`). `"auto"` = derived from proxy IP and language settings | `"auto"`    |
 | `uaFullVersion`                 | Overrides the full browser version returned by `navigator.userAgentData.fullVersion`; must match the Chromium major version (e.g. for major version 138, the full version must start with “138.”). | `""`        |
 | `colorScheme`                   | Preferred color scheme: `'light'` or `'dark'`.                                            | `"light"`   |
 | `disableDeviceScaleFactorOnGUI` | If `true`, ignore device scale factor for GUI elements (disable DPI-based UI scaling).    | `false`     |
@@ -142,11 +142,11 @@ All configurations are embedded in the `configs` field inside your profile JSON 
 ```json5
 {
   "configs": {
-    // Browser locale
-    "locale": "en-US",
+    // Browser locale (auto = derived from proxy IP and language settings)
+    "locale": "auto",
 
-    // Accept-Language header values
-    "languages": ["en-US"],
+    // Accept-Language header values (auto = IP-based detection)
+    "languages": "auto",
 
     // Color scheme: 'light' or 'dark'
     "colorScheme": "light",

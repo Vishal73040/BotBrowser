@@ -120,8 +120,8 @@ The following `--bot-config-*` flags correspond directly to profile `configs` pr
 --bot-config-fonts=profile                    # Font settings: profile (use profile fonts), real (system fonts)
 --bot-config-inject-random-history=true       # Inject random history: true, false
 --bot-config-keyboard=profile                 # Keyboard settings: profile (emulated), real (system keyboard)
---bot-config-languages=en-US,en               # Languages: "lang1,lang2" (comma-separated) or "auto" (IP-based)
---bot-config-locale=en-US                     # Browser locale: language code (e.g. en-US, zh-CN, fr-FR)
+--bot-config-languages=auto                   # Languages: "lang1,lang2" (comma-separated) or "auto" (IP-based)
+--bot-config-locale=auto                      # Browser locale: e.g. en-US, fr-FR, de-DE, or "auto" (derived from IP/language)
 --bot-config-location=40.7128,-74.0060        # Location: "lat,lon" (coordinates) or "auto" (IP-based)
 --bot-config-media-devices=profile            # Media devices: profile (fake devices), real (system devices)
 --bot-config-noise-audio-context=true         # Audio context noise: true, false

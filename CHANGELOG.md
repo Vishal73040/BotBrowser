@@ -19,8 +19,8 @@ New `--bot-config-*` flags override corresponding `configs` fields at runtime, e
 --bot-config-fonts="profile" # Font settings: profile (use profile fonts), real (system fonts)
 --bot-config-inject-random-history=true # Inject random history: true, false
 --bot-config-keyboard="profile" # Keyboard settings: profile (emulated), real (system keyboard)
---bot-config-languages="en-US,en" # Languages: "lang1,lang2" or "auto" (IP-based)
---bot-config-locale="en-US" # Browser locale: e.g. en-US, zh-CN, fr-FR
+--bot-config-languages="auto" # Languages: "lang1,lang2" or "auto" (IP-based)
+--bot-config-locale="auto" # Browser locale: e.g. en-US, fr-FR, de-DE, or "auto" (derived from IP/language)
 --bot-config-location="40.7128,-74.0060" # Location: "lat,lon" or "auto" (IP-based)
 --bot-config-media-devices="profile" # Media devices: profile (fake), real (system)
 --bot-config-noise-audio-context=true # AudioContext noise: true, false
@@ -233,11 +233,11 @@ Refined per‑OS rendering differences (fonts, CSS, anti‑aliasing, text sizing
 ```json5
 {
   "configs": {
-    // Browser locale
-    "locale": "en-US",
+    // Browser locale (auto = derived from proxy IP and language settings)
+    "locale": "auto",
 
-    // Accept-Language header values
-    "languages": ["en-US"],
+    // Accept-Language header values (auto = IP-based detection)  
+    "languages": "auto",
 
     // Color scheme: 'light' or 'dark'
     "colorScheme": "light",
@@ -440,17 +440,14 @@ Example:
 ```json
 {
     "configs": {
-        "locale": "en-US",
+        "locale": "auto",
         "timezone": "America/New_York",
         "proxy": {
             "server": "proxy.example.com:8080",
             "username": "user",
             "password": "pass"
         },
-        "languages": [
-            "en-US",
-            "ru-RU"
-        ],
+        "languages": "auto",
         "skipWindowAndScreenSizes": false, // =true, ignore this setting and you can use CDP to control the window size
         "window": {
             "innerWidth": 1203,
