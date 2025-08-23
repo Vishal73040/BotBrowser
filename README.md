@@ -49,7 +49,7 @@ Emulate Android devices (metrics, UA, touch & sensors, etc.) flawlessly and unde
 - [▶️ Pixelscan Test](//botswin.github.io/BotBrowser/video_player/index.html?video=antibots-pixelscan-pixelscan-Android)
 
 ### 🤖 Advanced Programmatic Control
-Harness CDP through [Playwright](examples/playwright) and [Puppeteer](examples/puppeteer) alongside deep C++ modifications that block CDP leak detection, delivering both powerful automation and rock‑solid stealth.
+Harness CDP through [Playwright](examples/playwright) (Node.js, Python, .NET, Java) and [Puppeteer](examples/puppeteer) alongside deep C++ modifications that block CDP leak detection, delivering both powerful automation and rock‑solid stealth.
 
 ### 📊 Success & Performance
 Proven **98%+ success** against sophisticated antibot measures, powering over 350,000 daily account registrations with exceptional stability and speed under heavy loads.
@@ -183,6 +183,12 @@ chrome.exe --bot-profile="authentic_user.enc" \
 > 📖 **For all available CLI flags**, see [⚙️ CLI Flags Reference](cli-flags.md)
 
 #### 2. [Playwright](examples/playwright) / [Puppeteer](examples/puppeteer) Examples
+
+**Available Examples:**
+- **Node.js:** [Playwright](examples/playwright/nodejs) | [Puppeteer](examples/puppeteer)
+- **Python:** [Playwright](examples/playwright/python)
+- **.NET:** [Playwright](examples/playwright/dotnet)
+- **Java:** [Playwright](examples/playwright/java)
 
 ```javascript
 const browser = await chromium.launch({

@@ -4,6 +4,8 @@ This document explains how to configure custom browser properties using **BotBro
 
 > 💡 **Recommended Approach:** Use CLI `--bot-config-*` flags instead of modifying profile files. CLI flags have the highest priority and don't require editing profile JSON files. See [CLI Flags Reference](../cli-flags.md#⚙️-profile-configuration-override-flags).
 
+> 🌍 **Auto-Configuration:** BotBrowser automatically detects and configures timezone, locale, and languages based on your IP address or proxy. Most users don't need to override these settings.
+
 ## 📋 Table of Contents
 
 - [⚙️ Configuration Priority System](#️-configuration-priority-system)
@@ -35,11 +37,10 @@ BotBrowser uses a three-tier priority system for configuration:
 
 **Example:**
 ```bash
-# Use CLI flags to override profile settings dynamically
+# Use CLI flags to override profile settings dynamically (timezone/locale auto-detected)
 chromium-browser \
   --bot-profile="./profiles/profile.enc" \
-  --bot-config-browser-brand="edge" \
-  --bot-config-timezone="Europe/London"
+  --bot-config-browser-brand="edge"
 ```
 
 > 📖 **Complete CLI flags reference:** [CLI Flags Reference](../cli-flags.md#⚙️-profile-configuration-override-flags)

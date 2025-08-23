@@ -2,6 +2,8 @@
 
 This document provides a comprehensive reference for **BotBrowser-specific** command-line flags. These are custom flags added by BotBrowser beyond standard Chromium flags.
 
+> 🌍 **Auto-Configuration:** BotBrowser automatically configures timezone, locale, and languages based on your IP/proxy. Most users don't need to override these settings manually.
+
 ## 📋 Table of Contents
 
 - [🎯 Core BotBrowser Flags](#-core-botbrowser-flags)
@@ -195,11 +197,10 @@ chromium-browser \
 
 ### Configuration Override Examples
 ```bash
-# Override specific profile settings with CLI flags
+# Only override when you need specific settings (timezone/locale auto-detected)
 chromium-browser \
   --bot-profile="./profiles/chrome139_win11_x64.enc" \
   --bot-config-browser-brand="edge" \
-  --bot-config-timezone="Europe/London" \
   --bot-config-webgl="disabled" \
   --bot-config-noise-canvas=true \
   --bot-title="Custom Session"
@@ -212,15 +213,13 @@ chromium-browser \
   --bot-profile="./profiles/profile.enc" \
   --bot-config-browser-brand="chrome" \
   --bot-config-window="profile" \
-  --bot-config-timezone="America/New_York" \
   --user-data-dir="/tmp/instance1" &
 
-# Instance 2 - Edge brand with real window settings
+# Instance 2 - Edge brand with real window settings  
 chromium-browser \
   --bot-profile="./profiles/profile.enc" \
   --bot-config-browser-brand="edge" \
   --bot-config-window="real" \
-  --bot-config-timezone="Europe/London" \
   --user-data-dir="/tmp/instance2" &
 ```
 
