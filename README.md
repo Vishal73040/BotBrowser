@@ -122,25 +122,14 @@ Get the BotBrowser installer for your OS from the [Releases](https://github.com/
    sudo apt-get install -f
    ```
 
-### Configuration & Profiles
+### 🚀 Quick Start
 
-> 📢 BotBrowser combines authentic user profiles with flexible runtime configuration. Your stealth capabilities come from real user fingerprints, enhanced by dynamic CLI settings.
+#### 1. Basic CLI Usage
 
-**Key Points:**
-- **Profile Foundation:** Authentic user fingerprints ensure undetectable browsing behavior
-- **CLI Flexibility:** Override profile settings at runtime without modifying encrypted files
-- **Cross-Platform Compatibility:** 🔥 A *macOS profile* works on Ubuntu; a *Windows profile* works on macOS; an *Android profile* can be fully emulated on macOS, Windows, and Ubuntu
-- **Demo Profiles:** Located in the [profiles](profiles) directory of the repository
+Get started in 3 simple steps:
 
-**Configuration Options:**
-- **CLI Flags:** See the [⚙️ CLI flags reference](cli-flags.md) - *Recommended for most users*
-- **Profile Settings:** See the [📚 profile-configs guide](https://github.com/botswin/BotBrowser/blob/main/profiles/profile-configs.md) - *Advanced configuration*
-
----
-
-### Quick Start Examples
-
-#### 1. CLI Usage
+**Step 1:** Download a profile from the [profiles](profiles) directory
+**Step 2:** Launch BotBrowser with your profile:
 
 **Windows (CMD):**
 ```cmd
@@ -163,26 +152,9 @@ chromium-browser \
   --bot-profile="/path/to/chrome139_win11_x64.enc"
 ```
 
-#### Flexible Configuration with CLI Flags
-```bash
-# Keep profile integrity, override only what you need
-chrome.exe --bot-profile="authentic_user.enc" \
-           --proxy-server="http://user:pass@proxy.com:8080" \
-           --bot-title="Session-A"
+**Step 3:** Browse normally - timezone, locale, and languages are automatically configured!
 
-# Same profile, different runtime settings
-chrome.exe --bot-profile="authentic_user.enc" \
-           --proxy-server="socks5://user:pass@proxy2.com:1080" \
-           --bot-title="Session-B"
-```
-
-> 💡 **CLI flags override profile settings without modifying the encrypted profile file**
-> 
-> This approach preserves authentic user fingerprints while enabling runtime flexibility.
-> 
-> 📖 **For all available CLI flags**, see [⚙️ CLI Flags Reference](cli-flags.md)
-
-#### 2. [Playwright](examples/playwright) / [Puppeteer](examples/puppeteer) Examples
+#### 2. [Playwright](examples/playwright) / [Puppeteer](examples/puppeteer) Automation
 
 **Available Examples:**
 - **Node.js:** [Playwright](examples/playwright/nodejs) | [Puppeteer](examples/puppeteer)
@@ -216,25 +188,53 @@ await page.goto("https://abrahamjuliot.github.io/creepjs/");
 
 > 📖 **For a complete list of BotBrowser-specific CLI flags**, see [⚙️ CLI Flags Reference](cli-flags.md)
 
-#### 3. BotBrowserConsole (GUI)
+#### 3. 🐳 Docker Deployment
 
-Streamline your automation with [BotBrowserConsole](console), a free and open-source GUI tool designed to:
-
-**Features:**
-- ✅ Select your profile and start browsing without code
-- ✅ Easily launch multiple browser instances
-- ✅ Seamlessly manage different environments
-- ✅ Efficiently handle multiple accounts
-
-
-
-#### 4. 🐳 Docker Deployment
-
-For a complete Docker setup and usage guide, please see [docker/README.md](docker/).
+For containerized deployment, see [docker/README.md](docker/) for complete setup guide.
 
 
 ---
 
+## ⚙️ Configuration & Profiles
+
+> 📢 BotBrowser combines authentic user profiles with flexible runtime configuration. Your stealth capabilities come from real user fingerprints, enhanced by dynamic CLI settings.
+
+### Key Concepts
+- **Profile Foundation:** Authentic user fingerprints ensure undetectable browsing behavior
+- **CLI Flexibility:** Override profile settings at runtime without modifying encrypted files
+- **Cross-Platform Compatibility:** 🔥 A *macOS profile* works on Ubuntu; a *Windows profile* works on macOS; an *Android profile* can be fully emulated on any OS
+- **Auto-Configuration:** Timezone, locale, and languages automatically detected from IP/proxy
+
+### Configuration Options
+- **CLI Flags:** See the [⚙️ CLI flags reference](cli-flags.md) - *Recommended for most users*
+- **Profile Settings:** See the [📚 profile-configs guide](profiles/profile-configs.md) - *Advanced configuration*
+
+### Example: Runtime Flexibility
+```bash
+# Keep profile integrity, override only what you need
+chrome.exe --bot-profile="authentic_user.enc" \
+           --proxy-server="http://user:pass@proxy.com:8080" \
+           --bot-title="Session-A"
+
+# Same profile, different runtime settings
+chrome.exe --bot-profile="authentic_user.enc" \
+           --proxy-server="socks5://user:pass@proxy2.com:1080" \
+           --bot-title="Session-B"
+```
+
+---
+
+## 🖥️ BotBrowserConsole (GUI Tool)
+
+For users who prefer a graphical interface, [BotBrowserConsole](console) provides a user-friendly way to manage BotBrowser:
+
+**Features:**
+- ✅ Select profiles and start browsing without command line
+- ✅ Launch multiple browser instances easily
+- ✅ Manage different environments and accounts
+- ✅ Perfect for non-technical users
+
+---
 
 ### 🐞 Debugging & FAQs
 
