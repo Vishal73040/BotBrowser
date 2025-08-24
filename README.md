@@ -38,15 +38,18 @@ BotBrowser is a cross-platform stealth browser designed to defeat modern antibot
 Use distinct cross-platform profiles to emulate Windows, macOS, Ubuntu, or Android on any host—undetectable even in **headless** mode.
 
 ### 🔄 Latest Chromium Base
-Always aligned with the newest stable Chromium release, ensuring cutting‑edge compatibility with today's most advanced antibot defenses.
+**Always updated!** Instantly synced to the latest stable Chrome build with lightning-fast release cycles, ensuring zero fingerprint drift and maximum compatibility with cutting-edge antibot systems.
 
-### 📱 Unlimited Android Chrome Emulation
-Emulate Android devices (metrics, UA, touch & sensors, etc.) flawlessly and undetectably.
+### 📱 Perfect Android Chrome Emulation
+Emulate Android devices with **automatic touch simulation**, realistic device metrics, sensors, and UA strings. BotBrowser intelligently enables touch events when using Android profiles for unparalleled mobile authenticity.
 
 **Test Results:**
 - [▶️ CreepJS Test](//botswin.github.io/BotBrowser/video_player/index.html?video=antibots-creepjs-creepjs-Android)
 - [▶️ Iphey Test](//botswin.github.io/BotBrowser/video_player/index.html?video=antibots-iphey-iphey-Android)
 - [▶️ Pixelscan Test](//botswin.github.io/BotBrowser/video_player/index.html?video=antibots-pixelscan-pixelscan-Android)
+
+### ⚙️ Revolutionary CLI Configuration Override
+**NEW!** Override any profile setting with [`--bot-config-*` flags](cli-flags.md#⚙️-profile-configuration-override-flags) at startup - no file editing required! Change browser brand, timezone, WebGL settings, and 20+ fingerprint properties dynamically per session. Perfect for CI/CD and multi-instance automation.
 
 ### 🤖 Advanced Programmatic Control
 Harness CDP through [Playwright](examples/playwright) (Node.js, Python, .NET, Java) and [Puppeteer](examples/puppeteer) alongside deep C++ modifications that block CDP leak detection, delivering both powerful automation and rock‑solid stealth.
@@ -60,11 +63,14 @@ Proven **98%+ success** against sophisticated antibot measures, powering over 35
 
 - [x] **Proxy Authentication**: Supports embedding credentials in proxy URLs (e.g., `http://usr:pwd@host:port`, `socks5://usr:pwd@host:port`).
 
-- [x] **Custom Flags for Cookies, Bookmarks & Title**: Use startup flags (`--bot-cookies`, `--bot-bookmarks`, `--bot-title`) for session restoration and UI enhancements.
+- [x] **Live Environment Dashboard**: **NEW!** Every new tab displays real-time proxy IP, timezone, coordinates, WebGL info, and fingerprint status - instant verification of your stealth setup.
 
-- [x] **Fingerprint Noise & Spoof Control**: Unified real/noise toggles and noise injection for Canvas, WebGL, audio, text metrics, and headless GPU simulation.
 
-- [x] **On-Demand Geo & Language Detection**: Automatically sets timezone, geolocation, and browser languages based on proxy IP.
+- [x] **Custom Flags for Cookies, Bookmarks & Title**: Use startup flags (`--bot-cookies`, `--bot-bookmarks`, `--bot-title`) for session restoration and enhanced UI customization.
+
+- [x] **Advanced Fingerprint Noise Control**: Enhanced Canvas, WebGL, and TextMetrics noise with **stabilized injection algorithms**. Precision-tuned noise systems defeat the latest fingerprint detection techniques.
+
+- [x] **Smart Auto-Configuration**: Automatically adapts timezone, locale, geolocation, and languages based on proxy IP for seamless regional authenticity.
 
 - [x] **WebRTC Leak Protection**: Full IPv4/IPv6 SDP refactor and candidate spoofing to prevent local IP exposure.
 

@@ -1,8 +1,10 @@
 # 🚀 BotBrowser CLI Flags Reference
 
-This document provides a comprehensive reference for **BotBrowser-specific** command-line flags. These are custom flags added by BotBrowser beyond standard Chromium flags.
+This document showcases **BotBrowser's revolutionary CLI configuration system** - the most advanced fingerprint override capabilities available. These powerful flags go far beyond standard Chromium, giving you **unprecedented control** over browser fingerprints without touching profile files.
 
-> 🌍 **Auto-Configuration:** BotBrowser automatically configures timezone, locale, and languages based on your IP/proxy. Most users don't need to override these settings manually.
+> 🌍 **Smart Auto-Configuration:** BotBrowser automatically detects timezone, locale, and languages from your IP/proxy. Override only when needed for specific use cases.
+
+> ⚡ **Dynamic Override Power:** 20+ [`--bot-config-*` flags](#⚙️-profile-configuration-override-flags) provide real-time fingerprint control - perfect for CI/CD, multi-instance automation, and advanced stealth scenarios.
 
 ## 📋 Table of Contents
 
