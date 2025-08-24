@@ -32,62 +32,56 @@ BotBrowser is a cross-platform stealth browser designed to defeat modern antibot
 
 ---
 
-## 🚀 Core Features
+## 🚀 Why Choose BotBrowser
 
-### 🌍 Cross-Platform OS Simulation
-Use distinct cross-platform profiles to emulate Windows, macOS, Ubuntu, or Android on any host—undetectable even in **headless** mode.
+- 🎭 **Real User Fingerprints + Dynamic CLI Override** - Authentic profiles with [`20+ runtime flags`](cli-flags.md#⚙️-profile-configuration-override-flags)
+- 🔄 **Latest Chromium Base** - Always synced to newest stable Chrome for zero fingerprint drift
+- ⚡ **Zero-Config Intelligence** - Auto-detects timezone/locale/language from IP  
+- 🛡️ **98%+ Success Rate** - Defeats Cloudflare, Kasada, Akamai, F5 Shape; powering 350,000+ daily registrations with exceptional stability under heavy loads
+- 🤖 **Advanced Programmatic Control** - [Playwright/Puppeteer integration](examples/) with CDP leak blocking
 
-### 🔄 Latest Chromium Base
-**Always updated!** Instantly synced to the latest stable Chrome build with lightning-fast release cycles, ensuring zero fingerprint drift and maximum compatibility with cutting-edge antibot systems.
+### 📱 Perfect Cross-Platform Profile Emulation
+🔥 **Revolutionary capability:** Use ANY profile (Windows, macOS, Android, Ubuntu) on ANY host system seamlessly!
 
-### 📱 Perfect Android Chrome Emulation
-Emulate Android devices with **automatic touch simulation**, realistic device metrics, sensors, and UA strings. BotBrowser intelligently enables touch events when using Android profiles for unparalleled mobile authenticity.
+Automatic touch simulation, device metrics, and authentic fingerprints - **undetectable even in headless mode**.
 
-**Test Results:**
-- [▶️ CreepJS Test](//botswin.github.io/BotBrowser/video_player/index.html?video=antibots-creepjs-creepjs-Android)
-- [▶️ Iphey Test](//botswin.github.io/BotBrowser/video_player/index.html?video=antibots-iphey-iphey-Android)
-- [▶️ Pixelscan Test](//botswin.github.io/BotBrowser/video_player/index.html?video=antibots-pixelscan-pixelscan-Android)
+**Desktop → Android Test Results:**
+- [▶️ CreepJS Test](//botswin.github.io/BotBrowser/video_player/index.html?video=antibots-creepjs-creepjs-Android) - Desktop perfectly emulating Android fingerprint
+- [▶️ Iphey Test](//botswin.github.io/BotBrowser/video_player/index.html?video=antibots-iphey-iphey-Android) - Complete mobile device simulation  
+- [▶️ Pixelscan Test](//botswin.github.io/BotBrowser/video_player/index.html?video=antibots-pixelscan-pixelscan-Android) - Undetectable cross-platform emulation
 
-### ⚙️ Revolutionary CLI Configuration Override
-**NEW!** Override any profile setting with [`--bot-config-*` flags](cli-flags.md#⚙️-profile-configuration-override-flags) at startup - no file editing required! Change browser brand, timezone, WebGL settings, and 20+ fingerprint properties dynamically per session. Perfect for CI/CD and multi-instance automation.
+## 🛠️ Advanced Capabilities
 
-### 🤖 Advanced Programmatic Control
-Harness CDP through [Playwright](examples/playwright) (Node.js, Python, .NET, Java) and [Puppeteer](examples/puppeteer) alongside deep C++ modifications that block CDP leak detection, delivering both powerful automation and rock‑solid stealth.
+### 🔧 Configuration & Control
+- [x] **Live Environment Dashboard** - Real-time proxy IP, timezone, coordinates, WebGL status in every new tab  
+- [x] **Enhanced UI Control** - Custom `--bot-title`, `--bot-cookies`, `--bot-bookmarks` with toolbar labels
+- [x] **Automation-Friendly** - `disableDebugger` prevents JS breakpoints, `keyboard` source selection
+- [x] **Enterprise Proxy Support** - Embedded credentials, SOCKS5/HTTP, authentication protocols
 
-### 📊 Success & Performance
-Proven **98%+ success** against sophisticated antibot measures, powering over 350,000 daily account registrations with exceptional stability and speed under heavy loads.
+### 🎭 Stealth & Detection Evasion  
+- [x] **Advanced Noise Injection** - Stabilized Canvas, WebGL, TextMetrics algorithms resist detection
+- [x] **Headless & Incognito Bypass** - Undetectable in all browser modes with GPU simulation
+- [x] **WebRTC Leak Protection** - Complete IPv4/IPv6 SDP spoofing, candidate manipulation
+- [x] **Dynamic Blink Features** - Runtime OS-based feature loading (Windows/macOS/Android)
+- [x] **Chrome Behavior Emulation** - Google `X-Browser-*` headers, Widevine CDM, Chrome-specific APIs
 
-## 🛡️ Advanced Capabilities
+### 📱 Device & Platform Emulation
+- [x] **Cross-Platform Font Rendering** - OS-specific UI fonts, system fonts, anti-aliasing  
+- [x] **Hardware Fingerprint Control** - CPU architecture, screen metrics, device pixel ratios
 
-- [x] **Headless & Incognito Evasion**: Seamlessly bypasses detection in both headless and incognito modes.
+### 📋 Complete Fingerprint Control
 
-- [x] **Proxy Authentication**: Supports embedding credentials in proxy URLs (e.g., `http://usr:pwd@host:port`, `socks5://usr:pwd@host:port`).
-
-- [x] **Live Environment Dashboard**: **NEW!** Every new tab displays real-time proxy IP, timezone, coordinates, WebGL info, and fingerprint status - instant verification of your stealth setup.
-
-
-- [x] **Custom Flags for Cookies, Bookmarks & Title**: Use startup flags (`--bot-cookies`, `--bot-bookmarks`, `--bot-title`) for session restoration and enhanced UI customization.
-
-- [x] **Advanced Fingerprint Noise Control**: Enhanced Canvas, WebGL, and TextMetrics noise with **stabilized injection algorithms**. Precision-tuned noise systems defeat the latest fingerprint detection techniques.
-
-- [x] **Smart Auto-Configuration**: Automatically adapts timezone, locale, geolocation, and languages based on proxy IP for seamless regional authenticity.
-
-- [x] **WebRTC Leak Protection**: Full IPv4/IPv6 SDP refactor and candidate spoofing to prevent local IP exposure.
-
-- [x] **Chrome Behavior Emulation**: Fully emulate Chrome, including Google `X-Browser-*` headers, Widevine CDM, and other Chrome-specific features.
-
-- [x] **Comprehensive Fingerprint Spoofing**:
-
-  | Category     | Details                                                                               |
-  |--------------|---------------------------------------------------------------------------------------|
-  | **Browser**  | Version, userAgentData, userAgent                                                     |
-  | **OS**       | Windows, macOS, Ubuntu, Android emulation; Fonts (UI/System); Colors                               |
-  | **Navigator**| Languages, Plugins, Permissions, Battery, Keyboard                                    |
-  | **Network**  | Proxy auth, WebRTC SDP spoofing, Google headers                                       |
-  | **Graphics** | Canvas noise, WebGL/WebGL2, GPUAdapter, GPUDevice                                     |
-  | **Hardware** | Screen resolution, devicePixelRatio, CPU architecture                                 |
-  | **Media**    | MediaDevices, MimeTypes, AudioContext                                                 |
-  | **Other**    | Emoji, Unicode, matchMedia control, client rects, bookmarks                           |
+| Category | Capabilities |
+|----------|-------------|
+| **Browser** | Version, userAgentData, brands, full version override, debugger disabling |
+| **OS Platform** | Windows/macOS/Android emulation, UI/system fonts, colors, Blink features |
+| **Input Control** | Keyboard layouts (profile/real), touch simulation, mouse patterns |
+| **Navigator APIs** | Languages, plugins, permissions, battery, MimeTypes, speech voices |
+| **Graphics Engine** | Canvas/WebGL/WebGPU noise, GPU adapter spoofing, hardware acceleration |
+| **Network Layer** | Proxy auth, WebRTC SDP manipulation, Google headers, connection spoofing |
+| **Media Systems** | MediaDevices, AudioContext, speech synthesis, codec emulation |
+| **Advanced APIs** | Emoji rendering, Unicode, matchMedia, client rects, geolocation |
+| **Automation** | CDP leak blocking, [Playwright/Puppeteer integration](examples/)
 
 
 

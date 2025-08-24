@@ -11,6 +11,10 @@ Profiles are encrypted files that define the complete environment a browser inst
 - **Hardware emulation** (device memory, CPU architecture, screen properties)
 - **Platform simulation** (Android behavior, OS-specific features)
 
+### 🔥 Revolutionary Cross-Platform Compatibility
+
+**BotBrowser's unique advantage:** ANY profile (Windows, macOS, Android, Ubuntu) works on ANY host system seamlessly!
+
 By using a profile, BotBrowser launches sessions that mimic real human devices and browsing patterns across different operating systems, achieving maximum stealth against sophisticated antifraud and antibot detection systems.
 
 **💡 Profile = Complete Virtual Browser Identity**
