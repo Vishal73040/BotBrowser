@@ -34,10 +34,10 @@ BotBrowser is a cross-platform stealth browser designed to defeat modern antibot
 
 ## 🚀 Why Choose BotBrowser
 
-- 🎭 **Real User Fingerprints + Dynamic CLI Override** - Authentic profiles with [`20+ runtime flags`](cli-flags.md#⚙️-profile-configuration-override-flags)
+- 🎭 **Real User Fingerprints** - Authentic profiles from 300,000+ real users
 - 🔄 **Latest Chromium Base** - Always synced to newest stable Chrome for zero fingerprint drift
 - ⚡ **Zero-Config Intelligence** - Auto-detects timezone/locale/language from IP
-- 🛡️ **98%+ Success Rate** - Defeats Cloudflare, Kasada, Akamai, F5 Shape; powering 350,000+ daily registrations with exceptional stability under heavy loads
+- 🛡️ **98%+ Success Rate** - Powering 350,000+ daily registrations with exceptional stability under heavy loads
 - 🤖 **Advanced Programmatic Control** - [Playwright/Puppeteer integration](examples/) with CDP leak blocking
 
 ### 📱 Perfect Cross-Platform Profile Emulation
@@ -53,39 +53,36 @@ Automatic touch simulation, device metrics, and authentic fingerprints - **undet
 ## 🛠️ Advanced Capabilities
 
 ### 🔧 Configuration & Control
-- [x] **Live Environment Dashboard** - Real-time proxy IP, timezone, coordinates, WebGL status in every new tab
-- [x] **Enhanced UI Control** - Custom `--bot-title`, `--bot-cookies`, `--bot-bookmarks` with toolbar labels
-- [x] **Automation-Friendly** - `disableDebugger` prevents JS breakpoints, `keyboard` source selection
-- [x] **Enterprise Proxy Support** - Embedded credentials, SOCKS5/HTTP, authentication protocols
+- [x] **Advanced CLI Configuration** - [`20+ --bot-config-*` flags](cli-flags.md#⚙️-profile-configuration-override-flags) override key fingerprint properties at startup
+- [x] **Session Management** - Custom `--bot-title`, `--bot-cookies`, `--bot-bookmarks` with toolbar labels
+- [x] **Advanced Proxy Authentication** - Embed username:password directly in proxy URLs (http://user:pass@proxy.com:8080)
 
 ### 🎭 Stealth & Detection Evasion
-- [x] **Advanced Noise Injection** - Skia-integrated anti-aliasing, HarfBuzz text shaping modifications, stabilized TextMetrics for multi-language authenticity
+- [x] **Multi-Layer Noise Injection** - Canvas, WebGL, Audio, TextMetrics with stabilized algorithms resist detection
 - [x] **Headless & Incognito Bypass** - Undetectable in all browser modes with GPU simulation
 - [x] **WebRTC Leak Protection** - Complete IPv4/IPv6 SDP spoofing, candidate manipulation
-- [x] **Dynamic Blink Features** - Runtime OS-based feature loading (Windows/macOS/Android)
 - [x] **Chrome Behavior Emulation** - Google `X-Browser-*` headers, Widevine CDM, Chrome-specific APIs
 
 ### 📱 Device & Platform Emulation
-- [x] **Deep Font System Control** - HarfBuzz text shaping, multi-language rendering (CJK/RTL/emoji), cross-platform font loading with natural variance
-- [x] **Hardware Fingerprint Control** - CPU architecture, screen metrics, device pixel ratios
+- [x] **Cross-Platform Font Engine** - Built-in Windows/macOS/Android fonts and emojis, authentic rendering on any host system
+- [x] **Cross-Platform Consistency** - Eliminates platform-specific rendering differences, perfect emulation across Windows/macOS/Linux hosts
+- [x] **Hardware Fingerprint Control** - CPU architecture, screen metrics, device pixel ratios, authentic device behavior
 
-### ⚡ Enterprise-Grade Anti-Detection
+### ⚡ Deep System Integration
 - [x] **GPU Driver Micro-Benchmarks** - Precision timing emulation, vendor-specific behavior patterns, authentic computation curves
-- [x] **Text Rendering Engine Control** - Skia anti-aliasing integration, subpixel rendering variance, font fallback authenticity
+- [x] **Advanced Text Rendering** - HarfBuzz text shaping, Skia anti-aliasing integration, multi-language support (CJK/RTL/emoji)
+- [x] **Dynamic Blink Features** - Runtime OS-based feature loading (Windows/macOS/Android)
 
 ### 📋 Complete Fingerprint Control
 
 | Category | Capabilities |
 |----------|-------------|
-| **Browser** | Version, userAgentData, brands, full version override, debugger disabling |
-| **OS Platform** | Windows/macOS/Android emulation, UI/system fonts, colors, Blink features |
-| **Input Control** | Keyboard layouts (profile/real), touch simulation, mouse patterns |
-| **Navigator APIs** | Languages, plugins, permissions, battery, MimeTypes, speech voices |
-| **Graphics Engine** | Canvas/WebGL/WebGPU noise, precision GPU micro-benchmarks, driver-specific behavior emulation |
-| **Network Layer** | Proxy auth, WebRTC SDP manipulation, Google headers, connection spoofing |
-| **Media Systems** | MediaDevices, AudioContext, speech synthesis, codec emulation |
-| **Advanced APIs** | Emoji rendering, Unicode, matchMedia, client rects, geolocation |
-| **Automation** | CDP leak blocking, [Playwright/Puppeteer integration](examples/)
+| **Browser & OS** | Version, userAgentData, brands, full version override, debugger disabling, CDP leak blocking, Windows/macOS/Android emulation, built-in cross-platform fonts, Blink features |
+| **Location & Time** | Timezone, geolocation |
+| **Display & UI** | Screen properties, window dimensions, matchMedia, UI/system colors |
+| **Input & Navigation** | Keyboard layouts (profile/real), touch simulation, mouse patterns, languages, plugins, permissions, battery, MimeTypes |
+| **Graphics & Rendering** | Canvas/WebGL/WebGPU noise, precision GPU micro-benchmarks, driver-specific behavior emulation, HarfBuzz text shaping, cross-platform fonts/emojis, TextMetrics noise, client/text rects, emoji rendering, Unicode |
+| **Network & Media** | Proxy auth, WebRTC SDP manipulation, Google headers, connection spoofing, MediaDevices, AudioContext, speech voices, speech synthesis, codec emulation |
 
 
 
