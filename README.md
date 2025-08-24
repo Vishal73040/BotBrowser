@@ -36,29 +36,29 @@ BotBrowser is a cross-platform stealth browser designed to defeat modern antibot
 
 - 🎭 **Real User Fingerprints + Dynamic CLI Override** - Authentic profiles with [`20+ runtime flags`](cli-flags.md#⚙️-profile-configuration-override-flags)
 - 🔄 **Latest Chromium Base** - Always synced to newest stable Chrome for zero fingerprint drift
-- ⚡ **Zero-Config Intelligence** - Auto-detects timezone/locale/language from IP  
+- ⚡ **Zero-Config Intelligence** - Auto-detects timezone/locale/language from IP
 - 🛡️ **98%+ Success Rate** - Defeats Cloudflare, Kasada, Akamai, F5 Shape; powering 350,000+ daily registrations with exceptional stability under heavy loads
 - 🤖 **Advanced Programmatic Control** - [Playwright/Puppeteer integration](examples/) with CDP leak blocking
 
 ### 📱 Perfect Cross-Platform Profile Emulation
-🔥 **Revolutionary capability:** Use ANY profile (Windows, macOS, Android, Ubuntu) on ANY host system seamlessly!
+🔥 **Revolutionary capability:** Use ANY profile (Windows, macOS, Android) on ANY host system seamlessly!
 
 Automatic touch simulation, device metrics, and authentic fingerprints - **undetectable even in headless mode**.
 
 **Desktop → Android Test Results:**
 - [▶️ CreepJS Test](//botswin.github.io/BotBrowser/video_player/index.html?video=antibots-creepjs-creepjs-Android) - Desktop perfectly emulating Android fingerprint
-- [▶️ Iphey Test](//botswin.github.io/BotBrowser/video_player/index.html?video=antibots-iphey-iphey-Android) - Complete mobile device simulation  
+- [▶️ Iphey Test](//botswin.github.io/BotBrowser/video_player/index.html?video=antibots-iphey-iphey-Android) - Complete mobile device simulation
 - [▶️ Pixelscan Test](//botswin.github.io/BotBrowser/video_player/index.html?video=antibots-pixelscan-pixelscan-Android) - Undetectable cross-platform emulation
 
 ## 🛠️ Advanced Capabilities
 
 ### 🔧 Configuration & Control
-- [x] **Live Environment Dashboard** - Real-time proxy IP, timezone, coordinates, WebGL status in every new tab  
+- [x] **Live Environment Dashboard** - Real-time proxy IP, timezone, coordinates, WebGL status in every new tab
 - [x] **Enhanced UI Control** - Custom `--bot-title`, `--bot-cookies`, `--bot-bookmarks` with toolbar labels
 - [x] **Automation-Friendly** - `disableDebugger` prevents JS breakpoints, `keyboard` source selection
 - [x] **Enterprise Proxy Support** - Embedded credentials, SOCKS5/HTTP, authentication protocols
 
-### 🎭 Stealth & Detection Evasion  
+### 🎭 Stealth & Detection Evasion
 - [x] **Advanced Noise Injection** - Stabilized Canvas, WebGL, TextMetrics algorithms resist detection
 - [x] **Headless & Incognito Bypass** - Undetectable in all browser modes with GPU simulation
 - [x] **WebRTC Leak Protection** - Complete IPv4/IPv6 SDP spoofing, candidate manipulation
@@ -66,7 +66,7 @@ Automatic touch simulation, device metrics, and authentic fingerprints - **undet
 - [x] **Chrome Behavior Emulation** - Google `X-Browser-*` headers, Widevine CDM, Chrome-specific APIs
 
 ### 📱 Device & Platform Emulation
-- [x] **Cross-Platform Font Rendering** - OS-specific UI fonts, system fonts, anti-aliasing  
+- [x] **Cross-Platform Font Rendering** - OS-specific UI fonts, system fonts, anti-aliasing
 - [x] **Hardware Fingerprint Control** - CPU architecture, screen metrics, device pixel ratios
 
 ### 📋 Complete Fingerprint Control
