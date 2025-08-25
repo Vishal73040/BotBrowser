@@ -26,15 +26,17 @@
 
 ---
 
+**⚠️ Disclaimer: This project is intended for authorized security research, fingerprint consistency testing, and automation compatibility evaluation only. Misuse for spam, fraud, or unauthorized activity is strictly prohibited.**
+
 ## What is BotBrowser?
 
-BotBrowser is a cross-platform stealth browser designed to defeat modern antibot systems. By directly modifying Chromium's C++ source code, BotBrowser eliminates the fingerprint leaks and automation traces left behind by [CDP](https://chromedevtools.github.io/devtools-protocol/)-based solutions, enabling true undetectable browsing and automation.
+BotBrowser is a cross-platform stealth browser designed to evaluate and minimize automation artifacts compared to [CDP](https://chromedevtools.github.io/devtools-protocol/)-based tools, supporting authorized testing and automation.
 
 ---
 
 ## 🚀 Why Choose BotBrowser
 
-- 🎭 **Real User Fingerprints** - Authentic profiles from 300,000+ real users
+- 🎭 **High-fidelity profile simulation** - synthetic/aggregated profiles for realistic, policy-compliant testing
 - 🔄 **Latest Chromium Base** - Always synced to newest stable Chrome for zero fingerprint drift
 - ⚡ **Zero-Config Intelligence** - Auto-detects timezone/locale/language from IP
 - 🤖 **Advanced Programmatic Control** - [Playwright/Puppeteer integration](examples/) with CDP leak blocking
@@ -56,11 +58,13 @@ Automatic touch simulation, device metrics, and authentic fingerprints - **undet
 - [x] **Session Management** - Custom `--bot-title`, `--bot-cookies`, `--bot-bookmarks` with toolbar labels
 - [x] **Advanced Proxy Authentication** - Embed username:password directly in proxy URLs (http://user:pass@proxy.com:8080)
 
-### 🎭 Stealth & Detection Evasion
+### 🎭 Stealth & Detection Resilience Testing
 - [x] **Multi-Layer Noise Injection** - Canvas, WebGL, Audio, TextMetrics with stabilized algorithms resist detection
 - [x] **Headless & Incognito Bypass** - Undetectable in all browser modes with GPU simulation
 - [x] **WebRTC Leak Protection** - Complete IPv4/IPv6 SDP spoofing, candidate manipulation
 - [x] **Chrome Behavior Emulation** - Google `X-Browser-*` headers, Widevine CDM, Chrome-specific APIs
+
+> **This project does not distribute proprietary modules (e.g., Widevine).** Any playback components must be obtained via official channels by the end user.
 
 ### 📱 Device & Platform Emulation
 - [x] **Cross-Platform Font Engine** - Built-in Windows/macOS/Android fonts and emojis, authentic rendering on any host system
@@ -198,7 +202,7 @@ For containerized deployment, see [docker/README.md](docker/) for complete setup
 
 ## ⚙️ Configuration & Profiles
 
-> 📢 BotBrowser combines authentic user profiles with flexible runtime configuration. Your stealth capabilities come from real user fingerprints, enhanced by dynamic CLI settings.
+> 📢 BotBrowser combines authentic user profiles with flexible runtime configuration. Your stealth capabilities come from fingerprints, enhanced by dynamic CLI settings.
 
 ### Key Concepts
 - **Profile Foundation:** Authentic user fingerprints ensure undetectable browsing behavior
@@ -257,6 +261,8 @@ Use our detailed test scripts to explore real-world use cases and implementation
 ### ⚠️ Disclaimer
 
 These test scripts are provided for **educational purposes** and to **demonstrate** the capabilities of BotBrowser. They are intended solely for **legal use cases** that comply with all applicable laws and regulations. **Any misuse**—such as violating website terms of service or engaging in unlawful activities—**is strictly prohibited.**
+
+**These test pages are used to validate rendering and API-level behavior under authorized, non-production conditions.**
 
 
 
