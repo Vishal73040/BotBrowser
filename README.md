@@ -37,7 +37,6 @@ BotBrowser is a cross-platform stealth browser designed to defeat modern antibot
 - 🎭 **Real User Fingerprints** - Authentic profiles from 300,000+ real users
 - 🔄 **Latest Chromium Base** - Always synced to newest stable Chrome for zero fingerprint drift
 - ⚡ **Zero-Config Intelligence** - Auto-detects timezone/locale/language from IP
-- 🛡️ **98%+ Success Rate** - Powering 350,000+ daily registrations with exceptional stability under heavy loads
 - 🤖 **Advanced Programmatic Control** - [Playwright/Puppeteer integration](examples/) with CDP leak blocking
 
 ### 📱 Perfect Cross-Platform Profile Emulation
