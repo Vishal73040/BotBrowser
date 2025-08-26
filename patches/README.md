@@ -1,11 +1,15 @@
 # 🛠️ BotBrowser Patch Examples
 
-> 🚧 These patches are just a small glimpse into BotBrowser’s internals. The full core remains private and proven against real-world antibot systems.
+**For Academic and Security Analysis Purposes**
 
-BotBrowser is **100% proprietary** - built entirely on top of **Chromium**, with **no third-party code** involved.
+> 🚧 These patches are select examples from BotBrowser's internals for academic study and security analysis. The full core remains proprietary for compatibility testing environments.
+
+BotBrowser includes proprietary enhancements built on top of Chromium, developed independently for academic study and compatibility testing.
 
 Only the GUI ([BotBrowserConsole](https://github.com/botswin/BotBrowser/tree/main/console)) is open-sourced.
-The patches here are **select examples**, published to illustrate techniques without exposing the full engine.
+The patches here are **select examples**, published to illustrate techniques for academic and security analysis purposes without exposing the full engine.
+
+⚠️ **Usage Policy:** These patch examples are designed for academic study, security analysis, and authorized testing environments only. Use in compliance with institutional policies and applicable laws.
 
 ---
 
@@ -14,21 +18,22 @@ The patches here are **select examples**, published to illustrate techniques wit
 - **Proprietary Foundation**
   BotBrowser’s engine is entirely homegrown—no forks, no references to external projects.
 
-- **Selective Open-Source**
-  We publish only a handful of patches in this folder. The rest stay private to prevent antibots from zeroing in on every leak point.
+- **Selective Academic Disclosure**
+  We publish only select patches in this folder for educational purposes. The rest remain proprietary to maintain compatibility testing integrity.
 
-- **Comprehensive Leak Coverage**
-  Our patches plug gaps at every conceivable fingerprinting surface. Crafted through:
-  1. Hands-on reverse engineering of antibot defenses
-  2. V8-level analysis of how antibots collect and validate fingerprints
-  3. Real-world automation experience at scale
+- **Comprehensive Compatibility Coverage**
+  Our patches address fingerprinting consistency across various surfaces. Developed through:
+  1. Security analysis of browser compatibility mechanisms
+  2. V8-level study of fingerprint collection and validation
+  3. Compatibility testing experience in controlled environments
 
-- **Get the Full Engine**
-  Interested in the complete core source? Reach out for licensing or private review:
+## 📬 Contact (Academic Inquiries Only)
 
-  | 📧 Email    | [botbrowser@bk.ru](mailto:botbrowser@bk.ru) |
-  |------------|--------------------------------------------------------------|
-  | 📱 Telegram | [@botbrowser_support](https://t.me/botbrowser_support)               |
+For academic collaboration or licensing review, please reach out:
+
+| 📧 Email    | [botbrowser@bk.ru](mailto:botbrowser@bk.ru) |
+|-------------|---------------------------------------------|
+| 📱 Telegram | [@botbrowser_support](https://t.me/botbrowser_support) |
 
 ---
 
@@ -147,6 +152,8 @@ patches_v2/136.0.7103.49/
 
 ---
 
-## ⚠️ DISCLAIMER
+## ⚠️ ACADEMIC USE DISCLAIMER
 
-The code snippets and patches provided here are for **demonstration purposes only**. They come **as-is**, without any warranty-explicit or implied. BotBrowser and its authors are **not responsible** for any misuse, data loss, or legal claims arising from the application of these examples. Unauthorized distribution or modification of our private core beyond this showcase is strictly prohibited.
+The code snippets and patches provided here are for **academic study and security analysis purposes only**. They are intended solely for **authorized testing environments** that comply with all applicable laws, regulations, and institutional policies. They come **as-is**, without any warranty-explicit or implied. BotBrowser and its authors are **not responsible** for any misuse, data loss, or legal claims arising from the application of these examples. 
+
+**Any use outside of authorized academic study, security analysis, or compatibility testing is strictly prohibited.** These patch examples are simplified and illustrative; they do not represent functional bypasses of production systems. Unauthorized distribution or modification of our private core beyond this showcase is strictly prohibited.

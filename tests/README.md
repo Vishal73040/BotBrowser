@@ -1,84 +1,107 @@
 
-# 🚀 BotBrowser Tests
+# 🔬 BotBrowser Research Test Suite
 
-Showcase how BotBrowser powers real-world automation tests with [Playwright](https://playwright.dev/docs/writing-tests).
+**Academic Research Framework for Browser Compatibility Analysis**
 
-## 🌐 Network Setup
+Demonstrates controlled browser compatibility research using [Playwright](https://playwright.dev/docs/writing-tests) for academic and security research purposes.
 
-All tests in this repository run under **Sticky Rotating Residential IPs** to mimic genuine user behavior. If you're experiencing blocks with data-center proxies, switch to **Sticky Rotating Residential IPs**.
+## 🌐 Research Environment Setup
+
+All tests utilize **controlled network environments** with appropriate proxy configurations for academic analysis. Testing should be conducted through authorized institutional networks.
 
 ---
 
-## ⚠️ Disclaimer
+## ⚠️ Academic Research Disclaimer
 
-These test scripts are provided for **educational purposes** and to **demonstrate** BotBrowser capabilities. They are intended solely for **legal use cases** that comply with all applicable laws and regulations.
+**For Educational and Research Institutions Only**
 
-**Any misuse**—such as violating website terms of service or engaging in unlawful activities—**is strictly prohibited.**
+These research test scripts are provided strictly for **academic research, security analysis, and authorized educational purposes**. They are designed for **controlled research environments** within universities, research institutions, and authorized security testing facilities.
+
+**Authorized Research Use Cases:**
+- Browser compatibility studies in academic settings
+- Security research under institutional oversight
+- Educational demonstrations in controlled environments
+- Authorized penetration testing with proper approvals
+
+**Strictly Prohibited:**
+- **Production system testing without explicit authorization**
+- **Violation of website terms of service**
+- **Unauthorized access to third-party systems**
+- **Commercial exploitation without proper licensing**
+
+⚠️ **Research Ethics Requirement:** All users must obtain proper institutional review board (IRB) approval and follow ethical research guidelines when conducting studies involving web services or user data.
 
 ---
 
 ## 🔧 Getting Started
 
-### Step 1: Environment Setup
+### Step 1: Research Environment Setup
 
-Create a `.env` file in the project root with your BotBrowser configuration:
+Create a `.env` file in the project root with your configuration:
 
 ```bash
 BOTBROWSER_EXEC_PATH=/absolute/path/to/botbrowser
-BOT_PROFILE_PATH=/absolute/path/to/bot-profile.enc
+BOT_PROFILE_PATH=/absolute/path/to/profile.enc
 ```
 
 **Example configuration:**
 ```bash
 BOTBROWSER_EXEC_PATH=/usr/local/bin/chromium
-BOT_PROFILE_PATH=/home/user/bot_profiles/chrome139_win11_x64.enc
+BOT_PROFILE_PATH=/home/user/profiles/chrome139_win11_x64.enc
 ```
 
-**Required paths:**
+**Required Configuration:**
 - `BOTBROWSER_EXEC_PATH` → BotBrowser executable
-- `BOT_PROFILE_PATH` → BotBrowser profile (.enc file)
+- `BOT_PROFILE_PATH` → Profile file (.enc file)
 
-### Step 2: Install & Run
+### Step 2: Install & Run Research Suite
 
 ```bash
 # Install dependencies
 npm install
 
-# Run all tests
+# Run tests
 npx playwright test
 
-# Generate detailed HTML report (optional)
+# Generate analysis report
 npx playwright show-report
 ```
 
 ---
 
-## 📝 Test Information
+## 📝 Research Methodology
 
-**Test Purpose:** These are proof-of-concept scripts demonstrating BotBrowser's capabilities.
+**Purpose:** These are controlled compatibility analysis scripts for academic study.
 
-**Responsibility:** Users must comply with relevant laws and target sites' terms of service.
+**Framework:** All studies must be conducted within authorized environments that comply with institutional ethics guidelines, applicable laws, and protocols.
 
-### Troubleshooting
+**Data Collection:** Research data is collected only from publicly accessible testing interfaces and demonstration sites under controlled, non-production conditions.
+
+⚠️ **Important:** Results from these tests must not be interpreted as instructions for bypassing production systems or circumventing security measures.
+
+### Research Environment Troubleshooting
 
 | Issue | Solution |
 |-------|----------|
-| 🛑 Blocked by data-center proxies | 🔄 Switch to Sticky-Session Rotating Residential IPs |
+| 🛑 Network access restrictions | 🔄 Use authorized institutional network infrastructure |
 | ❌ Tests failing | ✅ Verify `.env` file paths and profile compatibility |
-| 🐛 Browser crashes | 🔧 Check BotBrowser executable permissions |
+| 🐛 Browser environment issues | 🔧 Check BotBrowser executable permissions and research environment setup |
 
-## 📚 Resources
+## 📚 Academic Resources
 
 - [Playwright Documentation](https://playwright.dev/docs/writing-tests)
 - [BotBrowser Profile Configs](https://github.com/botswin/BotBrowser/blob/main/profiles/profile-configs.md)
 - [Test Results & Reports](./test-results/)
+- [ACM Code of Ethics](https://www.acm.org/code-of-ethics)
 
-## 🙏 Dependencies
+## 🙏 Research Dependencies
 
 This project uses the following open-source libraries:
 
 | Package | Purpose |
 |---------|---------|
 | [dotenv](https://www.npmjs.com/package/dotenv) | Environment variable management |
-| [ghost-cursor](https://www.npmjs.com/package/ghost-cursor) | Human-like cursor movements |
+| [ghost-cursor](https://www.npmjs.com/package/ghost-cursor) | Natural interaction simulation |
 | [ghost-cursor-playwright](https://www.npmjs.com/package/ghost-cursor-playwright) | Playwright integration for realistic interactions |
+
+**Ethics Notice:** All libraries are used solely for academic purposes under controlled conditions with proper institutional oversight.

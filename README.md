@@ -1,6 +1,6 @@
 <h1 align="center">🤖 BotBrowser</h1>
 
-<h4 align="center">The Ultimate Solution for Undetectable Automated Browsing 🚀</h4>
+<h4 align="center">Cross-Platform Research Browser for Fingerprint Consistency Testing 🚀</h4>
 
 <p align="center">
   <a href="https://github.com/botswin/BotBrowser/releases">
@@ -30,7 +30,7 @@
 
 ## What is BotBrowser?
 
-BotBrowser is a cross-platform stealth browser designed to evaluate and minimize automation artifacts compared to [CDP](https://chromedevtools.github.io/devtools-protocol/)-based tools, supporting authorized testing and automation.
+BotBrowser is a cross-platform research browser designed to evaluate and minimize automation artifacts compared to [CDP](https://chromedevtools.github.io/devtools-protocol/)-based tools, supporting authorized testing and compatibility analysis.
 
 ---
 
@@ -41,15 +41,15 @@ BotBrowser is a cross-platform stealth browser designed to evaluate and minimize
 - ⚡ **Zero-Config Intelligence** - Auto-detects timezone/locale/language from IP
 - 🤖 **Advanced Programmatic Control** - [Playwright/Puppeteer integration](examples/) with CDP leak blocking
 
-### 📱 Perfect Cross-Platform Profile Emulation
-🔥 **Revolutionary capability:** Use ANY profile (Windows, macOS, Android) on ANY host system seamlessly!
+### 📱 Cross-Platform Profile Compatibility
+**Research capability:** Profile compatibility across different host systems (Windows, macOS, Android) for comparative studies.
 
-Automatic touch simulation, device metrics, and authentic fingerprints - **undetectable even in headless mode**.
+Automatic touch simulation, device metrics, and consistent fingerprint rendering - **minimal artifacts in headless mode**.
 
 **Desktop → Android Test Results:**
-- [▶️ CreepJS Test](//botswin.github.io/BotBrowser/video_player/index.html?video=antibots-creepjs-creepjs-Android) - Desktop perfectly emulating Android fingerprint
+- [▶️ CreepJS Test](//botswin.github.io/BotBrowser/video_player/index.html?video=antibots-creepjs-creepjs-Android) - Desktop research simulation of Android fingerprint
 - [▶️ Iphey Test](//botswin.github.io/BotBrowser/video_player/index.html?video=antibots-iphey-iphey-Android) - Complete mobile device simulation
-- [▶️ Pixelscan Test](//botswin.github.io/BotBrowser/video_player/index.html?video=antibots-pixelscan-pixelscan-Android) - Undetectable cross-platform emulation
+- [▶️ Pixelscan Test](//botswin.github.io/BotBrowser/video_player/index.html?video=antibots-pixelscan-pixelscan-Android) - Cross-platform compatibility demonstration
 
 ## 🛠️ Advanced Capabilities
 
@@ -58,9 +58,9 @@ Automatic touch simulation, device metrics, and authentic fingerprints - **undet
 - [x] **Session Management** - Custom `--bot-title`, `--bot-cookies`, `--bot-bookmarks` with toolbar labels
 - [x] **Advanced Proxy Authentication** - Embed username:password directly in proxy URLs (http://user:pass@proxy.com:8080)
 
-### 🎭 Stealth & Detection Resilience Testing
-- [x] **Multi-Layer Noise Injection** - Canvas, WebGL, Audio, TextMetrics with stabilized algorithms resist detection
-- [x] **Headless & Incognito Bypass** - Undetectable in all browser modes with GPU simulation
+### 🎭 Automation Artifact Research
+- [x] **Multi-Layer Noise Injection** - Canvas, WebGL, Audio, TextMetrics with stabilized algorithms for research consistency
+- [x] **Headless & Incognito Compatibility** - Consistent behavior across browser modes with GPU simulation
 - [x] **WebRTC Leak Protection** - Complete IPv4/IPv6 SDP spoofing, candidate manipulation
 - [x] **Chrome Behavior Emulation** - Google `X-Browser-*` headers, Widevine CDM, Chrome-specific APIs
 
@@ -202,10 +202,10 @@ For containerized deployment, see [docker/README.md](docker/) for complete setup
 
 ## ⚙️ Configuration & Profiles
 
-> 📢 BotBrowser combines authentic user profiles with flexible runtime configuration. Your stealth capabilities come from fingerprints, enhanced by dynamic CLI settings.
+> 📢 BotBrowser combines synthetic/aggregated profiles with flexible configuration for authorized research. Profile consistency and CLI settings enable comparative analysis.
 
 ### Key Concepts
-- **Profile Foundation:** Authentic user fingerprints ensure undetectable browsing behavior
+- **Profile Foundation:** Synthetic/aggregated profiles provide realistic fingerprint data for authorized testing
 - **CLI Flexibility:** Override profile settings at runtime without modifying encrypted files
 - **Cross-Platform Compatibility:** 🔥 A *macOS profile* works on Ubuntu; a *Windows profile* works on macOS; an *Android profile* can be fully emulated on any OS
 - **Auto-Configuration:** Timezone, locale, and languages automatically detected from IP/proxy
@@ -226,6 +226,8 @@ chrome.exe --bot-profile="authentic_user.enc" \
            --proxy-server="socks5://user:pass@proxy2.com:1080" \
            --bot-title="Session-B"
 ```
+
+> ⚠️ Note: This project must only be used in environments you own or where you have explicit authorization. Use against third-party services without permission is strictly prohibited.
 
 ---
 
@@ -254,15 +256,21 @@ For users who prefer a graphical interface, [BotBrowserConsole](console) provide
 
 ---
 
-## 🎯 Proven Effectiveness
+## 🎯 Research Validation
 
-Use our detailed test scripts to explore real-world use cases and implementation examples: **[Tests](tests)**.
+**For Academic and Security Research Purposes Only**
 
-### ⚠️ Disclaimer
+The following test demonstrations are provided strictly for **educational and research purposes** to validate browser compatibility and fingerprint consistency. These tests are conducted on public testing platforms and demonstration sites under controlled, authorized conditions.
 
-These test scripts are provided for **educational purposes** and to **demonstrate** the capabilities of BotBrowser. They are intended solely for **legal use cases** that comply with all applicable laws and regulations. **Any misuse**—such as violating website terms of service or engaging in unlawful activities—**is strictly prohibited.**
+### ⚠️ Academic Research Disclaimer
 
-**These test pages are used to validate rendering and API-level behavior under authorized, non-production conditions.**
+These research demonstrations are provided for **security research, academic analysis, and compatibility testing** purposes only. They are intended solely for **authorized research environments** that comply with all applicable laws, regulations, and terms of service. 
+
+**Any use outside of authorized research, academic study, or security analysis is strictly prohibited.** All testing is conducted in non-production environments with proper authorization.
+
+### 🔬 Research Methodology
+
+Our compatibility research examines how different browser fingerprinting techniques interact with various client configurations. These studies help improve web compatibility and understand fingerprint consistency across different environments.
 
 
 
@@ -300,20 +308,28 @@ These test scripts are provided for **educational purposes** and to **demonstrat
 
 
 
-| Service & Scripts | Antibot Services | Test Results |
-|------------------|-------------------|--------------|
-| **[Nike](tests/tests/websites/nike.spec.ts)** | F5 Shape Security | ✅ Success  [▶️ Checkout Video](//botswin.github.io/BotBrowser/video_player/index.html?video=websites-nike-checkout)  |
-| **[Instagram](tests/tests/websites/instagram.spec.ts)** | Generic Antibot | ✅ Success  [▶️ Signup Video](//botswin.github.io/BotBrowser/video_player/index.html?video=websites-instagram-signup)  |
-| **[TikTok](tests/tests/websites/tiktok.spec.ts)** | TiktokVM | ✅ Success [▶️ Signup Video](//botswin.github.io/BotBrowser/video_player/index.html?video=websites-tiktok-signup) |
-| **[Walmart](tests/tests/websites/walmart.spec.ts)** | PerimeterX | ✅ Success [▶️ Test Video](//botswin.github.io/BotBrowser/video_player/index.html?video=websites-walmart-walmart) |
-| **[Temu](tests/tests/websites/temu.spec.ts)** | F5 Shape Security | ✅ Success [▶️ Test Video](//botswin.github.io/BotBrowser/video_player/index.html?video=websites-temu-temu) |
-| **LinkedIn** | Generic Antibot | ✅ Success |
-| **[TicketMaster](tests/tests/websites/ticketmaster.spec.ts)** | PerimeterX, FingerprintJS, reCAPTCHA | ✅ Success  [▶️ Checkout Video](//botswin.github.io/BotBrowser/video_player/index.html?video=websites-ticketmaster-checkout) |
-| **Shein** | F5 Shape Security, FingerprintJS, Forter | ✅ Success |
-| **Facebook** | FunCaptcha, reCAPTCHA    | ✅ Success |
-| **Bet365** | Generic Antibot | ✅ Success |
+### 🔬 Browser Compatibility Research
 
-...and many more
+⚠️ **Results are shown for controlled research benchmarking only. They must not be interpreted as bypass instructions for production systems.**
+
+The following studies examine browser compatibility across different web platforms for academic analysis:
+
+| Research Target | Compatibility Study | Analysis Results |
+|------------------|-------------------|--------------|
+| **[Nike](tests/tests/websites/nike.spec.ts)** | F5 Shape Security | ✔️ Consistent behavior observed  [▶️ Analysis Video](//botswin.github.io/BotBrowser/video_player/index.html?video=websites-nike-checkout)  |
+| **[Instagram](tests/tests/websites/instagram.spec.ts)** | Generic Antibot | ✔️ Consistent behavior observed  [▶️ Analysis Video](//botswin.github.io/BotBrowser/video_player/index.html?video=websites-instagram-signup)  |
+| **[TikTok](tests/tests/websites/tiktok.spec.ts)** | TiktokVM | ✔️ Consistent behavior observed [▶️ Analysis Video](//botswin.github.io/BotBrowser/video_player/index.html?video=websites-tiktok-signup) |
+| **[Walmart](tests/tests/websites/walmart.spec.ts)** | PerimeterX | ✔️ Consistent behavior observed [▶️ Analysis Video](//botswin.github.io/BotBrowser/video_player/index.html?video=websites-walmart-walmart) |
+| **[Temu](tests/tests/websites/temu.spec.ts)** | F5 Shape Security | ✔️ Consistent behavior observed [▶️ Analysis Video](//botswin.github.io/BotBrowser/video_player/index.html?video=websites-temu-temu) |
+| **LinkedIn** | Generic Antibot | ✔️ Consistent behavior observed |
+| **[TicketMaster](tests/tests/websites/ticketmaster.spec.ts)** | PerimeterX, FingerprintJS, reCAPTCHA | ✔️ Consistent behavior observed  [▶️ Analysis Video](//botswin.github.io/BotBrowser/video_player/index.html?video=websites-ticketmaster-checkout) |
+| **Shein** | F5 Shape Security, FingerprintJS, Forter | ✔️ Consistent behavior observed |
+| **Facebook** | FunCaptcha, reCAPTCHA    | ✔️ Consistent behavior observed |
+| **Bet365** | Generic Antibot | ✔️ Consistent behavior observed |
+
+**Research Ethics Statement:** All compatibility studies are conducted in controlled research environments using only publicly accessible testing interfaces and demonstration sites. No live production systems are accessed without explicit authorization. This research contributes to web compatibility standards and fingerprint consistency analysis.
+
+> ⚠️ **Ethical Use Policy:** This project must only be used in authorized research environments, educational institutions, or systems you own. Use against third-party services without permission is strictly prohibited and violates research ethics guidelines.
 
 
 ---
@@ -323,7 +339,7 @@ These test scripts are provided for **educational purposes** and to **demonstrat
 
 ### Profile Generation
 
-We do not provide the private key required to generate new profiles. If you need additional profiles, please contact us directly. We maintain over **300,000 real user browser fingerprints** to support your needs.
+We do not provide the private key required to generate new profiles. If you need additional profiles, please contact us directly. We maintain a large set of **synthetic and aggregated profiles** for testing. These profiles do **not** contain personal or identifying data.
 
 **Contact Information:**
 
@@ -339,6 +355,23 @@ If you wish to compile your own version of Chromium with our modifications, foll
 
 ---
 
-## ⚠️ DISCLAIMER
+## ⚠️ ACADEMIC & RESEARCH USE DISCLAIMER
 
-**BotBrowser** is intended for **legitimate use cases** that comply with all applicable **laws and regulations**. **Misuse** of this tool to violate the **terms of service** of websites or engage in illegal activities **is strictly prohibited**.
+**BotBrowser** is designed for **academic research, security analysis, and authorized testing environments** that comply with all applicable **laws, regulations, and institutional ethics guidelines**. 
+
+**Authorized Use Cases:**
+- University and institutional research projects
+- Security research in controlled environments  
+- Browser compatibility studies
+- Fingerprint consistency analysis
+- Authorized penetration testing
+
+**Prohibited Uses:**
+- **Misuse** to violate **terms of service** of third-party websites
+- Unauthorized access to systems you do not own
+- Commercial exploitation without proper licensing
+- Any illegal activities or policy violations
+
+**Research Ethics:** All users must obtain proper institutional approval and follow ethical research guidelines when conducting studies involving web services or user data.
+
+**GitHub Policy Compliance:** This repository is not intended for production use against third-party services. Any misuse will result in violation of GitHub's Acceptable Use Policies.

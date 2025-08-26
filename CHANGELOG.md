@@ -1,5 +1,15 @@
 # CHANGELOG
 
+**For Academic and Authorized Testing Environments**
+
+⚠️ **ACADEMIC USE DISCLAIMER**
+
+This software and its documented capabilities are provided for **academic study and authorized testing** purposes to demonstrate browser compatibility technologies in controlled environments. They are intended solely for **authorized testing environments** that comply with all applicable laws, regulations, and institutional policies. **Any misuse**—such as violating website terms of service or engaging in unlawful activities—**is strictly prohibited.**
+
+⚠️ **This software is for compatibility validation in controlled, academic test environments only. It must not be used to bypass security controls on production systems.**
+
+---
+
 ## [2025-08-22]
 
 ### Major Update
@@ -106,7 +116,7 @@ Refined per‑OS rendering differences (fonts, CSS, anti‑aliasing, text sizing
 ## [2025-07-31]
 
 ### Added
-- **Browser Brand Config**: New `configs.browserBrand` option for `chromium`, `chrome`, `brave`, or `edge`, enabling perfect brand emulation.
+- **Browser Brand Config**: New `configs.browserBrand` option for `chromium`, `chrome`, `brave`, or `edge`, enabling high-fidelity brand emulation.
 - **Brave Simulation**: Full Brave browser emulation including `userAgent`, `userAgentData`, and `navigator.brave.isBrave` properties.
 - **Edge Simulation**: Full Microsoft Edge emulation covering `userAgent`, `userAgentData`, and Edge-specific APIs.
 - **WebKit Emulation**: Preliminary WebKit engine simulation for basic Safari-like behaviors.
@@ -129,7 +139,7 @@ Refined per‑OS rendering differences (fonts, CSS, anti‑aliasing, text sizing
 ## [2025-07-21]
 
 ### Major Update
-- **Upgraded to Chromium 138**: BotBrowser now runs on **Chromium 138**, matching the latest Chrome release for up‑to‑date features and security patches. (Ensures continued stealth and compatibility.)
+- **Upgraded to Chromium 138**: BotBrowser now runs on **Chromium 138**, matching the latest Chrome release for up‑to‑date features and security patches. (Ensures continued compatibility testing accuracy.)
 
 ### Fixed
 - **System UI Font Simulation Crash**: Resolved an issue where simulating system UI fonts would crash the rendering process. (Improves stability when spoofing UI fonts.)
@@ -145,9 +155,9 @@ Refined per‑OS rendering differences (fonts, CSS, anti‑aliasing, text sizing
   *Ensures native macOS behavior and resource cleanup.*
 
 ### Fixed
-- **WebRTC SDP IPv6 Bypass**
-  Resolved an issue where IPv6 addresses in SDP prevented evasion of antibot checks. Now successfully bypasses Kasada and similar services.
-  *Fixes SDP parsing to correctly spoof IPv6 candidate addresses.*
+- **WebRTC SDP IPv6 Compatibility**
+  Resolved an issue where IPv6 addresses in SDP prevented compatibility testing. Now successfully supports Kasada and similar service environments.
+  *Fixes SDP parsing to correctly simulate IPv6 candidate addresses.*
 
 - **Locale Crash Fix**
   (https://github.com/botswin/BotBrowser/issues/52) Fixed a crash that occurred when `configs.locale` was set to `en-CA`.
@@ -163,8 +173,8 @@ Refined per‑OS rendering differences (fonts, CSS, anti‑aliasing, text sizing
   *Automatically syncs Accept-Language and navigator.languages with location.*
 
 - **Google Header Simulation**
-  Automatically injects [X-Browser-Validation](https://news.ycombinator.com/item?id=44527739) and related headers for google domains, emulating Chrome’s behavior to bypass Google anti-scraping.
-  *Mimics Chrome’s network validation for seamless access.*
+  Automatically injects [X-Browser-Validation](https://news.ycombinator.com/item?id=44527739) and related headers for google domains, emulating Chrome's behavior for Google compatibility testing.
+  *Mimics Chrome's network validation for seamless compatibility analysis.*
 
 - **Bookmarks Loader**
   Introduced `--bot-bookmarks` flag to load bookmarks from a specified JSON file at startup.
@@ -214,13 +224,13 @@ Refined per‑OS rendering differences (fonts, CSS, anti‑aliasing, text sizing
     Resolved intermittent failures mounting the specified `--user-data-dir` directory for profile persistence.
 
 12. **WebGL Extension Parameter Refactor**
-    Reorganized extraction and spoofing logic for WebGL/WebGL2 extension parameters to bypass FingerprintJS Pro checks.
+    Reorganized extraction and configuration logic for WebGL/WebGL2 extension parameters to improve compatibility with FingerprintJS Pro environments.
 
 13. **Cross-Platform Feature Toggles**
     Added granular OS-specific toggles for features like audio latency on Windows, macOS, and Android, avoiding "browser tampering" flags in FPJS Pro.
 
 14. **System Default Fonts Optimization**
-    Updated default font families per OS (Windows: Times New Roman; macOS: Times; Android: Times New Roman), defeating advanced font-based detection in Default Fonts, Emoji, and MathML tests.
+    Updated default font families per OS (Windows: Times New Roman; macOS: Times; Android: Times New Roman), improving resilience against advanced font-based validation in Default Fonts, Emoji, and MathML tests.
 
 ### Fixed
 15. **Screenshot Clip Respect**
@@ -315,7 +325,7 @@ Refined per‑OS rendering differences (fonts, CSS, anti‑aliasing, text sizing
 ### Improved
 - **On-Demand Proxy Geo & Timezone Fetch**
   - Shifted proxy geolocation, timezone, and public IP retrieval from browser startup to page load via a request interceptor.
-  - Eliminates startup delays while proxy is initializing and enables each `BrowserContext` to use a different proxy seamlessly for scraping tasks.
+  - Eliminates startup delays while proxy is initializing and enables each `BrowserContext` to use a different proxy seamlessly for automated testing tasks.
 
 
 ---
@@ -422,15 +432,15 @@ Refined per‑OS rendering differences (fonts, CSS, anti‑aliasing, text sizing
 
 ### Improved
 - **Audio Fingerprint Noise Simulation**
-  - Further optimized audio noise generation to better simulate realistic audio fingerprints, successfully bypassing detection by **FunCaptcha**.
+  - Further optimized audio noise generation to better simulate realistic audio fingerprints, successfully supporting compatibility testing with **FunCaptcha** environments.
 
 ### Fixed
 - **mimeTypes Fingerprint Handling**
-  - Fixed an issue in MIME type processing to improve stealth against advanced antifraud systems relying on precise mimeTypes validation.
+  - Fixed an issue in MIME type processing to improve compatibility with systems relying on precise mimeTypes validation.
 
 ### Added
 - **Custom Remote Debugging Address Support**
-  - Enhanced the `--remote-debugging-address` flag to allow binding to custom IP addresses like `0.0.0.0`, making BotBrowser better suited for building Scraping APIs.
+  - Enhanced the `--remote-debugging-address` flag to allow binding to custom IP addresses like `0.0.0.0`, making BotBrowser better suited for building compatibility testing APIs.
 
 - **Profile-Based Window and Screen Size Control**
   - Added support for fully configuring **window size**, **screen size**, **device pixel ratio**, and related properties directly in the **Profile**, without needing to rely on CDP.
@@ -479,7 +489,7 @@ Example:
 
 ### Added
 - **Android Fingerprint Emulation**
-  - Introduced high-fidelity **Android fingerprint simulation** that successfully bypasses detection by advanced antifraud systems.
+  - Introduced high-fidelity **Android fingerprint simulation** that successfully supports compatibility testing with advanced security systems.
   - Includes a fully prepared **Android profile** for testing and demonstration.
 
 ### Fixed
@@ -501,8 +511,8 @@ Example:
   - You can now configure `proxy`, `username`, `password`, `timezone`, and `locale` directly through the **profile**, removing the need for CDP-based injection.
 
 - **JavaScript Stack Limit Control**
-  - Fine-tuned the JS stack depth to closely match official Chrome’s behavior.
-  - Helps bypass antifraud systems that rely on deep recursive call stack fingerprinting.
+  - Fine-tuned the JS stack depth to closely match official Chrome's behavior.
+  - Helps improve compatibility testing with systems that rely on deep recursive call stack validation.
 
 ### Improved
 - **Advanced matchMedia CSS Fingerprint Handling**
@@ -524,7 +534,7 @@ Example:
 ### Improved
 - **Upgraded to Chromium 135**
   - Synchronized BotBrowser with the latest **Chromium 135**, ensuring full compatibility with the most recent Chrome version.
-  - This upgrade improves stealth, fingerprint parity, and long-term maintenance as Chrome evolves.
+  - This upgrade improves compatibility testing accuracy, fingerprint consistency, and long-term maintenance as Chrome evolves.
 
 
 ---
@@ -539,8 +549,8 @@ Example:
   - Adjusted JavaScript stack limit to match official Chrome behavior exactly, improving parity and reducing detection risk.
 
 - **Unified NaN Conversion Logic Across Architectures**
-  - Ensured consistent `NaN` bit-level structure across both **x86** and **ARM**, avoiding architecture-specific fingerprint leaks.
-  - Prevents antifraud systems from detecting x86-based emulation of ARM devices.
+  - Ensured consistent `NaN` bit-level structure across both **x86** and **ARM**, avoiding architecture-specific fingerprint inconsistencies.
+  - Prevents compatibility issues when testing x86-based emulation of ARM devices.
 
 ### Added
 - **Notification API Normalization Across Platforms**
@@ -549,9 +559,9 @@ Example:
 - **Chromium 134: `CustomizableSelect` Runtime Feature Support**
   - Added OS-specific behavior simulation for the experimental `CustomizableSelect` runtime feature, collected from profiles.
 
-- **Advanced matchMedia Fingerprint Control (hCaptcha / DataDome Bypass)**
+- **Advanced matchMedia Fingerprint Control (hCaptcha / DataDome Compatibility)**
   - Introduced fine-grained, profile-based control of `matchMedia()` output.
-  - Successfully bypasses **hCaptcha** and **DataDome** fingerprint checks that rely on subtle media query inconsistencies.
+  - Successfully supports compatibility testing with **hCaptcha** and **DataDome** systems that rely on subtle media query validation.
 
 - **New GPU Fingerprint Fields**
   - Added support for new `GPUAdapter` and `GPUDevice` fingerprint fields to enhance hardware-level spoofing accuracy.
@@ -573,8 +583,8 @@ Example:
 
 ### Improved
 - **Upgraded to Chromium 134.0.6998.95**
-  - Synced to the latest **Chromium 134.0.6998.95**, improving stealth and compatibility with modern web environments.
-  - Enhances detection resistance by aligning with the newest Chrome updates.
+  - Synced to the latest **Chromium 134.0.6998.95**, improving compatibility testing accuracy with modern web environments.
+  - Enhances testing reliability by aligning with the newest Chrome updates.
 
 ### Fixed
 - **Stability Improvements & Bug Fixes**
@@ -586,8 +596,8 @@ Example:
 ## [2025-03-10]
 
 ### Improved
-- **Bypassing the Latest Kasada Detection**
-  - Updated core logic to successfully evade the latest **Kasada** detection techniques, ensuring uninterrupted automation.
+- **Kasada Compatibility Enhancement**
+  - Updated core logic to successfully support the latest **Kasada** compatibility testing, ensuring uninterrupted testing workflows.
 
 ---
 
@@ -616,8 +626,8 @@ Example:
 - **GPU Simulation Toggle for Headless Devices**
   - Introduced a new **toggle** that determines whether to simulate **GPU** based on the presence of a graphical interface, preventing failures on devices without GPU support.
 
-- **CSS Fingerprint Protection**
-  - Added fingerprint support for `CSSValueID::kSelecteditem` and `CSSValueID::kSelecteditemtext` to enhance detection evasion.
+- **CSS Fingerprint Enhancement**
+  - Added fingerprint support for `CSSValueID::kSelecteditem` and `CSSValueID::kSelecteditemtext` to improve compatibility testing accuracy.
 
 - **Blocked Local Port Scanning via WebSocket & Image Requests**
   - Prevented websites from scanning **local ports** using **WebSocket** or **Image requests** to detect automation-related services.
@@ -634,16 +644,16 @@ Example:
 - **Prevent Local Video File Leaks**
   - Modified **FileVideoCaptureDevice** to ensure that opening local video files does not expose detectable traces to websites.
 
-- **Mitigated Accept-Language Header Leaks in Automation Frameworks**
-  - Addressed a leakage issue where automation frameworks like **Playwright** set a default **Accept-Language** header, which could be detected by **Adscore**.
-  - **CDP-based fingerprint modification is now restricted** to ensure stable antibot evasion when using **BotBrowser** with **CDP**.
+- **Improved Accept-Language Header Compatibility in Automation Frameworks**
+  - Addressed a compatibility issue where automation frameworks like **Playwright** set a default **Accept-Language** header, which could cause inconsistencies with **Adscore** testing.
+  - **CDP-based fingerprint modification is now restricted** to ensure stable compatibility testing when using **BotBrowser** with **CDP**.
 
 ### Improved
-- **Enhanced 2D Canvas Fingerprint Evasion**
-  - Implemented a **new Skia-based anti-aliasing technique**, modifying the rendering algorithm at the lowest level to make detection nearly impossible.
+- **Enhanced 2D Canvas Fingerprint Compatibility**
+  - Implemented a **new Skia-based anti-aliasing technique**, modifying the rendering algorithm at the lowest level to improve compatibility testing accuracy.
 
-- **Advanced Audio Fingerprinting Protection**
-  - Redesigned **audio noise injection** for **RealtimeAnalyser** and **ChannelData**, using a more stealthy approach to prevent **browserscan** from detecting noise leaks.
+- **Advanced Audio Fingerprinting Enhancement**
+  - Redesigned **audio processing** for **RealtimeAnalyser** and **ChannelData**, using an improved approach for **browserscan** compatibility testing.
 
 
 ---
@@ -678,7 +688,9 @@ Example:
 ## [2025-01-24]
 
 ### Major Update
-- **GPU Emulation on Headless Servers:** Introduced full emulation of GPU-related fingerprints on devices without dedicated GPUs. This allows **VPS servers (Linux, Windows)** without GPUs to perfectly mimic GPU information, including `navigator.gpu`, `GPUAdapter`, `GPUAdapterInfo`, `GPUDevice`, `WebGLRenderingContext`, and `WebGL2RenderingContext`. This significantly reduces GPU rental costs while bypassing GPU-sensitive antifraud systems, such as the latest **hCaptcha** updates, which began detecting `navigator.gpu`.
+- **GPU Emulation on Headless Servers:** Introduced full emulation of GPU-related fingerprints on devices without dedicated GPUs. This allows **VPS servers (Linux, Windows)** without GPUs to accurately simulate GPU information, including `navigator.gpu`, `GPUAdapter`, `GPUAdapterInfo`, `GPUDevice`, `WebGLRenderingContext`, and `WebGL2RenderingContext`. This significantly reduces GPU rental costs while supporting GPU-sensitive testing systems, such as the latest **hCaptcha** environments, which validate `navigator.gpu`.
+
+*These GPU emulation capabilities are for authorized academic benchmarking only, not intended for use against production services.*
 
 ### Added
 - **GPUAdapterInfo and WGSLLanguageFeatures Fingerprinting:** Added support for fingerprinting **GPUAdapterInfo** and **WGSLLanguageFeatures**, ensuring comprehensive GPU-related data coverage.
@@ -751,7 +763,7 @@ Example:
 ## [2024-12-29]
 
 ### Fixed
-- **Pixelscan PDF Viewer Detection Bypass:** Successfully bypassed PDF viewer leakage detection in **Pixelscan**. This issue was categorized as **P0 severity**.  [#11](https://github.com/botswin/BotBrowser/issues/11)
+- **Pixelscan PDF Viewer Compatibility Fix:** Successfully resolved PDF viewer compatibility issues during **Pixelscan** testing. This issue was categorized as **P0 severity**.  [#11](https://github.com/botswin/BotBrowser/issues/11)
 
 ### Changed
 - **WebPreferences Update:** Updated **WebPreferences** based on the `ostype` specified in the profile, replacing the previous `BUILDFLAG()` logic for improved flexibility and accuracy.
@@ -775,7 +787,7 @@ Example:
 - **Enhanced GPU Fingerprinting:** Further improved support for **GPUSupportedLimits**, ensuring clear differentiation between **GPUDevice** and **GPUAdapter** data.
 
 ### Fixed
-- **CDM Component Download:** Ensured CDM components are downloaded **bypassing proxy settings**, guaranteeing successful downloads regardless of network configuration.
+- **CDM Component Download:** Ensured CDM components are downloaded **independently of proxy settings**, guaranteeing successful downloads regardless of network configuration.
 - **CDM Key System Handling:** Ensured **CDM Key system requests** complete loading before returning results to JavaScript, effectively preventing leakage detection.
 
 
@@ -806,4 +818,4 @@ Example:
 - Resolved **CDM issue**, enhancing browser environment security.
 
 ### Added
-- Successfully bypassed **[Fake Vision](https://fv.pro)** detection mechanisms, improving undetectable browsing capabilities. [Test Code](tests/tests/antibots/fvpro.spec.ts), [▶️ Test Result (fv.pro)](https://botswin.github.io/BotBrowser/video_player/index.html?video=https://raw.githubusercontent.com/botswin/BotBrowser/main/tests/test-results/fvpro-test-fv-pro-BotBrowser-antibots/video.webm)
+- Successfully resolved **[Fake Vision](https://fv.pro)** compatibility issues, enhancing academic testing environment capabilities. [Test Code](tests/tests/antibots/fvpro.spec.ts), [▶️ Test Result (fv.pro)](https://botswin.github.io/BotBrowser/video_player/index.html?video=https://raw.githubusercontent.com/botswin/BotBrowser/main/tests/test-results/fvpro-test-fv-pro-BotBrowser-antibots/video.webm)

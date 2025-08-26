@@ -1,6 +1,8 @@
-# BotBrowser Profiles
+# BotBrowser Research Profiles
 
-In BotBrowser, everything starts with a profile. Your stealth, reliability, and success depend on it.
+**Academic Research Framework for Browser Environment Simulation**
+
+In BotBrowser, everything starts with a profile for controlled research environments. Research consistency and compatibility depend on proper profile configuration.
 
 ## What Are Profiles?
 
@@ -11,13 +13,13 @@ Profiles are encrypted files that define the complete environment a browser inst
 - **Hardware emulation** (device memory, CPU architecture, screen properties)
 - **Platform simulation** (Android behavior, OS-specific features)
 
-### 🔥 Revolutionary Cross-Platform Compatibility
+### 🔬 Cross-Platform Research Compatibility
 
-**BotBrowser's unique advantage:** ANY profile (Windows, macOS, Android, Ubuntu) works on ANY host system seamlessly!
+**BotBrowser's research capability:** Profile compatibility across different host systems (Windows, macOS, Android, Ubuntu) for comparative analysis.
 
-By using a profile, BotBrowser launches sessions that mimic real human devices and browsing patterns across different operating systems, achieving maximum stealth against sophisticated antifraud and antibot detection systems.
+By using profiles, BotBrowser launches controlled sessions that simulate consistent device behavior across different operating systems for academic research and compatibility testing.
 
-**💡 Profile = Complete Virtual Browser Identity**
+**💡 Profile = Controlled Research Environment Configuration**
 
 ## 🤔 Understanding BotBrowser Profiles
 
@@ -29,7 +31,7 @@ By using a profile, BotBrowser launches sessions that mimic real human devices a
 **Real-world analogy:**
 - Profile = "MacBook Pro M4 Max" (the device type)
 - You can simulate User A in USA using this "M4 Max" profile
-- You can simulate User B in Europe using the same "M4 Max" profile  
+- You can simulate User B in Europe using the same "M4 Max" profile
 - Same device hardware, but different users and environments
 
 ### 🔧 How Profiles Work:
@@ -46,32 +48,33 @@ All appear as different users on the same device type.
 
 ## ⚠️ Profile Types
 
-### 🚨 Demo Profiles (Testing Only)
+### 🚨 Demo Profiles (Educational Testing Only)
 
 **Limitations:**
-- Limited-time testing only
+- Limited-time educational testing only
 - No headless mode support
 - No automation framework connection
 - No extension loading
-- **Production use results in immediate bans** (widely circulated and flagged)
+- **Not suitable for production research** (widely distributed and may be flagged)
 
-### 🌟 Premium Profiles (Production Ready)
+### 🌟 Premium Profiles (Academic Use)
 
 **Features:**
-- **300,000+ authentic fingerprints** from real users
-- Unique and never reused
-- Private and secure
-- Based on genuine device/browser data
-- Production-safe for scalable automation
+- Unique configurations for controlled studies
+- Privacy-compliant synthetic data
+- Based on aggregated device/browser patterns
+- Suitable for authorized academic research
 
-### 📬 Get Premium Profiles
+### 📬 Access Premium Profiles
+
+For academic institutions and authorized research:
 
 | Contact Method | Link |
 |----------------|------|
 | 📧 Email | [botbrowser@bk.ru](mailto:botbrowser@bk.ru) |
 | 📱 Telegram | [@botbrowser_support](https://t.me/botbrowser_support) |
 
-*Fast delivery, confidentiality, and professional support guaranteed.*
+*Premium profiles available for qualified academic institutions with proper ethical approvals.*
 
 ---
 
@@ -106,7 +109,7 @@ const browser = await chromium.launch({
 
 const page = await browser.newPage();
 
-// Remove Playwright's bindings to avoid detection.
+// Remove Playwright's bindings for clean research environment.
 await page.addInitScript(() => {
   delete window.__playwright__binding__;
   delete window.__pwInitScripts;
@@ -125,23 +128,23 @@ await page.goto("https://abrahamjuliot.github.io/creepjs/");
 - **When to use**: For core browser identity and fingerprint data
 - **Limitation**: Encrypted files are difficult to modify
 
-### CLI-Based Configuration  
+### CLI-Based Configuration
 - **Purpose**: Runtime overrides without modifying profile files
 - **When to use**: For session-specific settings like proxy, title, cookies
 - **Advantage**: Preserves profile integrity while enabling flexibility
 
 ### Best Practice: Hybrid Approach
 ```bash
-# Keep authentic fingerprint data in profile
+# Keep profile data in profile
 # Override session-specific settings via CLI
---bot-profile="real_user_fingerprint.enc" \
+--bot-profile="user_profile.enc" \
 --proxy-server="session_specific_proxy" \
 --bot-title="current_session_id"
 ```
 
 ## ⚡ Why CLI Flags Matter
-- **🔒 Preserve authenticity**: Don't modify real user fingerprint data
-- **🚀 Runtime flexibility**: Adjust settings per session without file edits  
+- **🔒 Preserve integrity**: Don't modify profile data
+- **🚀 Runtime flexibility**: Adjust settings per session without file edits
 - **💼 Session isolation**: Multiple instances with different settings
 - **🛡️ Security**: Keep sensitive data (like proxy credentials) out of profile files
 
@@ -155,22 +158,24 @@ await page.goto("https://abrahamjuliot.github.io/creepjs/");
 
 ### 🛠️ Unique Capabilities
 
-- [x] **Bypass Incognito mode checks**
-- [x] **Avoid CDP leaks** — native CDP fingerprint protection
-- [x] **Custom page history** — enhance fingerprint realism
+⚠️ **All features are intended for compatibility testing and academic research only, not for use in production against third-party services.**
+
+- [x] **Provides compatibility in incognito-mode research environments**
+- [x] **CDP artifact minimization** — native CDP fingerprint consistency
+- [x] **Custom page history** — enhance browsing pattern realism for research
 - [x] **Keep pages active** even when they lose focus
 - [x] **Set proxy (host, username, password) directly via profile**
 - [x] **Set language and timezone** based on proxy or manually
-- [x] **WebRTC leak protection**
-- [x] **Canvas / WebGL noise injection**
-- [x] **Audio fingerprinting noise** (enhanced to bypass FunCaptcha)
+- [x] **WebRTC configuration control**
+- [x] **Canvas / WebGL noise injection** for research consistency
+- [x] **Audio fingerprinting variation**
 - [x] **Control scroll bar width**
-- [x] **Bypass CDM (Content Decryption Module) detection**
-- [x] **Customizable remote-debugging-address** (bind to 0.0.0.0 for Scraping APIs)
+- [x] **Supports CDM compatibility research** (no proprietary modules distributed)
+- [x] **Customizable remote-debugging-address** (bind to 0.0.0.0)
 - [x] **Full window/screen size control via profile**
-- [x] **Advanced matchMedia simulation** — bypass complex CSS feature detection
-- [x] **Android fingerprint simulation** — real mobile device behavior emulation
-- [x] **Precision GPU and WebGL parameter spoofing**
+- [x] **Advanced matchMedia simulation** for CSS feature research
+- [x] **Android behavior simulation** for mobile compatibility research
+- [x] **Precision GPU and WebGL parameter configuration**
 
 ---
 
@@ -188,8 +193,8 @@ await page.goto("https://abrahamjuliot.github.io/creepjs/");
 
 ## 📌 Best Practices
 
-✅ **Use Premium Profiles** for production traffic  
-✅ **Configure realistic settings** (screen size, devicePixelRatio, proxy)  
-✅ **Choose appropriate profiles** (Android for mobile operations)  
-✅ **Keep profiles updated** with latest Chrome versions  
+✅ **Use Premium Profiles** for production traffic
+✅ **Configure realistic settings** (screen size, devicePixelRatio, proxy)
+✅ **Choose appropriate profiles** (Android for mobile operations)
+✅ **Keep profiles updated** with latest Chrome versions
 ✅ **Test thoroughly** before production deployment

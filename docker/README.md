@@ -1,8 +1,12 @@
 # Docker Deployment
 
-> 🔥 Spin up BotBrowser quickly with Docker.
+**For Academic and Authorized Testing Environments**
 
-This guide explains how to deploy BotBrowser using Docker and Docker Compose.
+> 🔥 Deploy BotBrowser with Docker for controlled testing environments.
+
+This guide explains how to deploy BotBrowser using Docker and Docker Compose for authorized testing and academic environments.
+
+⚠️ **Usage Policy:** This Docker deployment is designed for academic study, security analysis, and authorized testing environments only. Use in compliance with institutional policies and applicable laws.
 
 ---
 
@@ -83,6 +87,8 @@ docker-compose logs -f botbrowser
 
 ### Automation Scripts
 
+⚠️ **Integration examples with Playwright and Puppeteer are for academic automation only. Unauthorized scraping or production misuse is prohibited.**
+
 **Playwright**
 
 ```javascript
@@ -106,6 +112,8 @@ const puppeteer = require('puppeteer');
   // ...
 })();
 ```
+
+**These scripts are not intended for bulk data collection and must only be run in test setups where you have explicit authorization.**
 
 ---
 
@@ -137,11 +145,15 @@ For other issues, see the main README or open a GitHub issue.
 
 ## Examples
 
-> ⚠️ **DISCLAIMER**
+> ⚠️ **ACADEMIC USE DISCLAIMER**
 >
-> These Docker projects are provided for **educational purposes** and to **demonstrate** the capabilities of BotBrowser. They are intended solely for **legal use cases** that comply with all applicable laws and regulations. **Any misuse**—such as violating website terms of service or engaging in unlawful activities—**is strictly prohibited.**
+> These Docker projects are provided for **academic study and authorized testing** purposes to demonstrate BotBrowser capabilities in controlled environments. They are intended solely for **authorized testing environments** that comply with all applicable laws, regulations, and institutional policies. **Any misuse**—such as violating website terms of service or engaging in unlawful activities—**is strictly prohibited.**
+
+⚠️ **These examples are provided for compatibility validation in controlled, academic test environments only. They must not be used to bypass security controls on production systems.**
+
+**These examples are research demonstrations only. The names of third-party services are referenced solely for compatibility benchmarking in controlled environments.**
 
 | Example Directory | Description                        |
 | ----------------- | ---------------------------------- |
-| **[Cloudflare](cloudflare-docker)** | Submit Cloudflare demo booking |
-| **[Wizzair](wizzair-docker)** | Scraping flight prices with Docker |
+| **[Cloudflare](cloudflare-docker)** | Reverse proxy test (Cloudflare) with Docker |
+| **[Wizzair](wizzair-docker)** | Airline website compatibility demo with Docker |

@@ -1,12 +1,16 @@
 # 📚 BotBrowser Profile Configuration Guide
 
-This guide unlocks **BotBrowser's advanced fingerprint customization system** - the most sophisticated browser identity control available. Master both authentic user profiles and dynamic CLI overrides for unparalleled stealth automation.
+**For Academic and Authorized Testing Environments**
 
-> 💡 **Revolutionary CLI-First Approach:** Use powerful [`--bot-config-*` flags](../cli-flags.md#⚙️-profile-configuration-override-flags) for instant fingerprint changes without touching encrypted profiles. Highest priority configuration system designed for enterprise automation.
+This guide provides **BotBrowser's fingerprint customization system** for controlled testing and academic environments. Learn to configure synthetic profiles and dynamic CLI overrides for authorized compatibility testing.
 
-> 🌍 **Intelligent Auto-Detection:** BotBrowser's advanced geolocation engine automatically configures timezone, locale, and languages based on your proxy IP. Override only for specialized targeting scenarios.
+⚠️ **Usage Policy:** This configuration system is designed for academic study, security analysis, and authorized testing environments only. Use in compliance with institutional policies and applicable laws.
 
-> 🔒 **Enterprise-Grade Security:** All profile data comes from real users with authentic fingerprints. Dynamic CLI overrides preserve profile integrity while enabling unlimited customization.
+> 💡 **CLI-First Configuration:** Use [`--bot-config-*` flags](../cli-flags.md#⚙️-profile-configuration-override-flags) for runtime fingerprint configuration without modifying encrypted profiles. Highest priority configuration system suitable for authorized testing environments.
+
+> 🌍 **Smart Auto-Configuration:** BotBrowser automatically configures timezone, locale, and languages based on proxy IP. Override only for specific testing scenarios.
+
+> 🔒 **Data Privacy:** All profile data uses synthetic/aggregated configurations for academic compliance. BotBrowser does not collect or distribute personal or user-identifying data. All fingerprints are synthetic/aggregated for academic compliance. Dynamic CLI overrides preserve profile integrity while enabling flexible customization.
 
 ## 📋 Table of Contents
 
@@ -51,7 +55,7 @@ chromium-browser \
 
 ## ⚠️ Important: Profile Data Integrity
 
-**Profile data comes from real users; unless you are certain about the impact of a change, do not override any fingerprint property - keeping the defaults ensures the most authentic behavior.**
+**Profile data uses synthetic/aggregated configurations; unless you are certain about the impact of a change, do not override any fingerprint property - keeping the defaults ensures the most consistent behavior for academic testing.**
 
 ## 🔧 How to Apply Configuration
 
@@ -84,8 +88,8 @@ All configurations are embedded in the `configs` field inside your profile JSON 
 | `timezone`                      | `"auto"` = IP-based; `"real"` = system timezone; any other string = custom timezone name. | `"auto"`    |
 | `location`                      | `"auto"` = IP-based; `"real"` = system (GPS); object = custom coordinates (`lat`, `lon`). | `"auto"`    |
 | `browserBrand`                  | override for `navigator.userAgentData.brands` and related UA fields. Supports "chromium", "chrome", "edge", "brave". | `"chrome"`    |
-| `injectRandomHistory`           | If `true`, BotBrowser will simulate prior navigation by injecting a random number of history entries when opening a new tab (fake `history.back()`, etc.). | `false`    |
-| `disableDebugger`               | If `true`, prevents JavaScript `debugger` statements from pausing execution, keeping flows non-interactive during automation. | `true`     |
+| `injectRandomHistory`           | Optionally injects synthetic navigation history for academic experiments in browser state testing. | `false`    |
+| `disableDebugger`               | Prevents unintended interruptions from JavaScript debugger statements during automated academic workflows. | `true`     |
 | `keyboard`                      | Choose keyboard fingerprint source: `"profile"` (emulated from profile) or `"real"` (use system keyboard). | `"profile"` |
 
 ### Proxy Settings
@@ -109,6 +113,7 @@ All configurations are embedded in the `configs` field inside your profile JSON 
 >
 > 📖 **For complete CLI flags documentation**, see [⚙️ CLI Flags Reference](../cli-flags.md)
 
+⚠️ **Proxy configurations are intended for authorized networks only. They must not be used for unauthorized data collection or abuse.**
 
 ### Window & Screen Settings
 
@@ -132,11 +137,11 @@ All configurations are embedded in the `configs` field inside your profile JSON 
 
 | Field               | Description                             | Default |
 | ------------------- | --------------------------------------- | ------- |
-| `noiseCanvas`       | Add subtle noise to Canvas fingerprint. | `true`  |
-| `noiseWebglImage`   | Add noise to WebGL image fingerprint.   | `true`  |
-| `noiseAudioContext` | Add noise to AudioContext fingerprint.  | `true`  |
-| `noiseClientRects`  | Add noise to client rects fingerprint.  | `false` |
-| `noiseTextRects`    | Add noise to TextRects fingerprint.     | `true`  |
+| `noiseCanvas`       | Introduce controlled variance to Canvas for academic fingerprint resilience testing. | `true`  |
+| `noiseWebglImage`   | Introduce controlled variance to WebGL for academic fingerprint resilience testing.   | `true`  |
+| `noiseAudioContext` | Introduce controlled variance to AudioContext for academic fingerprint resilience testing.  | `true`  |
+| `noiseClientRects`  | Introduce controlled variance to client rects for academic fingerprint resilience testing.  | `false` |
+| `noiseTextRects`    | Introduce controlled variance to TextRects for academic fingerprint resilience testing.     | `true`  |
 
 ---
 
@@ -199,28 +204,28 @@ All configurations are embedded in the `configs` field inside your profile JSON 
     // Speech voices: 'profile' = profile’s synthetic voices; 'real' = system voices
     "speechVoices": "profile",
 
-    // noiseCanvas: true adds subtle noise to Canvas fingerprint; false disables it
+    // noiseCanvas: Introduce controlled variance to Canvas for academic fingerprint resilience testing
     "noiseCanvas": true,
 
-    // noiseWebglImage: true adds noise to WebGL image fingerprint; false disables it
+    // noiseWebglImage: Introduce controlled variance to WebGL for academic fingerprint resilience testing
     "noiseWebglImage": true,
 
-    // noiseAudioContext: true adds noise to AudioContext fingerprint; false disables it
+    // noiseAudioContext: Introduce controlled variance to AudioContext for academic fingerprint resilience testing
     "noiseAudioContext": true,
 
-    // noiseClientRects: true adds noise to clientRects fingerprint; false disables it
+    // noiseClientRects: Introduce controlled variance to client rects for academic fingerprint resilience testing
     "noiseClientRects": false,
 
-    // noiseTextRects: true adds noise to TextRects fingerprint; false disables it
+    // noiseTextRects: Introduce controlled variance to TextRects for academic fingerprint resilience testing
     "noiseTextRects": true,
 
     // browserBrand: override for `navigator.userAgentData.brands` and related UA fields. Supports "chromium", "chrome", "edge", "brave"
     "browserBrand": "chrome",
 
-    // injectRandomHistory: true will simulate prior navigation by injecting a random number of history entries when opening a new tab
+    // injectRandomHistory: Optionally injects synthetic navigation history for academic experiments in browser state testing
     "injectRandomHistory": false,
 
-    // disableDebugger: true prevents JavaScript debugger statements from pausing execution, keeping flows non-interactive during automation
+    // disableDebugger: Prevents unintended interruptions from JavaScript debugger statements during automated academic workflows
     "disableDebugger": true,
 
     // keyboard: choose keyboard fingerprint source: "profile" (emulated from profile) or "real" (use system keyboard)
@@ -263,7 +268,7 @@ All configurations are embedded in the `configs` field inside your profile JSON 
 ## 📌 Important Notes
 
 ### Configuration Behavior
-- Profile data comes from real users; change only if necessary and you understand the impact.
+- Profile data uses synthetic/aggregated configurations; change only if necessary and you understand the impact.
 - All string fields support multi-purpose values: string literal (`"auto"`, `"real"`, or custom), or object schema when more parameters are needed.
 - If a field is omitted, BotBrowser uses profile defaults where appropriate.
 - CLI `--bot-config-*` flags **override** profile `configs` settings with highest priority

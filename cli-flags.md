@@ -1,10 +1,14 @@
 # 🚀 BotBrowser CLI Flags Reference
 
-This document showcases **BotBrowser's revolutionary CLI configuration system** - the most advanced fingerprint override capabilities available. These powerful flags go far beyond standard Chromium, giving you **unprecedented control** over browser fingerprints without touching profile files.
+**For Academic and Authorized Testing Environments**
+
+This document provides **BotBrowser's CLI configuration system** for authorized testing and academic environments. These flags extend standard Chromium capabilities, providing **comprehensive control** over browser fingerprints without modifying profile files.
+
+⚠️ **Usage Policy:** These configuration options are designed for academic study, security analysis, and authorized testing environments only. Use in compliance with institutional policies and applicable laws.
 
 > 🌍 **Smart Auto-Configuration:** BotBrowser automatically detects timezone, locale, and languages from your IP/proxy. Override only when needed for specific use cases.
 
-> ⚡ **Dynamic Override Power:** 20+ [`--bot-config-*` flags](#⚙️-profile-configuration-override-flags) provide real-time fingerprint control - perfect for CI/CD, multi-instance automation, and advanced stealth scenarios.
+> ⚡ **Dynamic Configuration:** 20+ [`--bot-config-*` flags](#⚙️-profile-configuration-override-flags) provide runtime fingerprint configuration - suitable for authorized testing environments, CI/CD, and multi-instance setups.
 
 ## 📋 Table of Contents
 
@@ -19,7 +23,7 @@ This document showcases **BotBrowser's revolutionary CLI configuration system** 
 ## 🎯 Core BotBrowser Flags
 
 ### `--bot-profile`
-**The foundation of BotBrowser stealth capabilities**
+**The foundation of BotBrowser compatibility features**
 
 Specifies the path to the BotBrowser profile file (.enc).
 
@@ -29,7 +33,7 @@ Specifies the path to the BotBrowser profile file (.enc).
 ```
 
 **Notes:**
-- Profile determines the browser fingerprint, OS emulation, and stealth capabilities
+- Profile determines the browser fingerprint, OS emulation, and compatibility features
 - Use profiles from [profiles directory](profiles/) or contact support for custom profiles
 - This is what makes BotBrowser different from regular Chromium
 
@@ -41,6 +45,8 @@ Specifies the path to the BotBrowser profile file (.enc).
 **BotBrowser enhancement for simplified proxy authentication**
 
 BotBrowser enhanced the standard `--proxy-server` flag to accept embedded credentials directly in the URL.
+
+⚠️ **These options are for authorized network testing environments only. They must not be used for unauthorized data collection.**
 
 ```bash
 # HTTP/HTTPS proxy with credentials
@@ -75,7 +81,7 @@ Sets custom browser window title and taskbar/dock icon label.
 
 ```bash
 --bot-title="MyBot Session 1"
---bot-title="Production Scraper"
+--bot-title="Research Session"
 ```
 
 **Features:**
@@ -94,7 +100,7 @@ Accepts a JSON string containing cookie data for startup.
 ```
 
 ### `--bot-bookmarks`
-**Pre-populate bookmarks for realistic browsing**
+**Pre-populate bookmarks for test session consistency**
 
 Accepts a JSON string containing bookmark data for startup.
 
@@ -225,7 +231,7 @@ chromium-browser \
   --user-data-dir="/tmp/instance2" &
 ```
 
-### Complete Stealth Setup with Configuration Overrides
+### Comprehensive Testing Configuration Example
 ```bash
 # All BotBrowser features combined with CLI configuration
 chromium-browser \
