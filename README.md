@@ -36,7 +36,7 @@ BotBrowser is a cross-platform research browser designed to evaluate and minimiz
 
 ## 🚀 Why Choose BotBrowser
 
-- 🎭 **High-fidelity profile simulation** - synthetic/aggregated profiles for realistic, policy-compliant testing
+- 🎭 **High-fidelity Profile Simulation** - Synthetic/aggregated profiles for realistic, policy-compliant testing
 - 🔄 **Latest Chromium Base** - Always synced to newest stable Chrome for zero fingerprint drift
 - ⚡ **Zero-Config Intelligence** - Auto-detects timezone/locale/language from IP
 - 🤖 **Advanced Programmatic Control** - [Playwright/Puppeteer integration](examples/) with CDP leak blocking
@@ -264,7 +264,7 @@ The following test demonstrations are provided strictly for **educational and re
 
 ### ⚠️ Academic Research Disclaimer
 
-These research demonstrations are provided for **security research, academic analysis, and compatibility testing** purposes only. They are intended solely for **authorized research environments** that comply with all applicable laws, regulations, and terms of service. 
+These research demonstrations are provided for **security research, academic analysis, and compatibility testing** purposes only. They are intended solely for **authorized research environments** that comply with all applicable laws, regulations, and terms of service.
 
 **Any use outside of authorized research, academic study, or security analysis is strictly prohibited.** All testing is conducted in non-production environments with proper authorization.
 
@@ -357,11 +357,11 @@ If you wish to compile your own version of Chromium with our modifications, foll
 
 ## ⚠️ ACADEMIC & RESEARCH USE DISCLAIMER
 
-**BotBrowser** is designed for **academic research, security analysis, and authorized testing environments** that comply with all applicable **laws, regulations, and institutional ethics guidelines**. 
+**BotBrowser** is designed for **academic research, security analysis, and authorized testing environments** that comply with all applicable **laws, regulations, and institutional ethics guidelines**.
 
 **Authorized Use Cases:**
 - University and institutional research projects
-- Security research in controlled environments  
+- Security research in controlled environments
 - Browser compatibility studies
 - Fingerprint consistency analysis
 - Authorized penetration testing
