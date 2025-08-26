@@ -260,17 +260,13 @@ For users who prefer a graphical interface, [BotBrowserConsole](console) provide
 
 **For Academic and Security Research Purposes Only**
 
-The following test demonstrations are provided strictly for **educational and research purposes** to validate browser compatibility and fingerprint consistency. These tests are conducted on public testing platforms and demonstration sites under controlled, authorized conditions.
-
 ### ⚠️ Academic Research Disclaimer
 
-These research demonstrations are provided for **security research, academic analysis, and compatibility testing** purposes only. They are intended solely for **authorized research environments** that comply with all applicable laws, regulations, and terms of service.
-
-**Any use outside of authorized research, academic study, or security analysis is strictly prohibited.** All testing is conducted in non-production environments with proper authorization.
+These demonstrations are provided for security research, academic analysis, and compatibility testing in authorized environments only. Any use outside of authorized research is strictly prohibited.
 
 ### 🔬 Research Methodology
 
-Our compatibility research examines how different browser fingerprinting techniques interact with various client configurations. These studies help improve web compatibility and understand fingerprint consistency across different environments.
+Our compatibility research examines browser fingerprinting techniques across different client configurations to improve web compatibility and understand fingerprint consistency.
 
 
 
@@ -327,9 +323,9 @@ The following studies examine browser compatibility across different web platfor
 | **Facebook** | FunCaptcha, reCAPTCHA    | ✔️ Consistent behavior observed |
 | **Bet365** | Generic Antibot | ✔️ Consistent behavior observed |
 
-**Research Ethics Statement:** All compatibility studies are conducted in controlled research environments using only publicly accessible testing interfaces and demonstration sites. No live production systems are accessed without explicit authorization. This research contributes to web compatibility standards and fingerprint consistency analysis.
+**Research Ethics Statement:** All studies are conducted in controlled environments using publicly accessible testing interfaces only. This research contributes to web compatibility standards and fingerprint consistency analysis.
 
-> ⚠️ **Ethical Use Policy:** This project must only be used in authorized research environments, educational institutions, or systems you own. Use against third-party services without permission is strictly prohibited and violates research ethics guidelines.
+> ⚠️ **Ethical Use Policy:** Use only in authorized research environments, educational institutions, or systems you own. Unauthorized use against third-party services is prohibited.
 
 
 ---
