@@ -113,6 +113,8 @@ All configurations are embedded in the `configs` field inside your profile JSON 
 >
 > 📖 **For complete CLI flags documentation**, see [⚙️ CLI Flags Reference](../cli-flags.md)
 
+⚠️ **Important:** When using automation frameworks (Puppeteer/Playwright), always use CLI flags like `--proxy-server` instead of framework-specific proxy options (like `page.authenticate()` or `proxy` parameter in `launch()`). This ensures BotBrowser can retrieve geo information from proxy IP for accurate timezone/locale auto-configuration.
+
 ⚠️ **Proxy configurations are intended for authorized networks only. They must not be used for unauthorized data collection or abuse.**
 
 ### Window & Screen Settings

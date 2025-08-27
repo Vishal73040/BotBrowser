@@ -70,6 +70,8 @@ For cases where you prefer separate credential parameters:
 --proxy-password="mypass"
 ```
 
+⚠️ **Important:** Use `--proxy-server` flag instead of framework-specific proxy options (like `page.authenticate()` in Puppeteer or `proxy` parameter in Playwright's `launch()`). This ensures BotBrowser can retrieve geo information from proxy IP for accurate timezone/locale auto-configuration.
+
 ---
 
 ## 🎨 BotBrowser Customization
@@ -223,7 +225,7 @@ chromium-browser \
   --bot-config-window="profile" \
   --user-data-dir="/tmp/instance1" &
 
-# Instance 2 - Edge brand with real window settings  
+# Instance 2 - Edge brand with real window settings
 chromium-browser \
   --bot-profile="./profiles/profile.enc" \
   --bot-config-browser-brand="edge" \

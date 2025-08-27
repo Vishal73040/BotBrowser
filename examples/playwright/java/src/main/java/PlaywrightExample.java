@@ -26,6 +26,11 @@ public class PlaywrightExample {
                     "--disable-blink-features=AutomationControlled",
                     "--disable-audio-output",
                     "--bot-profile=" + botProfilePath
+                    // ⚠️ PROXY CONFIGURATION:
+                    // Use --proxy-server flag instead of playwright's proxy option in launch()
+                    // This ensures BotBrowser can retrieve geo information from proxy IP for accurate timezone/locale
+                    // "--proxy-server=http://user:pass@proxy.com:8080",
+                    // "--proxy-server=socks5://user:pass@proxy.com:1080"
                 ));
 
             BrowserContext browser = playwright.chromium().launchPersistentContext(

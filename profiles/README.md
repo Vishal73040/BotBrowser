@@ -1,6 +1,6 @@
-# BotBrowser Research Profiles
+# BotBrowser Profiles
 
-**Academic Research Framework for Browser Environment Simulation**
+**Academic Framework for Browser Environment Simulation**
 
 In BotBrowser, everything starts with a profile for controlled research environments. Research consistency and compatibility depend on proper profile configuration.
 
@@ -13,9 +13,9 @@ Profiles are encrypted files that define the complete environment a browser inst
 - **Hardware emulation** (device memory, CPU architecture, screen properties)
 - **Platform simulation** (Android behavior, OS-specific features)
 
-### 🔬 Cross-Platform Research Compatibility
+### 🔬 Cross-Platform Compatibility
 
-**BotBrowser's research capability:** Profile compatibility across different host systems (Windows, macOS, Android, Ubuntu) for comparative analysis.
+**BotBrowser's capability:** Profile compatibility across different host systems (Windows, macOS, Android, Ubuntu) for comparative analysis.
 
 By using profiles, BotBrowser launches controlled sessions that simulate consistent device behavior across different operating systems for academic research and compatibility testing.
 
@@ -103,6 +103,9 @@ const browser = await chromium.launch({
   executablePath: BOTBROWSER_EXEC_PATH,
   args: [
     `--bot-profile=${BOT_PROFILE_PATH}`,
+    // ⚠️ PROXY CONFIGURATION:
+    // Use --proxy-server flag instead of framework-specific proxy options
+    // This ensures BotBrowser can retrieve geo information for accurate timezone/locale
     '--proxy-server="socks5://usr:pwd@127.0.0.1:8989"',
   ],
 });
@@ -117,6 +120,8 @@ await page.addInitScript(() => {
 
 await page.goto("https://abrahamjuliot.github.io/creepjs/");
 ```
+
+⚠️ **Important:** When using automation frameworks (Puppeteer/Playwright), always use the `--proxy-server` flag instead of framework-specific proxy options (like `page.authenticate()` or `proxy` parameter in `launch()`). This ensures BotBrowser can retrieve geo information from proxy IP for accurate timezone/locale auto-configuration.
 
 
 ---
@@ -160,21 +165,21 @@ await page.goto("https://abrahamjuliot.github.io/creepjs/");
 
 ⚠️ **All features are intended for compatibility testing and academic research only, not for use in production against third-party services.**
 
-- [x] **Provides compatibility in incognito-mode research environments**
+- [x] **Provides compatibility in incognito-mode environments**
 - [x] **CDP artifact minimization** — native CDP fingerprint consistency
-- [x] **Custom page history** — enhance browsing pattern realism for research
+- [x] **Custom page history** — enhance browsing pattern realism
 - [x] **Keep pages active** even when they lose focus
 - [x] **Set proxy (host, username, password) directly via profile**
 - [x] **Set language and timezone** based on proxy or manually
 - [x] **WebRTC configuration control**
-- [x] **Canvas / WebGL noise injection** for research consistency
+- [x] **Canvas / WebGL noise injection** for consistency
 - [x] **Audio fingerprinting variation**
 - [x] **Control scroll bar width**
-- [x] **Supports CDM compatibility research** (no proprietary modules distributed)
+- [x] **Supports CDM compatibility** (no proprietary modules distributed)
 - [x] **Customizable remote-debugging-address** (bind to 0.0.0.0)
 - [x] **Full window/screen size control via profile**
-- [x] **Advanced matchMedia simulation** for CSS feature research
-- [x] **Android behavior simulation** for mobile compatibility research
+- [x] **Advanced matchMedia simulation** for CSS feature compatibility
+- [x] **Android behavior simulation** for mobile compatibility
 - [x] **Precision GPU and WebGL parameter configuration**
 
 ---

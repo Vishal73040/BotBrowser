@@ -25,6 +25,11 @@ async def main():
                 "--disable-blink-features=AutomationControlled",
                 "--disable-audio-output",
                 f"--bot-profile={BOT_PROFILE_PATH}",
+                # ⚠️ PROXY CONFIGURATION:
+                # Use --proxy-server flag instead of playwright's proxy parameter in launch()
+                # This ensures BotBrowser can retrieve geo information from proxy IP for accurate timezone/locale
+                # "--proxy-server=http://user:pass@proxy.com:8080",
+                # "--proxy-server=socks5://user:pass@proxy.com:1080",
             ],
         )
         page = await browser.new_page()

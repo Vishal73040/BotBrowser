@@ -18,6 +18,11 @@ const browser = await puppeteer.launch({
     "--disable-blink-features=AutomationControlled",
     "--disable-audio-output",
     `--bot-profile=${BOT_PROFILE_PATH}`,
+    // ⚠️ PROXY CONFIGURATION:
+    // Use --proxy-server flag instead of page.authenticate() or puppeteer proxy options
+    // This ensures BotBrowser can retrieve geo information from proxy IP for accurate timezone/locale
+    // '--proxy-server=http://user:pass@proxy.com:8080',
+    // '--proxy-server=socks5://user:pass@proxy.com:1080',
   ],
 });
 

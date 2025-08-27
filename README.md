@@ -1,6 +1,6 @@
 <h1 align="center">🤖 BotBrowser</h1>
 
-<h4 align="center">Cross-Platform Research Browser for Fingerprint Consistency Testing 🚀</h4>
+<h4 align="center">Cross-Platform Browser for Fingerprint Consistency Testing 🚀</h4>
 
 <p align="center">
   <a href="https://github.com/botswin/BotBrowser/releases">
@@ -30,7 +30,7 @@
 
 ## What is BotBrowser?
 
-BotBrowser is a cross-platform research browser designed to evaluate and minimize automation artifacts compared to [CDP](https://chromedevtools.github.io/devtools-protocol/)-based tools, supporting authorized testing and compatibility analysis.
+BotBrowser is a cross-platform browser designed to evaluate and minimize automation artifacts compared to [CDP](https://chromedevtools.github.io/devtools-protocol/)-based tools, supporting authorized testing and compatibility analysis.
 
 ---
 
@@ -47,7 +47,7 @@ BotBrowser is a cross-platform research browser designed to evaluate and minimiz
 Automatic touch simulation, device metrics, and consistent fingerprint rendering - **minimal artifacts in headless mode**.
 
 **Desktop → Android Test Results:**
-- [▶️ CreepJS Test](//botswin.github.io/BotBrowser/video_player/index.html?video=antibots-creepjs-creepjs-Android) - Desktop research simulation of Android fingerprint
+- [▶️ CreepJS Test](//botswin.github.io/BotBrowser/video_player/index.html?video=antibots-creepjs-creepjs-Android) - Desktop simulation of Android fingerprint
 - [▶️ Iphey Test](//botswin.github.io/BotBrowser/video_player/index.html?video=antibots-iphey-iphey-Android) - Complete mobile device simulation
 - [▶️ Pixelscan Test](//botswin.github.io/BotBrowser/video_player/index.html?video=antibots-pixelscan-pixelscan-Android) - Cross-platform compatibility demonstration
 
@@ -59,7 +59,7 @@ Automatic touch simulation, device metrics, and consistent fingerprint rendering
 - [x] **Advanced Proxy Authentication** - Embed username:password directly in proxy URLs (http://user:pass@proxy.com:8080)
 
 ### 🎭 Automation Artifact Research
-- [x] **Multi-Layer Noise Injection** - Canvas, WebGL, Audio, TextMetrics with stabilized algorithms for research consistency
+- [x] **Multi-Layer Noise Injection** - Canvas, WebGL, Audio, TextMetrics with stabilized algorithms to ensure consistency
 - [x] **Headless & Incognito Compatibility** - Consistent behavior across browser modes with GPU simulation
 - [x] **WebRTC Leak Protection** - Complete IPv4/IPv6 SDP spoofing, candidate manipulation
 - [x] **Chrome Behavior Emulation** - Google `X-Browser-*` headers, Widevine CDM, Chrome-specific APIs
@@ -190,6 +190,7 @@ await page.goto("https://abrahamjuliot.github.io/creepjs/");
 **Important Notes:**
 - Use `--user-data-dir` with a unique temporary folder to avoid conflicts with running Chromium instances
 - Use `--proxy-server` to connect to proxy servers, supported protocols: HTTP, HTTPS, SOCKS5
+- ⚠️ **Proxy Configuration:** When using automation frameworks, always use `--proxy-server` flag instead of framework-specific proxy options (like `page.authenticate()` or `proxy` parameter in `launch()`). This ensures BotBrowser can retrieve geo information for accurate timezone/locale auto-configuration
 
 > 📖 **For a complete list of BotBrowser-specific CLI flags**, see [⚙️ CLI Flags Reference](cli-flags.md)
 
@@ -258,8 +259,6 @@ For users who prefer a graphical interface, [BotBrowserConsole](console) provide
 
 ## 🎯 Research Validation
 
-**For Academic and Security Research Purposes Only**
-
 ### ⚠️ Academic Research Disclaimer
 
 These demonstrations are provided for security research, academic analysis, and compatibility testing in authorized environments only. Any use outside of authorized research is strictly prohibited.
@@ -306,24 +305,22 @@ Our compatibility research examines browser fingerprinting techniques across dif
 
 ### 🔬 Browser Compatibility Research
 
-⚠️ **Results are shown for controlled research benchmarking only. They must not be interpreted as bypass instructions for production systems.**
+⚠️ **Results are shown for controlled benchmarking purposes only. They must not be interpreted as bypass instructions for production systems.**
 
 The following studies examine browser compatibility across different web platforms for academic analysis:
 
 | Research Target | Compatibility Study | Analysis Results |
 |------------------|-------------------|--------------|
-| **[Nike](tests/tests/websites/nike.spec.ts)** | F5 Shape Security | ✔️ Consistent behavior observed  [▶️ Analysis Video](//botswin.github.io/BotBrowser/video_player/index.html?video=websites-nike-checkout)  |
-| **[Instagram](tests/tests/websites/instagram.spec.ts)** | Generic Antibot | ✔️ Consistent behavior observed  [▶️ Analysis Video](//botswin.github.io/BotBrowser/video_player/index.html?video=websites-instagram-signup)  |
-| **[TikTok](tests/tests/websites/tiktok.spec.ts)** | TiktokVM | ✔️ Consistent behavior observed [▶️ Analysis Video](//botswin.github.io/BotBrowser/video_player/index.html?video=websites-tiktok-signup) |
-| **[Walmart](tests/tests/websites/walmart.spec.ts)** | PerimeterX | ✔️ Consistent behavior observed [▶️ Analysis Video](//botswin.github.io/BotBrowser/video_player/index.html?video=websites-walmart-walmart) |
-| **[Temu](tests/tests/websites/temu.spec.ts)** | F5 Shape Security | ✔️ Consistent behavior observed [▶️ Analysis Video](//botswin.github.io/BotBrowser/video_player/index.html?video=websites-temu-temu) |
+| **[Nike](tests/tests/websites/nike.spec.ts)** | F5 Shape Security | ✔️ Consistent behavior observed  [▶️ Video](//botswin.github.io/BotBrowser/video_player/index.html?video=websites-nike-checkout)  |
+| **[Instagram](tests/tests/websites/instagram.spec.ts)** | Generic Antibot | ✔️ Consistent behavior observed  [▶️ Video](//botswin.github.io/BotBrowser/video_player/index.html?video=websites-instagram-signup)  |
+| **[TikTok](tests/tests/websites/tiktok.spec.ts)** | TiktokVM | ✔️ Consistent behavior observed [▶️ Video](//botswin.github.io/BotBrowser/video_player/index.html?video=websites-tiktok-signup) |
+| **[Walmart](tests/tests/websites/walmart.spec.ts)** | PerimeterX | ✔️ Consistent behavior observed [▶️ Video](//botswin.github.io/BotBrowser/video_player/index.html?video=websites-walmart-walmart) |
+| **[Temu](tests/tests/websites/temu.spec.ts)** | F5 Shape Security | ✔️ Consistent behavior observed [▶️ Video](//botswin.github.io/BotBrowser/video_player/index.html?video=websites-temu-temu) |
 | **LinkedIn** | Generic Antibot | ✔️ Consistent behavior observed |
-| **[TicketMaster](tests/tests/websites/ticketmaster.spec.ts)** | PerimeterX, FingerprintJS, reCAPTCHA | ✔️ Consistent behavior observed  [▶️ Analysis Video](//botswin.github.io/BotBrowser/video_player/index.html?video=websites-ticketmaster-checkout) |
+| **[TicketMaster](tests/tests/websites/ticketmaster.spec.ts)** | PerimeterX, FingerprintJS, reCAPTCHA | ✔️ Consistent behavior observed  [▶️ Video](//botswin.github.io/BotBrowser/video_player/index.html?video=websites-ticketmaster-checkout) |
 | **Shein** | F5 Shape Security, FingerprintJS, Forter | ✔️ Consistent behavior observed |
 | **Facebook** | FunCaptcha, reCAPTCHA    | ✔️ Consistent behavior observed |
 | **Bet365** | Generic Antibot | ✔️ Consistent behavior observed |
-
-**Research Ethics Statement:** All studies are conducted in controlled environments using publicly accessible testing interfaces only. This research contributes to web compatibility standards and fingerprint consistency analysis.
 
 > ⚠️ **Ethical Use Policy:** Use only in authorized research environments, educational institutions, or systems you own. Unauthorized use against third-party services is prohibited.
 
