@@ -149,6 +149,7 @@ The following `--bot-config-*` flags correspond directly to profile `configs` pr
 --bot-config-webgpu=profile                   # WebGPU: profile (use profile), real (system), disabled (off)
 --bot-config-webrtc=profile                   # WebRTC: profile (use profile), real (native), disabled (off)
 --bot-config-window=profile                   # Window dimensions: profile (use profile), real (system window)
+--bot-config-media-types=profile                # Media types: profile, real, expand (allow expanding via local decoders)
 ```
 
 ### Key Benefits of CLI Configuration Flags

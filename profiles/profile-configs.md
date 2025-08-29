@@ -92,6 +92,7 @@ All configurations are embedded in the `configs` field inside your profile JSON 
 | `injectRandomHistory`           | Optionally injects synthetic navigation history for academic experiments in browser state testing. | `false`    |
 | `disableDebugger`               | Prevents unintended interruptions from JavaScript debugger statements during automated academic workflows. | `true`     |
 | `keyboard`                      | Choose keyboard fingerprint source: `"profile"` (emulated from profile) or `"real"` (use system keyboard). | `"profile"` |
+| `mediaTypes`                    | Media types behavior: `"profile"` (use profile settings), `"real"` (native system), `"expand"` (allow expanding via local decoders). | `"profile"` |
 
 ### Proxy Settings
 

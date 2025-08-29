@@ -54,7 +54,7 @@ Automatic touch simulation, device metrics, and consistent fingerprint rendering
 ## 🛠️ Advanced Capabilities
 
 ### 🔧 Configuration & Control
-- [x] **Advanced CLI Configuration** - [`20+ --bot-config-*` flags](cli-flags.md#⚙️-profile-configuration-override-flags) override key fingerprint properties at startup
+- [x] **Advanced CLI Configuration** - [`21+ --bot-config-*` flags](cli-flags.md#⚙️-profile-configuration-override-flags) override key fingerprint properties at startup
 - [x] **Session Management** - Custom `--bot-title`, `--bot-cookies`, `--bot-bookmarks` with toolbar labels
 - [x] **Advanced Proxy Authentication** - Embed username:password directly in proxy URLs (http://user:pass@proxy.com:8080)
 
@@ -72,6 +72,9 @@ Automatic touch simulation, device metrics, and consistent fingerprint rendering
 - [x] **Hardware Fingerprint Control** - CPU architecture, screen metrics, device pixel ratios, authentic device behavior
 
 ### ⚡ Deep System Integration
+- [x] **Precise FPS Simulation** - Emulate target refresh rate & input latency (e.g., simulate 120 FPS macOS on Ubuntu)
+- [x] **Performance Fingerprint Controls** - Fine-grained tuning of memory allocation timing, IndexedDB access latency, requestAnimationFrame delay
+- [x] **Extended Media Types & WebCodecs APIs** - Broader mediaTypes coverage, mediaCapabilities, videoDecoderSupport, audioDecoderSupport
 - [x] **GPU Driver Micro-Benchmarks** - Precision timing emulation, vendor-specific behavior patterns, authentic computation curves
 - [x] **Advanced Text Rendering** - HarfBuzz text shaping, Skia anti-aliasing integration, multi-language support (CJK/RTL/emoji)
 - [x] **Dynamic Blink Features** - Runtime OS-based feature loading (Windows/macOS/Android)
@@ -83,9 +86,10 @@ Automatic touch simulation, device metrics, and consistent fingerprint rendering
 | **Browser & OS** | Version, userAgentData, brands, full version override, debugger disabling, CDP leak blocking, Windows/macOS/Android emulation, built-in cross-platform fonts, Blink features |
 | **Location & Time** | Timezone, geolocation |
 | **Display & UI** | Screen properties, window dimensions, matchMedia, UI/system colors |
-| **Input & Navigation** | Keyboard layouts (profile/real), touch simulation, mouse patterns, languages, plugins, permissions, battery, MimeTypes |
-| **Graphics & Rendering** | Canvas/WebGL/WebGPU noise, precision GPU micro-benchmarks, driver-specific behavior emulation, HarfBuzz text shaping, cross-platform fonts/emojis, TextMetrics noise, client/text rects, emoji rendering, Unicode |
-| **Network & Media** | Proxy auth, WebRTC SDP manipulation, Google headers, connection spoofing, MediaDevices, AudioContext, speech voices, speech synthesis, codec emulation |
+| **Input & Navigation** | Keyboard layouts, touch simulation, mouse patterns, languages, plugins, permissions, battery, MimeTypes |
+| **Graphics & Rendering** | Canvas/WebGL/WebGPU noise, precision GPU micro-benchmarks, driver-specific behavior emulation, HarfBuzz text shaping, cross-platform fonts/emojis, cross-worker font consistency, TextMetrics noise, client/text rects, emoji rendering, Unicode, precise FPS simulation, textureHashes spoofing |
+| **Network & Media** | Proxy auth, WebRTC SDP manipulation, Google headers, connection spoofing, MediaDevices, AudioContext, speech voices, speech synthesis, codec emulation, extended media types, WebCodecs APIs |
+| **Performance** | Fine-grained performance fingerprint controls, memory allocation timing, IndexedDB access latency, requestAnimationFrame delay |
 
 
 
