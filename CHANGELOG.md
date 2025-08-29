@@ -8,6 +8,68 @@ This software and its documented capabilities are provided for **academic study 
 
 ⚠️ **This software is for compatibility validation in controlled, academic test environments only. It must not be used to bypass security controls on production systems.**
 
+
+
+## [2025-08-29]
+
+### Major Update
+- **Chromium 139.0.7258.156**
+  Synced BotBrowser to the latest stable Chrome build for feature parity, current security patches, and minimized fingerprint drift.
+
+### Added
+- **Extended Media Types**
+  Added broader `mediaTypes` coverage (e.g., `video/mp4;codecs="avc1.42C028"`) so capability checks reflect real browsers.
+  *Improves MSE/EME and HTML5 playback compatibility.*
+
+- **CLI: `--bot-config-media-types`**
+  New override flag with modes: `profile`, `real`, and `expand` (allow expanding via local decoders). Fixes **#60**.
+  *Lets you choose conservative profile-only behavior, native system reporting, or an expanded set when OS codecs are available.*
+
+- **Performance Fingerprint Controls**
+  Fine-grained tuning of performance surfaces (e.g., memory allocation timing, IndexedDB access latency, `requestAnimationFrame` delay).
+  *Matches target host characteristics to resist high-sensitivity behavioral checks.*
+
+- **Precise FPS Simulation**
+  Emulate target refresh rate & input latency (e.g., simulate **120 FPS macOS** on Ubuntu).
+  *Aligns rendering cadence and user input timing with the profiled device.*
+
+- **GPUAdapter `textureHashes`**
+  Added spoofing for `textureHashes` to strengthen GPU identity simulation.
+  *Reduces GPU-surface inconsistencies across contexts.*
+
+- **New Fingerprint APIs**
+  Implemented `mediaCapabilities`, `videoDecoderSupport`, `audioDecoderSupport` and other WebCodecs-related capability signals.
+  *Prevents easy capability-based bot detection.*
+
+- **Faster Proxy IP Detection (Endpoint Race)**
+  Parallel fetch to:
+  `https://api64.ipify.org`, `https://ifconfig.me/ip`, `https://ident.me`, `https://icanhazip.com`, `https://checkip.amazonaws.com`, `https://ipecho.net/plain`.
+  *Returns the first successful response to speed up network initialization.*
+
+### Changed
+- **Caches Off by Default**
+  Disabled **GPU program cache** and **disk cache** by default.
+  *Reduces persistent artifacts and cross-session correlation risk.*
+
+### Improved
+- **Ubuntu Cross-Worker Font Consistency**
+  Workers (`Worker`/`SharedWorker`/`ServiceWorker`) now mirror the main thread's font defaults so emoji and special glyphs match.
+  *Fixes CreepJS workers test (consistent canvas hashes across threads).*
+  Test: https://abrahamjuliot.github.io/creepjs/tests/workers.html
+
+### Fixed
+- **Profile-Induced Crash (Access Violation)**
+  Resolved rare crashes caused by specific profiles.
+  *Improves stability when loading edge-case profiles.*
+
+- **Windows `--bot-title` Dock Label**
+  The custom title now also applies to the Windows taskbar/dock icon.
+  *Parses and displays the label consistently across OSes.*
+
+- **HTTP Proxy with VPN (TUN Mode)**
+  Fixed cases where HTTP proxying failed when a VPN in TUN mode was active.
+  *Restores connectivity in mixed-network setups.*
+
 ---
 
 ## [2025-08-22]
@@ -246,7 +308,7 @@ Refined per‑OS rendering differences (fonts, CSS, anti‑aliasing, text sizing
     // Browser locale (auto = derived from proxy IP and language settings)
     "locale": "auto",
 
-    // Accept-Language header values (auto = IP-based detection)  
+    // Accept-Language header values (auto = IP-based detection)
     "languages": "auto",
 
     // Color scheme: 'light' or 'dark'

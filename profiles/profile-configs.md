@@ -36,10 +36,10 @@ BotBrowser uses a three-tier priority system for configuration:
 
 ### 💡 Why CLI Flags Are Recommended
 
-**✅ Highest Priority:** Always takes precedence over profile settings
-**✅ No Profile Editing:** Avoid modifying complex encrypted profile files
-**✅ Dynamic Configuration:** Perfect for automation and different environments
-**✅ Session Isolation:** Different settings per browser instance without conflicts
+- **✅ Highest Priority:** Always takes precedence over profile settings
+- **✅ No Profile Editing:** Avoid modifying complex encrypted profile files
+- **✅ Dynamic Configuration:** Perfect for automation and different environments
+- **✅ Session Isolation:** Different settings per browser instance without conflicts
 
 **Example:**
 ```bash
@@ -66,6 +66,7 @@ All configurations are embedded in the `configs` field inside your profile JSON 
 > 💡 **Important:** BotBrowser only accepts profile input as a file. Shell command piping (e.g., `--bot-profile=<(echo '{"x": 1}')`) is **not supported** due to CLI argument length and file descriptor limitations.
 
 **✅ Best Practice:**
+
 1. Build your profile JSON dynamically in your code
 2. Write it to a temporary file (e.g., `/tmp/myprofile.json`)
 3. Pass the path to `--bot-profile`

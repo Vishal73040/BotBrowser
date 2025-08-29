@@ -198,8 +198,8 @@ await page.goto("https://abrahamjuliot.github.io/creepjs/");
 
 ## 📌 Best Practices
 
-✅ **Use Premium Profiles** for production traffic
-✅ **Configure realistic settings** (screen size, devicePixelRatio, proxy)
-✅ **Choose appropriate profiles** (Android for mobile operations)
-✅ **Keep profiles updated** with latest Chrome versions
-✅ **Test thoroughly** before production deployment
+- ✅ **Use Premium Profiles** for production traffic
+- ✅ **Configure realistic settings** (screen size, devicePixelRatio, proxy)
+- ✅ **Choose appropriate profiles** (Android for mobile operations)
+- ✅ **Keep profiles updated** with latest Chrome versions
+- ✅ **Test thoroughly** before production deployment
