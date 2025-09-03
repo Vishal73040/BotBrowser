@@ -110,6 +110,25 @@ Accepts a JSON string containing bookmark data for startup.
 --bot-bookmarks='[{"name":"Example","url":"https://example.com","folder":"Work"}]'
 ```
 
+### `--bot-script`  
+**Framework-less automation with privileged JavaScript context**
+
+Execute a JavaScript file right after BotBrowser starts in a privileged, non-extension context where `chrome.debugger` is available.
+
+```bash
+--bot-script="/path/to/automation.js"
+```
+
+**Key Features:**
+- **No framework dependencies** - Pure Chrome DevTools Protocol access
+- **Earlier intervention** - Execute before page navigation
+- **Privileged context** - Full `chrome.debugger` API access  
+- **Reduced detection surface** - No Playwright/Puppeteer artifacts
+
+📖 **Documentation:** Chrome `chrome.debugger` API - <https://developer.chrome.com/docs/extensions/reference/api/debugger/>
+
+📖 **Examples:** [Bot Script Automation](examples/bot-script)
+
 ---
 
 ## ⚙️ Profile Configuration Override Flags

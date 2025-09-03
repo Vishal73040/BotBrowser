@@ -67,7 +67,7 @@ Automatic touch simulation, device metrics, and consistent fingerprint rendering
 > **This project does not distribute proprietary modules (e.g., Widevine).** Any playback components must be obtained via official channels by the end user.
 
 ### 📱 Device & Platform Emulation
-- [x] **Cross-Platform Font Engine** - Built-in Windows/macOS/Android fonts and emojis, authentic rendering on any host system
+- [x] **Cross-Platform Font Engine** - Built-in Windows/macOS/Android fonts, emojis, accurate CJK/rare symbol fallback chains with cross-worker consistency
 - [x] **Cross-Platform Consistency** - Eliminates platform-specific rendering differences, perfect emulation across Windows/macOS/Linux hosts
 - [x] **Hardware Fingerprint Control** - CPU architecture, screen metrics, device pixel ratios, authentic device behavior
 
@@ -198,7 +198,23 @@ await page.goto("https://abrahamjuliot.github.io/creepjs/");
 
 > 📖 **For a complete list of BotBrowser-specific CLI flags**, see [⚙️ CLI Flags Reference](cli-flags.md)
 
-#### 3. 🐳 Docker Deployment
+#### 3. Framework-less Automation with `--bot-script`
+
+**Native BotBrowser automation** using privileged JavaScript context with `chrome.debugger` API access:
+
+```bash
+./chrome.exe --no-sandbox --bot-profile="profile.enc" --bot-script="automation.js"
+```
+
+**Key advantages:**
+- **No framework dependencies** - Pure Chrome DevTools Protocol
+- **Earlier intervention** - Execute before page navigation
+- **Privileged context** - Full `chrome.debugger` API access
+- **Reduced detection surface** - No Playwright/Puppeteer artifacts
+
+📖 **Examples:** [Bot Script Automation](examples/bot-script)
+
+#### 4. 🐳 Docker Deployment
 
 For containerized deployment, see [docker/README.md](docker/) for complete setup guide.
 

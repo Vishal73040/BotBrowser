@@ -9,6 +9,26 @@ This software and its documented capabilities are provided for **academic study 
 ⚠️ **This software is for compatibility validation in controlled, academic test environments only. It must not be used to bypass security controls on production systems.**
 
 
+## [2025-09-02]
+
+### Major Feature
+- **Framework‑less Automation — `--bot-script`**
+  - Execute a JavaScript file **right after BotBrowser starts** in a privileged, non‑extension context where **`chrome.debugger`** is available.
+  - Build automation **without Playwright/Puppeteer** while still driving CDP via `chrome.debugger` — reducing framework/CDP leak surface and giving **pre‑navigation control**.
+  - **Docs:** Chrome `chrome.debugger` — <https://developer.chrome.com/docs/extensions/reference/api/debugger/>
+  - **Usage:** `botbrowser --bot-profile=/path/profile.enc --bot-script=/path/boot.js`
+  - **Examples:** [Bot Script Automation](examples/bot-script) (includes Cloudflare Turnstile automation)
+
+### Improved
+- **Embedded System Fonts (Cross‑OS)**
+  - Bundled **more accurate system fonts** into resources so BotBrowser can emulate Windows/macOS/Linux text rendering with higher fidelity (wider glyph coverage, more consistent shaping/kerning).
+
+- **Font Fallback Robustness (incl. Emoji)**
+  - Tuned fallback chains so missing glyphs (emoji, CJK, rare symbols) resolve to the **same fonts a real device would use**.
+  - Stabilizes **TextMetrics/Canvas** values and line‑breaking; strengthens resistance to **emoji/font‑based checks (e.g., hCaptcha)**.
+  - **Workers parity:** Worker/SharedWorker/ServiceWorker now mirror the main thread’s fallback behavior to avoid cross‑thread hash mismatches.
+
+---
 
 ## [2025-08-29]
 
