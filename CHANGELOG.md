@@ -131,7 +131,7 @@ New `--bot-config-*` flags override corresponding `configs` fields at runtime, e
 ```
 
 **Benefits:** Highest priority (overrides profiles) · No JSON editing · Dynamic per-run configuration · Clean session isolation.
-See **`cli-flags.md`** for details.
+See **`CLI_FLAGS.md`** for details.
 
 ### Added
 - **Android touch simulation**
@@ -471,7 +471,7 @@ Refined per‑OS rendering differences (fonts, CSS, anti‑aliasing, text sizing
 ### Added
 - **Auto Timezone via IP Lookup**
   - Introduced built-in IP geolocation detection based on proxy exit IP, allowing automatic adjustment of timezone and location.
-  - Controlled via the `configs.autoTimezone` flag (enabled by default). See [profile-configs.md](https://github.com/botswin/BotBrowser/blob/main/profiles/profile-configs.md) for details.
+  - Controlled via the `configs.autoTimezone` flag (enabled by default). See [PROFILE_CONFIGS.md](https://github.com/botswin/BotBrowser/blob/main/profiles/PROFILE_CONFIGS.md) for details.
 
 - **Theme Control via `configs.colorScheme`**
   - Users can now specify browser color scheme (`dark` or `light`) through profile configuration. If omitted, the profile's native scheme is used.

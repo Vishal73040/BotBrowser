@@ -90,7 +90,7 @@ npx playwright show-report
 ## 📚 Academic Resources
 
 - [Playwright Documentation](https://playwright.dev/docs/writing-tests)
-- [BotBrowser Profile Configs](https://github.com/botswin/BotBrowser/blob/main/profiles/profile-configs.md)
+- [BotBrowser Profile Configs](https://github.com/botswin/BotBrowser/blob/main/profiles/PROFILE_CONFIGS.md)
 - [Test Results & Reports](./test-results/)
 - [ACM Code of Ethics](https://www.acm.org/code-of-ethics)
 

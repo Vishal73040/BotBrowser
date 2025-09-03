@@ -107,10 +107,10 @@ Accepts a JSON string containing cookie data for startup.
 Accepts a JSON string containing bookmark data for startup.
 
 ```bash
---bot-bookmarks='[{"name":"Example","url":"https://example.com","folder":"Work"}]'
+--bot-bookmarks='[{"title":"Example","type":"url","url":"https://example.com"},{"title":"Folder","type":"folder","children":[{"title":"Example","type":"url","url":"https://example.com"}]}]'
 ```
 
-### `--bot-script`  
+### `--bot-script`
 **Framework-less automation with privileged JavaScript context**
 
 Execute a JavaScript file right after BotBrowser starts in a privileged, non-extension context where `chrome.debugger` is available.
@@ -122,7 +122,7 @@ Execute a JavaScript file right after BotBrowser starts in a privileged, non-ext
 **Key Features:**
 - **No framework dependencies** - Pure Chrome DevTools Protocol access
 - **Earlier intervention** - Execute before page navigation
-- **Privileged context** - Full `chrome.debugger` API access  
+- **Privileged context** - Full `chrome.debugger` API access
 - **Reduced detection surface** - No Playwright/Puppeteer artifacts
 
 📖 **Documentation:** Chrome `chrome.debugger` API - <https://developer.chrome.com/docs/extensions/reference/api/debugger/>
@@ -168,7 +168,7 @@ The following `--bot-config-*` flags correspond directly to profile `configs` pr
 --bot-config-webgpu=profile                   # WebGPU: profile (use profile), real (system), disabled (off)
 --bot-config-webrtc=profile                   # WebRTC: profile (use profile), real (native), disabled (off)
 --bot-config-window=profile                   # Window dimensions: profile (use profile), real (system window)
---bot-config-media-types=profile                # Media types: profile, real, expand (allow expanding via local decoders)
+--bot-config-media-types=profile              # Media types: profile, real, expand (allow expanding via local decoders)
 ```
 
 ### Key Benefits of CLI Configuration Flags
@@ -206,7 +206,7 @@ chromium-browser \
   --bot-profile="./profiles/profile1.enc" \
   --bot-title="Account 1" \
   --bot-cookies='[{"name":"sessionid","value":"abc123","domain":".example.com"}]' \
-  --bot-bookmarks='[{"name":"Work Site","url":"https://work.com"}]' \
+  --bot-bookmarks='[{"title":"Work Site","url":"https://work.com","type":"url"}]' \
   --user-data-dir="/tmp/bot1" &
 
 # Instance 2 with different profile
@@ -262,7 +262,6 @@ chromium-browser \
   --bot-profile="./profiles/chrome139_win11_x64.enc" \
   --bot-title="Production Bot" \
   --bot-cookies='[{"name":"auth","value":"token123","domain":".site.com"}]' \
-  --bot-bookmarks='[{"name":"Home","url":"https://example.com"}]' \
   --proxy-server="http://user:pass@proxy.example.com:8080" \
   --bot-config-browser-brand="chrome" \
   --bot-config-timezone="auto" \
@@ -277,7 +276,7 @@ chromium-browser \
 
 ## 🔗 Related Documentation
 
-- [📚 Profile Configuration Guide](profiles/profile-configs.md) - Configure browser behavior via profiles
+- [📚 Profile Configuration Guide](profiles/PROFILE_CONFIGS.md) - Configure browser behavior via profiles
 - [📖 Main README](README.md) - General usage and standard Chromium flags
 - [🎭 Examples](examples/) - Playwright and Puppeteer integration examples
 - [🐳 Docker Deployment](docker/README.md) - Container deployment guides
