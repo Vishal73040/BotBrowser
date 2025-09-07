@@ -91,7 +91,7 @@ chromium --bot-profile="/absolute/path/to/chrome139_win11_x64.enc"
 - Example: BotBrowser v139 only supports v139 profiles
 - Use absolute paths if relative paths fail to load
 
-> 📖 **For all available CLI flags**, see [⚙️ CLI Flags Reference](../cli-flags.md)
+> 📖 **For all available CLI flags**, see [⚙️ CLI Flags Reference](../CLI_FLAGS.md)
 
 ### Automation Framework Integration
 
@@ -153,9 +153,9 @@ await page.goto("https://abrahamjuliot.github.io/creepjs/");
 - **💼 Session isolation**: Multiple instances with different settings
 - **🛡️ Security**: Keep sensitive data (like proxy credentials) out of profile files
 
-📖 **For complete CLI flags documentation**, see [⚙️ CLI Flags Reference](../cli-flags.md)
+📖 **For complete CLI flags documentation**, see [⚙️ CLI Flags Reference](../CLI_FLAGS.md)
 
-👉 **See [`profile-configs.md`](https://github.com/botswin/BotBrowser/blob/main/profiles/profile-configs.md) for complete configuration options.**
+👉 **See [`PROFILE_CONFIGS.md`](https://github.com/botswin/BotBrowser/blob/main/profiles/PROFILE_CONFIGS.md) for complete configuration options.**
 
 ---
 

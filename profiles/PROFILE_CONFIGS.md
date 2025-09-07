@@ -6,7 +6,7 @@ This guide provides **BotBrowser's fingerprint customization system** for contro
 
 ⚠️ **Usage Policy:** This configuration system is designed for academic study, security analysis, and authorized testing environments only. Use in compliance with institutional policies and applicable laws.
 
-> 💡 **CLI-First Configuration:** Use [`--bot-config-*` flags](../cli-flags.md#⚙️-profile-configuration-override-flags) for runtime fingerprint configuration without modifying encrypted profiles. Highest priority configuration system suitable for authorized testing environments.
+> 💡 **CLI-First Configuration:** Use [`--bot-config-*` flags](../CLI_FLAGS.md#⚙️-profile-configuration-override-flags) for runtime fingerprint configuration without modifying encrypted profiles. Highest priority configuration system suitable for authorized testing environments.
 
 > 🌍 **Smart Auto-Configuration:** BotBrowser automatically configures timezone, locale, and languages based on proxy IP. Override only for specific testing scenarios.
 
@@ -49,7 +49,7 @@ chromium-browser \
   --bot-config-browser-brand="edge"
 ```
 
-> 📖 **Complete CLI flags reference:** [CLI Flags Reference](../cli-flags.md#⚙️-profile-configuration-override-flags)
+> 📖 **Complete CLI flags reference:** [CLI Flags Reference](../CLI_FLAGS.md#⚙️-profile-configuration-override-flags)
 
 ---
 
@@ -113,7 +113,7 @@ All configurations are embedded in the `configs` field inside your profile JSON 
 > --proxy-password="password"
 > ```
 >
-> 📖 **For complete CLI flags documentation**, see [⚙️ CLI Flags Reference](../cli-flags.md)
+> 📖 **For complete CLI flags documentation**, see [⚙️ CLI Flags Reference](../CLI_FLAGS.md)
 
 ⚠️ **Important:** When using automation frameworks (Puppeteer/Playwright), always use CLI flags like `--proxy-server` instead of framework-specific proxy options (like `page.authenticate()` or `proxy` parameter in `launch()`). This ensures BotBrowser can retrieve geo information from proxy IP for accurate timezone/locale auto-configuration.
 

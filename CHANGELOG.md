@@ -9,6 +9,23 @@ This software and its documented capabilities are provided for **academic study 
 ⚠️ **This software is for compatibility validation in controlled, academic test environments only. It must not be used to bypass security controls on production systems.**
 
 
+## [2025-09-06]
+
+### Major
+- **Chromium Core Upgrade → 140**
+  Upgraded engine to Chromium **140** to maintain Chrome‑level parity and stealth consistency across APIs and anti‑bot surfaces.
+
+### Improved
+- **Slimmer Profiles (≈1.3 MB → ≈100 KB)**
+  Refactored profile packaging **without reducing fingerprint coverage**. Results: faster startup, lower I/O, and lighter memory—better for high‑QPS orchestration and containerized runs.
+
+### Fixed
+- **WebGL2 `DRAW_BUFFER*`**
+  Corrected an override that could set **`DRAW_BUFFER*`** state incorrectly during WebGL2 context creation—an issue certain sites probed for detection. Now adheres to spec/real‑device values, restoring pass rates.
+
+---
+
+
 ## [2025-09-02]
 
 ### Major Feature
