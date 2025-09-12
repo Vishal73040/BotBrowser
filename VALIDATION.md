@@ -65,6 +65,31 @@ Our research evaluates fingerprint consistency across various security technolog
 | **[BrowserScan](tests/tests/antibots/browserscan.spec.ts)** | [▶️ Test Video](//botswin.github.io/BotBrowser/video_player/index.html?video=antibots-browserscan-browserscan) |
 | **[Pixelscan](tests/tests/antibots/pixelscan.spec.ts)** | [▶️ Comprehensive Scan](//botswin.github.io/BotBrowser/video_player/index.html?video=antibots-pixelscan-pixelscan) |
 | **[Iphey](tests/tests/antibots/iphey.spec.ts)** | [▶️ Device Detection](//botswin.github.io/BotBrowser/video_player/index.html?video=antibots-iphey-iphey) |
+| **[FingerprintScan](tests/tests/antibots/fingerprintscan.spec.ts)** | [▶️ Fingerprint Scan](//botswin.github.io/BotBrowser/video_player/index.html?video=antibots-fingerprintscan-fingerprintscan) |
+| **[Brotector](tests/tests/antibots/brotector.spec.ts)** | [▶️ Automation Detection](//botswin.github.io/BotBrowser/video_player/index.html?video=antibots-brotector-brotector) |
+| **[DeviceAndBrowserInfo](tests/tests/antibots/deviceandbrowserinfo.spec.ts)** | [▶️ Device Fingerprinting](//botswin.github.io/BotBrowser/video_player/index.html?video=antibots-deviceandbrowserinfo-deviceandbrowserinfo) |
+
+### E-commerce and Popular Websites
+
+Our testing extends to major e-commerce platforms and popular websites to demonstrate real-world compatibility and bot detection evasion capabilities.
+
+| Website & Scripts | Test Results |
+|-------------------|--------------|
+| **[Temu](tests/tests/websites/temu.spec.ts)** | [▶️ Temu Shopping](//botswin.github.io/BotBrowser/video_player/index.html?video=websites-temu-temu) |
+| **[Walmart](tests/tests/websites/walmart.spec.ts)** | [▶️ Product Page](//botswin.github.io/BotBrowser/video_player/index.html?video=websites-walmart-walmart) |
+| **[Nike](tests/tests/websites/nike.spec.ts)** | [▶️ Checkout Process](//botswin.github.io/BotBrowser/video_player/index.html?video=websites-nike-checkout) |
+| **[Ticketmaster](tests/tests/websites/ticketmaster.spec.ts)** | [▶️ Ticket Checkout](//botswin.github.io/BotBrowser/video_player/index.html?video=websites-ticketmaster-checkout) |
+| **[Instagram](tests/tests/websites/instagram.spec.ts)** | [▶️ Signup Process](//botswin.github.io/BotBrowser/video_player/index.html?video=websites-instagram-signup) |
+| **[TikTok](tests/tests/websites/tiktok.spec.ts)** | [▶️ Signup Process](//botswin.github.io/BotBrowser/video_player/index.html?video=websites-tiktok-signup) |
+
+### Internal Consistency and Detection Tests
+
+These tests validate the internal consistency of browser behaviors and ensure automation artifacts are properly concealed.
+
+| Test Category & Scripts | Description |
+|-------------------------|-------------|
+| **[Suspicious Behavior Tests](tests/tests/suspicious.spec.ts)** | Validates DevTools detection prevention, PDF rendering consistency, and automation property concealment |
+| **[Cross-Context Consistency Tests](tests/tests/lied.spec.ts)** | Ensures consistent fingerprinting across iframe contexts, canvas rendering consistency between main thread and workers, hardware concurrency matching, and text metrics accuracy |
 
 ---
 
