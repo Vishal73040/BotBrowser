@@ -37,7 +37,29 @@ chrome.exe --no-sandbox --bot-profile="C:\\path\\to\\chrome139_win11_x64.enc" --
 
 ### 3. macOS Installation
 
-#### Standard Installation
+#### Quick Install (Automated)
+For the fastest installation experience, use our automated installation script:
+
+```bash
+# One-line install (downloads and runs script directly)
+curl -L https://raw.githubusercontent.com/botswin/BotBrowser/main/scripts/install_botbrowser.sh | bash
+```
+
+Or download and run locally:
+```bash
+# Clone repository and run script
+git clone https://github.com/botswin/BotBrowser.git
+cd BotBrowser
+./scripts/install_botbrowser.sh
+```
+
+The script will automatically:
+- Download the latest BotBrowser DMG
+- Mount and copy the application to `/Applications/`
+- Remove macOS quarantine attributes
+- Clean up temporary files
+
+#### Manual Installation
 1. Open the downloaded `.dmg` file
 2. Drag `Chromium.app` into your Applications folder or any desired location
 3. If you see the error:
