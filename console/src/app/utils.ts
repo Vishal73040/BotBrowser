@@ -23,7 +23,8 @@ export async function createDirectoryIfNotExists(path: string): Promise<void> {
 
 export async function getAppDataPath(subPath?: string): Promise<string> {
     const systemDataPath = await Neutralino.os.getPath('data');
-    const fullPath = [systemDataPath, AppName, subPath].filter(Boolean).join('/');
+    const pathSegments = [systemDataPath, AppName, subPath].filter((segment): segment is string => Boolean(segment));
+    const fullPath = await Neutralino.filesystem.getJoinedPath(...pathSegments);
     await createDirectoryIfNotExists(fullPath);
     return fullPath;
 }

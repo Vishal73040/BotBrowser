@@ -3,7 +3,6 @@
 import { inject, Injectable } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import * as Neutralino from '@neutralinojs/lib';
-import { cloneDeep } from 'lodash-es';
 import { AppName } from '../const';
 import { BrowserProfileStatus, getBrowserProfileStatusText, type BrowserProfile } from '../data/browser-profile';
 import { SimpleCDP } from '../simple-cdp';
@@ -70,7 +69,7 @@ export class BrowserLauncherService {
 
     async getUserDataDirPath(): Promise<string> {
         const systemDataPath = await Neutralino.os.getPath('data');
-        const result = `${systemDataPath}/${AppName}/user-data-dirs`;
+        const result = await Neutralino.filesystem.getJoinedPath(systemDataPath, AppName, 'user-data-dirs');
 
         try {
             await Neutralino.filesystem.getStats(result);
@@ -106,61 +105,17 @@ export class BrowserLauncherService {
         }
 
         if (!botProfileObject) {
-            this.#dialog.open(AlertDialogComponent, {
-                data: { message: 'Bot profile content is empty, cannot run' },
-            });
+            this.#dialog.open(AlertDialogComponent, { data: { message: 'Bot profile content is empty, cannot run' } });
             return;
         }
 
         const sysTempPath = await Neutralino.os.getPath('temp');
 
-        // Set variables
-        const variables = cloneDeep<any>(browserProfile.variableValues);
-        if (browserProfile.variablesInfo.locale) {
-            variables.locale = browserProfile.variablesInfo.locale;
-        }
-        if (browserProfile.variablesInfo.timezone) {
-            variables.timezone = browserProfile.variablesInfo.timezone;
-        }
-        if (!browserProfile.variablesInfo.noisesCanvas2d) {
-            delete variables.canvas2d;
-        }
-        if (!browserProfile.variablesInfo.noisesCanvasWebgl) {
-            delete variables.canvasWebgl;
-        }
-        if (!browserProfile.variablesInfo.noisesClientRectsFactor) {
-            delete variables.clientRectsFactor;
-        }
-        if (!browserProfile.variablesInfo.noisesTextMetricsFactor) {
-            delete variables.textMetricsFactor;
-        }
-        if (!browserProfile.variablesInfo.noisesAudio) {
-            delete variables.audio;
-        }
-        variables.disableConsoleMessage = browserProfile.variablesInfo.disableConsoleMessage ?? false;
-
-        if (browserProfile.proxyInfo?.proxyHost) {
-            const proxyConfig = {
-                server: browserProfile.proxyInfo.proxyHost,
-            } as any;
-            variables.proxy = proxyConfig;
-
-            if (browserProfile.proxyInfo.username) {
-                proxyConfig.username = browserProfile.proxyInfo.username;
-            }
-
-            if (browserProfile.proxyInfo.password) {
-                proxyConfig.password = browserProfile.proxyInfo.password;
-            }
-        }
-
-        botProfileObject.variables = variables;
-
         // Save bot profile
         const botProfileContent = JSON.stringify(botProfileObject);
-        const botProfilesBasePath = `${sysTempPath}/${AppName}/bot-profiles`;
+        const botProfilesBasePath = await Neutralino.filesystem.getJoinedPath(sysTempPath, AppName, 'bot-profiles');
         await createDirectoryIfNotExists(botProfilesBasePath);
-        const botProfilePath = `${botProfilesBasePath}/${browserProfile.id}.json`;
+        const botProfilePath = await Neutralino.filesystem.getJoinedPath(botProfilesBasePath, `${browserProfile.id}.json`);
         await Neutralino.filesystem.writeFile(botProfilePath, botProfileContent);
 
         // Save browser profile
@@ -168,22 +123,25 @@ export class BrowserLauncherService {
         await this.#browserProfileService.saveBrowserProfile(browserProfile);
 
         const browserProfilePath = await this.#browserProfileService.getBrowserProfilePath(browserProfile);
-        const userDataDirPath = `${browserProfilePath}/user-data-dir`;
-        const diskCacheDirPath = `${sysTempPath}/${AppName}/disk-cache-dir/${browserProfile.id}`;
+        const userDataDirPath = await Neutralino.filesystem.getJoinedPath(browserProfilePath, 'user-data-dir');
+        const diskCacheDirPath = await Neutralino.filesystem.getJoinedPath(sysTempPath, AppName, 'disk-cache-dir', browserProfile.id);
 
         let execPath: string;
-        if (browserProfile.variablesInfo.botBrowserBinaryPath) {
+        if (browserProfile.binaryPath) {
             if (osType.includes('Darwin')) {
-                execPath = `${browserProfile.variablesInfo.botBrowserBinaryPath}/Contents/MacOS/Chromium`;
+                if (browserProfile.binaryPath.endsWith('.app')) {
+                    execPath = await Neutralino.filesystem.getJoinedPath(browserProfile.binaryPath, 'Contents', 'MacOS', 'Chromium');
+                } else {
+                    execPath = browserProfile.binaryPath;
+                }
             } else {
-                execPath = browserProfile.variablesInfo.botBrowserBinaryPath;
+                execPath = browserProfile.binaryPath;
             }
         } else {
-            execPath = `${NL_PATH}/Chromium`;
+            execPath = await Neutralino.filesystem.getJoinedPath(NL_PATH, 'Chromium');
         }
 
         console.log('Neutralino NL_PATH: ', NL_PATH);
-        console.log('Neutralino NL_CWD: ', NL_CWD);
         console.log('Chromium path: ', execPath);
 
         console.log('Starting browser with profile: ', browserProfile.id);
@@ -193,22 +151,7 @@ export class BrowserLauncherService {
 
         const args = [
             '--allow-pre-commit-input',
-            '--disable-background-timer-throttling',
-            '--disable-backgrounding-occluded-windows',
-            '--disable-breakpad',
-            '--disable-client-side-phishing-detection',
-            '--disable-component-extensions-with-background-pages',
-            '--disable-default-apps',
-            '--disable-dev-shm-usage',
-            '--disable-hang-monitor',
-            '--disable-infobars',
-            '--disable-ipc-flooding-protection',
-            '--disable-prompt-on-repost',
-            '--disable-search-engine-choice-screen',
-            '--disable-sync',
             '--enable-automation',
-            '--export-tagged-pdf',
-            '--generate-pdf-document-outline',
             '--metrics-recording-only',
             '--no-first-run',
             '--password-store=basic',
@@ -221,10 +164,15 @@ export class BrowserLauncherService {
             `--bot-profile="${botProfilePath}"`,
         ];
 
-        const runningInfo: RunningInfo = {
-            browserProfileId: browserProfile.id,
-            status: BrowserProfileStatus.Running,
-        };
+        if (browserProfile.proxyServer) {
+            args.push(`--proxy-server="${browserProfile.proxyServer}"`);
+        }
+
+        if (browserProfile.basicInfo.profileName) {
+            args.push(`--bot-title="${browserProfile.basicInfo.profileName}"`);
+        }
+
+        const runningInfo: RunningInfo = { browserProfileId: browserProfile.id, status: BrowserProfileStatus.Running };
 
         const warmupUrls = (browserProfile.warmupUrls ?? '').split('\n');
         if (!warmupUrls.length) warmup = false;
@@ -239,7 +187,7 @@ export class BrowserLauncherService {
             });
         }
 
-        const proc = await Neutralino.os.spawnProcess(`${execPath} ${args.join(' ')} about:blank`);
+        const proc = await Neutralino.os.spawnProcess(`"${execPath}" ${args.join(' ')}`);
         runningInfo.spawnProcessInfo = proc;
 
         this.#runningStatuses.set(browserProfile.id, runningInfo);

@@ -18,9 +18,9 @@ export class BrowserProfileService {
         const browserProfileId = typeof browserProfile === 'string' ? browserProfile : browserProfile.id;
 
         const sysTempPath = await Neutralino.os.getPath('temp');
-        const botProfilesBasePath = `${sysTempPath}/${AppName}/bot-profiles`;
+        const botProfilesBasePath = await Neutralino.filesystem.getJoinedPath(sysTempPath, AppName, 'bot-profiles');
         await createDirectoryIfNotExists(botProfilesBasePath);
-        const result = `${botProfilesBasePath}/${browserProfileId}.json`;
+        const result = await Neutralino.filesystem.getJoinedPath(botProfilesBasePath, `${browserProfileId}.json`);
 
         return result;
     }
@@ -29,27 +29,27 @@ export class BrowserProfileService {
         const id = typeof browserProfile === 'string' ? browserProfile : browserProfile.id;
 
         const basePath = await this.getBasePath();
-        const browserProfilePath = `${basePath}/${id}`;
+        const browserProfilePath = await Neutralino.filesystem.getJoinedPath(basePath, id);
         await createDirectoryIfNotExists(browserProfilePath);
         return browserProfilePath;
     }
 
     async getBrowserProfileUserDataDirPath(browserProfile: string | BrowserProfile) {
         const basePath = await this.getBrowserProfilePath(browserProfile);
-        const result = `${basePath}/user-data-dir`;
+        const result = await Neutralino.filesystem.getJoinedPath(basePath, 'user-data-dir');
         return result;
     }
 
     async getBrowserProfileDiskCacheDirPath(browserProfile: string | BrowserProfile) {
         const browserProfileId = typeof browserProfile === 'string' ? browserProfile : browserProfile.id;
         const sysTempPath = await Neutralino.os.getPath('temp');
-        const result = `${sysTempPath}/${AppName}/disk-cache-dir/${browserProfileId}`;
+        const result = await Neutralino.filesystem.getJoinedPath(sysTempPath, AppName, 'disk-cache-dir', browserProfileId);
         return result;
     }
 
     async saveBrowserProfile(browserProfile: BrowserProfile): Promise<void> {
         const basePath = await this.getBrowserProfilePath(browserProfile);
-        const filename = `${basePath}/${kProfileConfigFileName}`;
+        const filename = await Neutralino.filesystem.getJoinedPath(basePath, kProfileConfigFileName);
         await Neutralino.filesystem.writeFile(filename, JSON.stringify(browserProfile));
 
         console.log(`Browser profile saved: ${filename}`);
@@ -65,7 +65,7 @@ export class BrowserProfileService {
                     if (entry.type == 'FILE') return;
 
                     try {
-                        const content = await Neutralino.filesystem.readFile(`${entry.path}/${kProfileConfigFileName}`);
+                        const content = await Neutralino.filesystem.readFile(await Neutralino.filesystem.getJoinedPath(entry.path, kProfileConfigFileName));
                         return JSON.parse(content);
                     } catch {}
                 })
@@ -78,7 +78,7 @@ export class BrowserProfileService {
 
     async getBrowserProfile(browserProfile: string | BrowserProfile): Promise<BrowserProfile | undefined> {
         const basePath = await this.getBrowserProfilePath(browserProfile);
-        const filename = `${basePath}/${kProfileConfigFileName}`;
+        const filename = await Neutralino.filesystem.getJoinedPath(basePath, kProfileConfigFileName);
         const content = await Neutralino.filesystem.readFile(filename);
 
         console.log(`Browser profile loaded: ${filename}`);
@@ -97,9 +97,9 @@ export class BrowserProfileService {
 
     async getTempUserDataDirFilePath(browserProfileId: string): Promise<string> {
         const sysTempPath = await Neutralino.os.getPath('temp');
-        const basePath = `${sysTempPath}/${AppName}/user-data-dirs`;
+        const basePath = await Neutralino.filesystem.getJoinedPath(sysTempPath, AppName, 'user-data-dirs');
         await createDirectoryIfNotExists(basePath);
-        const userDataDirFilePath = `${basePath}/${browserProfileId}.zip`;
+        const userDataDirFilePath = await Neutralino.filesystem.getJoinedPath(basePath, `${browserProfileId}.zip`);
 
         return userDataDirFilePath;
     }

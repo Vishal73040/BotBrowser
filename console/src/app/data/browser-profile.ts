@@ -9,24 +9,6 @@ export interface BotProfileInfo {
     content?: string | null;
 }
 
-export interface ProxyInfo {
-    proxyHost?: string | null;
-    username?: string | null;
-    password?: string | null;
-}
-
-export interface VariablesInfo {
-    locale?: string | null;
-    timezone?: string | null;
-    noisesCanvas2d?: boolean | null;
-    noisesCanvasWebgl?: boolean | null;
-    noisesClientRectsFactor?: boolean | null;
-    noisesTextMetricsFactor?: boolean | null;
-    noisesAudio?: boolean | null;
-    disableConsoleMessage?: boolean | null;
-    botBrowserBinaryPath?: string | null;
-}
-
 export enum BrowserProfileStatus {
     Idle,
     Launching,
@@ -53,21 +35,11 @@ export interface BrowserProfile {
     id: string;
     basicInfo: Partial<BasicInfo>;
     botProfileInfo: Partial<BotProfileInfo>;
-    proxyInfo: Partial<ProxyInfo>;
-    variablesInfo: Partial<VariablesInfo>;
+    binaryPath: string;
+    proxyServer?: string;
     createdAt: number;
     updatedAt: number;
     warmupUrls?: string;
     lastUsedAt?: number;
     deletedAt?: number;
-    variableValues?: {
-        storageQuotaInBytes?: number;
-        noises?: {
-            clientRectsFactor: number;
-            textMetricsFactor: number;
-            canvas2d: number[];
-            canvasWebgl: number[];
-            audio: number[];
-        };
-    };
 }

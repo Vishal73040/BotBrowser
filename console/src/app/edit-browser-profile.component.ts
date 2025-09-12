@@ -3,7 +3,6 @@ import { Component, inject, type OnInit } from '@angular/core';
 import {
     AbstractControl,
     FormBuilder,
-    FormGroup,
     FormsModule,
     ReactiveFormsModule,
     type ValidationErrors,
@@ -17,80 +16,68 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatStepperModule } from '@angular/material/stepper';
 import * as Neutralino from '@neutralinojs/lib';
-import { compact, shuffle } from 'lodash-es';
-import { map, startWith, type Observable } from 'rxjs';
+import { compact } from 'lodash-es';
+import { map, startWith } from 'rxjs';
 import { v4 as uuidv4 } from 'uuid';
 import { tryParseBotProfile, type BotProfileBasicInfo } from './data/bot-profile';
-import {
-    BrowserProfileStatus,
-    type BasicInfo,
-    type BotProfileInfo,
-    type BrowserProfile,
-    type ProxyInfo,
-    type VariablesInfo,
-} from './data/browser-profile';
-import * as localesJson from './data/locales.json';
-import * as timezonesJson from './data/timezones.json';
+import { BrowserProfileStatus, type BasicInfo, type BotProfileInfo, type BrowserProfile } from './data/browser-profile';
 import { AlertDialogComponent } from './shared/alert-dialog.component';
 import { BrowserLauncherService } from './shared/browser-launcher.service';
 import { BrowserProfileService } from './shared/browser-profile.service';
 import { ConfirmDialogComponent } from './shared/confirm-dialog.component';
 
 /**
- * Validates `botBrowserBinaryPath` based on the operating system type.
+ * Validates `binaryPath` based on the operating system type.
  * @param osType Operating system type: 'Darwin' | 'Windows' | 'Linux'
  * @returns ValidatorFn
  */
-export function botBrowserPathValidator(osType: 'Darwin' | 'Windows' | 'Linux'): ValidatorFn {
+export function binaryPathValidator(osType: 'Darwin' | 'Windows' | 'Linux'): ValidatorFn {
     return (group: AbstractControl): ValidationErrors | null => {
-        const botBrowserBinaryPathControl = group.get('botBrowserBinaryPath');
+        const binaryPathControl = group.get('binaryPath');
 
-        // Get the value of botBrowserBinaryPath from the form group
-        const botBrowserBinaryPath = group.get('botBrowserBinaryPath')?.value;
-
-        // Skip validation if the field is empty
-        if (!botBrowserBinaryPath) {
-            botBrowserBinaryPathControl?.setErrors(null);
-            return null;
-        }
+        // Get the value of binaryPath from the form group
+        const binaryPath = group.get('binaryPath')?.value;
 
         let error: ValidationErrors | null = null;
+        if (!binaryPath) {
+            error = { invalidBinaryPath: 'Binary path is required' };
+        } else {
+            switch (osType) {
+                case 'Darwin': // macOS
+                    if (!binaryPath.endsWith('.app')) {
+                        error = {
+                            invalidBinaryPath: 'On macOS, path must end with .app',
+                        };
+                    }
+                    break;
 
-        switch (osType) {
-            case 'Darwin': // macOS
-                if (!botBrowserBinaryPath.endsWith('.app')) {
-                    error = {
-                        invalidBotBrowserPath: 'On macOS, path must end with .app',
-                    };
-                }
-                break;
+                case 'Windows': // Windows
+                    if (!binaryPath.endsWith('.exe')) {
+                        error = {
+                            invalidBinaryPath: 'On Windows, path must end with .exe',
+                        };
+                    }
+                    break;
 
-            case 'Windows': // Windows
-                if (!botBrowserBinaryPath.endsWith('.exe')) {
-                    error = {
-                        invalidBotBrowserPath: 'On Windows, path must end with .exe',
-                    };
-                }
-                break;
+                case 'Linux': // Linux
+                    if (binaryPath !== 'chromium') {
+                        error = {
+                            invalidBinaryPath: 'On Linux, path must be "chromium"',
+                        };
+                    }
+                    break;
 
-            case 'Linux': // Linux
-                if (botBrowserBinaryPath !== 'chromium') {
-                    error = {
-                        invalidBotBrowserPath: 'On Linux, path must be "chromium"',
-                    };
-                }
-                break;
-
-            default:
-                error = { invalidOS: 'Unsupported OS type' };
+                default:
+                    error = { invalidOS: 'Unsupported OS type' };
+            }
         }
 
         // Apply the error directly to the FormControl
         if (error) {
-            botBrowserBinaryPathControl?.setErrors(error);
+            binaryPathControl?.setErrors(error);
             return error;
         } else {
-            botBrowserBinaryPathControl?.setErrors(null);
+            binaryPathControl?.setErrors(null);
         }
 
         return null;
@@ -145,27 +132,19 @@ export class EditBrowserProfileComponent implements OnInit {
         filename: this.#injectedData?.botProfileInfo.filename || '',
         content: this.#injectedData?.botProfileInfo.content,
     });
-    readonly proxyInfoGroup = this.#formBuilder.group<ProxyInfo>({
-        proxyHost: this.#injectedData?.proxyInfo.proxyHost || '',
-        username: this.#injectedData?.proxyInfo.username || '',
-        password: this.#injectedData?.proxyInfo.password || '',
+    readonly proxyInfoGroup = this.#formBuilder.group<{
+        proxyServer?: string;
+    }>({ proxyServer: this.#injectedData?.proxyServer });
+    variablesInfoGroup = this.#formBuilder.group<{
+        binaryPath?: string;
+    }>({
+        binaryPath: this.#injectedData?.binaryPath,
     });
-    variablesInfoGroup!: FormGroup;
-
-    readonly #localeOptions: string[];
-    filteredLocales!: Observable<string[]>;
-
-    readonly #timezoneOptions: string[];
-    filteredTimezones!: Observable<string[]>;
 
     isEdit = false;
-    botProfileBasicInfo: BotProfileBasicInfo | null = null;
+    basicInfo: BotProfileBasicInfo | null = null;
 
     constructor() {
-        this.#localeOptions = Array.from(new Set(((localesJson as any).default as any[]).map((e) => e.locale)));
-
-        this.#timezoneOptions = Array.from(new Set((timezonesJson as any).default as string[]));
-
         if (this.#injectedData) {
             this.isEdit = true;
 
@@ -175,7 +154,7 @@ export class EditBrowserProfileComponent implements OnInit {
             }
 
             if (this.#injectedData.botProfileInfo.content) {
-                this.botProfileBasicInfo = tryParseBotProfile(this.#injectedData.botProfileInfo.content);
+                this.basicInfo = tryParseBotProfile(this.#injectedData.botProfileInfo.content);
             }
         }
 
@@ -197,36 +176,9 @@ export class EditBrowserProfileComponent implements OnInit {
         }
 
         // Initialize the FormGroup with default values and the custom validator
-        this.variablesInfoGroup = this.#formBuilder.group<VariablesInfo>(
-            {
-                botBrowserBinaryPath: this.#injectedData?.variablesInfo.botBrowserBinaryPath,
-                locale: this.#injectedData?.variablesInfo.locale ?? 'en-US',
-                noisesCanvas2d: this.#injectedData?.variablesInfo.noisesCanvas2d ?? true,
-                noisesClientRectsFactor: this.#injectedData?.variablesInfo.noisesClientRectsFactor ?? true,
-                noisesCanvasWebgl: this.#injectedData?.variablesInfo.noisesCanvasWebgl ?? true,
-                noisesTextMetricsFactor: this.#injectedData?.variablesInfo.noisesTextMetricsFactor ?? true,
-                noisesAudio: this.#injectedData?.variablesInfo.noisesAudio ?? true,
-                timezone: this.#injectedData?.variablesInfo.timezone ?? 'America/New_York',
-                disableConsoleMessage: this.#injectedData?.variablesInfo.disableConsoleMessage ?? true,
-            },
-            { validators: botBrowserPathValidator(osType) }
-        );
-
-        this.filteredLocales = this.variablesInfoGroup.get('locale')?.valueChanges.pipe(
-            startWith(this.variablesInfoGroup.get<string>('locale')?.value),
-            map((value) => {
-                const filterValue = value.toLowerCase();
-                return this.#localeOptions.filter((option) => option.toLowerCase().includes(filterValue));
-            })
-        ) as Observable<string[]>;
-
-        this.filteredTimezones = this.variablesInfoGroup.get('timezone')?.valueChanges.pipe(
-            startWith(this.variablesInfoGroup.get<string>('timezone')?.value),
-            map((value) => {
-                const filterValue = value.toLowerCase();
-                return this.#timezoneOptions.filter((option) => option.toLowerCase().includes(filterValue));
-            })
-        ) as Observable<string[]>;
+        this.variablesInfoGroup = this.#formBuilder.group<{
+            binaryPath?: string;
+        }>({ binaryPath: this.#injectedData?.binaryPath }, { validators: binaryPathValidator(osType) });
     }
 
     async chooseFile(): Promise<void> {
@@ -260,21 +212,58 @@ export class EditBrowserProfileComponent implements OnInit {
 
     #handleFileSelection(filePath: string): void {
         Neutralino.filesystem.readFile(filePath).then((content) => {
-            const botProfileBasicInfo = tryParseBotProfile(content);
-            if (!botProfileBasicInfo) {
+            const basicInfo = tryParseBotProfile(content);
+            if (!basicInfo) {
                 this.#dialog.open(AlertDialogComponent, {
                     data: { message: 'Invalid bot profile file.' },
                 });
                 return;
             }
 
-            this.botProfileBasicInfo = botProfileBasicInfo;
+            this.basicInfo = basicInfo;
             this.botProfileInfoGroup.get('content')?.setValue(content);
             this.botProfileInfoGroup.get('filename')?.setValue(filePath);
         });
     }
 
+    #validateVariablesInfo(): boolean {
+        if (!this.basicInfo) {
+            this.#dialog.open(AlertDialogComponent, {
+                data: { message: 'Bot profile must be selected and valid.' },
+            });
+            return false;
+        }
+
+        const binaryPath = this.variablesInfoGroup.get('binaryPath')?.value;
+
+        if (!binaryPath) {
+            this.#dialog.open(AlertDialogComponent, {
+                data: { message: 'Binary path is required.' },
+            });
+            this.variablesInfoGroup.get('binaryPath')?.setErrors({ required: true });
+            return false;
+        }
+
+        this.variablesInfoGroup.updateValueAndValidity();
+
+        if (this.variablesInfoGroup.invalid) {
+            const errors = this.variablesInfoGroup.get('binaryPath')?.errors;
+            if (errors?.invalidBinaryPath) {
+                this.#dialog.open(AlertDialogComponent, {
+                    data: { message: errors.invalidBinaryPath },
+                });
+            }
+            return false;
+        }
+
+        return true;
+    }
+
     async onConfirmClick(): Promise<void> {
+        if (!this.#validateVariablesInfo()) {
+            return;
+        }
+
         if (
             !this.basicInfoFormGroup.valid ||
             !this.variablesInfoGroup.valid ||
@@ -287,34 +276,8 @@ export class EditBrowserProfileComponent implements OnInit {
             id: this.#injectedData?.id || uuidv4(),
             basicInfo: this.basicInfoFormGroup.value,
             botProfileInfo: this.botProfileInfoGroup.value,
-            proxyInfo: this.proxyInfoGroup.value,
-            variablesInfo: this.variablesInfoGroup.value,
-            variableValues:
-                this.#injectedData?.variableValues ||
-                (this.botProfileBasicInfo && !this.botProfileBasicInfo.isEncryptedProfile
-                    ? {
-                          storageQuotaInBytes: 590000000000 + Math.floor(Math.random() * 9000000000),
-                          noises: {
-                              clientRectsFactor: 1.0 + Math.random() * 0.004,
-                              textMetricsFactor: 1.0 + Math.random() * 0.004,
-                              canvas2d: [
-                                  Math.round(Math.random() * 20),
-                                  Math.round(Math.random() * 20),
-                                  Math.round(Math.random() * 20),
-                                  Math.round(Math.random() * 20),
-                                  Math.round(Math.random() * 20),
-                              ],
-                              canvasWebgl: [
-                                  Math.round(Math.random() * 20),
-                                  Math.round(Math.random() * 20),
-                                  Math.round(Math.random() * 20),
-                                  Math.round(Math.random() * 20),
-                                  Math.round(Math.random() * 20),
-                              ],
-                              audio: shuffle([0.01, 0.03, 0.01, 0.04, 0.02]),
-                          },
-                      }
-                    : {}),
+            proxyServer: this.proxyInfoGroup.value.proxyServer || undefined,
+            binaryPath: this.variablesInfoGroup.value.binaryPath || '',
             createdAt: this.#injectedData?.createdAt || Date.now(),
             lastUsedAt: this.#injectedData?.lastUsedAt,
             updatedAt: Date.now(),

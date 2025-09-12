@@ -15,7 +15,7 @@ import { cloneDeep } from 'lodash-es';
 import { v4 as uuidv4 } from 'uuid';
 import { CloneBrowserProfileComponent } from './clone-browser-profile.component';
 import { AppName } from './const';
-import { BrowserProfileStatus, type BrowserProfile, type ProxyInfo } from './data/browser-profile';
+import { BrowserProfileStatus, type BrowserProfile } from './data/browser-profile';
 import { EditBrowserProfileComponent } from './edit-browser-profile.component';
 import { BrowserLauncherService } from './shared/browser-launcher.service';
 import { BrowserProfileService } from './shared/browser-profile.service';
@@ -57,7 +57,7 @@ export class AppComponent implements AfterViewInit {
 
     @ViewChild(MatSort) sort!: MatSort;
 
-    constructor() { }
+    constructor() {}
 
     newProfile(): void {
         this.#dialog
@@ -246,7 +246,16 @@ export class AppComponent implements AfterViewInit {
     }
 
     exportToCSV(): void {
-        const headers = ['name', 'group', 'description', 'bot_profile', 'proxy', 'executable_path', 'warm_up_urls', 'locale'];
+        const headers = [
+            'name',
+            'group',
+            'description',
+            'bot_profile',
+            'proxy',
+            'executable_path',
+            'warm_up_urls',
+            'locale',
+        ];
 
         const rows = (this.selection.selected.length > 0 ? this.selection.selected : this.dataSource.data).map(
             (profile) => ({
@@ -254,10 +263,9 @@ export class AppComponent implements AfterViewInit {
                 group: profile.basicInfo?.groupName || '',
                 description: profile.basicInfo?.description || '',
                 bot_profile: profile.botProfileInfo?.filename || '',
-                proxy: this.formatProxy(profile.proxyInfo),
-                executable_path: profile.variablesInfo?.botBrowserBinaryPath || '',
+                proxy: profile.proxyServer || '',
+                executable_path: profile.binaryPath || '',
                 warm_up_urls: profile.warmupUrls || '',
-                locale: profile.variablesInfo?.locale || '',
             })
         );
 
@@ -270,7 +278,10 @@ export class AppComponent implements AfterViewInit {
         Neutralino.os
             .showSaveDialog('Save CSV File', {
                 defaultPath: defaultFilename,
-                filters: [{ name: 'CSV', extensions: ['csv'] }, { name: 'All files', extensions: ['*'] }],
+                filters: [
+                    { name: 'CSV', extensions: ['csv'] },
+                    { name: 'All files', extensions: ['*'] },
+                ],
             })
             .then((filePath) => {
                 if (!filePath) {
@@ -313,7 +324,10 @@ export class AppComponent implements AfterViewInit {
 
             if (lines.length <= 1) {
                 console.warn('CSV file is empty or only contains headers.');
-                Neutralino.os.showMessageBox('Warning', 'The CSV file is empty or only contains headers. Please check the file content!');
+                Neutralino.os.showMessageBox(
+                    'Warning',
+                    'The CSV file is empty or only contains headers. Please check the file content!'
+                );
                 return;
             }
 
@@ -327,20 +341,7 @@ export class AppComponent implements AfterViewInit {
             });
 
             const profiles = data.map(async (row: any) => {
-                const { name, group, description, bot_profile, proxy, executable_path, warm_up_urls, locale } = row;
-
-                let username = null;
-                let password = null;
-                let proxyHostValue = null;
-
-                if (proxy) {
-                    if (proxy.includes('@')) {
-                        [username, password] = proxy.split('@')[0]?.split(':') || [null, null];
-                        proxyHostValue = proxy.split('@')[1];
-                    } else {
-                        proxyHostValue = proxy;
-                    }
-                }
+                const { name, group, description, bot_profile, proxy, executable_path, warm_up_urls } = row;
 
                 let botProfileContent = '';
                 if (bot_profile) {
@@ -351,18 +352,6 @@ export class AppComponent implements AfterViewInit {
                         botProfileContent = '';
                     }
                 }
-
-                const variablesInfo = {
-                    botBrowserBinaryPath: executable_path || '',
-                    locale: locale || 'en-US',
-                    noisesCanvas2d: true,
-                    noisesClientRectsFactor: true,
-                    noisesCanvasWebgl: true,
-                    noisesTextMetricsFactor: true,
-                    noisesAudio: true,
-                    timezone: 'America/New_York',
-                    disableConsoleMessage: true,
-                };
 
                 const newProfile: BrowserProfile = {
                     id: uuidv4(),
@@ -375,13 +364,8 @@ export class AppComponent implements AfterViewInit {
                         filename: bot_profile || '',
                         content: botProfileContent,
                     },
-                    proxyInfo: {
-                        proxyHost: proxyHostValue || '',
-                        username: username || '',
-                        password: password || '',
-                    },
-                    variablesInfo,
-                    variableValues: {},
+                    binaryPath: executable_path || '',
+                    proxyServer: proxy || '',
                     warmupUrls: warm_up_urls || '',
                     createdAt: Date.now(),
                     updatedAt: Date.now(),
@@ -392,21 +376,15 @@ export class AppComponent implements AfterViewInit {
 
             const resolvedProfiles = await Promise.all(profiles);
 
-            await Promise.all(resolvedProfiles.map((profile) => this.#browserProfileService.saveBrowserProfile(profile)));
+            await Promise.all(
+                resolvedProfiles.map((profile) => this.#browserProfileService.saveBrowserProfile(profile))
+            );
             await this.refreshProfiles();
-            Neutralino.os.showMessageBox('Success', 'CSV file has been successfully imported!' );
+            Neutralino.os.showMessageBox('Success', 'CSV file has been successfully imported!');
         } catch (error) {
             console.error('Failed to import profiles from CSV:', error);
-            Neutralino.os.showMessageBox('Error', 'Failed to import CSV file. Please check the logs!' );
+            Neutralino.os.showMessageBox('Error', 'Failed to import CSV file. Please check the logs!');
         }
-    }
-
-    private formatProxy(proxy: Partial<ProxyInfo> | undefined): string {
-        if (!proxy) return '';
-        const { username, password, proxyHost } = proxy;
-
-        const credentials = [username, password].filter(Boolean).join(':');
-        return [credentials, proxyHost].filter(Boolean).join('@');
     }
 
     async runBrowserProfile(browserProfile: BrowserProfile): Promise<void> {

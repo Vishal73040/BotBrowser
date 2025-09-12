@@ -1,25 +1,16 @@
-export type BotProfileBasicInfo =
-    | {
-          version: string;
-          userAgent: string;
-          isEncryptedProfile: false;
-      }
-    | {
-          isEncryptedProfile: true;
-      };
+export type BotProfileBasicInfo = {
+    version: string;
+    userAgent: string;
+    unmaskedVendor: string;
+    unmaskedRenderer: string;
+};
 
 export function tryParseBotProfile(data: string): BotProfileBasicInfo | null {
     try {
         const info = JSON.parse(data);
 
-        if (typeof info.key === 'string' && typeof info.profile === 'string') {
-            return { isEncryptedProfile: true };
-        }
-
-        const version = info.profileVersion;
-        const userAgent = info.fingerprints.browser.navigator.userAgent;
-        if (typeof version === 'string' && typeof userAgent === 'string') {
-            return { version, userAgent, isEncryptedProfile: false };
+        if (info.version && info.userAgent && info.unmaskedVendor && info.unmaskedRenderer) {
+            return info;
         }
 
         return null;
