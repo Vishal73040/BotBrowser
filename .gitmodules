@@ -1,3 +1,0 @@
-[submodule "chromium"]
-    path = chromium
-    url = git@github.com:chromium/chromium.git
