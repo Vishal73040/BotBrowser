@@ -75,12 +75,6 @@ Enhanced proxy support with embedded credentials and automatic geo-detection.
 --proxy-server="socks5://username:password@proxy.example.com:1080"
 ```
 
-**Alternative Authentication:**
-```bash
---proxy-server="proxy.example.com:8080"
---proxy-username="myuser"
---proxy-password="mypass"
-```
 
 **Important:** Use BotBrowser's `--proxy-server` flag instead of framework-specific proxy options (like `page.authenticate()` in Puppeteer) to ensure proper geo-detection for timezone/locale auto-configuration.
 

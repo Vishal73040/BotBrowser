@@ -169,7 +169,7 @@ await page.goto("https://abrahamjuliot.github.io/creepjs/");
 - [x] **CDP artifact minimization** — native CDP fingerprint consistency
 - [x] **Custom page history** — enhance browsing pattern realism
 - [x] **Keep pages active** even when they lose focus
-- [x] **Set proxy (host, username, password) directly via profile**
+- [x] **Set proxy with embedded credentials directly via profile**
 - [x] **Set language and timezone** based on proxy or manually
 - [x] **WebRTC configuration control**
 - [x] **Canvas / WebGL noise injection** for consistency

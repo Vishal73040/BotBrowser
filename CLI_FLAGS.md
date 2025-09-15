@@ -59,16 +59,6 @@ BotBrowser enhanced the standard `--proxy-server` flag to accept embedded creden
 
 **Supported protocols:** HTTP, HTTPS, SOCKS5
 
-### `--proxy-username` & `--proxy-password`
-**Alternative method for proxy authentication**
-
-For cases where you prefer separate credential parameters:
-
-```bash
---proxy-server="proxy.example.com:8080"
---proxy-username="myuser"
---proxy-password="mypass"
-```
 
 ⚠️ **Important:** Use `--proxy-server` flag instead of framework-specific proxy options (like `page.authenticate()` in Puppeteer or `proxy` parameter in Playwright's `launch()`). This ensures BotBrowser can retrieve geo information from proxy IP for accurate timezone/locale auto-configuration.
 
@@ -295,7 +285,7 @@ chromium-browser \
 
 **Realistic Browsing:** `--bot-bookmarks` adds authenticity to your browser fingerprint.
 
-**Proxy Authentication:** Use separate `--proxy-username`/`--proxy-password` flags when you can't embed credentials in the proxy URL.
+**Proxy Authentication:** Embed credentials directly in the proxy URL for authentication.
 
 ---
 

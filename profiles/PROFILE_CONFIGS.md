@@ -99,18 +99,11 @@ All configurations are embedded in the `configs` field inside your profile JSON 
 | Field            | Description                               | Default |
 | ---------------- | ----------------------------------------- | ------- |
 | `proxy.server`   | Proxy server address (`scheme://username:password@hostname:port`).   | `""`    |
-| `proxy.username` | Proxy username for basic auth (optional). | `""`    |
-| `proxy.password` | Proxy password for basic auth (optional). | `""`    |
 
 > 💡 **Better Approach:** Use CLI flags for proxy configuration:
 > ```bash
 > # Embedded credentials (recommended)
 > --proxy-server="http://username:password@proxy.example.com:8080"
->
-> # Separate credentials
-> --proxy-server="proxy.example.com:8080"
-> --proxy-username="username"
-> --proxy-password="password"
 > ```
 >
 > 📖 **For complete CLI flags documentation**, see [⚙️ CLI Flags Reference](../CLI_FLAGS.md)
@@ -165,9 +158,7 @@ All configurations are embedded in the `configs` field inside your profile JSON 
 
     // Proxy settings: hostname:port, with optional basic auth
     "proxy": {
-      "server": "1.2.3.4:8080",
-      "username": "",
-      "password": ""
+      "server": "1.2.3.4:8080"
     },
 
     // Disable GUI scaling based on device scale factor (ignore DevicePixelRatio for UI scaling)

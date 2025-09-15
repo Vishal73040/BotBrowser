@@ -265,7 +265,7 @@ Refined per‑OS rendering differences (fonts, CSS, anti‑aliasing, text sizing
 ### Added
 - **Credentials in Proxy URLs**
   (https://github.com/botswin/BotBrowser/issues/50) `--proxy-server` and `configs.proxy.server` now accept URLs with embedded credentials (e.g., `http://user:pass@ip:port`, `socks5://user:pass@ip:port`).
-  *Simplifies secure proxy configuration with standard URI formats, no longer need to set `proxy-username` and `proxy-password`.*
+  *Simplifies secure proxy configuration with standard URI formats, using embedded credentials in the proxy URL.*
 
 - **Auto Language Detection**
   `configs.languages` now supports `"auto"` to set browser languages based on proxy IP’s country and timezone.
@@ -291,8 +291,8 @@ Refined per‑OS rendering differences (fonts, CSS, anti‑aliasing, text sizing
 1. **SOCKS5 Proxy Authentication**
    Support for SOCKS5 proxies with username/password to secure authentication.
 
-2. **Proxy Credentials CLI Flags**
-   New `--proxy-username` and `--proxy-password` flags allow passing credentials at startup, eliminating the need to embed them in profiles.
+2. **Enhanced Proxy Authentication**
+   Enhanced `--proxy-server` flag now supports embedded credentials in the URL format, eliminating the need for separate credential parameters.
 
 3. **Bot Cookies Flag**
    Added `--bot-cookies` startup parameter to load cookies from a file or inline specification at launch.
@@ -607,7 +607,7 @@ Example:
 
 ### Added
 - **Proxy, Timezone, Locale Support via Profile**
-  - You can now configure `proxy`, `username`, `password`, `timezone`, and `locale` directly through the **profile**, removing the need for CDP-based injection.
+  - You can now configure `proxy` (with embedded credentials), `timezone`, and `locale` directly through the **profile**, removing the need for CDP-based injection.
 
 - **JavaScript Stack Limit Control**
   - Fine-tuned the JS stack depth to closely match official Chrome's behavior.
