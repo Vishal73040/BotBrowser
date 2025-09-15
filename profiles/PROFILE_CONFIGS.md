@@ -81,18 +81,18 @@ All configurations are embedded in the `configs` field inside your profile JSON 
 
 | Field                           | Description                                                                               | Default     |
 | ------------------------------- | ----------------------------------------------------------------------------------------- | ----------- |
-| `languages`                     | HTTP `Accept-Language` header values and `navigator.languages`. `"auto"` = IP-based       | `"auto"`    |
-| `locale`                        | Browser locale (e.g., `"en-US"`, `"fr-FR"`, `"de-DE"`). `"auto"` = derived from proxy IP and language settings | `"auto"`    |
+| `languages`                     | HTTP `Accept-Language` header values and `navigator.languages`. `auto` = IP-based       | `auto`    |
+| `locale`                        | Browser locale (e.g., en-US, fr-FR, de-DE). `auto` = derived from proxy IP and language settings | `auto`    |
 | `uaFullVersion`                 | Overrides the full browser version returned by `navigator.userAgentData.fullVersion`; must match the Chromium major version (e.g. for major version 138, the full version must start with “138.”). | `""`        |
-| `colorScheme`                   | Preferred color scheme: `'light'` or `'dark'`.                                            | `"light"`   |
+| `colorScheme`                   | Preferred color scheme: light or dark.                                            | `light`   |
 | `disableDeviceScaleFactorOnGUI` | If `true`, ignore device scale factor for GUI elements (disable DPI-based UI scaling).    | `false`     |
-| `timezone`                      | `"auto"` = IP-based; `"real"` = system timezone; any other string = custom timezone name. | `"auto"`    |
-| `location`                      | `"auto"` = IP-based; `"real"` = system (GPS); object = custom coordinates (`lat`, `lon`). | `"auto"`    |
-| `browserBrand`                  | override for `navigator.userAgentData.brands` and related UA fields. Supports "chromium", "chrome", "edge", "brave". | `"chrome"`    |
+| `timezone`                      | `auto` = IP-based; `real` = system timezone; any other string = custom timezone name. | `auto`    |
+| `location`                      | `auto` = IP-based; `real` = system (GPS); object = custom coordinates (`lat`, `lon`). | `auto`    |
+| `browserBrand`                  | override for `navigator.userAgentData.brands` and related UA fields. Supports chromium, chrome, edge, brave. | `chrome`    |
 | `injectRandomHistory`           | Optionally injects synthetic navigation history for academic experiments in browser state testing. | `false`    |
 | `disableDebugger`               | Prevents unintended interruptions from JavaScript debugger statements during automated academic workflows. | `true`     |
-| `keyboard`                      | Choose keyboard fingerprint source: `"profile"` (emulated from profile) or `"real"` (use system keyboard). | `"profile"` |
-| `mediaTypes`                    | Media types behavior: `"profile"` (use profile settings), `"real"` (native system), `"expand"` (allow expanding via local decoders). | `"profile"` |
+| `keyboard`                      | Choose keyboard fingerprint source: `profile` (emulated from profile) or `real` (use system keyboard). | `profile` |
+| `mediaTypes`                    | Media types behavior: `profile` (use profile settings), `real` (native system), `expand` (allow expanding via local decoders). | `profile` |
 
 ### Proxy Settings
 
@@ -116,19 +116,19 @@ All configurations are embedded in the `configs` field inside your profile JSON 
 
 | Field    | Description                                                                                              | Default     |
 | -------- | -------------------------------------------------------------------------------------------------------- | ----------- |
-| `window` | `"profile"` = use profile’s dimensions;`"real"` = use system window size;object = custom dims.           | `"profile"` |
-| `screen` | `"profile"` = use profile’s screen metrics;`"real"` = use system screen metrics;object = custom metrics. | `"profile"` |
+| `window` | `profile` = use profile's dimensions;`real` = use system window size;object = custom dims.           | `profile` |
+| `screen` | `profile` = use profile's screen metrics;`real` = use system screen metrics;object = custom metrics. | `profile` |
 
 ### Engine & Device Simulation
 
 | Field          | Description                                                                              | Default     |
 | -------------- | ---------------------------------------------------------------------------------------- | ----------- |
-| `webrtc`       | `"profile"` = profile’s WebRTC config;`"real"` = native WebRTC;`"disabled"` = no WebRTC. | `"profile"` |
-| `fonts`        | `"profile"` = profile’s embedded font list;`"real"` = system-installed fonts.            | `"profile"` |
-| `webgl`        | `"profile"` = profile’s WebGL parameters;`"real"` = system WebGL;`"disabled"` = off.     | `"profile"` |
-| `webgpu`       | Same semantics as `webgl`.                                                               | `"profile"` |
-| `mediaDevices` | `"profile"` = fake camera/mic devices;`"real"` = actual system devices.                  | `"profile"` |
-| `speechVoices` | `"profile"` = profile’s TTS voices;`"real"` = system voices.                             | `"profile"` |
+| `webrtc`       | `profile` = profile's WebRTC config;`real` = native WebRTC;`disabled` = no WebRTC. | `profile` |
+| `fonts`        | `profile` = profile's embedded font list;`real` = system-installed fonts.            | `profile` |
+| `webgl`        | `profile` = profile's WebGL parameters;`real` = system WebGL;`disabled` = off.     | `profile` |
+| `webgpu`       | Same semantics as `webgl`.                                                               | `profile` |
+| `mediaDevices` | `profile` = fake camera/mic devices;`real` = actual system devices.                  | `profile` |
+| `speechVoices` | `profile` = profile's TTS voices;`real` = system voices.                             | `profile` |
 
 ### Noise Toggles
 
@@ -264,7 +264,7 @@ All configurations are embedded in the `configs` field inside your profile JSON 
 
 ### Configuration Behavior
 - Profile data uses synthetic/aggregated configurations; change only if necessary and you understand the impact.
-- All string fields support multi-purpose values: string literal (`"auto"`, `"real"`, or custom), or object schema when more parameters are needed.
+- All string fields support multi-purpose values: string literal (`auto`, `real`, or custom), or object schema when more parameters are needed.
 - If a field is omitted, BotBrowser uses profile defaults where appropriate.
 - CLI `--bot-config-*` flags **override** profile `configs` settings with highest priority
 - **uaFullVersion Tip**: When JavaScript calls `navigator.userAgentData.fullVersion`, BotBrowser will replace the default value with this field. Ensure that the specified full version corresponds to the Chromium engine’s major version (e.g., Chromium 138 → full version should begin with “138.”). You can look up the latest full version for each major release on https://chromiumdash.appspot.com/releases.

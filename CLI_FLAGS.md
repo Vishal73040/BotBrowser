@@ -152,7 +152,7 @@ The following `--bot-config-*` flags correspond directly to profile `configs` pr
 --bot-config-noise-webgl-image=true           # WebGL image noise: true, false
 --bot-config-screen=profile                   # Screen properties: profile (use profile), real (system screen)
 --bot-config-speech-voices=profile            # Speech voices: profile (synthetic), real (system voices)
---bot-config-timezone=auto                    # Timezone: "auto" (IP-based), "real" (system), or timezone name
+--bot-config-timezone=auto                    # Timezone: auto (IP-based), real (system), or timezone name
 --bot-config-ua-full-version=140.0.7339.81    # User agent version: full version string matching Chromium major
 --bot-config-webgl=profile                    # WebGL: profile (use profile), real (system), disabled (off)
 --bot-config-webgpu=profile                   # WebGPU: profile (use profile), real (system), disabled (off)

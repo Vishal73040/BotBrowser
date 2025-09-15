@@ -172,7 +172,7 @@ Refined per‑OS rendering differences (fonts, CSS, anti‑aliasing, text sizing
   Replaced new-tab page to display live environment data: Proxy IP, Timezone, Latitude/Longitude, User-Agent, WebGL, etc., giving instant visibility into the BotBrowser context.
 
 - **`configs.keyboard`**
-  Choose keyboard fingerprint source: `"profile"` (emulated from profile) or `"real"` (use system keyboard).
+  Choose keyboard fingerprint source: `profile` (emulated from profile) or `real` (use system keyboard).
 
 ### Optimized
 - **Binary Size Reduction (Windows/macOS)**
@@ -268,7 +268,7 @@ Refined per‑OS rendering differences (fonts, CSS, anti‑aliasing, text sizing
   *Simplifies secure proxy configuration with standard URI formats, using embedded credentials in the proxy URL.*
 
 - **Auto Language Detection**
-  `configs.languages` now supports `"auto"` to set browser languages based on proxy IP’s country and timezone.
+  `configs.languages` now supports `auto` to set browser languages based on proxy IP's country and timezone.
   *Automatically syncs Accept-Language and navigator.languages with location.*
 
 - **Google Header Simulation**
