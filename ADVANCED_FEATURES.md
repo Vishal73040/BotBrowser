@@ -62,8 +62,8 @@ chrome.exe --bot-profile="profile.enc" \
            --bot-bookmarks='[{"name":"Research","url":"https://example.com","folder":"Work"}]'
 ```
 
-### Advanced Proxy Authentication
-Enhanced proxy support with embedded credentials and automatic geo-detection.
+### Enhanced Proxy System
+Rewritten proxy subsystem with stability improvements, per-context support, and DNS leak protection.
 
 **Embedded Credentials:**
 ```bash
@@ -76,7 +76,36 @@ Enhanced proxy support with embedded credentials and automatic geo-detection.
 ```
 
 
-**Important:** Use BotBrowser's `--proxy-server` flag instead of framework-specific proxy options (like `page.authenticate()` in Puppeteer) to ensure proper geo-detection for timezone/locale auto-configuration.
+**Per-Context Proxy Support:**
+```javascript
+// Playwright example with different proxies per context
+const browser = await chromium.launch({
+  executablePath: './chrome', // BotBrowser path
+  args: ['--bot-profile=profile.enc']
+});
+
+// Context 1 with proxy A
+const context1 = await browser.newContext({
+  proxy: { server: 'http://user1:pass1@proxy1.com:8080' }
+});
+
+// Context 2 with proxy B
+const context2 = await browser.newContext({
+  proxy: { server: 'socks5://user2:pass2@proxy2.com:1080' }
+});
+```
+
+**Performance Optimization:**
+```bash
+# Skip IP lookups for faster page loads
+--proxy-server="http://user:pass@proxy.com:8080" --proxy-ip="203.0.113.1"
+```
+
+**DNS Leak Protection:**
+- SOCKS5 proxies now prevent local DNS resolution
+- All domain lookups go through the proxy tunnel
+
+**Important:** Use BotBrowser's proxy options instead of framework-specific settings to ensure proper geo-detection for timezone/locale auto-configuration.
 
 ---
 

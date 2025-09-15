@@ -9,6 +9,38 @@ This software and its documented capabilities are provided for **academic study 
 ⚠️ **This software is for compatibility validation in controlled, academic test environments only. It must not be used to bypass security controls on production systems.**
 
 
+## [2025-09-15]
+
+### Major
+- **Chromium Core Upgrade → 140.0.7339.128**
+  Keeps BotBrowser in lock‑step with the latest stable Chrome for improved performance, security patches, and parity across modern web/APIs.
+
+- **Proxy Subsystem Rewrite (faster • more stable • unified config)**
+  Re‑architected proxy stack to reduce connection latency and flakiness. **Deprecated** `--proxy-username` / `--proxy-password`; now use a single **`--proxy-server`** (or profile) endpoint that supports **auth & multiple protocols** (e.g., `http(s)`, `socks5`). Example: `socks5://user:pass@host:port`.
+
+- **Per‑Context Proxy (createBrowserContext)**
+  You can assign a **different `proxy-server` per BrowserContext**, including authenticated endpoints. Enables multi‑proxy, high‑concurrency tasks in one process.
+  Resolves: https://github.com/botswin/BotBrowser/issues/61
+
+### Improved / Fixed
+- **DNS Leak Hardening for SOCKS5**
+  Fixed a case where domain resolution might occur locally under SOCKS5, preventing DNS leaks and strengthening stealth.
+
+### New
+- **CLI: `--proxy-ip` (profile key: `configs.proxy.ip`)**
+  Provide the proxy’s public IP via CLI or profile so BotBrowser **skips per‑page IP lookups**, speeding up page open. Combine with `--bot-config-timezone` to emulate regions/timezones consistently.
+
+- **CLI: `--bot-config-mobile-force-touch` (profile key: `configs.mobileForceTouch`)**
+  Force **on/off** touch emission when simulating mobile devices. Useful for sites that require touch events regardless of the detected environment.
+  Resolves: https://github.com/botswin/BotBrowser/issues/65
+
+### Migration Notes
+- Replace `--proxy-username/--proxy-password` with **embedded credentials in `--proxy-server`** (or in the profile).
+  Example: `http://user:pass@ip:port`, `socks5://user:pass@ip:port`.
+
+
+---
+
 ## [2025-09-06]
 
 ### Major

@@ -59,6 +59,20 @@ BotBrowser enhanced the standard `--proxy-server` flag to accept embedded creden
 
 **Supported protocols:** HTTP, HTTPS, SOCKS5
 
+### `--proxy-ip`
+**Specify proxy's public IP to optimize performance**
+
+Provide the proxy's public IP address to skip per-page IP lookups, improving page load performance.
+
+```bash
+--proxy-ip="203.0.113.1"
+```
+
+**Benefits:**
+- Eliminates IP detection overhead on each page load
+- Faster browsing when using proxies
+- Combine with `--bot-config-timezone` for consistent region emulation
+
 
 ⚠️ **Important:** Use `--proxy-server` flag instead of framework-specific proxy options (like `page.authenticate()` in Puppeteer or `proxy` parameter in Playwright's `launch()`). This ensures BotBrowser can retrieve geo information from proxy IP for accurate timezone/locale auto-configuration.
 
@@ -159,6 +173,7 @@ The following `--bot-config-*` flags correspond directly to profile `configs` pr
 --bot-config-webrtc=profile                   # WebRTC: profile (use profile), real (native), disabled (off)
 --bot-config-window=profile                   # Window dimensions: profile (use profile), real (system window)
 --bot-config-media-types=profile              # Media types: profile, real, expand (allow expanding via local decoders)
+--bot-config-mobile-force-touch=false         # Mobile touch: force touch events on/off for mobile device simulation
 ```
 
 ### Key Benefits of CLI Configuration Flags

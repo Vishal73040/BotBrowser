@@ -56,9 +56,10 @@ Automatic touch simulation, device metrics, and consistent fingerprint rendering
 BotBrowser provides sophisticated browser fingerprint consistency testing through multiple layers of emulation and control:
 
 **🔧 Configuration & Control**
-- **21+ `--bot-config-*` flags** - Override browser brand, WebGL, timezone, etc.
+- **22+ `--bot-config-*` flags** - Override browser brand, WebGL, timezone, mobile touch, etc.
 - **Session Management** - Custom titles, cookies, bookmarks with `--bot-title`
-- **Advanced Proxy Auth** - Direct credentials: `--proxy-server="http://user:pass@proxy.com:8080"`
+- **Enhanced Proxy System** - Rewritten for stability, per-context proxies, DNS leak protection
+- **Performance Optimization** - `--proxy-ip` skips IP lookups for faster page loads
 
 **🎭 Automation Research** 
 - **Multi-Layer Noise Injection** - Canvas, WebGL, Audio with per-session consistency

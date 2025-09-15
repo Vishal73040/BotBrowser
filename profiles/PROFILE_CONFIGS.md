@@ -93,12 +93,14 @@ All configurations are embedded in the `configs` field inside your profile JSON 
 | `disableDebugger`               | Prevents unintended interruptions from JavaScript debugger statements during automated academic workflows. | `true`     |
 | `keyboard`                      | Choose keyboard fingerprint source: `profile` (emulated from profile) or `real` (use system keyboard). | `profile` |
 | `mediaTypes`                    | Media types behavior: `profile` (use profile settings), `real` (native system), `expand` (allow expanding via local decoders). | `profile` |
+| `mobileForceTouch`              | Force touch events on/off when simulating mobile devices (`true`, `false`).          | `false`    |
 
 ### Proxy Settings
 
 | Field            | Description                               | Default |
 | ---------------- | ----------------------------------------- | ------- |
 | `proxy.server`   | Proxy server address (`scheme://username:password@hostname:port`).   | `""`    |
+| `proxy.ip`       | Proxy's public IP address (skips IP lookups for better performance). | `""`    |
 
 > 💡 **Better Approach:** Use CLI flags for proxy configuration:
 > ```bash
@@ -158,7 +160,8 @@ All configurations are embedded in the `configs` field inside your profile JSON 
 
     // Proxy settings: hostname:port, with optional basic auth
     "proxy": {
-      "server": "1.2.3.4:8080"
+      "server": "1.2.3.4:8080",
+      "ip": "1.2.3.4"
     },
 
     // Disable GUI scaling based on device scale factor (ignore DevicePixelRatio for UI scaling)
@@ -225,6 +228,9 @@ All configurations are embedded in the `configs` field inside your profile JSON 
 
     // keyboard: choose keyboard fingerprint source: "profile" (emulated from profile) or "real" (use system keyboard)
     "keyboard": "profile",
+
+    // mobileForceTouch: Force touch events on/off when simulating mobile devices
+    "mobileForceTouch": false,
   }
 }
 
