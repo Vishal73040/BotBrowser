@@ -14,7 +14,7 @@ BotBrowser's `--bot-script` allows you to execute JavaScript code in a **privile
 ## Usage
 
 ```bash
-./chrome.exe --no-sandbox --bot-profile="profile.enc" --bot-script="your-script.js"
+./chrome.exe --no-sandbox --bot-profile="/absolute/path/to/profile.enc" --bot-script="your-script.js"
 ```
 
 ## Examples
@@ -31,7 +31,7 @@ Demonstrates automated handling of Cloudflare Turnstile challenges using:
 
 **Usage:**
 ```bash
-./chrome.exe --no-sandbox --bot-profile="chrome139_android.enc" --bot-script="cloudflare-turnstile.js"
+./chrome.exe --no-sandbox --bot-profile="/absolute/path/to/chrome139_android.enc" --bot-script="cloudflare-turnstile.js"
 ```
 
 ## Key APIs Available

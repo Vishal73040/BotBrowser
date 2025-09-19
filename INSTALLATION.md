@@ -164,10 +164,10 @@ After installation, verify BotBrowser is working correctly:
 
 ```bash
 # Test basic launch (replace with your executable path)
-./chrome.exe --no-sandbox --bot-profile="./profiles/demo.enc" --version
+./chrome.exe --no-sandbox --bot-profile="/absolute/path/to/demo.enc" --version
 
 # Test with remote debugging
-./chrome.exe --no-sandbox --bot-profile="./profiles/demo.enc" --remote-debugging-port=9222
+./chrome.exe --no-sandbox --bot-profile="/absolute/path/to/demo.enc" --remote-debugging-port=9222
 
 # Verify remote debugging is active
 curl http://localhost:9222/json/version
@@ -182,7 +182,7 @@ Ensure your profiles are working correctly:
 ls -la ./profiles/*.enc
 
 # Test profile loading
-./chrome.exe --no-sandbox --bot-profile="./profiles/chrome139_win11_x64.enc" --headless --dump-dom https://httpbin.org/user-agent
+./chrome.exe --no-sandbox --bot-profile="/absolute/path/to/chrome139_win11_x64.enc" --headless --dump-dom https://httpbin.org/user-agent
 ```
 
 ---

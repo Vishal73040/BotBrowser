@@ -27,13 +27,13 @@ BotBrowser provides sophisticated browser fingerprint consistency testing capabi
 **Examples:**
 ```bash
 # Override browser brand and WebGL settings
-chrome.exe --bot-profile="profile.enc" \
+chrome.exe --bot-profile="/absolute/path/to/profile.enc" \
            --bot-config-browser-brand="edge" \
            --bot-config-webgl="disabled" \
            --bot-config-noise-canvas=true
 
 # Auto-detect location and language from proxy IP
-chrome.exe --bot-profile="profile.enc" \
+chrome.exe --bot-profile="/absolute/path/to/profile.enc" \
            --bot-config-timezone="auto" \
            --bot-config-languages="auto" \
            --bot-config-locale="auto"
@@ -56,7 +56,7 @@ Comprehensive session control and identification features.
 
 **Example:**
 ```bash
-chrome.exe --bot-profile="profile.enc" \
+chrome.exe --bot-profile="/absolute/path/to/profile.enc" \
            --bot-title="Research Session A" \
            --bot-cookies='[{"name":"session","value":"abc123","domain":".example.com"}]' \
            --bot-bookmarks='[{"name":"Research","url":"https://example.com","folder":"Work"}]'
@@ -81,7 +81,7 @@ Rewritten proxy subsystem with stability improvements, per-context support, and 
 // Playwright example with different proxies per context
 const browser = await chromium.launch({
   executablePath: './chrome', // BotBrowser path
-  args: ['--bot-profile=profile.enc']
+  args: ['--bot-profile=/absolute/path/to/profile.enc']
 });
 
 // Context 1 with proxy A
@@ -426,7 +426,7 @@ Execute JavaScript with privileged `chrome.debugger` API access.
 
 **Usage Example:**
 ```bash
-./chrome.exe --no-sandbox --bot-profile="profile.enc" --bot-script="automation.js"
+./chrome.exe --no-sandbox --bot-profile="/absolute/path/to/profile.enc" --bot-script="automation.js"
 ```
 
 **Available APIs in bot-script context:**

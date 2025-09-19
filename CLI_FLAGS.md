@@ -29,7 +29,6 @@ Specifies the path to the BotBrowser profile file (.enc).
 
 ```bash
 --bot-profile="/path/to/chrome139_win11_x64.enc"
---bot-profile="./profiles/chrome139_mac_arm64.enc"  # Relative path supported
 ```
 
 **Notes:**
@@ -200,7 +199,7 @@ The following `--bot-config-*` flags correspond directly to profile `configs` pr
 ```bash
 # Essential BotBrowser flags only
 chromium-browser \
-  --bot-profile="./profiles/chrome139_win11_x64.enc" \
+  --bot-profile="/absolute/path/to/chrome139_win11_x64.enc" \
   --bot-title="My Session"
 ```
 
@@ -208,7 +207,7 @@ chromium-browser \
 ```bash
 # Instance 1 with cookies and bookmarks
 chromium-browser \
-  --bot-profile="./profiles/profile1.enc" \
+  --bot-profile="/absolute/path/to/profile1.enc" \
   --bot-title="Account 1" \
   --bot-cookies='[{"name":"sessionid","value":"abc123","domain":".example.com"}]' \
   --bot-bookmarks='[{"title":"Work Site","url":"https://work.com","type":"url"}]' \
@@ -216,7 +215,7 @@ chromium-browser \
 
 # Instance 2 with different profile
 chromium-browser \
-  --bot-profile="./profiles/profile2.enc" \
+  --bot-profile="/absolute/path/to/profile2.enc" \
   --bot-title="Account 2" \
   --user-data-dir="/tmp/bot2" &
 ```
@@ -225,7 +224,7 @@ chromium-browser \
 ```bash
 # Using BotBrowser's enhanced proxy with embedded credentials
 chromium-browser \
-  --bot-profile="./profiles/chrome139_win11_x64.enc" \
+  --bot-profile="/absolute/path/to/chrome139_win11_x64.enc" \
   --proxy-server="http://myuser:mypass@proxy.example.com:8080" \
   --remote-debugging-port=9222
 ```
@@ -234,7 +233,7 @@ chromium-browser \
 ```bash
 # Only override when you need specific settings (timezone/locale auto-detected)
 chromium-browser \
-  --bot-profile="./profiles/chrome139_win11_x64.enc" \
+  --bot-profile="/absolute/path/to/chrome139_win11_x64.enc" \
   --bot-config-browser-brand="edge" \
   --bot-config-webgl="disabled" \
   --bot-config-noise-canvas=true \
@@ -245,14 +244,14 @@ chromium-browser \
 ```bash
 # Instance 1 - Chrome brand with profile window settings
 chromium-browser \
-  --bot-profile="./profiles/profile.enc" \
+  --bot-profile="/absolute/path/to/profile.enc" \
   --bot-config-browser-brand="chrome" \
   --bot-config-window="profile" \
   --user-data-dir="/tmp/instance1" &
 
 # Instance 2 - Edge brand with real window settings
 chromium-browser \
-  --bot-profile="./profiles/profile.enc" \
+  --bot-profile="/absolute/path/to/profile.enc" \
   --bot-config-browser-brand="edge" \
   --bot-config-window="real" \
   --user-data-dir="/tmp/instance2" &
@@ -264,7 +263,7 @@ chromium-browser \
 chromium-browser \
   --no-sandbox \
   --headless \
-  --bot-profile="./profiles/chrome139_win11_x64.enc" \
+  --bot-profile="/absolute/path/to/chrome139_win11_x64.enc" \
   --bot-title="Production Bot" \
   --bot-cookies='[{"name":"auth","value":"token123","domain":".site.com"}]' \
   --proxy-server="http://user:pass@proxy.example.com:8080" \

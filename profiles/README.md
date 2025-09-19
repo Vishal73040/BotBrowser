@@ -142,7 +142,7 @@ await page.goto("https://abrahamjuliot.github.io/creepjs/");
 ```bash
 # Keep profile data in profile
 # Override session-specific settings via CLI
---bot-profile="user_profile.enc" \
+--bot-profile="/absolute/path/to/user_profile.enc" \
 --proxy-server="session_specific_proxy" \
 --bot-title="current_session_id"
 ```
