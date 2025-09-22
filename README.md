@@ -61,7 +61,7 @@ BotBrowser provides sophisticated browser fingerprint consistency testing throug
 - **Enhanced Proxy System** - Rewritten for stability, per-context proxies, DNS leak protection
 - **Performance Optimization** - `--proxy-ip` skips IP lookups for faster page loads
 
-**🎭 Automation Research** 
+**🎭 Automation Research**
 - **Multi-Layer Noise Injection** - Canvas, WebGL, Audio with per-session consistency
 - **CDP Leak Blocking** - Complete Chrome DevTools Protocol artifact elimination
 - **Chrome Behavior Emulation** - Google `X-Browser-*` headers, Widevine CDM support
@@ -268,7 +268,7 @@ Our compatibility research examines browser fingerprinting techniques across dif
 
 ### 📊 Cross-Platform Validation
 - **Windows Profile on macOS:** ✅ Perfect fingerprint consistency
-- **Android Emulation on Desktop:** ✅ Complete mobile API simulation  
+- **Android Emulation on Desktop:** ✅ Complete mobile API simulation
 - **Headless vs GUI Mode:** ✅ Identical fingerprint stability
 
 📖 **[Complete Validation Results & Research Data →](VALIDATION.md)** - 25+ anti-bot systems, 15+ fingerprinting tools, statistical analysis
@@ -284,7 +284,7 @@ Our compatibility research examines browser fingerprinting techniques across dif
 | Document | Description | Content Preview |
 |----------|-------------|-----------------|
 | **[Installation Guide](INSTALLATION.md)** | Platform-specific setup | Windows/macOS/Ubuntu guides, Docker deployment, troubleshooting |
-| **[Advanced Features](ADVANCED_FEATURES.md)** | Technical capabilities | 21+ CLI flags, noise injection, GPU micro-benchmarks |
+| **[Advanced Features](ADVANCED_FEATURES.md)** | Technical capabilities | 22+ CLI flags, noise injection, GPU micro-benchmarks |
 | **[Validation Results](VALIDATION.md)** | Research data | 25+ anti-bot systems, 50,000+ test sessions, statistical analysis |
 | **[CLI Flags Reference](CLI_FLAGS.md)** | Command-line options | `--bot-config-*` flags, proxy auth, session management |
 | **[Profile Configuration](profiles/PROFILE_CONFIGS.md)** | Profile customization | Fingerprint control, cross-platform compatibility |
@@ -294,7 +294,7 @@ Our compatibility research examines browser fingerprinting techniques across dif
 
 **Framework Integration:**
 - [Playwright Examples](examples/playwright/) - TypeScript/Python integration
-- [Puppeteer Examples](examples/puppeteer/) - JavaScript automation  
+- [Puppeteer Examples](examples/puppeteer/) - JavaScript automation
 - [Bot-Script Examples](examples/bot-script/) - Framework-less `chrome.debugger` API
 
 **Profile Management:**

@@ -17,7 +17,7 @@ BotBrowser provides sophisticated browser fingerprint consistency testing capabi
 ## 🔧 Configuration & Control
 
 ### Advanced CLI Configuration
-**[21+ `--bot-config-*` flags](CLI_FLAGS.md#⚙️-profile-configuration-override-flags)** override key fingerprint properties at startup without modifying profile files.
+**[22+ `--bot-config-*` flags](CLI_FLAGS.md#⚙️-profile-configuration-override-flags)** override key fingerprint properties at startup without modifying profile files.
 
 **Key Benefits:**
 - **Highest Priority:** CLI flags override any profile settings
@@ -206,7 +206,7 @@ Eliminates platform-specific rendering differences for perfect cross-platform em
 
 **OS Emulation Capabilities:**
 - Windows profile works perfectly on macOS/Linux hosts
-- macOS profile runs authentically on Windows/Linux hosts  
+- macOS profile runs authentically on Windows/Linux hosts
 - Android profile fully emulated on any desktop OS
 - Consistent behavior regardless of host operating system
 
@@ -324,7 +324,7 @@ Runtime OS-based feature loading for authentic browser behavior.
 
 **OS-Specific Features:**
 - Windows-specific Blink features
-- macOS-exclusive capabilities  
+- macOS-exclusive capabilities
 - Android mobile features
 - Linux distribution variations
 
@@ -445,7 +445,7 @@ Enhanced compatibility with popular automation frameworks.
 - Eliminates framework-specific fingerprint signatures
 
 **Enhanced WebDriver Support:**
-- ChromeDriver compatibility improvements  
+- ChromeDriver compatibility improvements
 - Selenium Grid integration support
 - Custom WebDriver extension APIs
 
@@ -496,7 +496,7 @@ BotBrowser implements advanced features through multiple integration layers:
 - Platform abstraction layer improvements
 - API behavior modification and extension
 
-**Profile System Integration:**  
+**Profile System Integration:**
 - Encrypted profile format with comprehensive fingerprint data
 - Runtime configuration override capabilities
 - Cross-platform compatibility matrix

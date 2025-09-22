@@ -9,6 +9,33 @@ This software and its documented capabilities are provided for **academic study 
 ⚠️ **This software is for compatibility validation in controlled, academic test environments only. It must not be used to bypass security controls on production systems.**
 
 
+## [2025-09-22]
+
+
+### Improved
+- **Audio fingerprinting on x86 (no-noise hardware modeling)**
+  Refined DSP/stack paths so x86 architectures can produce **native‑like audio fingerprints without injecting noise**, improving pass rates on vendors that score audio stability.
+
+- **Chrome brand fidelity & de‑Chromiumization**
+  Audited and tuned brand/feature switches to better emulate **Chrome** and suppress Chromium‑specific traits, strengthening stealth across brand heuristics.
+
+### Privacy
+- **First‑run telemetry suppression**
+  Removed non‑essential Google statistics/metrics requests on initial launch to reduce network exhaust and improve privacy (and a small bandwidth win).
+
+### Authenticity
+- **Bundled Chrome component plugin**
+  Preloads the stock Chrome component extension (**ID: ghbmnnjooekpmoecnnnilnnbdlolhkhi**) to mirror real‑Chrome environments. Helps bypass checks like **fingerprint‑scan.com** that expect this presence.
+
+### Fixed
+- **Locale ↔ Speech voice alignment**
+  When language auto‑detection adjusts the UI/locale, the **default speechSynthesis voice language** is now updated accordingly. Resolves mismatch flags observed by some probes (e.g., creepjs timezone/voice consistency checks).
+
+
+---
+
+
+
 ## [2025-09-15]
 
 ### Major
