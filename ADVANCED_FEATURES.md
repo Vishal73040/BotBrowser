@@ -95,6 +95,10 @@ const context2 = await browser.newContext({
 });
 ```
 
+**✅ Automatic Geo-Detection:** Each context automatically detects timezone, locale, and languages from its proxy IP - no manual configuration needed.
+
+**✅ Performance Benefits:** Use `--proxy-ip` at browser level if all contexts share the same proxy IP to skip repeated lookups.
+
 **Performance Optimization:**
 ```bash
 # Skip IP lookups for faster page loads

@@ -73,7 +73,10 @@ Provide the proxy's public IP address to skip per-page IP lookups, improving pag
 - Combine with `--bot-config-timezone` for consistent region emulation
 
 
-⚠️ **Important:** Use `--proxy-server` flag instead of framework-specific proxy options (like `page.authenticate()` in Puppeteer or `proxy` parameter in Playwright's `launch()`). This ensures BotBrowser can retrieve geo information from proxy IP for accurate timezone/locale auto-configuration.
+⚠️ **Important:**
+- **Browser-level proxy:** Use `--proxy-server` flag for consistent geo-detection across all contexts
+- **Per-context proxy:** You can set different proxies via `createBrowserContext({ proxy: {...} })` - BotBrowser supports both approaches and automatically retrieves geo information for timezone/locale configuration in both cases
+- **Avoid:** Framework-specific options like `page.authenticate()` which bypass BotBrowser's geo-detection system
 
 ---
 

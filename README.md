@@ -156,7 +156,8 @@ await page.goto("https://abrahamjuliot.github.io/creepjs/");
 **Important Notes:**
 - Use `--user-data-dir` with a unique temporary folder to avoid conflicts with running Chromium instances
 - Use `--proxy-server` to connect to proxy servers, supported protocols: HTTP, HTTPS, SOCKS5
-- ⚠️ **Proxy Configuration:** When using automation frameworks, always use `--proxy-server` flag instead of framework-specific proxy options (like `page.authenticate()` or `proxy` parameter in `launch()`). This ensures BotBrowser can retrieve geo information for accurate timezone/locale auto-configuration
+- **Flexible Proxy Configuration:** Use `--proxy-server` for browser-level proxies, or set per-context proxies via `createBrowserContext()` - both support automatic geo-detection
+- ⚠️ **Proxy Configuration:** Avoid framework-specific options like `page.authenticate()` or `proxy` parameter in `launch()`. Use either `--proxy-server` flag or `createBrowserContext({ proxy: {...} })` to ensure BotBrowser can retrieve geo information for accurate timezone/locale auto-configuration
 
 > 📖 **For a complete list of BotBrowser-specific CLI flags**, see [⚙️ CLI Flags Reference](CLI_FLAGS.md)
 
