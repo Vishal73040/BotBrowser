@@ -198,18 +198,6 @@ For containerized deployment, see [docker/README.md](docker/) for complete setup
 - **CLI Flags:** See the [⚙️ CLI flags reference](CLI_FLAGS.md) - *Recommended for most users*
 - **Profile Settings:** See the [📚 profile-configs guide](profiles/PROFILE_CONFIGS.md) - *Advanced configuration*
 
-### Example: Runtime Flexibility
-```bash
-# Keep profile integrity, override only what you need (use absolute path)
-chrome.exe --bot-profile="C:\\absolute\\path\\to\\authentic_user.enc" \
-           --proxy-server="http://user:pass@proxy.com:8080" \
-           --bot-title="Session-A"
-
-# Same profile, different runtime settings
-chrome.exe --bot-profile="C:\\absolute\\path\\to\\authentic_user.enc" \
-           --proxy-server="socks5://user:pass@proxy2.com:1080" \
-           --bot-title="Session-B"
-```
 
 > ⚠️ Note: This project must only be used in environments you own or where you have explicit authorization. Use against third-party services without permission is strictly prohibited.
 
