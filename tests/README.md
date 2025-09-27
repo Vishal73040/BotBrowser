@@ -105,3 +105,11 @@ This project uses the following open-source libraries:
 | [ghost-cursor-playwright](https://www.npmjs.com/package/ghost-cursor-playwright) | Playwright integration for realistic interactions |
 
 **Ethics Notice:** All libraries are used solely for academic purposes under controlled conditions with proper institutional oversight.
+
+---
+
+## ⚠️ LEGAL DISCLAIMER
+
+**📋 [Complete Legal Disclaimer & Terms of Use →](../DISCLAIMER.md)**
+
+BotBrowser is designed for academic research and authorized testing environments. By using this software, you acknowledge compliance with all applicable laws and accept full responsibility for any consequences of use.

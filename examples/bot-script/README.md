@@ -2,6 +2,8 @@
 
 **Framework-less automation using BotBrowser's native `--bot-script` feature**
 
+⚠️ **Research Use Only:** These automation examples are for academic research and authorized testing environments only. Not intended for bypassing security systems or unauthorized access to production services.
+
 ## What is `--bot-script`?
 
 BotBrowser's `--bot-script` allows you to execute JavaScript code in a **privileged, non-extension context** where the `chrome.debugger` API is available. This provides:

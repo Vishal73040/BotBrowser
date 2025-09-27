@@ -152,8 +152,8 @@ patches_v2/136.0.7103.49/
 
 ---
 
-## ⚠️ ACADEMIC USE DISCLAIMER
+## ⚠️ LEGAL DISCLAIMER
 
-The code snippets and patches provided here are for **academic study and security analysis purposes only**. They are intended solely for **authorized testing environments** that comply with all applicable laws, regulations, and institutional policies. They come **as-is**, without any warranty-explicit or implied. BotBrowser and its authors are **not responsible** for any misuse, data loss, or legal claims arising from the application of these examples. 
+**📋 [Complete Legal Disclaimer & Terms of Use →](../DISCLAIMER.md)**
 
-**Any use outside of authorized academic study, security analysis, or compatibility testing is strictly prohibited.** These patch examples are simplified and illustrative; they do not represent functional bypasses of production systems. Unauthorized distribution or modification of our private core beyond this showcase is strictly prohibited.
+BotBrowser is designed for academic research and authorized testing environments. By using this software, you acknowledge compliance with all applicable laws and accept full responsibility for any consequences of use.

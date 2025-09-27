@@ -410,3 +410,11 @@ Detection System Tests (200+ scenarios)
 - **[CLI Flags Reference](CLI_FLAGS.md)** - Complete command-line options
 - **[Profile Configuration](profiles/PROFILE_CONFIGS.md)** - Advanced profile customization
 - **[Test Suite Documentation](tests/README.md)** - Automated testing framework details
+
+---
+
+## ⚠️ LEGAL DISCLAIMER
+
+**📋 [Complete Legal Disclaimer & Terms of Use →](DISCLAIMER.md)**
+
+BotBrowser is designed for academic research and authorized testing environments. By using this software, you acknowledge compliance with all applicable laws and accept full responsibility for any consequences of use.

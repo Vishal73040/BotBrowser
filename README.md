@@ -26,20 +26,28 @@
 
 ---
 
+> **The Cross-Platform Browser That Actually Works in Authorized Testing Environments**  
+> **99.7% Success Rate • Zero Configuration • Perfect Mobile Emulation**  
+> **Windows profiles run flawlessly on macOS • Android simulation on desktop**  
+
+---
+
 **⚠️ Disclaimer: This project is intended for authorized security research, fingerprint consistency testing, and automation compatibility evaluation only. Misuse for spam, fraud, or unauthorized activity is strictly prohibited.**
 
-## What is BotBrowser?
+## 📖 What is BotBrowser?
 
 BotBrowser is a cross-platform browser designed to evaluate and minimize automation artifacts compared to [CDP](https://chromedevtools.github.io/devtools-protocol/)-based tools, supporting authorized testing and compatibility analysis.
 
 ---
 
-## 🚀 Why Choose BotBrowser
+## 🏆 Why Choose BotBrowser
 
-- 🎭 **High-fidelity Profile Simulation** - Synthetic/aggregated profiles for realistic, policy-compliant testing
-- 🔄 **Latest Chromium Base** - Always synced to newest stable Chrome for zero fingerprint drift
-- ⚡ **Zero-Config Intelligence** - Auto-detects timezone/locale/language from IP
-- 🤖 **Advanced Programmatic Control** - [Playwright/Puppeteer integration](examples/) with CDP leak blocking
+> **What makes BotBrowser different:** The ONLY browser achieving perfect cross-platform fingerprint consistency for authorized research
+
+| **Core Advantages** | **Technical Excellence** |
+|---------------------|-------------------------|
+| **High-fidelity Profile Simulation** - Synthetic/aggregated profiles for realistic, policy-compliant testing | **Latest Chromium Base** - Always synced to newest stable Chrome for zero fingerprint drift |
+| **Zero-Config Intelligence** - Auto-detects timezone/locale/language from IP | **Advanced Programmatic Control** - [Playwright/Puppeteer integration](examples/) with CDP leak blocking |
 
 ### 📱 Cross-Platform Profile Compatibility
 **Research capability:** Profile compatibility across different host systems (Windows, macOS, Android) for comparative studies.
@@ -53,30 +61,18 @@ Automatic touch simulation, device metrics, and consistent fingerprint rendering
 
 ## 🛠️ Advanced Capabilities
 
-BotBrowser provides sophisticated browser fingerprint consistency testing through multiple layers of emulation and control:
+> **Professional-grade fingerprint testing** through sophisticated multi-layer emulation and control systems
 
-**🔧 Configuration & Control**
-- **22+ `--bot-config-*` flags** - Override browser brand, WebGL, timezone, mobile touch, etc.
-- **Session Management** - Custom titles, cookies, bookmarks with `--bot-title`
-- **Enhanced Proxy System** - Rewritten for stability, per-context proxies, DNS leak protection
-- **Performance Optimization** - `--proxy-ip` skips IP lookups for faster page loads
+### Core Technology Arsenal
 
-**🎭 Automation Research**
-- **Multi-Layer Noise Injection** - Canvas, WebGL, Audio with per-session consistency
-- **CDP Leak Blocking** - Complete Chrome DevTools Protocol artifact elimination
-- **Chrome Behavior Emulation** - Google `X-Browser-*` headers, Widevine CDM support
+| **Category** | **Capabilities** |
+|-------------|------------------|
+| **Configuration & Control** | **22+ CLI flags** for browser brand, WebGL, timezone • **Session management** with custom titles/cookies • **Enhanced proxy system** with per-context support • **Performance optimization** via `--proxy-ip` |
+| **Automation Research** | **Multi-layer noise injection** (Canvas/WebGL/Audio) • **Complete CDP leak blocking** • **Native Chrome emulation** with Google headers & Widevine |
+| **Cross-Platform Excellence** | **Built-in font engines** (Windows/macOS/Android + HarfBuzz) • **Perfect consistency** across OS platforms • **Hardware control** for CPU/screen/device behavior |
+| **Deep System Integration** | **Precise FPS simulation** (120 FPS macOS on Ubuntu) • **Performance controls** (memory timing, IndexedDB latency) • **GPU micro-benchmarks** with vendor patterns |
 
-**📱 Cross-Platform Emulation**
-- **Built-in Font Engines** - Windows/macOS/Android fonts with HarfBuzz text shaping
-- **Perfect Consistency** - macOS profile works on Ubuntu, Android emulation on desktop
-- **Hardware Control** - CPU architecture, screen metrics, authentic device behavior
-
-**⚡ Deep System Integration**
-- **Precise FPS Simulation** - Emulate 120 FPS macOS behavior on Ubuntu hosts
-- **Performance Controls** - Memory allocation timing, IndexedDB latency tuning
-- **GPU Micro-Benchmarks** - Vendor-specific behavior patterns, computation curves
-
-### 📋 Fingerprint Control Matrix
+### Fingerprint Control Matrix
 
 | Category | Sample Capabilities |
 |----------|---------------------|
@@ -94,7 +90,17 @@ BotBrowser provides sophisticated browser fingerprint consistency testing throug
 
 ## 🚀 Getting Started
 
-### 🚀 Quick Start (3 Steps)
+### 30-Second Quick Test
+
+**Want to try immediately?** Download + Launch + Test in under 30 seconds:
+
+1. **[Download BotBrowser](https://github.com/botswin/BotBrowser/releases)** + **[Get Demo Profile](profiles/)**
+2. **Run command:** `./chrome.exe --no-sandbox --bot-profile="path/to/profile.enc"`
+3. **Visit test site:** [CreepJS](https://abrahamjuliot.github.io/creepjs/) to see perfect fingerprint consistency!
+
+> **Works instantly** - No configuration needed, timezone/locale auto-detected from your IP
+
+### Complete Setup (3 Steps)
 
 **Step 1:** Download from [Releases](https://github.com/botswin/BotBrowser/releases) and a profile from [profiles](profiles) directory.
 
@@ -191,7 +197,7 @@ For containerized deployment, see [docker/README.md](docker/) for complete setup
 ### Key Concepts
 - **Profile Foundation:** Synthetic/aggregated profiles provide realistic fingerprint data for authorized testing
 - **CLI Flexibility:** Override profile settings at runtime without modifying encrypted files
-- **Cross-Platform Compatibility:** 🔥 A *macOS profile* works on Ubuntu; a *Windows profile* works on macOS; an *Android profile* can be fully emulated on any OS
+- **Cross-Platform Compatibility:** A *macOS profile* works on Ubuntu; a *Windows profile* works on macOS; an *Android profile* can be fully emulated on any OS
 - **Auto-Configuration:** Timezone, locale, and languages automatically detected from IP/proxy
 
 ### Configuration Options
@@ -215,23 +221,9 @@ For users who prefer a graphical interface, [BotBrowserConsole](console) provide
 
 ---
 
-### 🐞 Debugging & FAQs
-
-| Issue | Platform | Solution |
-|-------|----------|----------|
-| **STATUS_ACCESS_VIOLATION** | Windows | Add `--no-sandbox` flag when launching |
-| **"Chromium" is damaged** | macOS | Run `xattr -rd com.apple.quarantine /Applications/Chromium.app` |
-| **Missing dependencies** | Ubuntu | Run `sudo apt-get install -f` |
-| **Profile file permission errors** | All | Ensure `.enc` file has read permissions (`chmod 644`) |
-| **BotBrowser won't start or crashes** | All | Check that your OS and Chromium version match the build; update BotBrowser to the latest release |
-
-
-
----
-
 ## 🎯 Research Validation
 
-### 🔬 Academic Research Overview
+### Academic Research Overview
 
 Our compatibility research examines browser fingerprinting techniques across different client configurations to improve web compatibility and understand fingerprint consistency.
 
@@ -239,7 +231,9 @@ Our compatibility research examines browser fingerprinting techniques across dif
 - ✅ **Overall Consistency Rate:** 99.7% (50,000+ test sessions)
 - ✅ **Detection Resistance:** 96.8% across automated systems
 
-### 🧪 Sample Test Results
+### Test Results
+
+> ⚠️ **Research Purpose Only:** These results demonstrate fingerprint consistency for academic analysis exclusively. Not intended for bypassing security systems or unauthorized access to production services. All tests conducted in controlled environments with proper authorization.
 
 **Anti-Bot Systems:**
 | Service | Technology | Results |
@@ -255,20 +249,18 @@ Our compatibility research examines browser fingerprinting techniques across dif
 | **FingerprintJS Pro** | Commercial fingerprinting | [▶️ Bot Detection](//botswin.github.io/BotBrowser/video_player/index.html?video=antibots-fingerprintjs-botdetection) |
 | **Pixelscan** | Detection suite | [▶️ Comprehensive Scan](//botswin.github.io/BotBrowser/video_player/index.html?video=antibots-pixelscan-pixelscan) |
 
-### 📊 Cross-Platform Validation
+### Cross-Platform Validation
 - **Windows Profile on macOS:** ✅ Perfect fingerprint consistency
 - **Android Emulation on Desktop:** ✅ Complete mobile API simulation
 - **Headless vs GUI Mode:** ✅ Identical fingerprint stability
 
 📖 **[Complete Validation Results & Research Data →](VALIDATION.md)** - 25+ anti-bot systems, 15+ fingerprinting tools, statistical analysis
 
-> ⚠️ **Ethical Use Policy:** Use only in authorized research environments, educational institutions, or systems you own. Unauthorized use against third-party services is prohibited.
-
 ---
 
 ## 📚 Resources & Support
 
-### 🔗 Documentation
+### Documentation
 
 | Document | Description | Content Preview |
 |----------|-------------|-----------------|
@@ -279,7 +271,7 @@ Our compatibility research examines browser fingerprinting techniques across dif
 | **[Profile Configuration](profiles/PROFILE_CONFIGS.md)** | Profile customization | Fingerprint control, cross-platform compatibility |
 | **[Examples](examples/)** | Code samples | Playwright, Puppeteer, bot-script automation |
 
-### 🎯 Quick Access
+### Quick Access
 
 **Framework Integration:**
 - [Playwright Examples](examples/playwright/) - TypeScript/Python integration
@@ -290,12 +282,12 @@ Our compatibility research examines browser fingerprinting techniques across dif
 - Demo profiles available in [profiles/](profiles/) directory
 - Premium profiles: Contact [botbrowser@bk.ru](mailto:botbrowser@bk.ru)
 
-### 📞 Support Channels
+### Support Channels
 
 | Contact Method | Best For | Link |
 |----------------|----------|------|
 | 📧 Email | Technical questions, source code access | [botbrowser@bk.ru](mailto:botbrowser@bk.ru) |
-| 📱 Telegram | Quick support, community | [@botbrowser_support](https://t.me/botbrowser_support) |
+| 📱 Telegram | Community support, quick questions | [@botbrowser_support](https://t.me/botbrowser_support) |
 
 ### Building from Source
 
@@ -306,25 +298,22 @@ For advanced users who want to build BotBrowser from source:
 
 Contact [botbrowser@bk.ru](mailto:botbrowser@bk.ru) for source code access and compilation instructions.
 
+### Debugging & FAQs
+
+| Issue | Platform | Solution |
+|-------|----------|----------|
+| **STATUS_ACCESS_VIOLATION** | Windows | Add `--no-sandbox` flag when launching |
+| **"Chromium" is damaged** | macOS | Run `xattr -rd com.apple.quarantine /Applications/Chromium.app` |
+| **Missing dependencies** | Ubuntu | Run `sudo apt-get install -f` |
+| **Profile file permission errors** | All | Ensure `.enc` file has read permissions (`chmod 644`) |
+| **BotBrowser won't start or crashes** | All | Check that your OS and Chromium version match the build; update BotBrowser to the latest release |
+
 ---
 
-## ⚠️ ACADEMIC & RESEARCH USE DISCLAIMER
+## ⚠️ LEGAL DISCLAIMER
 
-**BotBrowser** is designed for **academic research, security analysis, and authorized testing environments** that comply with all applicable **laws, regulations, and institutional ethics guidelines**.
+**BotBrowser** is designed for **academic research, security analysis, and authorized testing environments** that comply with all applicable laws and institutional ethics guidelines.
 
-**Authorized Use Cases:**
-- University and institutional research projects
-- Security research in controlled environments
-- Browser compatibility studies
-- Fingerprint consistency analysis
-- Authorized penetration testing
+**📋 [Complete Legal Disclaimer & Terms of Use →](DISCLAIMER.md)**
 
-**Prohibited Uses:**
-- **Misuse** to violate **terms of service** of third-party websites
-- Unauthorized access to systems you do not own
-- Commercial exploitation without proper licensing
-- Any illegal activities or policy violations
-
-**Research Ethics:** All users must obtain proper institutional approval and follow ethical research guidelines when conducting studies involving web services or user data.
-
-**GitHub Policy Compliance:** This repository is not intended for production use against third-party services. Any misuse will result in violation of GitHub's Acceptable Use Policies.
+By using this software, you acknowledge that you have read and agree to be bound by the complete disclaimer and all applicable laws. Users assume full responsibility for compliance and any consequences of use.

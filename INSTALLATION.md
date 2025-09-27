@@ -293,3 +293,11 @@ When reporting installation problems, please include:
 - **[Profile Configuration](profiles/PROFILE_CONFIGS.md)** - Advanced profile customization
 - **[Docker Guide](docker/README.md)** - Containerized deployment
 - **[Advanced Features](ADVANCED_FEATURES.md)** - Detailed feature documentation
+
+---
+
+## ⚠️ LEGAL DISCLAIMER
+
+**📋 [Complete Legal Disclaimer & Terms of Use →](DISCLAIMER.md)**
+
+BotBrowser is designed for academic research and authorized testing environments. By using this software, you acknowledge compliance with all applicable laws and accept full responsibility for any consequences of use.

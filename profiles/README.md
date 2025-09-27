@@ -2,6 +2,8 @@
 
 **Academic Framework for Browser Environment Simulation**
 
+⚠️ **Academic Research:** Profile examples are for authorized compatibility research only. Use in controlled environments with proper institutional approval.
+
 In BotBrowser, everything starts with a profile for controlled research environments. Research consistency and compatibility depend on proper profile configuration.
 
 ## What Are Profiles?

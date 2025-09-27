@@ -28,3 +28,11 @@
 5. The whole compilation process is very long, so please prepare a high-performance computer. If you want to speed up the build, please refer to: https://chromium.googlesource.com/chromium/src/+/main/docs/linux/build_instructions.md#faster-builds
 6. At this point it's all set up and ready to compile: [Build Chromium](https://chromium.googlesource.com/chromium/src/+/main/docs/linux/build_instructions.md#build-chromium).
 7. Go to `src/out/Default` and you can see that the `chrome` executable is already lying there quietly.
+
+---
+
+## ⚠️ LEGAL DISCLAIMER
+
+**📋 [Complete Legal Disclaimer & Terms of Use →](../DISCLAIMER.md)**
+
+BotBrowser is designed for academic research and authorized testing environments. By using this software, you acknowledge compliance with all applicable laws and accept full responsibility for any consequences of use.

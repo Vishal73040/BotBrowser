@@ -309,3 +309,11 @@ chromium-browser \
 > 💡 **Need Help?** Check our [Issues](https://github.com/botswin/BotBrowser/issues) or contact support at [botbrowser@bk.ru](mailto:botbrowser@bk.ru)
 
 > 📘 **Note:** This document covers BotBrowser-specific flags only. For standard Chromium flags (like `--headless`, `--no-sandbox`, `--user-data-dir`, etc.), refer to the [Chromium command line documentation](https://peter.sh/experiments/chromium-command-line-switches/).
+
+---
+
+## ⚠️ LEGAL DISCLAIMER
+
+**📋 [Complete Legal Disclaimer & Terms of Use →](DISCLAIMER.md)**
+
+BotBrowser is designed for academic research and authorized testing environments. By using this software, you acknowledge compliance with all applicable laws and accept full responsibility for any consequences of use.

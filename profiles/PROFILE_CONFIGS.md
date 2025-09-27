@@ -294,3 +294,11 @@ All configurations are embedded in the `configs` field inside your profile JSON 
 ### File Management
 - **Dynamic generation:** If you're generating a profile in code, **save it as a temporary file** (e.g., `/tmp/myprofile.json`) and pass the file path via `--bot-profile`
 - **Avoid piping:** Never pipe large JSON blobs via `echo`, as this is unsupported and unstable
+
+---
+
+## ⚠️ LEGAL DISCLAIMER
+
+**📋 [Complete Legal Disclaimer & Terms of Use →](../DISCLAIMER.md)**
+
+BotBrowser is designed for academic research and authorized testing environments. By using this software, you acknowledge compliance with all applicable laws and accept full responsibility for any consequences of use.

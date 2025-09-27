@@ -977,3 +977,11 @@ Example:
 
 ### Added
 - Successfully resolved **[Fake Vision](https://fv.pro)** compatibility issues, enhancing academic testing environment capabilities. [Test Code](tests/tests/antibots/fvpro.spec.ts), [▶️ Test Result (fv.pro)](https://botswin.github.io/BotBrowser/video_player/index.html?video=https://raw.githubusercontent.com/botswin/BotBrowser/main/tests/test-results/fvpro-test-fv-pro-BotBrowser-antibots/video.webm)
+
+---
+
+## ⚠️ LEGAL DISCLAIMER
+
+**📋 [Complete Legal Disclaimer & Terms of Use →](DISCLAIMER.md)**
+
+BotBrowser is designed for academic research and authorized testing environments. By using this software, you acknowledge compliance with all applicable laws and accept full responsibility for any consequences of use.
