@@ -8,6 +8,25 @@ This software and its documented capabilities are provided for **academic study 
 
 ⚠️ **This software is for compatibility validation in controlled, academic test environments only. It must not be used to bypass security controls on production systems.**
 
+## [2025-09-27]
+
+### Major
+- **Chromium Core Upgrade → 141**  
+  Stay in lock‑step with the latest Chrome for modern API parity, performance, and security fixes.
+
+### Anti‑Detection / New
+- **MediaCapabilities `decodingInfo` (DRM probing) hardening**  
+  Aligns responses with real‑Chrome behavior when sites probe **DRM capability** via `MediaCapabilities.decodingInfo` (e.g., H.264/H.265 + Widevine flow). Prevents capability mismatches and reduces a class of DRM‑support fingerprint checks.
+
+### Fixed
+- **Chrome component plugin preload**  
+  Resolved an intermittent race where the default Chrome component plugin (**ID: ghbmnnjooekpmoecnnnilnnbdlolhkhi**) might fail to load. Ensures consistent presence across sessions for scanners that expect it.
+
+- **Android profile stability**  
+  Fixed a crash that could occur when initializing **Android fingerprints** under certain setups (ordering/initialization edge cases). Improves reliability for mobile emulation.
+
+---
+
 
 ## [2025-09-22]
 
