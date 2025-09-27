@@ -1,4 +1,8 @@
 """
+⚠️ ACADEMIC RESEARCH USE ONLY
+For authorized testing environments that comply with all applicable laws.
+See: https://github.com/botswin/BotBrowser/blob/main/DISCLAIMER.md
+
 BotBrowser Per-Context Proxy Example (Python)
 
 This example demonstrates how to use different proxies for each browser context

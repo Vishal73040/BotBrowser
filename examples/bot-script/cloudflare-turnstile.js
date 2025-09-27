@@ -1,3 +1,9 @@
+/**
+ * ⚠️ ACADEMIC RESEARCH USE ONLY
+ * For authorized testing environments that comply with all applicable laws.
+ * See: https://github.com/botswin/BotBrowser/blob/main/DISCLAIMER.md
+ */
+
 // BotBrowser Frame Automation Script
 // Target: frames with src containing "https://challenges.cloudflare.com/cdn-cgi/challenge-platform"
 console.log("BotBrowser Frame Automation Script loaded!");

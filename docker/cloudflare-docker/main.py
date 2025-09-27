@@ -1,3 +1,10 @@
+#!/usr/bin/env python3
+"""
+⚠️ ACADEMIC RESEARCH USE ONLY
+For authorized testing environments that comply with all applicable laws.
+See: https://github.com/botswin/BotBrowser/blob/main/DISCLAIMER.md
+"""
+
 import asyncio
 import os
 from playwright.async_api import async_playwright, Page

@@ -1,3 +1,9 @@
+/**
+ * ⚠️ ACADEMIC RESEARCH USE ONLY
+ * For authorized testing environments that comply with all applicable laws.
+ * See: https://github.com/botswin/BotBrowser/blob/main/DISCLAIMER.md
+ */
+
 import com.microsoft.playwright.*;
 import java.nio.file.Paths;
 import java.util.Arrays;

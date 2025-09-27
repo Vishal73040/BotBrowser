@@ -1,3 +1,9 @@
+/**
+ * ⚠️ ACADEMIC RESEARCH USE ONLY
+ * For authorized testing environments that comply with all applicable laws.
+ * See: https://github.com/botswin/BotBrowser/blob/main/DISCLAIMER.md
+ */
+
 using Microsoft.Playwright;
 using System;
 using System.Threading.Tasks;
