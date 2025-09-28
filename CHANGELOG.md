@@ -14,7 +14,7 @@ This software and its documented capabilities are provided for **academic study 
 - **Chromium Core Upgrade → 141**  
   Stay in lock‑step with the latest Chrome for modern API parity, performance, and security fixes.
 
-### Anti‑Detection / New
+### Compatibility / New
 - **MediaCapabilities `decodingInfo` (DRM probing) hardening**  
   Aligns responses with real‑Chrome behavior when sites probe **DRM capability** via `MediaCapabilities.decodingInfo` (e.g., H.264/H.265 + Widevine flow). Prevents capability mismatches and reduces a class of DRM‑support fingerprint checks.
 
@@ -36,7 +36,7 @@ This software and its documented capabilities are provided for **academic study 
   Refined DSP/stack paths so x86 architectures can produce **native‑like audio fingerprints without injecting noise**, improving pass rates on vendors that score audio stability.
 
 - **Chrome brand fidelity & de‑Chromiumization**
-  Audited and tuned brand/feature switches to better emulate **Chrome** and suppress Chromium‑specific traits, strengthening stealth across brand heuristics.
+  Audited and tuned brand/feature switches to better emulate **Chrome** and suppress Chromium‑specific traits, improving compatibility across brand detection systems.
 
 ### Privacy
 - **First‑run telemetry suppression**
