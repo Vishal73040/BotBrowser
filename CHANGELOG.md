@@ -527,7 +527,7 @@ Refined per‑OS rendering differences (fonts, CSS, anti‑aliasing, text sizing
   - Fully rewrote internal WebRTC logic to eliminate local IP leaks.
   - Now simulates `candidate` IPs using public IPv4 and IPv6 from proxy.
   - Reads all simulation data from profile and mimics realistic `audio/video` media capabilities.
-  - Result: BotBrowser now scores **A+ / 100%** on CreepJS! 🎉
+  - Result: BotBrowser achieves high compatibility scores on CreepJS testing platform.
     ▶️ [View Demo](https://botswin.github.io/BotBrowser/video_player/index.html?video=antibots-creepjs-creepjs)
 
 ### Added
