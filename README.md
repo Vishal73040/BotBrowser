@@ -26,8 +26,8 @@
 
 ---
 
-> **Professional Cross-Platform Browser with Unified Fingerprint Technology**
-> **Identical Fingerprints Everywhere • Cross-OS Compatibility**
+> **Professional Cross-Platform Browser with Unified Fingerprint Technology**  
+> **Identical Fingerprints Everywhere • Cross-OS Compatibility**  
 > **Windows fingerprints work identically on macOS • Consistent browser environment on any platform**    
 
 ---
