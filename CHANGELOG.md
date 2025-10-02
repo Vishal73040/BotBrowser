@@ -8,6 +8,44 @@ This software and its documented capabilities are provided for **academic study 
 
 ⚠️ **This software is for compatibility validation in controlled, academic test environments only. It must not be used to bypass security controls on production systems.**
 
+## [2025-10-02] 
+
+### Major
+- **Chromium Core Upgrade → 141.0.7390.55**  
+  Aligned with the latest Chrome 141 for modern API parity, performance, and security fixes.
+
+- **Built‑in Widevine Component**  
+  Widevine CDM is now bundled. No more per‑launch downloads via ComponentUpdater → faster, deterministic startup and fewer external requests.
+
+### New
+- **DRM Hardware Simulation**  
+  Adds platform‑specific DRM capability emulation to satisfy advanced probes on certain sites/platforms.
+
+- **RLZ Re‑enabled**  
+  Restores RLZ behavior to improve compatibility with Google services that expect it.
+
+### Improved
+- **Android Speech Voices**  
+  More realistic `speechSynthesis.getVoices()` on Android profiles (language coverage, ordering, default selection) to better match real devices.
+
+- **Cross‑platform Feature Parity (outside `runtime_enabled_features.json5`)**  
+  Adapts a set of runtime capabilities not listed in the upstream JSON to keep platform‑agnostic fingerprints consistent across OS targets.
+
+- **X‑Browser Identification (Google)**  
+  Rewritten per Google‑recommended approach to increase Chrome authenticity signals.
+
+- **Stability with Browser Brand Overrides**  
+  Hardened brand‑switching paths to prevent occasional crashes under specific brand settings.
+
+### Fixed
+- **Screen Metrics from Profile**  
+  `config.screen.width` / `config.screen.height` now consistently apply on startup and new windows.
+
+- **Auto Language from Timezone**  
+  Fixed a case where timezone‑driven locale auto‑detection could fail to update the UI language.
+
+---
+
 ## [2025-09-27]
 
 ### Major
