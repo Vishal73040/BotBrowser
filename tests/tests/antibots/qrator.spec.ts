@@ -1,3 +1,15 @@
+/**
+ * ACADEMIC RESEARCH USE ONLY
+ *
+ * This test demonstrates Qrator bot detection compatibility in AUTHORIZED TEST ENVIRONMENTS ONLY.
+ * - Uses publicly accessible pages (MTS telecom service selection)
+ * - For fingerprint consistency research purposes
+ * - Read-only browsing, no account creation
+ *
+ * See https://github.com/botswin/BotBrowser/blob/main/tests/README.md
+ * and https://github.com/botswin/BotBrowser/blob/main/DISCLAIMER.md
+ */
+
 import { test } from '../global-setup';
 
 test('mts', async ({ page }) => {

@@ -1,3 +1,15 @@
+/**
+ * ACADEMIC RESEARCH USE ONLY
+ *
+ * Internal tests for detecting common fingerprint inconsistencies (lies).
+ * - Tests browser implementation consistency
+ * - For quality assurance and fingerprint validation
+ * - No external data submission
+ *
+ * See https://github.com/botswin/BotBrowser/blob/main/tests/README.md
+ * and https://github.com/botswin/BotBrowser/blob/main/DISCLAIMER.md
+ */
+
 import { test, expect } from './global-setup';
 
 test('ensure iframe content window width differs from window inner width', async ({ page }) => {

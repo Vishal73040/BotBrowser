@@ -1,3 +1,15 @@
+/**
+ * ACADEMIC RESEARCH USE ONLY
+ *
+ * This test demonstrates FunCaptcha (Arkose Labs) compatibility in AUTHORIZED TEST ENVIRONMENTS ONLY.
+ * - Uses publicly accessible registration pages with FunCaptcha
+ * - Submits ONLY synthetic/invalid test data
+ * - For CAPTCHA accessibility and fingerprint research
+ *
+ * See https://github.com/botswin/BotBrowser/blob/main/tests/README.md
+ * and https://github.com/botswin/BotBrowser/blob/main/DISCLAIMER.md
+ */
+
 import { expect, test } from '../global-setup';
 import { generateRandomEmail, generateRandomPassword, generateRandomUsername, sleep, waitForFrame } from '../utils';
 

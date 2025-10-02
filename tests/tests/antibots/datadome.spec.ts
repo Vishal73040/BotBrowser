@@ -1,3 +1,20 @@
+/**
+ * E-COMMERCE & PAYMENT SERVICES TESTING - AUTHORIZED USE ONLY
+ *
+ * This test demonstrates DataDome fingerprinting in AUTHORIZED TEST ENVIRONMENTS ONLY.
+ *
+ * Test Methodology:
+ * - Uses publicly accessible pages (search, browse, demo pages)
+ * - Submits ONLY synthetic/invalid test data
+ * - Does NOT attempt real purchases or payment processing
+ * - For academic fingerprint consistency research
+ *
+ * PROHIBITED: Production testing, real transactions, or unauthorized account access.
+ *
+ * See https://github.com/botswin/BotBrowser/blob/main/tests/README.md
+ * and https://github.com/botswin/BotBrowser/blob/main/DISCLAIMER.md
+ */
+
 import { expect, test } from '../global-setup';
 import { generateRandomEmail, generateRandomPassword, sleep } from '../utils';
 

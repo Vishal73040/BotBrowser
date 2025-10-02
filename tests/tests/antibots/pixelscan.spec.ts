@@ -1,3 +1,15 @@
+/**
+ * ACADEMIC RESEARCH USE ONLY
+ *
+ * This test demonstrates Pixelscan fingerprint analysis.
+ * - Uses publicly accessible fingerprinting tool (pixelscan.net)
+ * - For fingerprint consistency validation
+ * - Read-only analysis, no data submission
+ *
+ * See https://github.com/botswin/BotBrowser/blob/main/tests/README.md
+ * and https://github.com/botswin/BotBrowser/blob/main/DISCLAIMER.md
+ */
+
 import { expect, test } from '../global-setup';
 
 test('pixelscan', async ({ page }) => {

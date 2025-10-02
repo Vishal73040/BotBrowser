@@ -1,3 +1,20 @@
+/**
+ * TICKETING SYSTEM TESTING - AUTHORIZED USE ONLY
+ *
+ * This test demonstrates ticketing system compatibility in AUTHORIZED TEST ENVIRONMENTS ONLY.
+ *
+ * Test Methodology:
+ * - Tests publicly accessible event pages (does NOT purchase tickets)
+ * - Uses ONLY browsing/viewing functionality
+ * - Does NOT attempt real ticket purchases or reservations
+ * - For academic compatibility research
+ *
+ * PROHIBITED: Real ticket purchases, scalping, or automated ticket acquisition.
+ *
+ * See https://github.com/botswin/BotBrowser/blob/main/tests/README.md
+ * and https://github.com/botswin/BotBrowser/blob/main/DISCLAIMER.md
+ */
+
 import { expect, test } from '../global-setup';
 
 test('checkout', async ({ page }) => {

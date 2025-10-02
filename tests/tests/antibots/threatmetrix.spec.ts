@@ -1,3 +1,20 @@
+/**
+ * FINANCIAL SERVICES TESTING - AUTHORIZED USE ONLY
+ *
+ * This test demonstrates ThreatMetrix fingerprinting in AUTHORIZED TEST ENVIRONMENTS ONLY.
+ *
+ * Test Methodology:
+ * - Uses publicly accessible "forgot password" pages (NOT login/account access)
+ * - Submits ONLY invalid/synthetic data (fake names, invalid SSN "6789")
+ * - Does NOT attempt authentication or account access
+ * - For academic fingerprint consistency research
+ *
+ * PROHIBITED: Production testing without explicit written authorization.
+ *
+ * See https://github.com/botswin/BotBrowser/blob/main/tests/README.md
+ * and https://github.com/botswin/BotBrowser/blob/main/DISCLAIMER.md
+ */
+
 import { expect, test } from '../global-setup';
 import { generateRandomUsername } from '../utils';
 

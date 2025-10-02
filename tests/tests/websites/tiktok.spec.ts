@@ -1,3 +1,17 @@
+/**
+ * ACADEMIC RESEARCH USE ONLY
+ *
+ * This test demonstrates social media platform compatibility in AUTHORIZED TEST ENVIRONMENTS ONLY.
+ * - Uses publicly accessible signup pages (does NOT complete registration)
+ * - Submits ONLY synthetic/invalid test data
+ * - For fingerprint consistency research purposes
+ *
+ * PROHIBITED: Real account creation, ToS violations, or automated content manipulation.
+ *
+ * See https://github.com/botswin/BotBrowser/blob/main/tests/README.md
+ * and https://github.com/botswin/BotBrowser/blob/main/DISCLAIMER.md
+ */
+
 import { createCursor } from 'ghost-cursor-playwright';
 import { test } from '../global-setup';
 import { clickWithCursor, generateRandomEmail, generateRandomPassword, sleep } from '../utils';

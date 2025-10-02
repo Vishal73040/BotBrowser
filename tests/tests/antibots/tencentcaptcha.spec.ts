@@ -1,3 +1,15 @@
+/**
+ * ACADEMIC RESEARCH USE ONLY
+ *
+ * This test demonstrates Tencent Cloud Captcha compatibility in AUTHORIZED TEST ENVIRONMENTS ONLY.
+ * - Uses Tencent's official CAPTCHA demo page (tencentcloud.com)
+ * - For CAPTCHA accessibility and fingerprint research
+ * - Read-only demo interaction
+ *
+ * See https://github.com/botswin/BotBrowser/blob/main/tests/README.md
+ * and https://github.com/botswin/BotBrowser/blob/main/DISCLAIMER.md
+ */
+
 import { test } from '../global-setup';
 
 test('oneclick', async ({ page }) => {

@@ -1,3 +1,15 @@
+/**
+ * ACADEMIC RESEARCH USE ONLY
+ *
+ * This test demonstrates Incapsula (Imperva) bot detection compatibility in AUTHORIZED TEST ENVIRONMENTS ONLY.
+ * - Uses publicly accessible flight search pages
+ * - For fingerprint consistency research purposes
+ * - Read-only browsing, no purchases
+ *
+ * See https://github.com/botswin/BotBrowser/blob/main/tests/README.md
+ * and https://github.com/botswin/BotBrowser/blob/main/DISCLAIMER.md
+ */
+
 import { expect, test } from '../global-setup';
 import { getDateFormatted } from '../utils';
 

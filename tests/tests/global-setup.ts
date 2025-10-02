@@ -1,3 +1,14 @@
+/**
+ * Global Test Configuration
+ *
+ * Playwright test configuration for BotBrowser test suite.
+ * - Configures default timeouts and cleanup behaviors
+ * - Removes Playwright detection artifacts for realistic testing
+ * - For academic research test automation purposes
+ *
+ * See https://github.com/botswin/BotBrowser/blob/main/tests/README.md
+ */
+
 import { test as base } from '@playwright/test';
 import { sleep } from './utils';
 

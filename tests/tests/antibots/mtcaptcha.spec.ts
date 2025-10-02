@@ -1,3 +1,15 @@
+/**
+ * ACADEMIC RESEARCH USE ONLY
+ *
+ * This test demonstrates MTCaptcha compatibility in AUTHORIZED TEST ENVIRONMENTS ONLY.
+ * - Uses MTCaptcha's official demo page (mtcaptcha.com)
+ * - For CAPTCHA accessibility and fingerprint research
+ * - Read-only demo interaction
+ *
+ * See https://github.com/botswin/BotBrowser/blob/main/tests/README.md
+ * and https://github.com/botswin/BotBrowser/blob/main/DISCLAIMER.md
+ */
+
 import { test } from '../global-setup';
 
 test('invisiblecaptcha', async ({ page }) => {

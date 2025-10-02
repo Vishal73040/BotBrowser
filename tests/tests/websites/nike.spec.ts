@@ -1,3 +1,20 @@
+/**
+ * E-COMMERCE CHECKOUT TESTING - AUTHORIZED USE ONLY
+ *
+ * This test demonstrates e-commerce checkout flow in AUTHORIZED TEST ENVIRONMENTS ONLY.
+ *
+ * Test Methodology:
+ * - Tests publicly accessible checkout pages (does NOT complete purchases)
+ * - Uses ONLY synthetic/test data
+ * - Does NOT process real payments or create real orders
+ * - For academic compatibility research
+ *
+ * PROHIBITED: Real purchases, payment processing, or production system testing.
+ *
+ * See https://github.com/botswin/BotBrowser/blob/main/tests/README.md
+ * and https://github.com/botswin/BotBrowser/blob/main/DISCLAIMER.md
+ */
+
 import { expect, test } from '../global-setup';
 import { clickLocatorWithMouse, sleep } from '../utils';
 

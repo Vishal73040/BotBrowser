@@ -1,3 +1,15 @@
+/**
+ * ACADEMIC RESEARCH USE ONLY
+ *
+ * Internal tests for detecting automation/headless indicators.
+ * - Tests for common automation detection signals
+ * - For quality assurance and fingerprint validation
+ * - No external data submission
+ *
+ * See https://github.com/botswin/BotBrowser/blob/main/tests/README.md
+ * and https://github.com/botswin/BotBrowser/blob/main/DISCLAIMER.md
+ */
+
 import { expect, test } from './global-setup';
 
 test('is devtools open', async ({ page }) => {

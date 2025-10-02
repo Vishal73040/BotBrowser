@@ -1,3 +1,15 @@
+/**
+ * ACADEMIC RESEARCH USE ONLY
+ *
+ * This test demonstrates Cloudflare Turnstile compatibility in AUTHORIZED TEST ENVIRONMENTS ONLY.
+ * - Uses publicly accessible demo pages (2captcha.com/demo, official Cloudflare demos)
+ * - Submits ONLY synthetic/invalid test data
+ * - For fingerprint consistency research purposes
+ *
+ * See https://github.com/botswin/BotBrowser/blob/main/tests/README.md
+ * and https://github.com/botswin/BotBrowser/blob/main/DISCLAIMER.md
+ */
+
 import { expect, test } from '../global-setup';
 import { generateRandomEmail, generateRandomPassword, generateRandomUsername, sleep, waitForFrame } from '../utils';
 

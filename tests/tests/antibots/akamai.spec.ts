@@ -1,3 +1,15 @@
+/**
+ * ACADEMIC RESEARCH USE ONLY
+ *
+ * This test demonstrates Akamai bot management compatibility in AUTHORIZED TEST ENVIRONMENTS ONLY.
+ * - Uses publicly accessible login pages (does NOT attempt real authentication)
+ * - Submits ONLY invalid/synthetic credentials
+ * - For fingerprint consistency research purposes
+ *
+ * See https://github.com/botswin/BotBrowser/blob/main/tests/README.md
+ * and https://github.com/botswin/BotBrowser/blob/main/DISCLAIMER.md
+ */
+
 import { expect, test } from '../global-setup';
 import { generateRandomEmail, generateRandomPassword } from '../utils';
 

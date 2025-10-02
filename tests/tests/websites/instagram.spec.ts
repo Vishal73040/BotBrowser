@@ -1,3 +1,17 @@
+/**
+ * ACADEMIC RESEARCH USE ONLY
+ *
+ * This test demonstrates social media platform compatibility in AUTHORIZED TEST ENVIRONMENTS ONLY.
+ * - Uses publicly accessible signup pages (does NOT complete registration)
+ * - Submits ONLY synthetic/invalid test data
+ * - For fingerprint consistency research purposes
+ *
+ * PROHIBITED: Real account creation, ToS violations, or unauthorized automation.
+ *
+ * See https://github.com/botswin/BotBrowser/blob/main/tests/README.md
+ * and https://github.com/botswin/BotBrowser/blob/main/DISCLAIMER.md
+ */
+
 import { test } from '../global-setup';
 import { generateRandomEmail, generateRandomPassword, generateRandomUsername } from '../utils';
 

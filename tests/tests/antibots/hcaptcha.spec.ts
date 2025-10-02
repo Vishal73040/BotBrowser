@@ -1,3 +1,15 @@
+/**
+ * ACADEMIC RESEARCH USE ONLY
+ *
+ * This test demonstrates hCaptcha compatibility in AUTHORIZED TEST ENVIRONMENTS ONLY.
+ * - Uses publicly accessible login/registration pages with hCaptcha
+ * - Submits ONLY synthetic/invalid test data
+ * - For CAPTCHA accessibility and fingerprint research
+ *
+ * See https://github.com/botswin/BotBrowser/blob/main/tests/README.md
+ * and https://github.com/botswin/BotBrowser/blob/main/DISCLAIMER.md
+ */
+
 import { createCursor } from 'ghost-cursor-playwright';
 import { ElementHandle, expect, test } from '../global-setup';
 import {

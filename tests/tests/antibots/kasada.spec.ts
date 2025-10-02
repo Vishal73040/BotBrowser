@@ -1,3 +1,15 @@
+/**
+ * ACADEMIC RESEARCH USE ONLY
+ *
+ * This test demonstrates Kasada bot detection compatibility in AUTHORIZED TEST ENVIRONMENTS ONLY.
+ * - Uses publicly accessible registration pages (does NOT complete registration)
+ * - Submits ONLY synthetic/invalid test data
+ * - For fingerprint consistency research purposes
+ *
+ * See https://github.com/botswin/BotBrowser/blob/main/tests/README.md
+ * and https://github.com/botswin/BotBrowser/blob/main/DISCLAIMER.md
+ */
+
 import { expect, test } from '../global-setup';
 import { generateRandomEmail, generateRandomPassword, generateRandomUsername, getDateFormatted, sleep } from '../utils';
 

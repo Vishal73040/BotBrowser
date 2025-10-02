@@ -1,3 +1,15 @@
+/**
+ * ACADEMIC RESEARCH USE ONLY
+ *
+ * This test demonstrates FingerprintJS Pro bot detection analysis.
+ * - Uses publicly accessible demo pages (fingerprint.com demos)
+ * - For fingerprint consistency and bot detection research
+ * - Read-only analysis, no account creation
+ *
+ * See https://github.com/botswin/BotBrowser/blob/main/tests/README.md
+ * and https://github.com/botswin/BotBrowser/blob/main/DISCLAIMER.md
+ */
+
 import { expect, test } from '../global-setup';
 import { sleep } from '../utils';
 
