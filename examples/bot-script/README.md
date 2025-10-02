@@ -57,6 +57,6 @@ Since your script runs in a privileged context, you have access to:
 
 📖 **Chrome DevTools Protocol:** https://chromedevtools.github.io/devtools-protocol/
 
-## Academic Use Disclaimer
+---
 
-⚠️ **These examples are for academic research and authorized testing environments only.** Any use outside of authorized research is strictly prohibited.
+**📋 [Legal Disclaimer & Terms of Use](https://github.com/botswin/BotBrowser/blob/main/DISCLAIMER.md)**

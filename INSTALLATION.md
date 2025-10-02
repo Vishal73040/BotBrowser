@@ -6,18 +6,6 @@ This guide provides detailed installation instructions, troubleshooting steps, a
 
 ---
 
-> ## ⚠️ CRITICAL: AUTHORIZED USE ONLY
->
-> This software is for **academic research and authorized security testing** in controlled environments ONLY.
->
-> **Prohibited:** Production systems • Unauthorized access • ToS violations • Financial fraud
->
-> **📋 [Complete Legal Disclaimer & Terms of Use →](DISCLAIMER.md)**
-
----
-
----
-
 ## 📥 Download & Installation
 
 ### 1. Download Installer
@@ -306,8 +294,6 @@ When reporting installation problems, please include:
 
 ---
 
-## ⚠️ LEGAL DISCLAIMER
+---
 
-**📋 [Complete Legal Disclaimer & Terms of Use →](DISCLAIMER.md)**
-
-BotBrowser is designed for academic research and authorized testing environments. By using this software, you acknowledge compliance with all applicable laws and accept full responsibility for any consequences of use.
+**📋 [Legal Disclaimer & Terms of Use](https://github.com/botswin/BotBrowser/blob/main/DISCLAIMER.md)**

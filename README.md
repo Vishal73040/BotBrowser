@@ -26,9 +26,13 @@
 
 ---
 
-> **Professional Cross-Platform Browser with Unified Fingerprint Technology**  
-> **Identical Fingerprints Everywhere • Cross-OS Compatibility**  
-> **Windows fingerprints work identically on macOS • Consistent browser environment on any platform**  
+> **Note:** BotBrowser is designed for authorized testing and research. Review our [Legal Disclaimer](DISCLAIMER.md) before use.
+
+---
+
+> **Professional Cross-Platform Browser with Unified Fingerprint Technology**   
+> **Identical Fingerprints Everywhere • Cross-OS Compatibility**   
+> **Windows fingerprints work identically on macOS • Consistent browser environment on any platform**   
 
 ## 📖 What is BotBrowser?
 
@@ -304,10 +308,6 @@ Contact [botbrowser@bk.ru](mailto:botbrowser@bk.ru) for source code access and c
 
 ---
 
-## ⚠️ LEGAL DISCLAIMER
+---
 
-**BotBrowser** is designed for **academic research, security analysis, and authorized testing environments** that comply with all applicable laws and institutional ethics guidelines.
-
-**📋 [Complete Legal Disclaimer & Terms of Use →](DISCLAIMER.md)**
-
-By using this software, you acknowledge that you have read and agree to be bound by the complete disclaimer and all applicable laws. Users assume full responsibility for compliance and any consequences of use.
+**📋 [Legal Disclaimer & Terms of Use](https://github.com/botswin/BotBrowser/blob/main/DISCLAIMER.md)**

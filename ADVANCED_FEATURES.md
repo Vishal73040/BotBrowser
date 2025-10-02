@@ -6,18 +6,6 @@ This document provides detailed technical information about BotBrowser's advance
 
 ---
 
-> ## ⚠️ CRITICAL: AUTHORIZED USE ONLY
->
-> These advanced features are for **academic research and authorized security testing** in controlled environments ONLY.
->
-> **Prohibited:** Production systems • Unauthorized access • ToS violations • Malicious use
->
-> **📋 [Complete Legal Disclaimer & Terms of Use →](DISCLAIMER.md)**
-
----
-
----
-
 ## 🎯 Overview
 
 BotBrowser provides sophisticated browser fingerprint consistency testing capabilities through multiple layers of emulation and control. These features enable researchers to study web compatibility, automation detection, and fingerprint consistency across different environments.
@@ -557,8 +545,6 @@ For technical questions about advanced features, implementation details, or cust
 
 ---
 
-## ⚠️ LEGAL DISCLAIMER
+---
 
-**📋 [Complete Legal Disclaimer & Terms of Use →](DISCLAIMER.md)**
-
-BotBrowser is designed for academic research and authorized testing environments. By using this software, you acknowledge compliance with all applicable laws and accept full responsibility for any consequences of use.
+**📋 [Legal Disclaimer & Terms of Use](https://github.com/botswin/BotBrowser/blob/main/DISCLAIMER.md)**

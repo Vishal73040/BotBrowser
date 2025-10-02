@@ -6,16 +6,6 @@ This document provides **BotBrowser's CLI configuration system** for authorized 
 
 ---
 
-> ## ⚠️ CRITICAL: AUTHORIZED USE ONLY
->
-> These CLI flags are for **academic research and authorized security testing** in controlled environments ONLY.
->
-> **Prohibited:** Production systems • Unauthorized access • ToS violations • Malicious automation
->
-> **📋 [Complete Legal Disclaimer & Terms of Use →](DISCLAIMER.md)**
-
----
-
 > 🌍 **Smart Auto-Configuration:** BotBrowser automatically detects timezone, locale, and languages from your IP/proxy. Override only when needed for specific use cases.
 
 > ⚡ **Dynamic Configuration:** 20+ [`--bot-config-*` flags](#⚙️-profile-configuration-override-flags) provide runtime fingerprint configuration - suitable for authorized testing environments, CI/CD, and multi-instance setups.
@@ -322,8 +312,6 @@ chromium-browser \
 
 ---
 
-## ⚠️ LEGAL DISCLAIMER
+---
 
-**📋 [Complete Legal Disclaimer & Terms of Use →](DISCLAIMER.md)**
-
-BotBrowser is designed for academic research and authorized testing environments. By using this software, you acknowledge compliance with all applicable laws and accept full responsibility for any consequences of use.
+**📋 [Legal Disclaimer & Terms of Use](https://github.com/botswin/BotBrowser/blob/main/DISCLAIMER.md)**
