@@ -28,6 +28,12 @@ Simple testing approach to verify fingerprint consistency across different platf
 
 ## 📊 Test Results
 
+> ⚠️ **Research Purpose Only:** These results demonstrate fingerprint consistency for academic analysis exclusively. Not intended for bypassing security systems or unauthorized access to production services. All tests conducted in controlled environments with proper authorization.
+
+> ⚠️ **Test Data Policy:** All tests use synthetic/invalid data (random usernames, fake SSNs like "6789", non-existent credentials). No real user data or valid credentials are used or stored.
+
+> ⚠️ **Financial Services Testing:** Tests involving financial institutions (Vanguard, Fidelity, etc.) were conducted in authorized test/demo environments only. Production testing requires explicit authorization from the service provider.
+
 ### Website Compatibility
 
 Testing results with popular websites and their security systems. Shows how well BotBrowser works in real scenarios.
@@ -52,7 +58,7 @@ Testing results with popular websites and their security systems. Shows how well
 | **[MTCaptcha](tests/tests/antibots/mtcaptcha.spec.ts)** | [▶️ Invisible Captcha](//botswin.github.io/BotBrowser/video_player/index.html?video=antibots-mtcaptcha-invisiblecaptcha) |
 | **[FriendlyCaptcha](tests/tests/antibots/friendlycaptcha.spec.ts)** | [▶️ Captcha Demo](//botswin.github.io/BotBrowser/video_player/index.html?video=antibots-friendlycaptcha-captchademo) |
 | **[YandexCaptcha](tests/tests/antibots/yandexcaptcha.spec.ts)** | [▶️ SmartCaptcha](//botswin.github.io/BotBrowser/video_player/index.html?video=antibots-yandexcaptcha-smartcaptcha) |
-| **ThreatMetrix** | 🚧 Coming Soon |
+| **[ThreatMetrix](tests/tests/antibots/threatmetrix.spec.ts)** | [▶️ Vanguard](//botswin.github.io/BotBrowser/video_player/index.html?video=antibots-threatmetrix-vanguard), [▶️ Fidelity](//botswin.github.io/BotBrowser/video_player/index.html?video=antibots-threatmetrix-fidelity) |
 | **ProtectedMedia** | 🚧 Coming Soon |
 | **[Fake Vision](tests/tests/antibots/fvpro.spec.ts)** | [▶️ FakeVision](//botswin.github.io/BotBrowser/video_player/index.html?video=antibots-fvpro-fvpro) |
 

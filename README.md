@@ -26,13 +26,19 @@
 
 ---
 
-> **Professional Cross-Platform Browser with Unified Fingerprint Technology**  
-> **Identical Fingerprints Everywhere • Cross-OS Compatibility**  
-> **Windows fingerprints work identically on macOS • Consistent browser environment on any platform**    
+> ## ⚠️ CRITICAL: AUTHORIZED USE ONLY
+>
+> This software is for **academic research and authorized security testing** in controlled environments ONLY.
+>
+> **Prohibited:** Production systems • Unauthorized access • ToS violations • Financial fraud
+>
+> **📋 [Complete Legal Disclaimer & Terms of Use →](DISCLAIMER.md)**
 
 ---
 
-**⚠️ Disclaimer: This project is intended for authorized security research, fingerprint consistency testing, and automation compatibility evaluation only. Misuse for spam, fraud, or unauthorized activity is strictly prohibited.**
+> **Professional Cross-Platform Browser with Unified Fingerprint Technology**
+> **Identical Fingerprints Everywhere • Cross-OS Compatibility**
+> **Windows fingerprints work identically on macOS • Consistent browser environment on any platform**
 
 ## 📖 What is BotBrowser?
 

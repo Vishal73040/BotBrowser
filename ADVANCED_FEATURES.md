@@ -4,7 +4,17 @@
 
 This document provides detailed technical information about BotBrowser's advanced capabilities, designed for researchers, developers, and security professionals working in authorized testing environments.
 
-⚠️ **Usage Policy:** These advanced features are designed for academic study, security analysis, and authorized testing environments only. Use in compliance with institutional policies and applicable laws.
+---
+
+> ## ⚠️ CRITICAL: AUTHORIZED USE ONLY
+>
+> These advanced features are for **academic research and authorized security testing** in controlled environments ONLY.
+>
+> **Prohibited:** Production systems • Unauthorized access • ToS violations • Malicious use
+>
+> **📋 [Complete Legal Disclaimer & Terms of Use →](DISCLAIMER.md)**
+
+---
 
 ---
 

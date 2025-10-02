@@ -4,7 +4,17 @@
 
 This guide provides detailed installation instructions, troubleshooting steps, and deployment options for BotBrowser across different operating systems.
 
-⚠️ **Usage Policy:** BotBrowser is designed for academic research, security analysis, and authorized testing environments only. Use in compliance with institutional policies and applicable laws.
+---
+
+> ## ⚠️ CRITICAL: AUTHORIZED USE ONLY
+>
+> This software is for **academic research and authorized security testing** in controlled environments ONLY.
+>
+> **Prohibited:** Production systems • Unauthorized access • ToS violations • Financial fraud
+>
+> **📋 [Complete Legal Disclaimer & Terms of Use →](DISCLAIMER.md)**
+
+---
 
 ---
 

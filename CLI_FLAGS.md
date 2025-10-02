@@ -4,7 +4,17 @@
 
 This document provides **BotBrowser's CLI configuration system** for authorized testing and academic environments. These flags extend standard Chromium capabilities, providing **comprehensive control** over browser fingerprints without modifying profile files.
 
-⚠️ **Usage Policy:** These configuration options are designed for academic study, security analysis, and authorized testing environments only. Use in compliance with institutional policies and applicable laws.
+---
+
+> ## ⚠️ CRITICAL: AUTHORIZED USE ONLY
+>
+> These CLI flags are for **academic research and authorized security testing** in controlled environments ONLY.
+>
+> **Prohibited:** Production systems • Unauthorized access • ToS violations • Malicious automation
+>
+> **📋 [Complete Legal Disclaimer & Terms of Use →](DISCLAIMER.md)**
+
+---
 
 > 🌍 **Smart Auto-Configuration:** BotBrowser automatically detects timezone, locale, and languages from your IP/proxy. Override only when needed for specific use cases.
 

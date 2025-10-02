@@ -28,8 +28,25 @@ These research test scripts are provided strictly for **academic research, secur
 - **Violation of website terms of service**
 - **Unauthorized access to third-party systems**
 - **Commercial exploitation without proper licensing**
+- **Testing financial services without written authorization**
+- **Using real user credentials or personal data**
 
 ⚠️ **Research Ethics Requirement:** All users must obtain proper institutional review board (IRB) approval and follow ethical research guidelines when conducting studies involving web services or user data.
+
+### Test Data Policy
+
+**All test scripts use ONLY synthetic/invalid data:**
+- ✅ Random/generated usernames (not real accounts)
+- ✅ Fake SSNs (e.g., "6789" - obviously invalid)
+- ✅ Non-existent email addresses
+- ✅ Invalid credentials that will never authenticate
+- ✅ Test endpoints and demo environments
+
+**NEVER use:**
+- ❌ Real user accounts or credentials
+- ❌ Valid personal information (SSN, DOB, etc.)
+- ❌ Stolen or leaked credentials
+- ❌ Production API endpoints without authorization
 
 ---
 
@@ -78,6 +95,28 @@ npx playwright show-report
 **Data Collection:** Research data is collected only from publicly accessible testing interfaces and demonstration sites under controlled, non-production conditions.
 
 ⚠️ **Important:** Results from these tests must not be interpreted as instructions for bypassing production systems or circumventing security measures.
+
+### Ethical Testing Guidelines
+
+Before running any tests, ensure you meet ALL of these requirements:
+
+1. ✅ **Authorization:** You own the system OR have explicit written permission
+2. ✅ **Test Environment:** Using test/demo endpoints, not production systems
+3. ✅ **Synthetic Data:** No real user data or valid credentials
+4. ✅ **Legal Compliance:** Full compliance with applicable laws (CFAA, GDPR, etc.)
+5. ✅ **Terms of Service:** Not violating any website ToS
+6. ✅ **Academic Purpose:** Results used solely for research/education
+
+**If you cannot check ALL boxes above, DO NOT proceed with testing.**
+
+### Financial Services Testing - Special Notice
+
+Tests involving financial institutions (e.g., `threatmetrix.spec.ts` with Vanguard/Fidelity):
+- ⚠️ Use ONLY publicly accessible "forgot password" or demo pages
+- ⚠️ Submit ONLY invalid/synthetic data (fake names, obviously invalid SSNs)
+- ⚠️ Do NOT attempt actual authentication or account access
+- ⚠️ Intended to demonstrate fingerprinting behavior in research context
+- ⚠️ Production testing requires explicit written authorization from the institution
 
 ### Research Environment Troubleshooting
 
