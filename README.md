@@ -26,19 +26,9 @@
 
 ---
 
-> ## ⚠️ CRITICAL: AUTHORIZED USE ONLY
->
-> This software is for **academic research and authorized security testing** in controlled environments ONLY.
->
-> **Prohibited:** Production systems • Unauthorized access • ToS violations • Financial fraud
->
-> **📋 [Complete Legal Disclaimer & Terms of Use →](DISCLAIMER.md)**
-
----
-
-> **Professional Cross-Platform Browser with Unified Fingerprint Technology**
-> **Identical Fingerprints Everywhere • Cross-OS Compatibility**
-> **Windows fingerprints work identically on macOS • Consistent browser environment on any platform**
+> **Professional Cross-Platform Browser with Unified Fingerprint Technology**  
+> **Identical Fingerprints Everywhere • Cross-OS Compatibility**  
+> **Windows fingerprints work identically on macOS • Consistent browser environment on any platform**  
 
 ## 📖 What is BotBrowser?
 
