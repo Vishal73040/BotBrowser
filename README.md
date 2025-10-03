@@ -24,15 +24,16 @@
   <img width="600" alt="BotBrowser GUI - Your Command Center" src="https://github.com/user-attachments/assets/e9c0b656-83b0-4be5-986e-d4bc3c04b4b5">
 </div>
 
+<p align="center">
+  <strong>Professional Cross-Platform Browser with Unified Fingerprint Technology</strong><br>
+  Identical fingerprints on any OS • Cross-platform compatibility • Works with 29+ detection systems
+</p>
+
 ---
 
 > **Note:** BotBrowser is designed for authorized testing and research. Review our [Legal Disclaimer](DISCLAIMER.md) before use.
 
----
-
-> **Professional Cross-Platform Browser with Unified Fingerprint Technology**   
-> **Identical Fingerprints Everywhere • Cross-OS Compatibility**   
-> **Windows fingerprints work identically on macOS • Consistent browser environment on any platform**   
+---   
 
 ## 📖 What is BotBrowser?
 
@@ -98,7 +99,7 @@ Automatic touch simulation, device metrics, and unified fingerprint rendering ac
 
 1. **[Download BotBrowser](https://github.com/botswin/BotBrowser/releases)** + **[Get Demo Profile](profiles/)**
 2. **Run command:** `./chrome.exe --no-sandbox --bot-profile="path/to/profile.enc"`
-3. **Visit test site:** [CreepJS](https://abrahamjuliot.github.io/creepjs/) to see perfect fingerprint consistency!
+3. **Visit test site:** [CreepJS](https://abrahamjuliot.github.io/creepjs/) to see fingerprint consistency in action!
 
 > **Works instantly** - No configuration needed, timezone/locale auto-detected from your IP
 
