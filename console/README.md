@@ -70,7 +70,7 @@ npm i -g @neutralinojs/neu
 
 This desktop application is provided for **academic study and authorized testing** purposes to demonstrate BotBrowser capabilities in controlled environments. It is intended solely for **authorized testing environments** that comply with all applicable laws, regulations, and institutional policies. **Any misuse**—such as violating website terms of service or engaging in unlawful activities—**is strictly prohibited.**
 
-⚠️ **This application is for compatibility validation in controlled, academic test environments only. It must not be used to bypass security controls on production systems.**
+⚠️ **This application is for compatibility validation in controlled, academic test environments only. It must not be used to circumvent security controls on production systems.**
 
 ## 📬 Academic Collaboration & Inquiries
 

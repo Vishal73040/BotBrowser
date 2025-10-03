@@ -76,7 +76,7 @@ Provide the proxy's public IP address to skip per-page IP lookups, improving pag
 ⚠️ **Important:**
 - **Browser-level proxy:** Use `--proxy-server` flag for consistent geo-detection across all contexts
 - **Per-context proxy:** You can set different proxies via `createBrowserContext({ proxy: {...} })` - BotBrowser supports both approaches and automatically retrieves geo information for timezone/locale configuration in both cases
-- **Avoid:** Framework-specific options like `page.authenticate()` which bypass BotBrowser's geo-detection system
+- **Avoid:** Framework-specific options like `page.authenticate()` which skip BotBrowser's geo-detection system
 
 ---
 

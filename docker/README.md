@@ -149,7 +149,7 @@ For other issues, see the main README or open a GitHub issue.
 >
 > These Docker projects are provided for **academic study and authorized testing** purposes to demonstrate BotBrowser capabilities in controlled environments. They are intended solely for **authorized testing environments** that comply with all applicable laws, regulations, and institutional policies. **Any misuse**—such as violating website terms of service or engaging in unlawful activities—**is strictly prohibited.**
 
-⚠️ **These examples are provided for compatibility validation in controlled, academic test environments only. They must not be used to bypass security controls on production systems.**
+⚠️ **These examples are provided for compatibility validation in controlled, academic test environments only. They must not be used to circumvent security controls on production systems.**
 
 **These examples are research demonstrations only. The names of third-party services are referenced solely for compatibility benchmarking in controlled environments.**
 

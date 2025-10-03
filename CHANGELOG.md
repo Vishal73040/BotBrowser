@@ -6,7 +6,7 @@
 
 This software and its documented capabilities are provided for **academic study and authorized testing** purposes to demonstrate browser compatibility technologies in controlled environments. They are intended solely for **authorized testing environments** that comply with all applicable laws, regulations, and institutional policies. **Any misuse**—such as violating website terms of service or engaging in unlawful activities—**is strictly prohibited.**
 
-⚠️ **This software is for compatibility validation in controlled, academic test environments only. It must not be used to bypass security controls on production systems.**
+⚠️ **This software is for compatibility validation in controlled, academic test environments only. It must not be used to circumvent security controls on production systems.**
 
 ## [2025-10-02] 
 
@@ -82,7 +82,7 @@ This software and its documented capabilities are provided for **academic study 
 
 ### Authenticity
 - **Bundled Chrome component plugin**
-  Preloads the stock Chrome component extension (**ID: ghbmnnjooekpmoecnnnilnnbdlolhkhi**) to mirror real‑Chrome environments. Helps bypass checks like **fingerprint‑scan.com** that expect this presence.
+  Preloads the stock Chrome component extension (**ID: ghbmnnjooekpmoecnnnilnnbdlolhkhi**) to mirror real‑Chrome environments. Improves compatibility with fingerprinting tools like **fingerprint‑scan.com** that expect this presence.
 
 ### Fixed
 - **Locale ↔ Speech voice alignment**
