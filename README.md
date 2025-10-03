@@ -1,6 +1,9 @@
 <h1 align="center">🤖 BotBrowser</h1>
 
 <h4 align="center">Professional Cross-Platform Browser with Unified Fingerprint Technology 🚀</h4>
+<p align="center">
+  Identical fingerprints on any OS • Cross-platform compatibility • Works with 29+ detection systems
+</p>
 
 <p align="center">
   <a href="https://github.com/botswin/BotBrowser/releases">
@@ -23,11 +26,6 @@
 <div align="center">
   <img width="600" alt="BotBrowser GUI - Your Command Center" src="https://github.com/user-attachments/assets/e9c0b656-83b0-4be5-986e-d4bc3c04b4b5">
 </div>
-
-<p align="center">
-  <strong>Professional Cross-Platform Browser with Unified Fingerprint Technology</strong><br>
-  Identical fingerprints on any OS • Cross-platform compatibility • Works with 29+ detection systems
-</p>
 
 ---
 
