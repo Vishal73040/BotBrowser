@@ -10,8 +10,9 @@
  * and https://github.com/botswin/BotBrowser/blob/main/DISCLAIMER.md
  */
 
-import { test } from '../global-setup';
-import { generateRandomEmail, sleep } from '../utils';
+import { createCursor } from 'ghost-cursor-playwright';
+import { expect, test } from '../global-setup';
+import { clickWithCursor, enableMouseMovementOverlay, generateRandomEmail, sleep } from '../utils';
 
 test('zillow', async ({ page }) => {
     await page.goto('https://www.zillow.com/');
@@ -24,4 +25,18 @@ test('zillow', async ({ page }) => {
     await page.keyboard.press('Enter');
     await sleep(2_000);
     await page.locator('[[data-za-label="My Zillow"]]').waitFor({ state: 'visible' });
+});
+
+test('budget', async ({ page }) => {
+    test.setTimeout(3000_000);
+    const cursor = await createCursor(page);
+    await enableMouseMovementOverlay(page);
+    await page.goto('https://www.budget.co.nz/en/home');
+    await clickWithCursor(cursor, '#PicLoc');
+    await sleep(2000);
+    await page.locator('input#PicLoc_value').first().pressSequentially('141', { delay: 200 });
+    await clickWithCursor(cursor, 'div#PicLoc_dropdown >> div.angucomplete-results >> text=Banja');
+    await sleep(2000);
+    await clickWithCursor(cursor, 'button#res-home-select-car');
+    expect(await page.waitForNavigation({ url: 'https://www.budget.co.nz/en/reservation#/vehicles' })).toBeTruthy();
 });

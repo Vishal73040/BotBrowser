@@ -95,7 +95,7 @@ export function generateRandomPassword(length = 15) {
 }
 
 export async function clickWithCursor(cursor: Cursor, selector: string) {
-    const boundingBox = await cursor.page.locator(selector).boundingBox();
+    const boundingBox = await cursor.page.locator(selector).first().boundingBox();
     assert(boundingBox, `Bounding box for selector "${selector}" should not be null`);
     await cursor.actions.click({ target: boundingBox, waitBeforeClick: [100, 200] });
 }
