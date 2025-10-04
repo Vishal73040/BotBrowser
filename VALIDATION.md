@@ -415,6 +415,4 @@ Detection System Tests (200+ scenarios)
 
 ---
 
----
-
 **📋 [Legal Disclaimer & Terms of Use](https://github.com/botswin/BotBrowser/blob/main/DISCLAIMER.md)**

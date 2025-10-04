@@ -545,6 +545,4 @@ For technical questions about advanced features, implementation details, or cust
 
 ---
 
----
-
 **📋 [Legal Disclaimer & Terms of Use](https://github.com/botswin/BotBrowser/blob/main/DISCLAIMER.md)**

@@ -298,6 +298,4 @@ Contact [botbrowser@bk.ru](mailto:botbrowser@bk.ru) for source code access and c
 
 ---
 
----
-
 **📋 [Legal Disclaimer & Terms of Use](https://github.com/botswin/BotBrowser/blob/main/DISCLAIMER.md)**

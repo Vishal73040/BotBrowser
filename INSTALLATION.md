@@ -294,6 +294,4 @@ When reporting installation problems, please include:
 
 ---
 
----
-
 **📋 [Legal Disclaimer & Terms of Use](https://github.com/botswin/BotBrowser/blob/main/DISCLAIMER.md)**
