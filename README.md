@@ -91,46 +91,37 @@ Automatic touch simulation, device metrics, and unified fingerprint rendering ac
 
 ## 🚀 Getting Started
 
-### 30-Second Quick Test
+### Quick Start
 
-**Want to try immediately?** Download + Launch + Test in under 30 seconds:
+Get BotBrowser running in under a minute:
 
-1. **[Download BotBrowser](https://github.com/botswin/BotBrowser/releases)** + **[Get Demo Profile](profiles/)**
-2. **Run command:** `./chrome.exe --no-sandbox --bot-profile="path/to/profile.enc"`
-3. **Visit test site:** [CreepJS](https://abrahamjuliot.github.io/creepjs/) to see fingerprint consistency in action!
+**Step 1: Download**
+- [BotBrowser release](https://github.com/botswin/BotBrowser/releases) for your OS
+- [Demo profile](profiles/) (any `.enc` file)
 
-> **Works instantly** - No configuration needed, timezone/locale auto-detected from your IP
+**Step 2: Launch** (⚠️ use absolute paths)
 
-### Complete Setup (3 Steps)
-
-**Step 1:** Download from [Releases](https://github.com/botswin/BotBrowser/releases) and a profile from [profiles](profiles) directory.
-
-**Step 2:** Launch BotBrowser with your profile (⚠️ use absolute path):
-
-**Windows (CMD):**
+**Windows:**
 ```cmd
 chrome.exe --no-sandbox --bot-profile="C:\\absolute\\path\\to\\chrome139_win11_x64.enc" --user-data-dir="%TEMP%\\botprofile_%RANDOM%"
 ```
 
 **macOS:**
 ```bash
-/Applications/Chromium.app/Contents/MacOS/Chromium \
-  --no-sandbox \
-  --user-data-dir="$(mktemp -d)" \
-  --bot-profile="/absolute/path/to/chrome139_win11_x64.enc"
+/Applications/Chromium.app/Contents/MacOS/Chromium --no-sandbox --user-data-dir="$(mktemp -d)" --bot-profile="/absolute/path/to/chrome139_win11_x64.enc"
 ```
 
 **Ubuntu:**
 ```bash
-chromium-browser \
-  --no-sandbox \
-  --user-data-dir="$(mktemp -d)" \
-  --bot-profile="/absolute/path/to/chrome139_win11_x64.enc"
+chromium-browser --no-sandbox --user-data-dir="$(mktemp -d)" --bot-profile="/absolute/path/to/chrome139_win11_x64.enc"
 ```
 
-**Step 3:** Browse normally - timezone, locale, and languages are automatically configured!
+**Step 3: Test**
+Visit [CreepJS](https://abrahamjuliot.github.io/creepjs/) to see fingerprint consistency in action!
 
-📖 **[Complete Installation Guide →](INSTALLATION.md)** - Detailed setup, Docker deployment, troubleshooting
+> **Works instantly** - Timezone/locale auto-detected from your IP
+
+📖 **[Complete Installation Guide →](INSTALLATION.md)** - Docker, troubleshooting, advanced setup
 
 ### [Playwright](examples/playwright) / [Puppeteer](examples/puppeteer) Automation
 
