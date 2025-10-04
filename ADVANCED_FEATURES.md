@@ -181,6 +181,10 @@ Authentic Google Chrome behaviors and API responses.
 ---
 
 ## 📱 Device & Platform Emulation
+Compact overview; expand for full details.
+
+<details>
+<summary><strong>Full details: Device & Platform Emulation</strong></summary>
 
 ### Cross‑Platform Font Engine
 Advanced font rendering with consistent results across hosts.
@@ -244,6 +248,12 @@ Comprehensive hardware emulation and fingerprint management.
 ---
 
 ## ⚡ Deep System Integration
+</details>
+
+Compact overview; expand for full details.
+
+<details>
+<summary><strong>Full details: Deep System Integration</strong></summary>
 
 ### Precise FPS Simulation
 Advanced frame‑rate and performance emulation.
@@ -341,6 +351,12 @@ Runtime OS‑based feature loading for authentic behavior.
 ---
 
 ## 📋 Complete Fingerprint Control
+</details>
+
+Compact overview; expand for full details.
+
+<details>
+<summary><strong>Full details: Complete Fingerprint Control</strong></summary>
 
 ### Browser & OS Fingerprinting
 Comprehensive browser and OS emulation.
@@ -418,6 +434,7 @@ Fine‑grained performance fingerprint control and timing simulation.
 ---
 
 ## 🔗 Integration with Automation Frameworks
+</details>
 
 ### Framework‑Less Automation (`--bot-script`)
 Execute JavaScript with privileged `chrome.debugger` access.
