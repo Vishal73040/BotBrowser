@@ -1,16 +1,16 @@
 # 📚 BotBrowser Profile Configuration Guide
 
-**For Academic and Authorized Testing Environments**
+For Academic and Authorized Testing Environments.
 
-This guide provides **BotBrowser's fingerprint customization system** for controlled testing and academic environments. Learn to configure synthetic profiles and dynamic CLI overrides for authorized compatibility testing.
+This guide explains BotBrowser’s fingerprint‑customization system for controlled testing. Configure synthetic profiles and use dynamic CLI overrides for authorized compatibility testing.
 
-⚠️ **Usage Policy:** This configuration system is designed for academic study, security analysis, and authorized testing environments only. Use in compliance with institutional policies and applicable laws.
+⚠️ **Usage Policy:** This configuration system is designed for academic study, security analysis, and authorized testing only. Use in compliance with institutional policies and applicable laws.
 
-> 💡 **CLI-First Configuration:** Use [`--bot-config-*` flags](../CLI_FLAGS.md#⚙️-profile-configuration-override-flags) for runtime fingerprint configuration without modifying encrypted profiles. Highest priority configuration system suitable for authorized testing environments.
+> 💡 **CLI‑First Configuration:** Use [`--bot-config-*` flags](../CLI_FLAGS.md#⚙️-profile-configuration-override-flags) for runtime fingerprint control without editing encrypted profiles. These carry the highest priority.
 
-> 🌍 **Smart Auto-Configuration:** BotBrowser automatically configures timezone, locale, and languages based on proxy IP. Override only for specific testing scenarios.
+> 🌍 **Smart Auto‑Configuration:** BotBrowser automatically configures timezone, locale, and languages based on proxy IP. Override only when your scenario requires it.
 
-> 🔒 **Data Privacy:** All profile data uses synthetic/aggregated configurations for academic compliance. BotBrowser does not collect or distribute personal or user-identifying data. All fingerprints are synthetic/aggregated for academic compliance. Dynamic CLI overrides preserve profile integrity while enabling flexible customization.
+> 🔒 **Data Privacy:** Profiles use synthetic/aggregated configurations for academic compliance. BotBrowser does not collect or distribute personal or user‑identifying data. Use CLI overrides to keep profiles intact while customizing behavior.
 
 ## 📋 Table of Contents
 
@@ -36,10 +36,10 @@ BotBrowser uses a three-tier priority system for configuration:
 
 ### 💡 Why CLI Flags Are Recommended
 
-- **✅ Highest Priority:** Always takes precedence over profile settings
-- **✅ No Profile Editing:** Avoid modifying complex encrypted profile files
-- **✅ Dynamic Configuration:** Perfect for automation and different environments
-- **✅ Session Isolation:** Different settings per browser instance without conflicts
+- **Highest Priority:** Always takes precedence over profile settings
+- **No Profile Editing:** Avoid modifying complex encrypted profile files
+- **Dynamic Configuration:** Perfect for automation and different environments
+- **Session Isolation:** Different settings per browser instance without conflicts
 
 **Example:**
 ```bash
@@ -55,17 +55,17 @@ chromium-browser \
 
 ## ⚠️ Important: Profile Data Integrity
 
-**Profile data uses synthetic/aggregated configurations; unless you are certain about the impact of a change, do not override any fingerprint property - keeping the defaults ensures the most consistent behavior for academic testing.**
+Profile data uses synthetic/aggregated configurations. Unless you are certain about the impact, avoid overriding fingerprint properties—defaults provide the most consistent behavior for academic testing.
 
 ## 🔧 How to Apply Configuration
 
 All configurations are embedded in the `configs` field inside your profile JSON structure.
 
-### 📁 File-Based Configuration Only
+### 📁 File‑Based Configuration Only
 
-> 💡 **Important:** BotBrowser only accepts profile input as a file. Shell command piping (e.g., `--bot-profile=<(echo '{"x": 1}')`) is **not supported** due to CLI argument length and file descriptor limitations.
+> 💡 Important: BotBrowser only accepts profile input as a file. Shell piping (e.g., `--bot-profile=<(echo '{"x": 1}')`) is not supported due to CLI argument length and file‑descriptor limits.
 
-**✅ Best Practice:**
+**Best Practice:**
 
 1. Build your profile JSON dynamically in your code
 2. Write it to a temporary file (e.g., `/tmp/myprofile.json`)
@@ -237,13 +237,13 @@ All configurations are embedded in the `configs` field inside your profile JSON 
 
 ```
 
-⚠️ Open the `.enc` file and place the `configs` block before the `key` block, keeping the entire .enc file in JSON format:
+⚠️ Open the `.enc` file and place the `configs` block before the `key` block, keeping the entire file in JSON format:
 
 <img width="758" alt="image" src="https://github.com/user-attachments/assets/e34b1557-d7cd-4257-b709-b76ec1b0409b" />
 
 ---
 
-⚠️ Eventually, your modified `.enc` profile should have this structure:
+⚠️ Your modified `.enc` profile should have this structure:
 
 ```json5
 {
@@ -272,8 +272,8 @@ All configurations are embedded in the `configs` field inside your profile JSON 
 - Profile data uses synthetic/aggregated configurations; change only if necessary and you understand the impact.
 - All string fields support multi-purpose values: string literal (`auto`, `real`, or custom), or object schema when more parameters are needed.
 - If a field is omitted, BotBrowser uses profile defaults where appropriate.
-- CLI `--bot-config-*` flags **override** profile `configs` settings with highest priority
-- **uaFullVersion Tip**: When JavaScript calls `navigator.userAgentData.fullVersion`, BotBrowser will replace the default value with this field. Ensure that the specified full version corresponds to the Chromium engine’s major version (e.g., Chromium 138 → full version should begin with “138.”). You can look up the latest full version for each major release on https://chromiumdash.appspot.com/releases.
+- CLI `--bot-config-*` flags override profile `configs` with the highest priority
+- **uaFullVersion Tip:** When JavaScript calls `navigator.userAgentData.fullVersion`, BotBrowser replaces the default value with this field. Ensure the full version matches the Chromium major version (e.g., Chromium 138 → full version starts with “138.”). See https://chromiumdash.appspot.com/releases.
 
 ---
 

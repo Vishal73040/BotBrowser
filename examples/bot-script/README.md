@@ -1,12 +1,12 @@
 # BotBrowser Script Automation Examples
 
-**Framework-less automation using BotBrowser's native `--bot-script` feature**
+Framework‑less automation using BotBrowser’s native `--bot-script` feature.
 
-⚠️ **Research Use Only:** These automation examples are for academic research and authorized testing environments only. Not intended for bypassing security systems or unauthorized access to production services.
+⚠️ Research use only: These examples are for academic research and authorized testing. They are not intended to bypass security systems or access production services without permission.
 
-## What is `--bot-script`?
+## What Is `--bot-script`?
 
-BotBrowser's `--bot-script` allows you to execute JavaScript code in a **privileged, non-extension context** where the `chrome.debugger` API is available. This provides:
+`--bot-script` executes JavaScript in a privileged, non‑extension context where the `chrome.debugger` API is available. This provides:
 
 - **No framework dependencies** - Pure Chrome DevTools Protocol access
 - **Earlier intervention** - Execute before page navigation
@@ -38,7 +38,7 @@ Demonstrates automated handling of Cloudflare Turnstile challenges using:
 
 ## Key APIs Available
 
-Since your script runs in a privileged context, you have access to:
+Because scripts run in a privileged context, you have access to:
 
 - **`chrome.debugger`** - Full Chrome DevTools Protocol access
 - **`chrome.runtime`** - Runtime APIs
@@ -46,10 +46,10 @@ Since your script runs in a privileged context, you have access to:
 
 ## Best Practices
 
-1. **Error Handling** - Always check `chrome.runtime.lastError`
-2. **Target Management** - Track active targets to avoid duplicates
-3. **Resource Cleanup** - Detach from debugger when done
-4. **Timing Control** - Use appropriate delays for actions
+1. Error handling — always check `chrome.runtime.lastError`
+2. Target management — track active targets to avoid duplicates
+3. Resource cleanup — detach from the debugger when done
+4. Timing control — use appropriate delays between actions
 
 ## Documentation
 

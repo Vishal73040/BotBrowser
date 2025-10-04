@@ -1,9 +1,9 @@
 
 # 🔬 BotBrowser Research Test Suite
 
-**Academic Research Framework for Browser Compatibility Analysis**
+Academic research framework for browser‑compatibility analysis.
 
-Demonstrates controlled browser compatibility research using [Playwright](https://playwright.dev/docs/writing-tests) for academic and security research purposes.
+Demonstrates controlled browser‑compatibility research using [Playwright](https://playwright.dev/docs/writing-tests) for academic and security research purposes.
 
 ## 🌐 Research Environment Setup
 
@@ -35,14 +35,14 @@ These research test scripts are provided strictly for **academic research, secur
 
 ### Test Data Policy
 
-**All test scripts use ONLY synthetic/invalid data:**
-- ✅ Random/generated usernames (not real accounts)
-- ✅ Fake SSNs (e.g., "6789" - obviously invalid)
-- ✅ Non-existent email addresses
-- ✅ Invalid credentials that will never authenticate
-- ✅ Test endpoints and demo environments
+**All Test Scripts Use Only Synthetic/Invalid Data:**
+- Random/generated usernames (not real accounts)
+- Fake SSNs (e.g., "6789" — obviously invalid)
+- Non-existent email addresses
+- Invalid credentials that will never authenticate
+- Test endpoints and demo environments
 
-**NEVER use:**
+**Never Use:**
 - ❌ Real user accounts or credentials
 - ❌ Valid personal information (SSN, DOB, etc.)
 - ❌ Stolen or leaked credentials
@@ -61,7 +61,7 @@ BOTBROWSER_EXEC_PATH=/absolute/path/to/botbrowser
 BOT_PROFILE_PATH=/absolute/path/to/profile.enc
 ```
 
-**Example configuration:**
+**Example Configuration:**
 ```bash
 BOTBROWSER_EXEC_PATH=/usr/local/bin/chromium
 BOT_PROFILE_PATH=/home/user/profiles/chrome139_win11_x64.enc
@@ -88,11 +88,11 @@ npx playwright show-report
 
 ## 📝 Research Methodology
 
-**Purpose:** These are controlled compatibility analysis scripts for academic study.
+**Purpose:** Controlled compatibility‑analysis scripts for academic study.
 
 **Framework:** All studies must be conducted within authorized environments that comply with institutional ethics guidelines, applicable laws, and protocols.
 
-**Data Collection:** Research data is collected only from publicly accessible testing interfaces and demonstration sites under controlled, non-production conditions.
+**Data Collection:** Collected only from publicly accessible testing interfaces and demonstration sites under controlled, non‑production conditions.
 
 ⚠️ **Important:** Results from these tests must not be interpreted as instructions for bypassing production systems or circumventing security measures.
 
@@ -109,7 +109,7 @@ Before running any tests, ensure you meet ALL of these requirements:
 
 **If you cannot check ALL boxes above, DO NOT proceed with testing.**
 
-### Financial Services Testing - Special Notice
+### Financial Services Testing — Special Notice
 
 Tests involving financial institutions (e.g., `threatmetrix.spec.ts` with Vanguard/Fidelity):
 - ⚠️ Use ONLY publicly accessible "forgot password" or demo pages
@@ -143,7 +143,7 @@ This project uses the following open-source libraries:
 | [ghost-cursor](https://www.npmjs.com/package/ghost-cursor) | Natural interaction simulation |
 | [ghost-cursor-playwright](https://www.npmjs.com/package/ghost-cursor-playwright) | Playwright integration for realistic interactions |
 
-**Ethics Notice:** All libraries are used solely for academic purposes under controlled conditions with proper institutional oversight.
+**Ethics Notice:** Libraries are used solely for academic purposes under controlled conditions with proper institutional oversight.
 
 ---
 

@@ -1,10 +1,8 @@
 # BotBrowser Profiles
 
-**Academic Framework for Browser Environment Simulation**
+Academic Framework for Browser‑Environment Simulation.
 
-⚠️ **Academic Research:** Profile examples are for authorized compatibility research only. Use in controlled environments with proper institutional approval.
-
-In BotBrowser, everything starts with a profile for controlled research environments. Research consistency and compatibility depend on proper profile configuration.
+In BotBrowser, everything starts with a profile. Research consistency and compatibility depend on proper profile configuration.
 
 ## What Are Profiles?
 
@@ -15,33 +13,33 @@ Profiles are encrypted files that define the complete environment a browser inst
 - **Hardware emulation** (device memory, CPU architecture, screen properties)
 - **Platform simulation** (Android behavior, OS-specific features)
 
-### 🔬 Cross-Platform Compatibility
+### 🔬 Cross‑Platform Compatibility
 
-**BotBrowser's capability:** Profile compatibility across different host systems (Windows, macOS, Android, Ubuntu) for comparative analysis.
+**BotBrowser capability:** Profile compatibility across host systems (Windows, macOS, Android, Ubuntu) for comparative analysis.
 
 By using profiles, BotBrowser launches controlled sessions that simulate consistent device behavior across different operating systems for academic research and compatibility testing.
 
-**💡 Profile = Controlled Research Environment Configuration**
+**💡 Profile = controlled research‑environment configuration**
 
 ## 🤔 Understanding BotBrowser Profiles
 
-**Important:** BotBrowser profiles work differently from typical browser fingerprinting tools.
+**Important:** BotBrowser profiles work differently than typical browser‑fingerprinting tools.
 
-### 💻 What BotBrowser Profiles Actually Are:
-**Device Models** - Think of them as specific hardware configurations.
+### 💻 What BotBrowser Profiles Actually Are
+**Device Models** — think of them as specific hardware configurations.
 
-**Real-world analogy:**
+**Real‑World Analogy**
 - Profile = "MacBook Pro M4 Max" (the device type)
 - You can simulate User A in USA using this "M4 Max" profile
 - You can simulate User B in Europe using the same "M4 Max" profile
 - Same device hardware, but different users and environments
 
-### 🔧 How Profiles Work:
+### 🔧 How Profiles Work
 - **Profile defines the device fingerprint** (hardware, browser capabilities)
 - **Environment settings differentiate users** (proxy, timezone, language, cookies)
 - **Each session can have unique characteristics** while maintaining device consistency
 
-**Example:** Using a "MacBook Pro M3" profile:
+**Example:** Using a “MacBook Pro M3” profile:
 - User A: US proxy + English + EST timezone
 - User B: Germany proxy + German + CET timezone
 - User C: Japan proxy + Japanese + JST timezone
@@ -52,7 +50,7 @@ All appear as different users on the same device type.
 
 ### 🚨 Demo Profiles (Educational Testing Only)
 
-**Limitations:**
+**Limitations**
 - Limited-time educational testing only
 - No headless mode support
 - No automation framework connection
@@ -76,7 +74,7 @@ For academic institutions and authorized research:
 | 📧 Email | [botbrowser@bk.ru](mailto:botbrowser@bk.ru) |
 | 📱 Telegram | [@botbrowser_support](https://t.me/botbrowser_support) |
 
-*Premium profiles available for qualified academic institutions with proper ethical approvals.*
+Premium profiles are available to qualified academic institutions with proper ethical approvals.
 
 ---
 
@@ -88,7 +86,7 @@ For academic institutions and authorized research:
 chromium --bot-profile="/absolute/path/to/chrome139_win11_x64.enc"
 ```
 
-**⚠️ Version Compatibility:**
+**⚠️ Version Compatibility**
 - BotBrowser binary version must match profile version
 - Example: BotBrowser v139 only supports v139 profiles
 - Use absolute paths if relative paths fail to load
@@ -123,19 +121,19 @@ await page.addInitScript(() => {
 await page.goto("https://abrahamjuliot.github.io/creepjs/");
 ```
 
-⚠️ **Important:** When using automation frameworks (Puppeteer/Playwright), always use the `--proxy-server` flag instead of framework-specific proxy options (like `page.authenticate()` or `proxy` parameter in `launch()`). This ensures BotBrowser can retrieve geo information from proxy IP for accurate timezone/locale auto-configuration.
+⚠️ Important: With automation frameworks (Puppeteer/Playwright), use the `--proxy-server` flag instead of framework‑specific proxy options (like `page.authenticate()` or a `proxy` parameter in `launch()`). This ensures BotBrowser can derive accurate timezone/locale from the proxy IP.
 
 
 ---
 
 ## 🎛️ Configuration Approaches
 
-### Profile-Based Configuration
+### Profile‑Based Configuration
 - **Purpose**: Stores authentic user fingerprints and base settings
 - **When to use**: For core browser identity and fingerprint data
 - **Limitation**: Encrypted files are difficult to modify
 
-### CLI-Based Configuration
+### CLI‑Based Configuration
 - **Purpose**: Runtime overrides without modifying profile files
 - **When to use**: For session-specific settings like proxy, title, cookies
 - **Advantage**: Preserves profile integrity while enabling flexibility
@@ -150,12 +148,12 @@ await page.goto("https://abrahamjuliot.github.io/creepjs/");
 ```
 
 ## ⚡ Why CLI Flags Matter
-- **🔒 Preserve integrity**: Don't modify profile data
-- **🚀 Runtime flexibility**: Adjust settings per session without file edits
-- **💼 Session isolation**: Multiple instances with different settings
-- **🛡️ Security**: Keep sensitive data (like proxy credentials) out of profile files
+- **Preserve Integrity:** Don't modify profile data
+- **Runtime Flexibility:** Adjust settings per session without file edits
+- **Session Isolation:** Multiple instances with different settings
+- **Security:** Keep sensitive data (like proxy credentials) out of profile files
 
-📖 **For complete CLI flags documentation**, see [⚙️ CLI Flags Reference](../CLI_FLAGS.md)
+📖 For complete CLI flags documentation, see [⚙️ CLI Flags Reference](../CLI_FLAGS.md)
 
 👉 **See [`PROFILE_CONFIGS.md`](https://github.com/botswin/BotBrowser/blob/main/profiles/PROFILE_CONFIGS.md) for complete configuration options.**
 
@@ -200,11 +198,11 @@ await page.goto("https://abrahamjuliot.github.io/creepjs/");
 
 ## 📌 Best Practices
 
-- ✅ **Use Premium Profiles** for production traffic
-- ✅ **Configure realistic settings** (screen size, devicePixelRatio, proxy)
-- ✅ **Choose appropriate profiles** (Android for mobile operations)
-- ✅ **Keep profiles updated** with latest Chrome versions
-- ✅ **Test thoroughly** before production deployment
+- **Use Premium Profiles** for production traffic
+- **Configure realistic settings** (screen size, devicePixelRatio, proxy)
+- **Choose appropriate profiles** (Android for mobile operations)
+- **Keep profiles updated** with the latest Chrome versions
+- **Test thoroughly** before production deployment
 
 ---
 

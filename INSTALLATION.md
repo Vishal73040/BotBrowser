@@ -1,8 +1,6 @@
 # 🛠️ BotBrowser Installation Guide
 
-**Complete installation instructions for all supported platforms**
-
-This guide provides detailed installation instructions, troubleshooting steps, and deployment options for BotBrowser across different operating systems.
+This guide provides step‑by‑step installation, troubleshooting, and deployment options across operating systems.
 
 ---
 
@@ -10,14 +8,14 @@ This guide provides detailed installation instructions, troubleshooting steps, a
 
 ### 1. Download Installer
 
-Get the BotBrowser installer for your OS from the [Releases](https://github.com/botswin/BotBrowser/releases) page.
+Get the installer for your OS from the [Releases](https://github.com/botswin/BotBrowser/releases) page.
 
 ### 2. Windows Installation
 
 #### Standard Installation
 1. Extract the downloaded `.7z` archive
 2. Run `chrome.exe` from the extracted folder
-3. If you encounter `STATUS_ACCESS_VIOLATION`, launch with [--no-sandbox](https://peter.sh/experiments/chromium-command-line-switches/#no-sandbox)
+3. If you encounter `STATUS_ACCESS_VIOLATION`, launch with [--no-sandbox](https://peter.sh/experiments/chromium-command-line-switches/#no-sandbox).
 
 #### Common Windows Issues & Solutions
 
@@ -28,7 +26,7 @@ Get the BotBrowser installer for your OS from the [Releases](https://github.com/
 | **BotBrowser won't start or crashes** | Check that your OS and Chromium version match the build; update BotBrowser to the latest release |
 | **Antivirus blocking execution** | Add BotBrowser directory to antivirus exclusions |
 
-#### Windows Command Line Example
+#### Windows Command-Line Example
 ```cmd
 chrome.exe --no-sandbox --bot-profile="C:\\path\\to\\chrome139_win11_x64.enc" --user-data-dir="%TEMP%\\botprofile_%RANDOM%"
 ```
@@ -36,7 +34,7 @@ chrome.exe --no-sandbox --bot-profile="C:\\path\\to\\chrome139_win11_x64.enc" --
 ### 3. macOS Installation
 
 #### Quick Install (Automated)
-For the fastest installation experience, use our automated installation script:
+For the fastest setup, use our automated installation script:
 
 ```bash
 # One-line install (downloads and runs script directly)
@@ -77,7 +75,7 @@ The script will automatically:
 | **Permission denied** | Ensure you have admin rights and the app is in Applications folder |
 | **Gatekeeper blocking** | Go to System Preferences > Security & Privacy and allow the app |
 
-#### macOS Command Line Example
+#### macOS Command-Line Example
 ```bash
 /Applications/Chromium.app/Contents/MacOS/Chromium \
   --no-sandbox \
@@ -113,7 +111,7 @@ sudo apt-get install -y \
     libgtk-3-0
 ```
 
-#### Ubuntu Command Line Example
+#### Ubuntu Command-Line Example
 ```bash
 chromium-browser \
   --no-sandbox \
@@ -220,7 +218,7 @@ EOF
 ```
 
 #### Windows Registry Integration
-For Windows power users, BotBrowser can be registered as a browser option through registry modifications. Contact support for enterprise deployment scripts.
+Advanced users can register BotBrowser as a browser option via registry changes. Contact support for enterprise deployment scripts.
 
 ---
 

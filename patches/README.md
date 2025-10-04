@@ -1,28 +1,28 @@
 # 🛠️ BotBrowser Patch Examples
 
-**For Academic and Security Analysis Purposes**
+For Academic and Security Analysis Purposes.
 
-> 🚧 These patches are select examples from BotBrowser's internals for academic study and security analysis. The full core remains proprietary for compatibility testing environments.
+> 🚧 These are selected examples from BotBrowser’s internals for academic study and security analysis. The full core remains proprietary for compatibility testing.
 
-BotBrowser includes proprietary enhancements built on top of Chromium, developed independently for academic study and compatibility testing.
+BotBrowser includes proprietary enhancements built on top of Chromium, developed in‑house for academic study and compatibility testing.
 
-Only the GUI ([BotBrowserConsole](https://github.com/botswin/BotBrowser/tree/main/console)) is open-sourced.
-The patches here are **select examples**, published to illustrate techniques for academic and security analysis purposes without exposing the full engine.
+Only the GUI ([BotBrowserConsole](https://github.com/botswin/BotBrowser/tree/main/console)) is open source.
+The patches here are select examples published to illustrate techniques for academic and security analysis without exposing the full engine.
 
-⚠️ **Usage Policy:** These patch examples are designed for academic study, security analysis, and authorized testing environments only. Use in compliance with institutional policies and applicable laws.
+⚠️ Usage policy: These examples are for academic study, security analysis, and authorized testing environments only. Use in compliance with institutional policies and applicable laws.
 
 ---
 
 ## 🔍 What’s Inside
 
 - **Proprietary Foundation**
-  BotBrowser’s engine is entirely homegrown—no forks, no references to external projects.
+  BotBrowser’s engine is built in‑house—no forks, no external project references.
 
 - **Selective Academic Disclosure**
-  We publish only select patches in this folder for educational purposes. The rest remain proprietary to maintain compatibility testing integrity.
+  Only select patches are published for educational purposes. The rest remain proprietary to maintain compatibility testing integrity.
 
 - **Comprehensive Compatibility Coverage**
-  Our patches address fingerprinting consistency across various surfaces. Developed through:
+  These patches address fingerprint consistency across multiple surfaces, informed by:
   1. Security analysis of browser compatibility mechanisms
   2. V8-level study of fingerprint collection and validation
   3. Compatibility testing experience in controlled environments

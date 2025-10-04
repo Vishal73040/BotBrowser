@@ -1,26 +1,26 @@
 # 🔧 BotBrowser Advanced Features
 
-**Comprehensive technical capabilities for fingerprint consistency testing and automation research**
+Robust capabilities for fingerprint‑consistency testing and automation research.
 
-This document provides detailed technical information about BotBrowser's advanced capabilities, designed for researchers, developers, and security professionals working in authorized testing environments.
+This document details BotBrowser’s advanced features for researchers, developers, and security professionals working in authorized testing environments.
 
 ---
 
 ## 🎯 Overview
 
-BotBrowser provides sophisticated browser fingerprint consistency testing capabilities through multiple layers of emulation and control. These features enable researchers to study web compatibility, automation detection, and fingerprint consistency across different environments.
+BotBrowser offers multi‑layer emulation and control to keep fingerprints consistent across platforms. These controls support research into web compatibility, automation detection, and cross‑environment consistency.
 
 ---
 
 ## 🔧 Configuration & Control
 
 ### Advanced CLI Configuration
-**[22+ `--bot-config-*` flags](CLI_FLAGS.md#⚙️-profile-configuration-override-flags)** override key fingerprint properties at startup without modifying profile files.
+**[22+ `--bot-config-*` flags](CLI_FLAGS.md#⚙️-profile-configuration-override-flags)** override key fingerprint properties at startup—no profile edits required.
 
 **Key Benefits:**
-- **Highest Priority:** CLI flags override any profile settings
-- **Dynamic Configuration:** Perfect for automated deployments and scripts
-- **Session Isolation:** Different configurations per browser instance without profile conflicts
+- **Highest Priority:** CLI flags override profile settings
+- **Dynamic Configuration:** Ideal for scripts and CI/CD
+- **Session Isolation:** Clean separation across instances
 
 **Examples:**
 ```bash
@@ -38,7 +38,7 @@ chrome.exe --bot-profile="/absolute/path/to/profile.enc" \
 ```
 
 ### Session Management
-Comprehensive session control and identification features.
+Comprehensive tools for session control and identification.
 
 **Custom Titles and Labels:**
 - `--bot-title` - Custom window title and taskbar/dock icon label
@@ -61,7 +61,7 @@ chrome.exe --bot-profile="/absolute/path/to/profile.enc" \
 ```
 
 ### Enhanced Proxy System
-Rewritten proxy subsystem with stability improvements, per-context support, and DNS leak protection.
+Rebuilt for stability, per‑context support, and DNS‑leak protection.
 
 **Embedded Credentials:**
 ```bash
@@ -74,7 +74,7 @@ Rewritten proxy subsystem with stability improvements, per-context support, and 
 ```
 
 
-**Per-Context Proxy Support:**
+**Per‑Context Proxy Support:**
 ```javascript
 // Playwright example with different proxies per context
 const browser = await chromium.launch({
@@ -93,9 +93,9 @@ const context2 = await browser.newContext({
 });
 ```
 
-**✅ Automatic Geo-Detection:** Each context automatically detects timezone, locale, and languages from its proxy IP - no manual configuration needed.
+**🌍 Automatic Geo‑Detection:** Each context derives timezone, locale, and languages from its proxy IP—no manual setup.
 
-**✅ Performance Benefits:** Use `--proxy-ip` at browser level if all contexts share the same proxy IP to skip repeated lookups.
+**💡 Performance Tip:** If all contexts share the same proxy IP, set `--proxy-ip` to skip repeated lookups.
 
 **Performance Optimization:**
 ```bash
@@ -103,18 +103,18 @@ const context2 = await browser.newContext({
 --proxy-server="http://user:pass@proxy.com:8080" --proxy-ip="203.0.113.1"
 ```
 
-**DNS Leak Protection:**
+**🛡️ DNS‑Leak Protection:**
 - SOCKS5 proxies now prevent local DNS resolution
 - All domain lookups go through the proxy tunnel
 
-**Important:** Use BotBrowser's proxy options instead of framework-specific settings to ensure proper geo-detection for timezone/locale auto-configuration.
+**⚠️ Important:** Prefer BotBrowser’s proxy options over framework‑specific settings so geo‑detection remains accurate.
 
 ---
 
 ## 🎭 Automation Artifact Research
 
-### Multi-Layer Noise Injection
-Sophisticated fingerprint noise injection with consistency algorithms.
+### Multi‑Layer Noise Injection
+Sophisticated noise with consistency algorithms.
 
 **Canvas Fingerprinting Protection:**
 - Stabilized noise algorithms ensure consistent results across sessions
@@ -131,20 +131,20 @@ Sophisticated fingerprint noise injection with consistency algorithms.
 - Maintains realistic audio processing behavior
 - Cross-worker consistency for complex applications
 
-**Text Metrics Manipulation:**
+**Text‑Metrics Manipulation:**
 - TextMetrics and client rects noise injection
 - Font measurement consistency across workers
 - Realistic text rendering variations
 
 ### Headless & Incognito Compatibility
-Consistent behavior across different browser modes with comprehensive simulation.
+Consistent behavior across modes with comprehensive simulation.
 
 **GPU Simulation in Headless Mode:**
 - Full GPU context simulation without physical GPU
 - WebGL and WebGPU rendering consistency
 - Hardware-accelerated video decoding simulation
 
-**Incognito Mode Enhancement:**
+**Incognito‑Mode Enhancements:**
 - Eliminates incognito-specific detection vectors
 - Consistent fingerprint between normal and incognito modes
 - Maintains privacy features while ensuring consistency
@@ -157,56 +157,58 @@ Complete WebRTC fingerprint control and IP protection.
 - ICE candidate manipulation and filtering
 - STUN/TURN server response modification
 
-**Real-time Communication Control:**
+**Real‑Time Communication Control:**
 - MediaStream API consistency
 - RTCPeerConnection behavior modification
 - Network topology hiding
 
 ### Chrome Behavior Emulation
-Authentic Google Chrome behavior patterns and API responses.
+Authentic Google Chrome behaviors and API responses.
 
-**Google-Specific Headers:**
+**Google‑Specific Headers:**
 - `X-Browser-*` headers matching authentic Chrome requests
 - Chrome-specific HTTP/2 and HTTP/3 behavior
 - Authentic request timing and patterns
 
-**Chrome-Specific APIs:**
+**Chrome‑Specific APIs:**
 - Chrome extension API simulation
 - Google services integration behavior
 - Chrome-specific JavaScript API responses
 
 **Widevine CDM Integration:**
-> **Note:** This project does not distribute proprietary modules (e.g., Widevine). Any playback components must be obtained via official channels by the end user.
+> Note: BotBrowser does not distribute proprietary modules (e.g., Widevine). End users must obtain playback components via official channels.
 
 ---
 
 ## 📱 Device & Platform Emulation
 
-### Cross-Platform Font Engine
-Advanced font rendering and consistency across different host systems.
+### Cross‑Platform Font Engine
+Advanced font rendering with consistent results across hosts.
 
-**Built-in Font Libraries:**
+**Built‑In Font Libraries:**
 - Windows fonts (Segoe UI, Arial, Times New Roman, etc.)
 - macOS fonts (San Francisco, Helvetica, Times, etc.)
 - Android fonts (Roboto, Noto, etc.)
 - Complete emoji sets for all platforms
 
-**Font Fallback Chain Accuracy:**
+**Accurate Font‑Fallback Chains:**
 - Accurate CJK (Chinese, Japanese, Korean) font fallback
 - Rare symbol and Unicode character support
 - Cross-worker font consistency
 - HarfBuzz text shaping integration
 
-**Text Rendering Features:**
+**Text‑Rendering Features:**
 - Skia anti-aliasing integration
 - Multi-language support (CJK/RTL/emoji)
 - Platform-specific font metrics
 - Consistent text measurement across workers
 
-### Cross-Platform Consistency
-Eliminates platform-specific rendering differences for perfect cross-platform emulation.
+> **Implementation Detail:** Low‑level rendering paths in Skia (2D/Canvas) and HarfBuzz (text shaping) are tuned where needed to align metrics and glyph shaping across OS targets. We also apply targeted WebGL/WebGPU parameter controls to keep visual output stable across contexts.
 
-**OS Emulation Capabilities:**
+### Cross‑Platform Consistency
+Eliminates host‑specific rendering differences for accurate cross‑platform emulation.
+
+**OS‑Emulation Capabilities:**
 - Windows profile works perfectly on macOS/Linux hosts
 - macOS profile runs authentically on Windows/Linux hosts
 - Android profile fully emulated on any desktop OS
@@ -221,7 +223,7 @@ Eliminates platform-specific rendering differences for perfect cross-platform em
 ### Hardware Fingerprint Control
 Comprehensive hardware emulation and fingerprint management.
 
-**CPU Architecture Emulation:**
+**CPU‑Architecture Emulation:**
 - x86/x64/ARM architecture simulation
 - Authentic CPU core count and timing
 - Realistic performance characteristics
@@ -233,7 +235,7 @@ Comprehensive hardware emulation and fingerprint management.
 - Multi-monitor configuration simulation
 - Refresh rate and orientation control
 
-**Device Behavior Simulation:**
+**Device‑Behavior Simulation:**
 - Authentic device memory reporting
 - Battery status and charging simulation
 - Network connection type emulation
@@ -244,9 +246,9 @@ Comprehensive hardware emulation and fingerprint management.
 ## ⚡ Deep System Integration
 
 ### Precise FPS Simulation
-Advanced frame rate and performance emulation capabilities.
+Advanced frame‑rate and performance emulation.
 
-**Refresh Rate Control:**
+**Refresh‑Rate Control:**
 - Emulate target refresh rates (60Hz, 120Hz, 144Hz, etc.)
 - Simulate high-FPS macOS behavior on Ubuntu hosts
 - Authentic vsync and frame timing patterns
@@ -259,15 +261,15 @@ Advanced frame rate and performance emulation capabilities.
 - Display synchronization behavior
 
 ### Performance Fingerprint Controls
-Fine-grained performance characteristic tuning for authentic device simulation.
+Fine‑grained tuning for authentic device simulation.
 
-**Memory Allocation Timing:**
+**Memory‑Allocation Timing:**
 - Realistic memory allocation patterns
 - Garbage collection timing simulation
 - Heap size and growth patterns
 - Memory pressure response simulation
 
-**Database Access Latency:**
+**Database‑Access Latency:**
 - IndexedDB access timing control
 - WebSQL performance characteristics (where supported)
 - localStorage and sessionStorage timing
@@ -280,7 +282,7 @@ Fine-grained performance characteristic tuning for authentic device simulation.
 - Web Worker performance patterns
 
 ### Extended Media Types & WebCodecs APIs
-Comprehensive media format support and codec emulation.
+Comprehensive media‑format support and codec emulation.
 
 **Broader MediaTypes Coverage:**
 - Extended MIME type support beyond browser defaults
@@ -300,16 +302,16 @@ Comprehensive media format support and codec emulation.
 - Smooth playback prediction accuracy
 - HDR and wide gamut support detection
 
-### GPU Driver Micro-Benchmarks
-Sophisticated GPU behavior emulation with vendor-specific patterns.
+### GPU Driver Micro‑Benchmarks
+Sophisticated GPU‑behavior emulation with vendor‑specific patterns.
 
-**Precision Timing Emulation:**
+**Precision‑Timing Emulation:**
 - GPU command execution timing
 - Shader compilation performance
 - Texture upload/download speeds
 - Buffer allocation and transfer rates
 
-**Vendor-Specific Behavior:**
+**Vendor‑Specific Behavior:**
 - NVIDIA, AMD, Intel driver behavior patterns
 - OpenGL extension availability simulation
 - Vulkan capability reporting
@@ -322,9 +324,9 @@ Sophisticated GPU behavior emulation with vendor-specific patterns.
 - Power management responses
 
 ### Dynamic Blink Features
-Runtime OS-based feature loading for authentic browser behavior.
+Runtime OS‑based feature loading for authentic behavior.
 
-**OS-Specific Features:**
+**OS‑Specific Features:**
 - Windows-specific Blink features
 - macOS-exclusive capabilities
 - Android mobile features
@@ -341,7 +343,7 @@ Runtime OS-based feature loading for authentic browser behavior.
 ## 📋 Complete Fingerprint Control
 
 ### Browser & OS Fingerprinting
-Comprehensive browser and operating system emulation capabilities.
+Comprehensive browser and OS emulation.
 
 | Component | Capabilities |
 |-----------|-------------|
@@ -351,7 +353,7 @@ Comprehensive browser and operating system emulation capabilities.
 | **Font System** | Built-in cross-platform fonts, Blink features, authentic fallback chains |
 
 ### Location & Time Management
-Precise geolocation and temporal fingerprint control.
+Precise geolocation and temporal controls.
 
 | Component | Capabilities |
 |-----------|-------------|
@@ -360,7 +362,7 @@ Precise geolocation and temporal fingerprint control.
 | **Time APIs** | Date/time consistency, performance.now() behavior, timezone transitions |
 
 ### Display & UI Control
-Complete visual presentation and user interface fingerprint management.
+Complete visual presentation and UI fingerprint controls.
 
 | Component | Capabilities |
 |-----------|-------------|
@@ -370,7 +372,7 @@ Complete visual presentation and user interface fingerprint management.
 | **UI Elements** | System colors, scrollbar styling, form control appearance |
 
 ### Input & Navigation Systems
-Comprehensive input method and navigation behavior emulation.
+Comprehensive input and navigation behavior emulation.
 
 | Component | Capabilities |
 |-----------|-------------|
@@ -382,7 +384,7 @@ Comprehensive input method and navigation behavior emulation.
 | **Navigation** | History manipulation, referrer control, navigation timing |
 
 ### Graphics & Rendering Engine
-Advanced graphics subsystem control and rendering consistency.
+Advanced graphics controls and rendering consistency.
 
 | Component | Capabilities |
 |-----------|-------------|
@@ -393,7 +395,7 @@ Advanced graphics subsystem control and rendering consistency.
 | **Performance** | Precise FPS simulation, texture hash spoofing, render timing control |
 
 ### Network & Media Subsystems
-Complete network behavior and media processing capabilities.
+Complete network behavior and media‑processing capabilities.
 
 | Component | Capabilities |
 |-----------|-------------|
@@ -404,7 +406,7 @@ Complete network behavior and media processing capabilities.
 | **Codecs** | Extended media types, WebCodecs APIs, hardware acceleration simulation |
 
 ### Performance Characteristics
-Fine-grained performance fingerprint control and timing simulation.
+Fine‑grained performance fingerprint control and timing simulation.
 
 | Component | Capabilities |
 |-----------|-------------|
@@ -417,8 +419,8 @@ Fine-grained performance fingerprint control and timing simulation.
 
 ## 🔗 Integration with Automation Frameworks
 
-### Framework-Less Automation (`--bot-script`)
-Execute JavaScript with privileged `chrome.debugger` API access.
+### Framework‑Less Automation (`--bot-script`)
+Execute JavaScript with privileged `chrome.debugger` access.
 
 **Key Advantages:**
 - **No framework dependencies** - Pure Chrome DevTools Protocol access
@@ -431,7 +433,7 @@ Execute JavaScript with privileged `chrome.debugger` API access.
 ./chrome.exe --no-sandbox --bot-profile="/absolute/path/to/profile.enc" --bot-script="automation.js"
 ```
 
-**Available APIs in bot-script context:**
+**Available APIs in Bot‑Script Context:**
 - `chrome.debugger` - Full Chrome DevTools Protocol access
 - `chrome.runtime` - Runtime APIs and event handling
 - Standard browser APIs (console, setTimeout, etc.)
@@ -441,7 +443,7 @@ Execute JavaScript with privileged `chrome.debugger` API access.
 ### Playwright/Puppeteer Integration
 Enhanced compatibility with popular automation frameworks.
 
-**CDP Leak Protection:**
+**CDP‑Leak Protection:**
 - Blocks automation detection via Chrome DevTools Protocol artifacts
 - Maintains authentic browser behavior under automation
 - Eliminates framework-specific fingerprint signatures
@@ -456,7 +458,7 @@ Enhanced compatibility with popular automation frameworks.
 ## 🔬 Research Applications
 
 ### Academic Research Use Cases
-BotBrowser's advanced features support various research applications in authorized environments:
+BotBrowser’s capabilities support multiple research applications in authorized environments:
 
 **Browser Compatibility Studies:**
 - Cross-platform rendering consistency analysis
@@ -491,7 +493,7 @@ BotBrowser's advanced features support various research applications in authoriz
 ## 🛠️ Technical Implementation Details
 
 ### Architecture Overview
-BotBrowser implements advanced features through multiple integration layers:
+BotBrowser implements advanced features across multiple layers:
 
 **Chromium Base Modifications:**
 - Core browser engine enhancements
@@ -503,13 +505,13 @@ BotBrowser implements advanced features through multiple integration layers:
 - Runtime configuration override capabilities
 - Cross-platform compatibility matrix
 
-**Noise Generation Algorithms:**
+**Noise‑Generation Algorithms:**
 - Cryptographically secure randomization
 - Deterministic per-session consistency
 - Realistic variation patterns
 
 ### Performance Optimization
-Advanced features are implemented with minimal performance impact:
+Advanced features are engineered for minimal performance impact:
 
 **Lazy Loading:**
 - Features activated only when needed

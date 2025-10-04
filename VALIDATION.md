@@ -1,28 +1,26 @@
 # 🎯 BotBrowser Test Results
 
-**Compatibility testing results across different platforms and websites**
+Compatibility Testing Across Platforms and Websites.
 
-Real-world testing data showing how BotBrowser performs with various websites and security systems.
-
-⚠️ **Academic Research Disclaimer:** These demonstrations are provided for security research, academic analysis, and compatibility testing in authorized environments only. Any use outside of authorized research is strictly prohibited.
+Real‑world data showing how BotBrowser performs with a range of sites and security systems.
 
 ---
 
 ## 🔬 How We Test
 
-Simple testing approach to verify fingerprint consistency across different platforms.
+We verify fingerprint consistency across platforms with a repeatable process.
 
 ### What We Test
-- Same profile on Windows, macOS, Linux - does it produce identical fingerprints?
-- Mobile profiles on desktop - do they look like real mobile devices?
-- Long-term stability - do fingerprints stay consistent over time?
-- Popular websites - how well does BotBrowser work in practice?
+- Same profile on Windows, macOS, and Linux — does it produce identical fingerprints?
+- Mobile profiles on desktop — do they behave like real mobile devices?
+- Long‑term stability — do fingerprints remain consistent over time?
+- Popular websites — how well does BotBrowser work in practice?
 
 ### Test Setup
 - Multiple operating systems (Windows, macOS, Linux)
-- Different device profiles (desktop, mobile, tablet)
+- Desktop and mobile device profiles
 - Automated scripts using Playwright
-- Regular testing to catch any issues
+- Regular runs to detect regressions
 
 ---
 
@@ -33,6 +31,8 @@ Simple testing approach to verify fingerprint consistency across different platf
 > ⚠️ **Test Data Policy:** All tests use synthetic/invalid data (random usernames, fake SSNs like "6789", non-existent credentials). No real user data or valid credentials are used or stored.
 
 > ⚠️ **Financial Services Testing:** Tests involving financial institutions (Vanguard, Fidelity, etc.) were conducted in authorized test/demo environments only. Production testing requires explicit authorization from the service provider.
+
+> ⚠️ See [DISCLAIMER](DISCLAIMER.md).
 
 ### Website Compatibility
 
@@ -111,27 +111,27 @@ BotBrowser's cross-platform capabilities enable perfect Android device emulation
 - [▶️ Pixelscan Android Test](//botswin.github.io/BotBrowser/video_player/index.html?video=antibots-pixelscan-pixelscan-Android) - Cross-platform compatibility demonstration
 
 **Key Findings:**
-- ✅ **Touch Simulation:** Authentic mobile touch event patterns
-- ✅ **Device Metrics Consistency:** Accurate screen dimensions, pixel density, orientation
-- ✅ **Mobile API Support:** Complete mobile-specific JavaScript API responses
-- ✅ **Font Rendering Accuracy:** Android font stack perfectly reproduced on desktop
+- **Touch Simulation:** Authentic mobile touch event patterns
+- **Device Metrics Consistency:** Accurate screen dimensions, pixel density, orientation
+- **Mobile API Support:** Complete mobile-specific JavaScript API responses
+- **Font Rendering Accuracy:** Android font stack perfectly reproduced on desktop
 
 ### Platform-Specific Test Results
 
 **Windows Host Testing:**
-- macOS profile emulation: ✅ Full compatibility
-- Android profile emulation: ✅ Complete mobile simulation
-- Linux profile behavior: ✅ Authentic rendering consistency
+- macOS profile emulation: Full compatibility
+- Android profile emulation: Complete mobile simulation
+- Linux profile behavior: Authentic rendering consistency
 
 **macOS Host Testing:**
-- Windows profile emulation: ✅ Fingerprint consistency
-- Android touch simulation: ✅ Mobile gesture recognition
-- Cross-platform font consistency: ✅ Identical text rendering
+- Windows profile emulation: Fingerprint consistency
+- Android touch simulation: Mobile gesture recognition
+- Cross-platform font consistency: Identical text rendering
 
 **Linux Host Testing:**
-- Windows/macOS profile support: ✅ Full compatibility
-- Headless mode consistency: ✅ GUI-equivalent fingerprints
-- Docker deployment validation: ✅ Container-based testing
+- Windows/macOS profile support: Full compatibility
+- Headless mode consistency: GUI-equivalent fingerprints
+- Docker deployment validation: Container-based testing
 
 ---
 
@@ -140,36 +140,36 @@ BotBrowser's cross-platform capabilities enable perfect Android device emulation
 ### Long-Term Stability Testing
 
 **Session Consistency:**
-- ✅ Identical fingerprints across multiple browser restarts
-- ✅ Consistent behavior in headless vs GUI modes
-- ✅ Profile integrity maintained across host reboots
+- Identical fingerprints across multiple browser restarts
+- Consistent behavior in headless vs GUI modes
+- Profile integrity maintained across host reboots
 
 **Cross-Worker Consistency:**
-- ✅ Web Worker fingerprint matching main thread
-- ✅ Service Worker consistent behavior patterns
-- ✅ Shared Worker cross-tab consistency
+- Web Worker fingerprint matching main thread
+- Service Worker consistent behavior patterns
+- Shared Worker cross-tab consistency
 
 **Noise Algorithm Validation:**
-- ✅ Per-session consistency with cross-session variation
-- ✅ Realistic randomization patterns
-- ✅ No detectable noise algorithm signatures
+- Per-session consistency with cross-session variation
+- Realistic randomization patterns
+- No detectable noise algorithm signatures
 
 ### Automation Detection Vector Analysis
 
 **Chrome DevTools Protocol (CDP) Artifacts:**
-- ✅ Complete CDP leak blocking
-- ✅ No automation-specific API responses
-- ✅ Authentic Chrome behavior under automation
+- Complete CDP leak blocking
+- No automation-specific API responses
+- Authentic Chrome behavior under automation
 
 **WebDriver Detection Resistance:**
-- ✅ No webdriver property exposure
-- ✅ Authentic navigator object composition
-- ✅ Realistic error message patterns
+- No webdriver property exposure
+- Authentic navigator object composition
+- Realistic error message patterns
 
 **Framework-Specific Detection:**
-- ✅ No Playwright-specific signatures
-- ✅ No Puppeteer artifact detection
-- ✅ Clean automation framework integration
+- No Playwright-specific signatures
+- No Puppeteer artifact detection
+- Clean automation framework integration
 
 ---
 

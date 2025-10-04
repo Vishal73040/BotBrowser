@@ -1,12 +1,10 @@
 # Docker Deployment
 
-**For Academic and Authorized Testing Environments**
+For Academic and Authorized Testing Environments.
 
 > 🔥 Deploy BotBrowser with Docker for controlled testing environments.
 
-This guide explains how to deploy BotBrowser using Docker and Docker Compose for authorized testing and academic environments.
-
-⚠️ **Usage Policy:** This Docker deployment is designed for academic study, security analysis, and authorized testing environments only. Use in compliance with institutional policies and applicable laws.
+This guide explains how to deploy BotBrowser using Docker and Docker Compose in authorized research setups.
 
 ---
 
@@ -36,7 +34,7 @@ repo-root/
 * Docker Compose >= 1.27
 * A BotBrowser `.enc` profile file
 
-> Tip: Run `docker version` and `docker-compose version` to check your setup.
+> **Tip:** Run `docker version` and `docker-compose version` to verify your setup.
 
 ---
 
@@ -87,7 +85,7 @@ docker-compose logs -f botbrowser
 
 ### Automation Scripts
 
-⚠️ **Integration examples with Playwright and Puppeteer are for academic automation only. Unauthorized scraping or production misuse is prohibited.**
+⚠️ Integration examples with Playwright and Puppeteer are for academic automation only. Unauthorized scraping or production misuse is prohibited.
 
 **Playwright**
 
@@ -113,7 +111,7 @@ const puppeteer = require('puppeteer');
 })();
 ```
 
-**These scripts are not intended for bulk data collection and must only be run in test setups where you have explicit authorization.**
+**Note:** These scripts are not intended for bulk data collection and must only be run in explicitly authorized test setups.
 
 ---
 
@@ -144,14 +142,6 @@ For other issues, see the main README or open a GitHub issue.
 ---
 
 ## Examples
-
-> ⚠️ **ACADEMIC USE DISCLAIMER**
->
-> These Docker projects are provided for **academic study and authorized testing** purposes to demonstrate BotBrowser capabilities in controlled environments. They are intended solely for **authorized testing environments** that comply with all applicable laws, regulations, and institutional policies. **Any misuse**—such as violating website terms of service or engaging in unlawful activities—**is strictly prohibited.**
-
-⚠️ **These examples are provided for compatibility validation in controlled, academic test environments only. They must not be used to circumvent security controls on production systems.**
-
-**These examples are research demonstrations only. The names of third-party services are referenced solely for compatibility benchmarking in controlled environments.**
 
 | Example Directory | Description                        |
 | ----------------- | ---------------------------------- |

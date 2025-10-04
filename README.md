@@ -29,21 +29,17 @@
 
 ---
 
-> **Note:** BotBrowser is designed for authorized testing and research. Review our [Legal Disclaimer](DISCLAIMER.md) before use.
+## 📖 What Is BotBrowser?
 
----   
+BotBrowser delivers identical browser fingerprints across all platforms. Run the same profile on Windows, macOS, or Linux — get the exact same fingerprint every time.  
 
-## 📖 What is BotBrowser?
-
-BotBrowser delivers identical browser fingerprints across all platforms. Run the same profile on Windows, macOS, or Linux - get exactly the same fingerprint every time.
-
-Designed for automation testing, cross-platform compatibility validation, and maintaining consistent browser environments.
+Designed for automation testing, cross-platform compatibility validation, and maintaining consistent browser environments.  
 
 ---
 
-## 🏆 Why Choose BotBrowser
+## 🏆 Why BotBrowser
 
-> **What makes BotBrowser different:** Cross-platform browser with unified fingerprint technology - identical fingerprints everywhere
+> **What makes BotBrowser different:** Cross-platform browser with unified fingerprint technology — identical fingerprints everywhere
 
 | **Core Advantages** | **Technical Excellence** |
 |---------------------|-------------------------|
@@ -70,10 +66,10 @@ Automatic touch simulation, device metrics, and unified fingerprint rendering ac
 |-------------|------------------|
 | **Configuration & Control** | **22+ CLI flags** for browser brand, WebGL, timezone • **Session management** with custom titles/cookies • **Enhanced proxy system** with per-context support • **Performance optimization** via `--proxy-ip` |
 | **Automation Technology** | **Multi-layer rendering consistency** (Canvas/WebGL/Audio) • **Complete CDP optimization** • **Native Chrome compatibility** with Google headers & Widevine |
-| **Cross-Platform Compatibility** | **Built-in font engines** (Windows/macOS/Android + HarfBuzz) • **Consistent behavior** across OS platforms • **Hardware control** for CPU/screen/device behavior |
+| **Cross-Platform Compatibility** | **Built-in font engines** (Windows/macOS/Android + HarfBuzz) • **Consistent behavior** across OS platforms • **Hardware control** for CPU/screen/device behavior • **Low-level tuning** (Skia/HarfBuzz) • **Targeted WebGL/WebGPU parameter controls** to stabilize rendering/text metrics |
 | **Deep System Integration** | **Precise FPS simulation** (120 FPS macOS on Ubuntu) • **Performance controls** (memory timing, IndexedDB latency) • **GPU micro-benchmarks** with vendor patterns |
 
-### Fingerprint Consistency Matrix
+### Fingerprint Consistency Matrix — Cross‑Platform Coverage
 
 | Category | Sample Capabilities |
 |----------|---------------------|
@@ -119,7 +115,7 @@ chromium-browser --no-sandbox --user-data-dir="$(mktemp -d)" --bot-profile="/abs
 **Step 3: Test**
 Visit [CreepJS](https://abrahamjuliot.github.io/creepjs/) to see fingerprint consistency in action!
 
-> **Works instantly** - Timezone/locale auto-detected from your IP
+> 🌍 **Works instantly** — timezone and locale auto-detected from your IP
 
 📖 **[Complete Installation Guide →](INSTALLATION.md)** - Docker, troubleshooting, advanced setup
 
@@ -159,7 +155,7 @@ await page.goto("https://abrahamjuliot.github.io/creepjs/");
 
 > 📖 **For a complete list of BotBrowser-specific CLI flags**, see [⚙️ CLI Flags Reference](CLI_FLAGS.md)
 
-### Framework-less Automation with `--bot-script`
+### Framework‑Less Automation with `--bot-script`
 
 **Native BotBrowser automation** using privileged JavaScript context with `chrome.debugger` API access:
 
@@ -167,7 +163,7 @@ await page.goto("https://abrahamjuliot.github.io/creepjs/");
 chrome.exe --no-sandbox --bot-profile="/absolute/path/to/profile.enc" --bot-script="automation.js"
 ```
 
-**Key advantages:**
+**Key Advantages:**
 - **No framework dependencies** - Pure Chrome DevTools Protocol
 - **Earlier intervention** - Execute before page navigation
 - **Privileged context** - Full `chrome.debugger` API access
@@ -206,10 +202,10 @@ For containerized deployment, see [docker/README.md](docker/) for complete setup
 For users who prefer a graphical interface, [BotBrowserConsole](console) provides a user-friendly way to manage BotBrowser:
 
 **Features:**
-- ✅ Select profiles and start browsing without command line
-- ✅ Launch multiple browser instances easily
-- ✅ Manage different environments and accounts
-- ✅ User-friendly interface
+- Select profiles and start browsing without command line
+- Launch multiple browser instances easily
+- Manage different environments and accounts
+- User-friendly interface
 
 ---
 
@@ -221,7 +217,7 @@ Our compatibility research examines browser fingerprinting techniques across dif
 
 ### Test Results
 
-> ⚠️ **Research Purpose Only:** These results demonstrate fingerprint consistency for academic analysis exclusively. Not intended for bypassing security systems or unauthorized access to production services. All tests conducted in controlled environments with proper authorization.
+> ⚠️ Research demos in authorized environments. See [DISCLAIMER](DISCLAIMER.md).
 
 **Anti-Bot Systems:**
 | Service | Technology | Results |
@@ -238,9 +234,9 @@ Our compatibility research examines browser fingerprinting techniques across dif
 | **Pixelscan** | Detection suite | [▶️ Comprehensive Scan](//botswin.github.io/BotBrowser/video_player/index.html?video=antibots-pixelscan-pixelscan) |
 
 ### Cross-Platform Validation
-- **Windows Profile on macOS:** ✅ Fingerprint consistency maintained
-- **Android Emulation on Desktop:** ✅ Complete mobile API simulation
-- **Headless vs GUI Mode:** ✅ Identical fingerprint stability
+- **Windows Profile on macOS:** Fingerprint consistency maintained
+- **Android Emulation on Desktop:** Complete mobile API simulation
+- **Headless vs GUI Mode:** Identical fingerprint stability
 
 📖 **[Complete Validation Results & Research Data →](VALIDATION.md)** - 25+ anti-bot systems, 15+ fingerprinting tools, statistical analysis
 

@@ -1,19 +1,15 @@
 # WizzAir Compatibility Testing with Docker
 
-**For Academic and Authorized Testing Environments**
+For Academic and Authorized Testing Environments.
 
-## ⚠️ **ACADEMIC USE DISCLAIMER**
-
-This Docker project is provided for **academic study and authorized testing** purposes to demonstrate BotBrowser compatibility in controlled environments. It is intended solely for **authorized testing environments** that comply with all applicable laws, regulations, and institutional policies. **Any misuse**—such as violating website terms of service or engaging in unlawful activities—**is strictly prohibited.**
-
-⚠️ **This example is for compatibility validation in controlled, academic test environments only. It must not be used to circumvent security controls on production systems.**
+> ⚠️ Research demo in authorized setups. See [DISCLAIMER](../../DISCLAIMER.md).
 
 
 ## Project Overview
 
 This repository contains a Docker setup for WizzAir website compatibility testing using BotBrowser and Playwright, which runs a Python script (`main.py`) inside a Docker container that:
 
-1. Launches BotBrowser in headless mode-**no XDISPLAY or GPU required**, yet fully simulates a desktop environment.
+1. Launches BotBrowser in headless mode — **no XDISPLAY or GPU required** — while simulating a full desktop environment.
 2. Performs compatibility validation on WizzAir's interface over a date range.
 3. Analyzes API responses for compatibility assessment.
 4. Saves analysis data to `flight_data/` and screenshots to `screenshots/` for academic review.
@@ -33,13 +29,13 @@ This repository contains a Docker setup for WizzAir website compatibility testin
 └── screenshots/    # Screenshots for academic review
 ```
 
-> **Tip:** Review `Dockerfile` and `docker-compose.yml` for detailed configuration options.
+> **Tip:** Review `Dockerfile` and `docker-compose.yml` for configuration options.
 
 ---
 
 ## Getting Started
 
-⚠️ **Before proceeding:** Ensure you have proper authorization to test against any target systems. This setup is for academic environments and controlled testing only.
+⚠️ Before proceeding, ensure you are authorized to test any target systems. This setup is for academic environments and controlled testing only.
 
 1. **Add Files**
 
@@ -73,7 +69,7 @@ This repository contains a Docker setup for WizzAir website compatibility testin
 * Iterates test dates for compatibility analysis.
 * Saves API analysis data and screenshot per date.
 
-*Modify the date range or test parameters directly in `main.py` for your academic study.*
+Modify the date range or test parameters directly in `main.py` for your study.
 
 ---
 

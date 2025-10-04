@@ -1,14 +1,14 @@
 # 🚀 BotBrowser CLI Flags Reference
 
-**For Academic and Authorized Testing Environments**
+For Academic and Authorized Testing Environments.
 
-This document provides **BotBrowser's CLI configuration system** for authorized testing and academic environments. These flags extend standard Chromium capabilities, providing **comprehensive control** over browser fingerprints without modifying profile files.
+This document explains BotBrowser’s CLI configuration system. These flags extend Chromium and provide comprehensive, runtime control over fingerprints—without modifying profile files.
 
 ---
 
-> 🌍 **Smart Auto-Configuration:** BotBrowser automatically detects timezone, locale, and languages from your IP/proxy. Override only when needed for specific use cases.
+> 🌍 **Smart Auto‑Configuration:** BotBrowser derives timezone, locale, and languages from your IP/proxy. Override only when you need a specific setup.
 
-> ⚡ **Dynamic Configuration:** 20+ [`--bot-config-*` flags](#⚙️-profile-configuration-override-flags) provide runtime fingerprint configuration - suitable for authorized testing environments, CI/CD, and multi-instance setups.
+> ⚡ **Dynamic Configuration:** 20+ [`--bot-config-*` flags](#⚙️-profile-configuration-override-flags) enable runtime fingerprint control—ideal for CI/CD and multi‑instance scenarios.
 
 ## 📋 Table of Contents
 
@@ -23,7 +23,7 @@ This document provides **BotBrowser's CLI configuration system** for authorized 
 ## 🎯 Core BotBrowser Flags
 
 ### `--bot-profile`
-**The foundation of BotBrowser compatibility features**
+The foundation of BotBrowser’s compatibility features.
 
 Specifies the path to the BotBrowser profile file (.enc).
 
@@ -32,20 +32,18 @@ Specifies the path to the BotBrowser profile file (.enc).
 ```
 
 **Notes:**
-- Profile determines the browser fingerprint, OS emulation, and compatibility features
-- Use profiles from [profiles directory](profiles/) or contact support for custom profiles
-- This is what makes BotBrowser different from regular Chromium
+- The profile determines the fingerprint, OS emulation, and compatibility features
+- Use profiles from the [profiles directory](profiles/) or contact support for custom profiles
+- This is the core difference from stock Chromium
 
 ---
 
 ## 🌐 Enhanced Proxy Configuration
 
 ### Enhanced `--proxy-server` with Embedded Credentials
-**BotBrowser enhancement for simplified proxy authentication**
+BotBrowser extends the standard `--proxy-server` flag to accept embedded credentials in the URL.
 
-BotBrowser enhanced the standard `--proxy-server` flag to accept embedded credentials directly in the URL.
-
-⚠️ **These options are for authorized network testing environments only. They must not be used for unauthorized data collection.**
+⚠️ **For Authorized Network Testing Only.** Do not use for unauthorized data collection.
 
 ```bash
 # HTTP/HTTPS proxy with credentials
@@ -56,12 +54,12 @@ BotBrowser enhanced the standard `--proxy-server` flag to accept embedded creden
 --proxy-server="socks5://username:password@proxy.example.com:1080"
 ```
 
-**Supported protocols:** HTTP, HTTPS, SOCKS5
+**Supported Protocols:** HTTP, HTTPS, SOCKS5
 
 ### `--proxy-ip`
-**Specify proxy's public IP to optimize performance**
+Specify the proxy’s public IP to optimize performance.
 
-Provide the proxy's public IP address to skip per-page IP lookups, improving page load performance.
+This skips per‑page IP lookups and speeds up navigation.
 
 ```bash
 --proxy-ip="203.0.113.1"
@@ -74,16 +72,16 @@ Provide the proxy's public IP address to skip per-page IP lookups, improving pag
 
 
 ⚠️ **Important:**
-- **Browser-level proxy:** Use `--proxy-server` flag for consistent geo-detection across all contexts
-- **Per-context proxy:** You can set different proxies via `createBrowserContext({ proxy: {...} })` - BotBrowser supports both approaches and automatically retrieves geo information for timezone/locale configuration in both cases
-- **Avoid:** Framework-specific options like `page.authenticate()` which skip BotBrowser's geo-detection system
+- Browser‑level proxy: use `--proxy-server` for consistent geo‑detection across contexts
+- Per‑context proxy: set different proxies via `createBrowserContext({ proxy })`; BotBrowser auto‑derives geo info in both cases
+- Avoid: framework‑specific options like `page.authenticate()` that bypass BotBrowser’s geo‑detection
 
 ---
 
 ## 🎨 BotBrowser Customization
 
 ### `--bot-title`
-**Custom browser identification and session management**
+Custom browser identification and session management.
 
 Sets custom browser window title and taskbar/dock icon label.
 
@@ -93,13 +91,13 @@ Sets custom browser window title and taskbar/dock icon label.
 ```
 
 **Features:**
-- Appears in window title bar
-- Shows on taskbar/dock icon
-- Displays as label next to toolbar Refresh button
-- Useful for managing multiple browser instances
+- Appears in the window title bar
+- Shows on the taskbar/dock icon
+- Displays as a label next to the Refresh button
+- Useful for managing multiple instances
 
 ### `--bot-cookies`
-**Session restoration and cookie management**
+Session restoration and cookie management.
 
 Accepts a JSON string containing cookie data for startup.
 
@@ -108,7 +106,7 @@ Accepts a JSON string containing cookie data for startup.
 ```
 
 ### `--bot-bookmarks`
-**Pre-populate bookmarks for test session consistency**
+Pre‑populate bookmarks for session consistency.
 
 Accepts a JSON string containing bookmark data for startup.
 
@@ -117,7 +115,7 @@ Accepts a JSON string containing bookmark data for startup.
 ```
 
 ### `--bot-script`
-**Framework-less automation with privileged JavaScript context**
+Framework‑less automation with a privileged JavaScript context.
 
 Execute a JavaScript file right after BotBrowser starts in a privileged, non-extension context where `chrome.debugger` is available.
 
@@ -126,10 +124,10 @@ Execute a JavaScript file right after BotBrowser starts in a privileged, non-ext
 ```
 
 **Key Features:**
-- **No framework dependencies** - Pure Chrome DevTools Protocol access
-- **Earlier intervention** - Execute before page navigation
-- **Privileged context** - Full `chrome.debugger` API access
-- **Reduced detection surface** - No Playwright/Puppeteer artifacts
+- No framework dependencies — pure Chrome DevTools Protocol access
+- Earlier intervention — runs before navigation
+- Privileged context — full `chrome.debugger` API access
+- Reduced detection surface — no Playwright/Puppeteer artifacts
 
 📖 **Documentation:** Chrome `chrome.debugger` API - <https://developer.chrome.com/docs/extensions/reference/api/debugger/>
 
@@ -139,15 +137,15 @@ Execute a JavaScript file right after BotBrowser starts in a privileged, non-ext
 
 ## ⚙️ Profile Configuration Override Flags
 
-**High-priority configuration overrides - these CLI flags override any profile settings**
+High‑priority configuration overrides — these CLI flags supersede profile settings.
 
 BotBrowser now supports command-line flags that override profile configuration values with the highest priority. These flags start with `--bot-config-` and directly map to profile `configs` properties.
 
-> 💡 **Recommended Approach:** Use these CLI flags instead of modifying profile files. They provide the highest priority and don't require editing profile JSON files.
+> 💡 **Recommended:** Use CLI flags instead of modifying profiles. They carry the highest priority and don’t require editing encrypted files.
 
 ### Available Configuration Override Flags
 
-The following `--bot-config-*` flags correspond directly to profile `configs` properties:
+The following `--bot-config-*` flags map directly to profile `configs`:
 
 ```bash
 --bot-config-browser-brand=chrome             # Browser brand: chrome, chromium, edge, brave
@@ -180,15 +178,12 @@ The following `--bot-config-*` flags correspond directly to profile `configs` pr
 
 ### Key Benefits of CLI Configuration Flags
 
-**✅ Highest Priority:** These flags override any profile settings
+- **Highest Priority:** Overrides profile settings
+- **No Profile Editing:** Avoid changing encrypted JSON
+- **Dynamic Configuration:** Perfect for automation and CI/CD
+- **Session Isolation:** Different settings per instance
 
-**✅ No Profile Editing:** Avoid modifying complex profile JSON files
-
-**✅ Dynamic Configuration:** Perfect for automated deployments and scripts
-
-**✅ Session Isolation:** Different configurations per browser instance without profile conflicts
-
-### Configuration Priority Order
+### Configuration Priority
 
 1. **🥇 CLI `--bot-config-*` flags** (Highest priority)
 2. **🥈 Profile `configs` settings** (Medium priority)
@@ -294,15 +289,15 @@ chromium-browser \
 
 ### BotBrowser-Specific Considerations
 
-**Configuration Priority:** CLI `--bot-config-*` flags have the highest priority and override profile `configs` settings.
+Configuration priority — CLI `--bot-config-*` flags override profile `configs`.
 
-**Session Management:** Use `--bot-title` to easily identify different browser instances in your system.
+Session management — use `--bot-title` to identify instances.
 
-**Cookie Persistence:** `--bot-cookies` is perfect for maintaining session state across restarts.
+Cookie persistence — `--bot-cookies` helps maintain state across restarts.
 
-**Realistic Browsing:** `--bot-bookmarks` adds authenticity to your browser fingerprint.
+Realistic browsing — `--bot-bookmarks` adds authenticity.
 
-**Proxy Authentication:** Embed credentials directly in the proxy URL for authentication.
+Proxy authentication — embed credentials directly in the proxy URL.
 
 ---
 
