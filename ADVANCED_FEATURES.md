@@ -12,6 +12,11 @@ BotBrowser offers multi‑layer emulation and control to keep fingerprints consi
 
 ---
 
+## 🧭 Capabilities Index
+
+[navigator.webdriver removal](#chrome-behavior-emulation), [main‑world isolation](#playwright-puppeteer-integration), [JS hook stealth](#playwright-puppeteer-integration), [Canvas noise](#graphics-rendering-engine), [WebGL/WebGPU param control](#graphics-rendering-engine), [Skia anti‑alias](#cross-platform-font-engine), [HarfBuzz shaping](#cross-platform-font-engine), [MediaDevices spoofing](#complete-fingerprint-control), [font list spoofing](#cross-platform-font-engine), [UA congruence](#configuration-and-control), [per‑context proxy geo](#enhanced-proxy-system), [DNS‑through‑proxy](#enhanced-proxy-system), [HTTP headers/HTTP2/HTTP3](#chrome-behavior-emulation), [headless parity](#headless-incognito-compatibility), [WebRTC SDP/ICE control](#webrtc-leak-protection), [TLS fingerprint (JA3/JARM)](#network-fingerprint-control)
+
+<a id="configuration-and-control"></a>
 ## 🔧 Configuration & Control
 
 ### Advanced CLI Configuration
@@ -60,6 +65,7 @@ chrome.exe --bot-profile="/absolute/path/to/profile.enc" \
            --bot-bookmarks='[{"name":"Research","url":"https://example.com","folder":"Work"}]'
 ```
 
+<a id="enhanced-proxy-system"></a>
 ### Enhanced Proxy System
 Rebuilt for stability, per‑context support, and DNS‑leak protection.
 
@@ -109,6 +115,16 @@ const context2 = await browser.newContext({
 
 **⚠️ Important:** Prefer BotBrowser’s proxy options over framework‑specific settings so geo‑detection remains accurate.
 
+<a id="network-fingerprint-control"></a>
+## 🌐 Network Fingerprint Control
+
+**Scope:** Network‑layer traits that detection systems often score.
+
+- **HTTP Headers & Protocol:** Chrome‑like request headers; authentic HTTP/2 and HTTP/3 behavior (see Chrome Behavior Emulation).
+- **DNS Routing:** SOCKS5 avoids local DNS resolution; all lookups go through the proxy tunnel (see Enhanced Proxy System).
+- **WebRTC:** SDP/ICE manipulation and candidate filtering to prevent local IP disclosure (see WebRTC Leak Protection).
+- **TLS Fingerprints (JA3/JARM/ALPN):** Status: Roadmap — evaluation in progress; goals include cipher/extension ordering and ALPN tuning.
+
 ---
 
 ## 🎭 Automation Artifact Research
@@ -136,6 +152,7 @@ Sophisticated noise with consistency algorithms.
 - Font measurement consistency across workers
 - Realistic text rendering variations
 
+<a id="headless-incognito-compatibility"></a>
 ### Headless & Incognito Compatibility
 Consistent behavior across modes with comprehensive simulation.
 
@@ -149,6 +166,7 @@ Consistent behavior across modes with comprehensive simulation.
 - Consistent fingerprint between normal and incognito modes
 - Maintains privacy features while ensuring consistency
 
+<a id="webrtc-leak-protection"></a>
 ### WebRTC Leak Protection
 Complete WebRTC fingerprint control and IP protection.
 
@@ -162,6 +180,7 @@ Complete WebRTC fingerprint control and IP protection.
 - RTCPeerConnection behavior modification
 - Network topology hiding
 
+<a id="chrome-behavior-emulation"></a>
 ### Chrome Behavior Emulation
 Authentic Google Chrome behaviors and API responses.
 
@@ -399,6 +418,7 @@ Comprehensive input and navigation behavior emulation.
 | **Permissions** | API permission simulation, notification handling, media access |
 | **Navigation** | History manipulation, referrer control, navigation timing |
 
+<a id="graphics-rendering-engine"></a>
 ### Graphics & Rendering Engine
 Advanced graphics controls and rendering consistency.
 
@@ -457,6 +477,7 @@ Execute JavaScript with privileged `chrome.debugger` access.
 
 📖 **Documentation:** [Bot Script Automation Examples](examples/bot-script)
 
+<a id="playwright-puppeteer-integration"></a>
 ### Playwright/Puppeteer Integration
 Enhanced compatibility with popular automation frameworks.
 

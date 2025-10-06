@@ -51,6 +51,41 @@ Because scripts run in a privileged context, you have access to:
 3. Resource cleanup — detach from the debugger when done
 4. Timing control — use appropriate delays between actions
 
+## Behavior Recipes (Human‑Like Interaction)
+
+**Mouse movement (CDP)**
+```js
+// Minimal example: smooth cursor path with jitter
+const path = [{x:100,y:200},{x:140,y:220},{x:180,y:230},{x:220,y:240}];
+for (const p of path) {
+  await chrome.debugger.sendCommand({tabId}, 'Input.dispatchMouseEvent', {
+    type: 'mouseMoved', x: p.x + Math.random()*0.7, y: p.y + Math.random()*0.7,
+    modifiers: 0, buttons: 0
+  });
+  await new Promise(r => setTimeout(r, 12 + Math.random()*18));
+}
+```
+
+**Typing cadence (CDP)**
+```js
+const text = 'hello world';
+for (const ch of text) {
+  await chrome.debugger.sendCommand({tabId}, 'Input.insertText', { text: ch });
+  await new Promise(r => setTimeout(r, 35 + Math.random()*45));
+}
+```
+
+**Scrolling pattern (CDP)**
+```js
+// Wheel events with easing
+for (let i = 0; i < 20; i++) {
+  await chrome.debugger.sendCommand({tabId}, 'Input.dispatchMouseEvent', {
+    type: 'mouseWheel', x: 400, y: 300, deltaY: 60 + Math.sin(i/3)*10
+  });
+  await new Promise(r => setTimeout(r, 30 + Math.random()*30));
+}
+```
+
 ## Documentation
 
 📖 **Chrome Debugger API:** https://developer.chrome.com/docs/extensions/reference/api/debugger/

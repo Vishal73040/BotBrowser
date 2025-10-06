@@ -38,6 +38,7 @@ Specifies the path to the BotBrowser profile file (.enc).
 
 ---
 
+<a id="enhanced-proxy-configuration"></a>
 ## 🌐 Enhanced Proxy Configuration
 
 ### Enhanced `--proxy-server` with Embedded Credentials
@@ -135,6 +136,7 @@ Execute a JavaScript file right after BotBrowser starts in a privileged, non-ext
 
 ---
 
+<a id="profile-configuration-override-flags"></a>
 ## ⚙️ Profile Configuration Override Flags
 
 High‑priority configuration overrides — these CLI flags supersede profile settings.
@@ -175,6 +177,8 @@ The following `--bot-config-*` flags map directly to profile `configs`:
 --bot-config-media-types=profile              # Media types: profile, real, expand (allow expanding via local decoders)
 --bot-config-mobile-force-touch=false         # Mobile touch: force touch events on/off for mobile device simulation
 ```
+
+> **Note — UA/Engine Congruence:** For `--bot-config-ua-full-version`, use a value that matches the Chromium major version in your build, and keep brands/`userAgentData` aligned to avoid fingerprint mismatches.
 
 ### Key Benefits of CLI Configuration Flags
 
