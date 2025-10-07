@@ -581,6 +581,7 @@ For technical questions about advanced features, implementation details, or cust
 - **[CLI Flags Reference](CLI_FLAGS.md)** - Complete command-line options
 - **[Profile Configuration](profiles/PROFILE_CONFIGS.md)** - Advanced profile customization
 - **[Validation Results](VALIDATION.md)** - Research and testing data
+- **[BotCanvas Lab](tools/botcanvas/)** - Canvas forensics and fingerprint analysis tool
 - **[Examples](examples/)** - Automation code samples
 
 ---

@@ -240,6 +240,7 @@ Our compatibility research examines browser fingerprinting techniques across dif
 | **[Validation Results](VALIDATION.md)** | Research data | 25+ anti-bot systems, 50,000+ test sessions, statistical analysis |
 | **[CLI Flags Reference](CLI_FLAGS.md)** | Command-line options | `--bot-config-*` flags, proxy auth, session management |
 | **[Profile Configuration](profiles/PROFILE_CONFIGS.md)** | Profile customization | Fingerprint control, cross-platform compatibility |
+| **[BotCanvas Lab](tools/botcanvas/)** | Canvas forensics tool | Canvas 2D recording, JSONL event viewer, replay roadmap |
 | **[Examples](examples/)** | Code samples | Playwright, Puppeteer, bot-script automation |
 
 ### Quick Access

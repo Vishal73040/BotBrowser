@@ -115,6 +115,23 @@ Accepts a JSON string containing bookmark data for startup.
 --bot-bookmarks='[{"title":"Example","type":"url","url":"https://example.com"},{"title":"Folder","type":"folder","children":[{"title":"Example","type":"url","url":"https://example.com"}]}]'
 ```
 
+### `--bot-canvas-record-file`
+Canvas forensics and fingerprint analysis.
+
+Records all Canvas 2D API calls to a JSONL file for forensic analysis and future replay capabilities.
+
+```bash
+--bot-canvas-record-file="/tmp/botcanvas.jsonl"
+```
+
+**Key Features:**
+- Complete Canvas 2D API call recording with full parameter serialization
+- Deterministic capture (noise injection disabled during recording)
+- JSONL format for easy parsing and analysis
+- HTML viewer included for interactive event inspection
+
+📖 **Learn More:** [BotCanvas Documentation](tools/botcanvas/)
+
 ### `--bot-script`
 Framework‑less automation with a privileged JavaScript context.
 
