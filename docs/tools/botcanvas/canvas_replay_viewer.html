@@ -111,71 +111,82 @@
       try { return JSON.stringify(obj); } catch { return String(obj); }
     }
 
+    function formatCaller(e) {
+      if (!e.caller) return '';
+      const c = e.caller;
+      // Use full URL/path
+      const url = c.url || '';
+      const location = `${url}:${c.line}:${c.column}`;
+      const func = c.function ? ` in ${c.function}()` : '';
+      return ` // @ ${location}${func}`;
+    }
+
     function codeLineForEvent(e) {
       const m = e.method;
       const a = e.args || {};
+      const callerComment = formatCaller(e);
       switch (e.type) {
         case 'canvas_init': {
           const src = e.exec_url ? `, exec_url=${e.exec_url}` : '';
-          return `// canvas_init width=${e.width}, height=${e.height}${src}`;
+          return `// canvas_init width=${e.width}, height=${e.height}${src}${callerComment}`;
         }
         case 'context_create': {
           const attrs = e.attributes || {};
           const attrsStr = Object.keys(attrs).length ? `, ${JSON.stringify(attrs)}` : '';
           const src = e.exec_url ? ` // exec_url=${e.exec_url}` : '';
-          return `const ctx = canvas.getContext('2d'${attrsStr});${src}`;
+          return `const ctx = canvas.getContext('2d'${attrsStr});${src}${callerComment}`;
         }
-        case 'resize': return `canvas.width = ${e.width}; canvas.height = ${e.height};`;
+        case 'resize': return `canvas.width = ${e.width}; canvas.height = ${e.height};${callerComment}`;
         case 'state': {
           const v = e.value;
           if (e.property === 'lineDash') {
             let arr = [];
             try { arr = typeof v === 'string' ? JSON.parse(v) : (Array.isArray(v) ? v : []); } catch {}
-            return `ctx.setLineDash(${JSON.stringify(arr)});`;
+            return `ctx.setLineDash(${JSON.stringify(arr)});${callerComment}`;
           }
           if (e.property === 'imageSmoothingEnabled') {
             const b = (v === true || v === 'true');
-            return `ctx.imageSmoothingEnabled = ${b};`;
+            return `ctx.imageSmoothingEnabled = ${b};${callerComment}`;
           }
           if (v && typeof v === 'object' && v.type === 'CanvasGradient' && v.gradient_id) {
-            return `ctx.${e.property} = g${v.gradient_id};`;
+            return `ctx.${e.property} = g${v.gradient_id};${callerComment}`;
           }
           if (v === '[Pattern]') {
-            return `try{ ctx.${e.property} = ptn; }catch(e){ /* pattern not available */ }`;
+            return `try{ ctx.${e.property} = ptn; }catch(e){ /* pattern not available */ }${callerComment}`;
           }
-          return `ctx.${e.property} = ${typeof e.value === 'string' ? JSON.stringify(e.value) : formatArgs(e.value)};`;
+          return `ctx.${e.property} = ${typeof e.value === 'string' ? JSON.stringify(e.value) : formatArgs(e.value)};${callerComment}`;
         }
         case 'draw': {
           if (m === 'fillRect' || m === 'strokeRect' || m === 'clearRect') {
-            return `ctx.${m}(${a.x}, ${a.y}, ${a.w}, ${a.h});`;
+            return `ctx.${m}(${a.x}, ${a.y}, ${a.w}, ${a.h});${callerComment}`;
           }
-          if (m === 'scale') return `ctx.scale(${a.sx}, ${a.sy});`;
-          if (m === 'rotate') return `ctx.rotate(${a.angle});`;
-          if (m === 'translate') return `ctx.translate(${a.x}, ${a.y});`;
-          if (m === 'transform') return `ctx.transform(${a.a}, ${a.b}, ${a.c}, ${a.d}, ${a.e}, ${a.f});`;
+          if (m === 'scale') return `ctx.scale(${a.sx}, ${a.sy});${callerComment}`;
+          if (m === 'rotate') return `ctx.rotate(${a.angle});${callerComment}`;
+          if (m === 'translate') return `ctx.translate(${a.x}, ${a.y});${callerComment}`;
+          if (m === 'transform') return `ctx.transform(${a.a}, ${a.b}, ${a.c}, ${a.d}, ${a.e}, ${a.f});${callerComment}`;
           if (m === 'setTransform') {
-            if (a && typeof a === 'object' && 'a' in a) return `ctx.setTransform(${a.a}, ${a.b}, ${a.c}, ${a.d}, ${a.e}, ${a.f});`;
-            return `ctx.setTransform(${formatArgs(a)});`;
+            if (a && typeof a === 'object' && 'a' in a) return `ctx.setTransform(${a.a}, ${a.b}, ${a.c}, ${a.d}, ${a.e}, ${a.f});${callerComment}`;
+            return `ctx.setTransform(${formatArgs(a)});${callerComment}`;
           }
-          if (m === 'resetTransform') return `ctx.resetTransform();`;
-          if (m === 'reset') return `if (typeof ctx.reset === 'function') ctx.reset();`;
-          if (m === 'beginPath') return `ctx.beginPath();`;
-          if (m === 'closePath') return `ctx.closePath();`;
-          if (m === 'moveTo') return `ctx.moveTo(${a.x}, ${a.y});`;
-          if (m === 'lineTo') return `ctx.lineTo(${a.x}, ${a.y});`;
-          if (m === 'quadraticCurveTo') return `ctx.quadraticCurveTo(${a.cpx}, ${a.cpy}, ${a.x}, ${a.y});`;
-          if (m === 'bezierCurveTo') return `ctx.bezierCurveTo(${a.cp1x}, ${a.cp1y}, ${a.cp2x}, ${a.cp2y}, ${a.x}, ${a.y});`;
-          if (m === 'arcTo') return `ctx.arcTo(${a.x1}, ${a.y1}, ${a.x2}, ${a.y2}, ${a.radius});`;
+          if (m === 'resetTransform') return `ctx.resetTransform();${callerComment}`;
+          if (m === 'reset') return `if (typeof ctx.reset === 'function') ctx.reset();${callerComment}`;
+          if (m === 'beginPath') return `ctx.beginPath();${callerComment}`;
+          if (m === 'closePath') return `ctx.closePath();${callerComment}`;
+          if (m === 'moveTo') return `ctx.moveTo(${a.x}, ${a.y});${callerComment}`;
+          if (m === 'lineTo') return `ctx.lineTo(${a.x}, ${a.y});${callerComment}`;
+          if (m === 'quadraticCurveTo') return `ctx.quadraticCurveTo(${a.cpx}, ${a.cpy}, ${a.x}, ${a.y});${callerComment}`;
+          if (m === 'bezierCurveTo') return `ctx.bezierCurveTo(${a.cp1x}, ${a.cp1y}, ${a.cp2x}, ${a.cp2y}, ${a.x}, ${a.y});${callerComment}`;
+          if (m === 'arcTo') return `ctx.arcTo(${a.x1}, ${a.y1}, ${a.x2}, ${a.y2}, ${a.radius});${callerComment}`;
           if (m === 'beginLayer') {
             const opts = [];
             if (a && a.filter) opts.push(`{filter: ${JSON.stringify(a.filter)}}`);
-            return `try{ ctx.beginLayer(${opts.join(', ')}); }catch(e){ /* fallback */ ctx.save(); ${a && a.filter ? `ctx.filter=${JSON.stringify(a.filter)};` : ''} }`;
+            return `try{ ctx.beginLayer(${opts.join(', ')}); }catch(e){ /* fallback */ ctx.save(); ${a && a.filter ? `ctx.filter=${JSON.stringify(a.filter)};` : ''} }${callerComment}`;
           }
-          if (m === 'endLayer') return `try{ ctx.endLayer(); }catch(e){ ctx.restore(); }`;
-          if (m === 'arc') return `ctx.arc(${a.x}, ${a.y}, ${a.radius}, ${a.startAngle}, ${a.endAngle}, ${a.anticlockwise});`;
-          if (m === 'ellipse') return `ctx.ellipse(${a.x}, ${a.y}, ${a.radiusX}, ${a.radiusY}, ${a.rotation}, ${a.startAngle}, ${a.endAngle}, ${a.anticlockwise});`;
-          if (m === 'rect') return `ctx.rect(${a.x}, ${a.y}, ${a.w ?? a.width}, ${a.h ?? a.height});`;
-          if (m === 'roundRect') return `ctx.roundRect(${a.x}, ${a.y}, ${a.width}, ${a.height}, ${JSON.stringify(a.radius)});`;
+          if (m === 'endLayer') return `try{ ctx.endLayer(); }catch(e){ ctx.restore(); }${callerComment}`;
+          if (m === 'arc') return `ctx.arc(${a.x}, ${a.y}, ${a.radius}, ${a.startAngle}, ${a.endAngle}, ${a.anticlockwise});${callerComment}`;
+          if (m === 'ellipse') return `ctx.ellipse(${a.x}, ${a.y}, ${a.radiusX}, ${a.radiusY}, ${a.rotation}, ${a.startAngle}, ${a.endAngle}, ${a.anticlockwise});${callerComment}`;
+          if (m === 'rect') return `ctx.rect(${a.x}, ${a.y}, ${a.w ?? a.width}, ${a.h ?? a.height});${callerComment}`;
+          if (m === 'roundRect') return `ctx.roundRect(${a.x}, ${a.y}, ${a.width}, ${a.height}, ${JSON.stringify(a.radius)});${callerComment}`;
           if (m === 'fill' && a.path) {
             const cmds = a.path || [];
             const lines = ['(() => {','const path = new Path2D();'];
@@ -188,7 +199,7 @@
               else if (op === 'Z') lines.push('path.closePath();');
             }
             lines.push(`ctx.fill(path${a.fillRule?`, ${JSON.stringify(a.fillRule)}`:''});`);
-            lines.push('})();');
+            lines.push(`})();${callerComment}`);
             return lines.join('\n');
           }
           if (m === 'stroke' && a.path) {
@@ -203,11 +214,11 @@
               else if (op === 'Z') lines.push('path.closePath();');
             }
             lines.push('ctx.stroke(path);');
-            lines.push('})();');
+            lines.push(`})();${callerComment}`);
             return lines.join('\n');
           }
-          if (m === 'fill') return `ctx.fill(${a.fillRule?JSON.stringify(a.fillRule):''});`;
-          if (m === 'stroke') return `ctx.stroke();`;
+          if (m === 'fill') return `ctx.fill(${a.fillRule?JSON.stringify(a.fillRule):''});${callerComment}`;
+          if (m === 'stroke') return `ctx.stroke();${callerComment}`;
           if (m === 'clip') {
             if (a.path) {
               const cmds = a.path || [];
@@ -221,25 +232,25 @@
                 else if (op === 'Z') lines.push('path.closePath();');
               }
               lines.push(`ctx.clip(path${a.fillRule?`, ${JSON.stringify(a.fillRule)}`:''});`);
-              lines.push('})();');
+              lines.push(`})();${callerComment}`);
               return lines.join('\n');
             }
-            return `ctx.clip(${a.fillRule?JSON.stringify(a.fillRule):''});`;
+            return `ctx.clip(${a.fillRule?JSON.stringify(a.fillRule):''});${callerComment}`;
           }
           if (m === 'beginLayer') {
             const opts = [];
             if (a && a.filter) opts.push(`{filter: ${JSON.stringify(a.filter)}}`);
-            return `try{ ctx.beginLayer(${opts.join(', ')}); }catch(e){ /* fallback */ ctx.save(); ${a && a.filter ? `ctx.filter=${JSON.stringify(a.filter)};` : ''} }`;
+            return `try{ ctx.beginLayer(${opts.join(', ')}); }catch(e){ /* fallback */ ctx.save(); ${a && a.filter ? `ctx.filter=${JSON.stringify(a.filter)};` : ''} }${callerComment}`;
           }
-          if (m === 'endLayer') return `try{ ctx.endLayer(); }catch(e){ ${/* fallback */''} ctx.restore(); }`;
-          if (m === 'save') return `ctx.save();`;
-          if (m === 'restore') return `ctx.restore();`;
-          if (m === 'fillText') return `ctx.fillText(${JSON.stringify(a.text)}, ${a.x}, ${a.y}${a.maxWidth!=null?`, ${a.maxWidth}`:''});`;
-          if (m === 'strokeText') return `ctx.strokeText(${JSON.stringify(a.text)}, ${a.x}, ${a.y}${a.maxWidth!=null?`, ${a.maxWidth}`:''});`;
-          if (m === 'createLinearGradient') return `const g${a.gradient_id||'X'}=ctx.createLinearGradient(${a.x0},${a.y0},${a.x1},${a.y1});`;
-          if (m === 'createRadialGradient') return `const g${a.gradient_id||'X'}=ctx.createRadialGradient(${a.x0},${a.y0},${a.r0},${a.x1},${a.y1},${a.r1});`;
-          if (m === 'createConicGradient') return `const g${a.gradient_id||'X'}=ctx.createConicGradient(${a.startAngle},${a.centerX},${a.centerY});`;
-          if (m === 'gradient_addColorStop') return `g${a.gradient_id||'X'}.addColorStop(${a.offset}, ${JSON.stringify(a.color)});`;
+          if (m === 'endLayer') return `try{ ctx.endLayer(); }catch(e){ ${/* fallback */''} ctx.restore(); }${callerComment}`;
+          if (m === 'save') return `ctx.save();${callerComment}`;
+          if (m === 'restore') return `ctx.restore();${callerComment}`;
+          if (m === 'fillText') return `ctx.fillText(${JSON.stringify(a.text)}, ${a.x}, ${a.y}${a.maxWidth!=null?`, ${a.maxWidth}`:''});${callerComment}`;
+          if (m === 'strokeText') return `ctx.strokeText(${JSON.stringify(a.text)}, ${a.x}, ${a.y}${a.maxWidth!=null?`, ${a.maxWidth}`:''});${callerComment}`;
+          if (m === 'createLinearGradient') return `const g${a.gradient_id||'X'}=ctx.createLinearGradient(${a.x0},${a.y0},${a.x1},${a.y1});${callerComment}`;
+          if (m === 'createRadialGradient') return `const g${a.gradient_id||'X'}=ctx.createRadialGradient(${a.x0},${a.y0},${a.r0},${a.x1},${a.y1},${a.r1});${callerComment}`;
+          if (m === 'createConicGradient') return `const g${a.gradient_id||'X'}=ctx.createConicGradient(${a.startAngle},${a.centerX},${a.centerY});${callerComment}`;
+          if (m === 'gradient_addColorStop') return `g${a.gradient_id||'X'}.addColorStop(${a.offset}, ${JSON.stringify(a.color)});${callerComment}`;
           if (m === 'createPattern') {
             const imgInfo = a.image || {};
             if (imgInfo.type === 'HTMLImageElement' && imgInfo.src) {
@@ -248,10 +259,10 @@
                 '  const image=new Image();',
                 `  image.onload = () => { try{ window.ptn = ctx.createPattern(image, ${JSON.stringify(a.repetition)}); }catch(e){} };`,
                 `  image.src=${JSON.stringify(imgInfo.src)};`,
-                '})();'
+                `})();${callerComment}`
               ].join('\n');
             }
-            return `const image=document.createElement('canvas'); image.width=1; image.height=1;\nconst ptn=ctx.createPattern(image, ${JSON.stringify(a.repetition)});`;
+            return `const image=document.createElement('canvas'); image.width=1; image.height=1;\nconst ptn=ctx.createPattern(image, ${JSON.stringify(a.repetition)});${callerComment}`;
           }
           if (m === 'drawImage') {
             const imgInfo = a.image || {};
@@ -266,7 +277,7 @@
                 '  const image=new Image();',
                 `  image.onload = () => { try{ ${drawLine} }catch(e){} };`,
                 `  image.src=${JSON.stringify(imgInfo.src)};`,
-                '})();'
+                `})();${callerComment}`
               ].join('\n');
             }
             const drawLine = (a.sw!=null)
@@ -278,14 +289,14 @@
               '(() => {',
               `  const image=document.createElement('canvas'); image.width=${a.dw||a.sw||1}; image.height=${a.dh||a.sh||1};`,
               `  try { ${drawLine} } catch(e) {}`,
-              '})();'
+              `})();${callerComment}`
             ].join('\n');
           }
           if (m === 'putImageData') {
             // Export policy: when fullRestoreExport is enabled, inline-decode pixels and call putImageData.
             // Otherwise, keep the lightweight placeholder comment to minimize export size.
             const id = a.imageData || a.image_data || a.image;
-            if (!fullRestoreExport) return `/* putImageData omitted in export */`;
+            if (!fullRestoreExport) return `/* putImageData omitted in export */${callerComment}`;
             if (id && id.pixels_b64 && id.w != null && id.h != null) {
               const dx = (a.dx != null ? a.dx : 0);
               const dy = (a.dy != null ? a.dy : 0);
@@ -301,39 +312,39 @@
                 '  for (let i = 0; i < bin.length; i++) u8[i] = bin.charCodeAt(i);',
                 '  const img = new ImageData(u8, w, h);',
                 `  ctx.putImageData(img, ${dx}, ${dy}${dirtyArgs});`,
-                '})();'
+                `})();${callerComment}`
               ].join('\n');
             }
-            return `/* putImageData: imageData missing in args */`;
+            return `/* putImageData: imageData missing in args */${callerComment}`;
           }
-          return `// draw ${m} ${formatArgs(a)}`;
+          return `// draw ${m} ${formatArgs(a)}${callerComment}`;
         }
         case 'read': {
           const m = e.method;
           const a = e.args || {};
           if (m === 'font') return ``;
-          if (m === 'getImageData') return `ctx.getImageData(${a.sx}, ${a.sy}, ${a.sw}, ${a.sh});`;
+          if (m === 'getImageData') return `ctx.getImageData(${a.sx}, ${a.sy}, ${a.sw}, ${a.sh});${callerComment}`;
           if (m === 'toDataURL') {
             const mime = a && a.mime ? JSON.stringify(a.mime) : '';
             const q = (a && a.quality != null) ? `, ${a.quality}` : '';
-            return `canvas.toDataURL(${mime}${q});`;
+            return `canvas.toDataURL(${mime}${q});${callerComment}`;
           }
           if (m === 'toBlob' || m === 'convertToBlob') {
             const mime = a && a.mime ? JSON.stringify(a.mime) : 'undefined';
             const q = (a && a.quality != null) ? `, ${a.quality}` : '';
             const target = (m === 'toBlob') ? 'canvas' : 'offscreen';
             // We don't know the offscreen variable here; call on canvas for preview consistency
-            return `canvas.toBlob(()=>{}, ${mime}${q});`;
+            return `canvas.toBlob(()=>{}, ${mime}${q});${callerComment}`;
           }
-          if (m === 'getLineDash') return `ctx.getLineDash();`;
-          if (m === 'getTransform') return `ctx.getTransform();`;
-          if (m === 'isPointInPath') return `ctx.isPointInPath(${a.x}, ${a.y}${a.fillRule?`, ${JSON.stringify(a.fillRule)}`:''});`;
-          if (m === 'isPointInStroke') return `ctx.isPointInStroke(${a.x}, ${a.y});`;
-          if (m === 'measureText') return `ctx.measureText(${JSON.stringify((a && a.text) || '')});`;
-          return `// read ${e.method}`;
+          if (m === 'getLineDash') return `ctx.getLineDash();${callerComment}`;
+          if (m === 'getTransform') return `ctx.getTransform();${callerComment}`;
+          if (m === 'isPointInPath') return `ctx.isPointInPath(${a.x}, ${a.y}${a.fillRule?`, ${JSON.stringify(a.fillRule)}`:''});${callerComment}`;
+          if (m === 'isPointInStroke') return `ctx.isPointInStroke(${a.x}, ${a.y});${callerComment}`;
+          if (m === 'measureText') return `ctx.measureText(${JSON.stringify((a && a.text) || '')});${callerComment}`;
+          return `// read ${e.method}${callerComment}`;
         }
       }
-      return `// unknown ${e.type}`;
+      return `// unknown ${e.type}${callerComment}`;
     }
 
     function createPath2DFromCommands(cmds) {

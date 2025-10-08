@@ -16,7 +16,7 @@ BotCanvas is a comprehensive canvas recording system that captures all Canvas 2D
 
 ## 🎬 Try It Now
 
-> **[▶️ Launch Live Replay Viewer](https://botswin.github.io/BotBrowser/tools/botcanvas/canvas_replay_viewer.html?jsonl=https://botswin.github.io/BotBrowser/tools/botcanvas/canvas_2d_simple_test_record.jsonl)** — Interactive demo preloaded with sample JSONL. Scrub through events, view generated code, and watch canvas rendering in slow motion!
+> **[▶️ Launch Live Replay Viewer](https://botswin.github.io/BotBrowser/tools/botcanvas/canvas_replay_viewer.html?jsonl=https://botswin.github.io/BotBrowser/tools/botcanvas/canvas_2d_simple_test_record.jsonl)** — Interactive demo preloaded with sample JSONL. Scrub through events, view generated code with source locations, and watch canvas rendering in slow motion!
 
 ### Demo Resources
 
@@ -37,8 +37,8 @@ BotCanvas is a comprehensive canvas recording system that captures all Canvas 2D
 | **WebGL Browser Replay** | 🔜 **Planned** | Post-Q4 2025 |
 
 **What's shipped now:**
-- ✅ Canvas 2D recording with complete API coverage
-- ✅ HTML-based event viewer for forensic analysis
+- ✅ Canvas 2D recording with complete API coverage and call stack tracking
+- ✅ HTML-based event viewer for forensic analysis with source location mapping
 
 **What's coming in Q4 2025:**
 - 🚧 Canvas 2D replay in BotBrowser (read JSONL and reconstruct canvas operations to restore hash)
@@ -77,6 +77,8 @@ Exit BotBrowser. The complete recording is saved to `/tmp/botcanvas.jsonl` in st
 | **`read`** | Data extraction and measurements | `getImageData`, `toBlob`, `measureText` |
 | **`resize`** | Canvas dimension changes | `canvas.width/height` modifications |
 
+> **Note:** All events include `caller` information (source URL, line, column) for precise debugging and analysis.
+
 ### What Gets Recorded
 
 ✅ **Complete parameter capture:**
@@ -98,6 +100,26 @@ Exit BotBrowser. The complete recording is saved to `/tmp/botcanvas.jsonl` in st
 - Canvas IDs for multi-canvas scenarios
 - Worker/offscreen canvas support
 
+✅ **Call stack information:**
+- Source location for every API call (`url:line:column`)
+- Function name when available
+- Direct mapping between canvas operations and source code
+- Enables precise debugging and fingerprinting technique analysis
+
+**Example event with caller:**
+```json
+{
+  "type": "state",
+  "property": "fillStyle",
+  "value": "#ff0000",
+  "caller": {
+    "url": "https://example.com/fingerprint.js",
+    "line": 42,
+    "column": 16
+  }
+}
+```
+
 ---
 
 ## Use Cases
@@ -105,9 +127,10 @@ Exit BotBrowser. The complete recording is saved to `/tmp/botcanvas.jsonl` in st
 | Scenario | How BotCanvas Helps |
 |----------|---------------------|
 | **Fingerprint Analysis** | Capture exact API sequences used by detection libraries to build canvas hashes |
+| **Source Code Mapping** | Trace every canvas operation back to its exact source location (`url:line:column`) for reverse engineering |
 | **Cross-Platform Validation** | Record on one OS, verify identical API calls reproduce on another platform |
 | **Regression Testing** | Baseline recordings ensure consistent fingerprint behavior across BotBrowser updates |
-| **Research & Documentation** | Archive real-world fingerprinting techniques with complete reproducibility |
+| **Research & Documentation** | Archive real-world fingerprinting techniques with complete reproducibility and source attribution |
 
 ---
 
