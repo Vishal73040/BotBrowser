@@ -1,4 +1,4 @@
-Please download the 141 kernel BotBrowser from [this release](https://github.com/botswin/BotBrowser/releases/tag/v141-20250927).
+Please download the 141 kernel BotBrowser from [this release](https://github.com/botswin/BotBrowser/releases/tag/v141-20251002).
 
 ---
 
