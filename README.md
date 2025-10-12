@@ -149,6 +149,7 @@ This map links common detection surfaces to BotBrowser capabilities and the exac
 - **Configurability:** 20+ CLI overrides, per‑context proxies with automatic geo‑detection, and session tools (cookies/bookmarks/title)
 - **Headless ↔ GUI Parity:** Stable GPU/WebGPU/media signals and consistent behavior across browser modes
 - **Performance Controls:** Precise FPS simulation, memory/storage timing, and GPU micro‑benchmarks for realistic profiles
+- **Focus & Session Control:** Always-active tab emulation, configurable WebRTC ICE servers, and expanded media decoder reporting for authentic runtime signals
 
 ### Fingerprint Consistency Matrix — Cross‑Platform Coverage
 
@@ -240,7 +241,7 @@ Our compatibility research examines browser fingerprinting techniques across dif
 | **[Validation Results](VALIDATION.md)** | Research data | 25+ anti-bot systems, 50,000+ test sessions, statistical analysis |
 | **[CLI Flags Reference](CLI_FLAGS.md)** | Command-line options | `--bot-config-*` flags, proxy auth, session management |
 | **[Profile Configuration](profiles/PROFILE_CONFIGS.md)** | Profile customization | Fingerprint control, cross-platform compatibility |
-| **[BotCanvas Lab](tools/botcanvas/)** | Canvas forensics tool | Canvas 2D recording, JSONL event viewer, replay roadmap |
+| **[BotCanvasLab](tools/botcanvas/)** | Canvas forensics tool | Canvas 2D recording, JSONL event viewer, replay roadmap |
 | **[Examples](examples/)** | Code samples | Playwright, Puppeteer, bot-script automation |
 
 ### Quick Access

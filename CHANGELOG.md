@@ -8,6 +8,76 @@ This software and its documented capabilities are provided for **academic study 
 
 ⚠️ **This software is for compatibility validation in controlled, academic test environments only. It must not be used to circumvent security controls on production systems.**
 
+## [2025-10-12] 
+
+### Major
+- **Chromium Core Upgrade → 141.0.7390.77**
+  - **What**: Sync to the latest stable Chrome 141 release.
+  - **Why**: Keeps Rendering/Network/Storage/Media in parity with upstream, reduces version‑based heuristics, and includes current security fixes.
+  - **Impact**: More deterministic behavior on sites that gate features by major version; lower drift on fingerprint surfaces impacted by minor engine changes.
+
+- **Experimental: BotCanvasLab (Canvas2D recorder)**
+  - **What**: An opt‑in tool that **records Canvas2D draw operations** and exports **replayable code snippets** (trace → code).
+  - **Use cases**: Reverse‑inspect how a site draws charts/captchas/signature pads; reproduce rendering flows; compare visual diffs across hosts/profiles.
+  - **Enable**:
+    ```bash
+    chrome.exe --bot-canvas-record-file=/abs/path/trace.canvas.jsonl --bot-profile=/abs/path/profile.enc
+    ```
+  - **Notes**: Recording is **local** and grows with draw calls; recommended for analysis/debug, not for high‑volume production.
+  - **Docs**: https://github.com/botswin/BotBrowser/tree/main/tools/botcanvas
+
+### New
+- **CLI: `--bot-config-webrtc-ice` (custom ICE servers)**
+  - **What**: Choose STUN/TURN presets or provide a custom list to **avoid TURN‑level IP disclosure**.
+  - **Examples**:
+    - Google preset:
+      ```bash
+      --bot-config-webrtc-ice=google
+      ```
+    - Custom list (comma‑separated):
+      ```bash
+      --bot-config-webrtc-ice=custom:stun:stun.l.google.com:19302,turn:turn.example.com
+      ```
+  - **Why**: Some probes (e.g., https://ipbinding.online/) try to infer the real network by observing TURN traffic; controlling ICE servers reduces unintended leakage.
+
+- **CLI: `--bot-config-always-active` (true/false, default: true)**
+  - **What**: Keep windows **active** even when unfocused.
+  - **Behavior**: Suppresses `blur/visibilitychange`; forces `document.hidden=false`; caret keeps blinking; applies **per‑window** (multi‑window friendly).
+  - **Why**: Certain sites degrade features or throttle actions when the tab isn’t considered active.
+
+### Improved
+- **Runtime features control (finer per‑OS toggling)**
+  - More precise reading/toggling of runtime flags at startup, including OS‑conditioned switches → **more stable cross‑OS fingerprints** when moving profiles between Windows/macOS/Android.
+
+- **Chrome component plugin preload (ID: `ghbmnnjooekpmoecnnnilnnbdlolhkhi`)**
+  - Hardened preload path and timing so this stock component extension reliably appears; improves **Chrome‑authentic** signals that some scanners expect.
+
+- **WebGL/WebGL2 parameter reads**
+  - Reworked parameter access to avoid **application‑settable states** and cross‑driver quirks; prevents false values and closes detection patterns reported by https://fv.pro/
+
+- **Media types default → `expand`**
+  - `--bot-config-media-types` now defaults to **`expand`** (previously `profile`) so BotBrowser leverages **local decoders** by default → more accurate `canPlayType`/MSE decisions.
+  - To keep old behavior, pass `--bot-config-media-types=profile`.
+
+- **AudioContext noise tuning**
+  - Adjusted distribution/phase to better defend against **audio fingerprinting** with minimal audible/timing side‑effects.
+
+### Fixed
+- **Font sizes stable under `--bot-config-noise-text-rects`**
+  - Fixed an interaction where text‑rect noise perturbed computed font‑size metrics; sizes now remain stable.
+
+- **Geolocation reliability**
+  - Fixed geolocation not working in some configurations. Tracks: https://github.com/botswin/BotBrowser/issues/69
+
+- **Android window sizing**
+  - Corrected window metrics when emulating Android so viewport matches profile expectations.
+
+- **Proxy robustness & validation**
+  - Avoid crashes on failing proxies; emit clear error messages for malformed proxy arguments to prevent misconfig loops.
+
+
+---
+
 ## [2025-10-02] 
 
 ### Major

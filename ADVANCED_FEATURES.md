@@ -14,7 +14,7 @@ BotBrowser offers multi‑layer emulation and control to keep fingerprints consi
 
 ## 🧭 Capabilities Index
 
-[navigator.webdriver removal](#chrome-behavior-emulation), [main‑world isolation](#playwright-puppeteer-integration), [JS hook stealth](#playwright-puppeteer-integration), [Canvas noise](#graphics-rendering-engine), [WebGL/WebGPU param control](#graphics-rendering-engine), [Skia anti‑alias](#cross-platform-font-engine), [HarfBuzz shaping](#cross-platform-font-engine), [MediaDevices spoofing](#complete-fingerprint-control), [font list spoofing](#cross-platform-font-engine), [UA congruence](#configuration-and-control), [per‑context proxy geo](#enhanced-proxy-system), [DNS‑through‑proxy](#enhanced-proxy-system), [HTTP headers/HTTP2/HTTP3](#chrome-behavior-emulation), [headless parity](#headless-incognito-compatibility), [WebRTC SDP/ICE control](#webrtc-leak-protection), [TLS fingerprint (JA3/JARM)](#network-fingerprint-control)
+[navigator.webdriver removal](#chrome-behavior-emulation), [main‑world isolation](#playwright-puppeteer-integration), [JS hook stealth](#playwright-puppeteer-integration), [Canvas noise](#graphics-rendering-engine), [WebGL/WebGPU param control](#graphics-rendering-engine), [Skia anti‑alias](#cross-platform-font-engine), [HarfBuzz shaping](#cross-platform-font-engine), [MediaDevices spoofing](#complete-fingerprint-control), [font list spoofing](#cross-platform-font-engine), [UA congruence](#configuration-and-control), [per‑context proxy geo](#enhanced-proxy-system), [DNS‑through‑proxy](#enhanced-proxy-system), [active window emulation](#active-window-emulation), [HTTP headers/HTTP2/HTTP3](#chrome-behavior-emulation), [headless parity](#headless-incognito-compatibility), [WebRTC SDP/ICE control](#webrtc-leak-protection), [TLS fingerprint (JA3/JARM)](#network-fingerprint-control)
 
 <a id="configuration-and-control"></a>
 ## 🔧 Configuration & Control
@@ -146,11 +146,20 @@ Sophisticated noise with consistency algorithms.
 - AudioContext fingerprint noise injection
 - Maintains realistic audio processing behavior
 - Cross-worker consistency for complex applications
+- Tuned noise distribution (Chromium 141) to harden probes without audible artifacts
 
 **Text‑Metrics Manipulation:**
 - TextMetrics and client rects noise injection
 - Font measurement consistency across workers
 - Realistic text rendering variations
+
+<a id="active-window-emulation"></a>
+### Active Window Emulation
+Keep automation sessions foreground-consistent even when the host window is unfocused.
+
+- `--bot-config-always-active` defaults to `true`, suppressing `blur`/`visibilitychange` events and pinning `document.hidden=false`.
+- Works per window: disable explicitly when sites must observe genuine focus changes.
+- Prevents detection heuristics that watch caret blinking, FocusManager events, or inactive viewport throttling.
 
 <a id="headless-incognito-compatibility"></a>
 ### Headless & Incognito Compatibility
@@ -179,6 +188,7 @@ Complete WebRTC fingerprint control and IP protection.
 - MediaStream API consistency
 - RTCPeerConnection behavior modification
 - Network topology hiding
+- ICE server presets and custom lists via `--bot-config-webrtc-ice` to prevent TURN-level IP disclosure
 
 <a id="chrome-behavior-emulation"></a>
 ### Chrome Behavior Emulation
@@ -318,6 +328,7 @@ Comprehensive media‑format support and codec emulation.
 - Platform-specific codec availability simulation
 - Authentic media format reporting
 - Container format support detection
+- Default profile configuration now uses `expand` to prioritize local decoders; switch back to `profile` for legacy canned lists
 
 **WebCodecs API Support:**
 - videoDecoderSupport authentic reporting
@@ -581,7 +592,7 @@ For technical questions about advanced features, implementation details, or cust
 - **[CLI Flags Reference](CLI_FLAGS.md)** - Complete command-line options
 - **[Profile Configuration](profiles/PROFILE_CONFIGS.md)** - Advanced profile customization
 - **[Validation Results](VALIDATION.md)** - Research and testing data
-- **[BotCanvas Lab](tools/botcanvas/)** - Canvas forensics and fingerprint analysis tool
+- **[BotCanvasLab](tools/botcanvas/)** - Canvas forensics and fingerprint analysis tool
 - **[Examples](examples/)** - Automation code samples
 
 ---

@@ -92,7 +92,9 @@ All configurations are embedded in the `configs` field inside your profile JSON 
 | `injectRandomHistory`           | Optionally injects synthetic navigation history for academic experiments in browser state testing. | `false`    |
 | `disableDebugger`               | Prevents unintended interruptions from JavaScript debugger statements during automated academic workflows. | `true`     |
 | `keyboard`                      | Choose keyboard fingerprint source: `profile` (emulated from profile) or `real` (use system keyboard). | `profile` |
-| `mediaTypes`                    | Media types behavior: `profile` (use profile settings), `real` (native system), `expand` (allow expanding via local decoders). | `profile` |
+| `mediaTypes`                    | Media types behavior: `expand` (prefer local decoders), `profile` (profile-defined list), `real` (native system). | `expand` |
+| `alwaysActive`                  | Keep windows/tabs in an active state to suppress `blur`/`visibilitychange` events and `document.hidden=true`. | `true` |
+| `webrtcICE`                     | ICE server preset (`google`) or custom list via `custom:stun:host:port,turn:host:port`. | `google` |
 | `mobileForceTouch`              | Force touch events on/off when simulating mobile devices (`true`, `false`).          | `false`    |
 
 ### Proxy Settings
@@ -187,6 +189,12 @@ All configurations are embedded in the `configs` field inside your profile JSON 
     // WebRTC: 'profile' = profile’s settings; 'real' = native; 'disabled' = no WebRTC
     "webrtc": "profile",
 
+    // WebRTC ICE servers: 'google' preset or 'custom:stun:...,turn:...'
+    "webrtcICE": "google",
+
+    // Keep the window active even when unfocused (suppresses blur/visibilitychange)
+    "alwaysActive": true,
+
     // Fonts: 'profile' = profile’s embedded list; 'real' = system-installed fonts
     "fonts": "profile",
 
@@ -198,6 +206,9 @@ All configurations are embedded in the `configs` field inside your profile JSON 
 
     // Media devices: 'profile' = fake camera/mic devices; 'real' = actual system devices
     "mediaDevices": "profile",
+
+    // Media types: 'expand' = prefer local decoders; switch to 'profile' for legacy behavior
+    "mediaTypes": "expand",
 
     // Speech voices: 'profile' = profile’s synthetic voices; 'real' = system voices
     "speechVoices": "profile",

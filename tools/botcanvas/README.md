@@ -1,4 +1,4 @@
-# BotCanvas Lab (Beta)
+# BotCanvasLab (Beta)
 
 Canvas 2D/WebGL fingerprint forensics for BotBrowser. Capture every API call as a JSONL event stream for analysis and future replay capabilities.
 

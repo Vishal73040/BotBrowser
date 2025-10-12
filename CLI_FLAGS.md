@@ -178,6 +178,7 @@ The following `--bot-config-*` flags map directly to profile `configs`:
 --bot-config-locale=auto                      # Browser locale: e.g. en-US, fr-FR, de-DE, or "auto" (derived from IP/language)
 --bot-config-location=40.7128,-74.0060        # Location: "lat,lon" (coordinates) or "auto" (IP-based)
 --bot-config-media-devices=profile            # Media devices: profile (fake devices), real (system devices)
+--bot-config-always-active=true               # Keep windows/tabs active even unfocused (default true)
 --bot-config-noise-audio-context=true         # Audio context noise: true, false
 --bot-config-noise-canvas=true                # Canvas fingerprint noise: true, false
 --bot-config-noise-client-rects=false         # Client rects noise: true, false
@@ -190,8 +191,9 @@ The following `--bot-config-*` flags map directly to profile `configs`:
 --bot-config-webgl=profile                    # WebGL: profile (use profile), real (system), disabled (off)
 --bot-config-webgpu=profile                   # WebGPU: profile (use profile), real (system), disabled (off)
 --bot-config-webrtc=profile                   # WebRTC: profile (use profile), real (native), disabled (off)
+--bot-config-webrtc-ice=google                # ICE servers: google preset or custom:stun:host:port,turn:host
 --bot-config-window=profile                   # Window dimensions: profile (use profile), real (system window)
---bot-config-media-types=profile              # Media types: profile, real, expand (allow expanding via local decoders)
+--bot-config-media-types=expand               # Media types: expand (default), profile, real
 --bot-config-mobile-force-touch=false         # Mobile touch: force touch events on/off for mobile device simulation
 ```
 
@@ -203,6 +205,12 @@ The following `--bot-config-*` flags map directly to profile `configs`:
 - **No Profile Editing:** Avoid changing encrypted JSON
 - **Dynamic Configuration:** Perfect for automation and CI/CD
 - **Session Isolation:** Different settings per instance
+
+### Spotlight: BotBrowser v141 20251012 Additions
+
+- **`--bot-config-webrtc-ice`** — choose ICE presets or bring your own STUN/TURN list to keep TURN traffic from revealing the real network path.
+- **`--bot-config-always-active`** — keeps tabs/windows active (default `true`) so sites can’t key off backgrounded state; disable per window if you need native focus behavior.
+- **`--bot-config-media-types` default = `expand`** — BotBrowser now prefers locally available decoders for more realistic media capability checks; switch back to `profile` for the legacy behavior.
 
 ### Configuration Priority
 
@@ -257,6 +265,16 @@ chromium-browser \
   --bot-config-webgl="disabled" \
   --bot-config-noise-canvas=true \
   --bot-title="Custom Session"
+```
+
+### Active Window + Custom ICE Setup
+```bash
+# Keep tabs active while routing WebRTC through explicit ICE servers
+chromium-browser \
+  --bot-profile="/absolute/path/to/chrome141_win11_x64.enc" \
+  --bot-config-always-active=true \
+  --bot-config-webrtc-ice="custom:stun:stun.l.google.com:19302,turn:turn.example.com" \
+  --bot-config-media-types="expand"
 ```
 
 ### Dynamic Multi-Instance Setup
