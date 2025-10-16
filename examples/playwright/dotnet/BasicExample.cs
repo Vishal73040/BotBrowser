@@ -8,7 +8,7 @@ using Microsoft.Playwright;
 using System;
 using System.Threading.Tasks;
 
-class Program
+class BasicExample
 {
     static async Task Main(string[] args)
     {

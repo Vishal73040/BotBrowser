@@ -8,7 +8,7 @@ import com.microsoft.playwright.*;
 import java.nio.file.Paths;
 import java.util.Arrays;
 
-public class PlaywrightExample {
+public class BasicExample {
     public static void main(String[] args) {
         String botBrowserExecPath = System.getenv("BOTBROWSER_EXEC_PATH");
         String botProfilePath = System.getenv("BOT_PROFILE_PATH");
