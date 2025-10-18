@@ -1,9 +1,6 @@
 # WizzAir Compatibility Testing with Docker
 
-For Academic and Authorized Testing Environments.
-
-> ⚠️ Research demo in authorized setups. See [DISCLAIMER](../../DISCLAIMER.md).
-
+For Academic and Authorized Testing Environments. See the project [Legal Disclaimer](../../DISCLAIMER.md) and [Responsible Use Guidelines](../../RESPONSIBLE_USE.md) for usage boundaries.
 
 ## Project Overview
 
@@ -35,7 +32,7 @@ This repository contains a Docker setup for WizzAir website compatibility testin
 
 ## Getting Started
 
-⚠️ Before proceeding, ensure you are authorized to test any target systems. This setup is for academic environments and controlled testing only.
+> **Reminder:** run this workflow only against environments where you have explicit authorization.
 
 1. **Add Files**
 
@@ -59,7 +56,7 @@ This repository contains a Docker setup for WizzAir website compatibility testin
    * Analysis data in `flight_data/`
    * Screenshots in `screenshots/`
 
-**This compatibility testing script is not intended for bulk data collection and must only be run in test setups where you have explicit authorization.**
+This compatibility testing script is not intended for bulk data collection and must only be run in test setups where you have explicit authorization.
 
 ---
 
@@ -84,4 +81,4 @@ Modify the date range or test parameters directly in `main.py` for your study.
 
 ---
 
-**📋 [Legal Disclaimer & Terms of Use](https://github.com/botswin/BotBrowser/blob/main/DISCLAIMER.md)** — BotBrowser is for authorized fingerprint-consistency testing and research only.
+**📋 [Legal Disclaimer & Terms of Use](https://github.com/botswin/BotBrowser/blob/main/DISCLAIMER.md)** • **[Responsible Use Guidelines](https://github.com/botswin/BotBrowser/blob/main/RESPONSIBLE_USE.md)** — BotBrowser is for authorized fingerprint-consistency testing and research only.

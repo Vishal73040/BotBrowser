@@ -157,4 +157,4 @@ Share JSONL samples or feature requests via [GitHub Issues](https://github.com/b
 
 ---
 
-**📋 [Legal Disclaimer & Terms of Use](../../DISCLAIMER.md)** — BotCanvas is for authorized fingerprint-consistency testing and research only.
+**📋 [Legal Disclaimer & Terms of Use](../../DISCLAIMER.md)** • **[Responsible Use Guidelines](../../RESPONSIBLE_USE.md)** — BotCanvas is for authorized fingerprint-consistency testing and research only.

@@ -2,7 +2,7 @@
 
 Academic Framework for Browser‑Environment Simulation.
 
-In BotBrowser, everything starts with a profile. Research consistency and compatibility depend on proper profile configuration.
+In BotBrowser, everything starts with a profile. Research consistency and compatibility depend on proper profile configuration. Profiles are provided to authorized researchers—see the project [Legal Disclaimer](DISCLAIMER.md) and [Responsible Use Guidelines](RESPONSIBLE_USE.md) for access policies.
 
 ## What Are Profiles?
 
@@ -206,4 +206,4 @@ await page.goto("https://abrahamjuliot.github.io/creepjs/");
 
 ---
 
-**📋 [Legal Disclaimer & Terms of Use](https://github.com/botswin/BotBrowser/blob/main/DISCLAIMER.md)** — BotBrowser is for authorized fingerprint-consistency testing and research only.
+**📋 [Legal Disclaimer & Terms of Use](https://github.com/botswin/BotBrowser/blob/main/DISCLAIMER.md)** • **[Responsible Use Guidelines](https://github.com/botswin/BotBrowser/blob/main/RESPONSIBLE_USE.md)** — BotBrowser is for authorized fingerprint-consistency testing and research only.

@@ -2,7 +2,7 @@
 
 Framework‑less automation using BotBrowser’s native `--bot-script` feature.
 
-⚠️ Research use only: These examples are for academic research and authorized testing. They are not intended to bypass security systems or access production services without permission.
+These examples assume an authorized research environment. Review the project [Legal Disclaimer](../../DISCLAIMER.md) and [Responsible Use Guidelines](../../RESPONSIBLE_USE.md) before adapting them to your own lab.
 
 ## What Is `--bot-script`?
 
@@ -94,4 +94,4 @@ for (let i = 0; i < 20; i++) {
 
 ---
 
-**📋 [Legal Disclaimer & Terms of Use](https://github.com/botswin/BotBrowser/blob/main/DISCLAIMER.md)** — BotBrowser is for authorized fingerprint-consistency testing and research only.
+**📋 [Legal Disclaimer & Terms of Use](https://github.com/botswin/BotBrowser/blob/main/DISCLAIMER.md)** • **[Responsible Use Guidelines](https://github.com/botswin/BotBrowser/blob/main/RESPONSIBLE_USE.md)** — BotBrowser is for authorized fingerprint-consistency testing and research only.

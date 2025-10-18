@@ -2,7 +2,7 @@
 
 ## ACADEMIC & RESEARCH USE DISCLAIMER
 
-**BotBrowser** is designed exclusively for **academic research, security analysis, and authorized testing environments** that comply with all applicable **laws, regulations, and institutional ethics guidelines**.
+**BotBrowser** is designed exclusively for **academic research, security analysis, and authorized testing environments** that comply with all applicable **laws, regulations, and institutional ethics guidelines**. Review the companion [RESPONSIBLE_USE.md](RESPONSIBLE_USE.md) for operational expectations and reporting procedures.
 
 ## DUAL-USE TECHNOLOGY NOTICE
 

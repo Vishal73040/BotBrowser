@@ -1,12 +1,6 @@
 # CHANGELOG
 
-**For Academic and Authorized Testing Environments**
-
-⚠️ **ACADEMIC USE DISCLAIMER**
-
-This software and its documented capabilities are provided for **academic study and authorized testing** purposes to demonstrate browser compatibility technologies in controlled environments. They are intended solely for **authorized testing environments** that comply with all applicable laws, regulations, and institutional policies. **Any misuse**—such as violating website terms of service or engaging in unlawful activities—**is strictly prohibited.**
-
-⚠️ **This software is for compatibility validation in controlled, academic test environments only. It must not be used to circumvent security controls on production systems.**
+> **Research scope:** Entries in this changelog describe features evaluated in authorized labs and defensive benchmarking programs. Follow the [Legal Disclaimer](DISCLAIMER.md) and [Responsible Use Guidelines](RESPONSIBLE_USE.md). We work with security vendors to investigate any misuse—report concerns to [botbrowser@bk.ru](mailto:botbrowser@bk.ru).
 
 ## [2025-10-12] 
 
@@ -1107,4 +1101,4 @@ Example:
 
 ---
 
-**📋 [Legal Disclaimer & Terms of Use](https://github.com/botswin/BotBrowser/blob/main/DISCLAIMER.md)** — BotBrowser is for authorized fingerprint-consistency testing and research only.
+**📋 [Legal Disclaimer & Terms of Use](https://github.com/botswin/BotBrowser/blob/main/DISCLAIMER.md)** • **[Responsible Use Guidelines](https://github.com/botswin/BotBrowser/blob/main/RESPONSIBLE_USE.md)** — BotBrowser is for authorized fingerprint-consistency testing and research only.

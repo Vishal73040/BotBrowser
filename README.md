@@ -1,8 +1,9 @@
 <h1 align="center">🤖 BotBrowser</h1>
 
 <h4 align="center">Professional Cross-Platform Browser with Unified Fingerprint Technology 🚀</h4>
+
 <p align="center">
-  Identical fingerprints on any OS • Cross-platform compatibility • Works with 29+ detection systems
+  Identical fingerprints on any OS • Cross-platform compatibility • Validated against 29+ detection systems for research benchmarking
 </p>
 
 <p align="center">
@@ -28,12 +29,11 @@
 </div>
 
 ---
-
 ## 📖 What Is BotBrowser?
 
 BotBrowser delivers identical browser fingerprints across all platforms. Run the same profile on Windows, macOS, or Linux — get the exact same fingerprint every time.  
 
-Designed for automation testing, cross-platform compatibility validation, and maintaining consistent browser environments.  
+Designed for automation testing, cross-platform compatibility validation, and maintaining consistent browser environments in authorized research and defensive benchmarking settings. Review the project [Legal Disclaimer](DISCLAIMER.md) and [Responsible Use Guidelines](RESPONSIBLE_USE.md) before using the software.  
 
 ---
 
@@ -283,4 +283,11 @@ Contact [botbrowser@bk.ru](mailto:botbrowser@bk.ru) for source code access and c
 
 ---
 
-**📋 [Legal Disclaimer & Terms of Use](https://github.com/botswin/BotBrowser/blob/main/DISCLAIMER.md)** — BotBrowser is for authorized fingerprint-consistency testing and research only.
+## 🛡️ Responsible Use
+
+- Review the detailed [Responsible Use Guidelines](RESPONSIBLE_USE.md) and [Legal Disclaimer](DISCLAIMER.md) before requesting binaries or premium profiles.
+- Maintain written authorization for every environment you test, and record the synthetic data sets you rely on.
+- Contact the maintainers at [botbrowser@bk.ru](mailto:botbrowser@bk.ru) if you observe suspicious activity or need to report an abuse incident.
+
+**📋 [Legal Disclaimer & Terms of Use](https://github.com/botswin/BotBrowser/blob/main/DISCLAIMER.md)** • **[Responsible Use Guidelines](https://github.com/botswin/BotBrowser/blob/main/RESPONSIBLE_USE.md)** — BotBrowser is for authorized fingerprint-consistency testing and research only.
+

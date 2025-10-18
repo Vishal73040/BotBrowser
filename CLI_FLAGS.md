@@ -2,9 +2,7 @@
 
 For Academic and Authorized Testing Environments.
 
-This document explains BotBrowser’s CLI configuration system. These flags extend Chromium and provide comprehensive, runtime control over fingerprints—without modifying profile files.
-
----
+This document explains BotBrowser’s CLI configuration system. These flags extend Chromium and provide comprehensive, runtime control over fingerprints—without modifying profile files. For terms of use, see the [Legal Disclaimer](DISCLAIMER.md) and [Responsible Use Guidelines](RESPONSIBLE_USE.md).
 
 > 🌍 **Smart Auto‑Configuration:** BotBrowser derives timezone, locale, and languages from your IP/proxy. Override only when you need a specific setup.
 
@@ -346,4 +344,4 @@ Proxy authentication — embed credentials directly in the proxy URL.
 
 ---
 
-**📋 [Legal Disclaimer & Terms of Use](https://github.com/botswin/BotBrowser/blob/main/DISCLAIMER.md)** — BotBrowser is for authorized fingerprint-consistency testing and research only.
+**📋 [Legal Disclaimer & Terms of Use](https://github.com/botswin/BotBrowser/blob/main/DISCLAIMER.md)** • **[Responsible Use Guidelines](https://github.com/botswin/BotBrowser/blob/main/RESPONSIBLE_USE.md)** — BotBrowser is for authorized fingerprint-consistency testing and research only.

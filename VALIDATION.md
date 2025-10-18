@@ -26,13 +26,13 @@ We verify fingerprint consistency across platforms with a repeatable process.
 
 ## 📊 Test Results
 
-> ⚠️ **Research Purpose Only:** These results demonstrate fingerprint consistency for academic analysis exclusively. Not intended for bypassing security systems or unauthorized access to production services. All tests conducted in controlled environments with proper authorization.
-
-> ⚠️ **Test Data Policy:** All tests use synthetic/invalid data (random usernames, fake SSNs like "6789", non-existent credentials). No real user data or valid credentials are used or stored.
-
-> ⚠️ **Financial Services Testing:** Tests involving financial institutions (Vanguard, Fidelity, etc.) were conducted in authorized test/demo environments only. Production testing requires explicit authorization from the service provider.
-
-> ⚠️ See [DISCLAIMER](DISCLAIMER.md).
+> ⚠️ **Research Purpose Only:** These results demonstrate fingerprint consistency for academic analysis exclusively. Not intended for bypassing security systems or unauthorized access to production services. All tests were conducted in controlled environments with proper authorization in place.
+>
+> ⚠️ **Test Data Policy:** All tests use synthetic or invalid data (random usernames, fake SSNs like "6789", non-existent credentials). No real user data or valid credentials are collected or stored.
+>
+> ⚠️ **Financial Services Testing:** Scripts that interact with financial brands (e.g., Vanguard, Fidelity) run only against authorized demo flows or staging endpoints. Production testing requires written authorization from the service provider.
+>
+> ⚠️ Review the project [Legal Disclaimer](DISCLAIMER.md) and [Responsible Use Guidelines](RESPONSIBLE_USE.md) before reproducing or adapting these tests.
 
 ### Website Compatibility
 
@@ -415,4 +415,4 @@ Detection System Tests (200+ scenarios)
 
 ---
 
-**📋 [Legal Disclaimer & Terms of Use](https://github.com/botswin/BotBrowser/blob/main/DISCLAIMER.md)** — BotBrowser is for authorized fingerprint-consistency testing and research only.
+**📋 [Legal Disclaimer & Terms of Use](https://github.com/botswin/BotBrowser/blob/main/DISCLAIMER.md)** • **[Responsible Use Guidelines](https://github.com/botswin/BotBrowser/blob/main/RESPONSIBLE_USE.md)** — BotBrowser is for authorized fingerprint-consistency testing and research only.

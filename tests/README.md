@@ -3,7 +3,7 @@
 
 Academic research framework for browser‑compatibility analysis.
 
-Demonstrates controlled browser‑compatibility research using [Playwright](https://playwright.dev/docs/writing-tests) for academic and security research purposes.
+Demonstrates controlled browser‑compatibility research using [Playwright](https://playwright.dev/docs/writing-tests) for academic and security research purposes. Operate these scripts in accordance with the project [Legal Disclaimer](../DISCLAIMER.md) and [Responsible Use Guidelines](../RESPONSIBLE_USE.md). If you ever observe misuse, email [botbrowser@bk.ru](mailto:botbrowser@bk.ru) so we can follow up with the affected service.
 
 ## 🌐 Research Environment Setup
 
@@ -11,27 +11,15 @@ All tests utilize **controlled network environments** with appropriate proxy con
 
 ---
 
-## ⚠️ Academic Research Disclaimer
+## Usage Context
 
-**For Educational and Research Institutions Only**
+These materials target university labs, security research groups, and other approved testing programs. Typical scenarios include:
+- Browser compatibility studies comparing multiple anti-bot vendors
+- Academic coursework or workshops supervised by faculty
+- Security benchmarking in dedicated staging environments
+- Authorized penetration testing with written approval
 
-These research test scripts are provided strictly for **academic research, security analysis, and authorized educational purposes**. They are designed for **controlled research environments** within universities, research institutions, and authorized security testing facilities.
-
-**Authorized Research Use Cases:**
-- Browser compatibility studies in academic settings
-- Security research under institutional oversight
-- Educational demonstrations in controlled environments
-- Authorized penetration testing with proper approvals
-
-**Strictly Prohibited:**
-- **Production system testing without explicit authorization**
-- **Violation of website terms of service**
-- **Unauthorized access to third-party systems**
-- **Commercial exploitation without proper licensing**
-- **Testing financial services without written authorization**
-- **Using real user credentials or personal data**
-
-⚠️ **Research Ethics Requirement:** All users must obtain proper institutional review board (IRB) approval and follow ethical research guidelines when conducting studies involving web services or user data.
+Out-of-scope uses include production attacks, terms-of-service violations, or handling real customer data. When in doubt, obtain written permission and institutional ethics review (IRB or equivalent) before running any scenario.
 
 ### Test Data Policy
 
@@ -147,4 +135,4 @@ This project uses the following open-source libraries:
 
 ---
 
-**📋 [Legal Disclaimer & Terms of Use](https://github.com/botswin/BotBrowser/blob/main/DISCLAIMER.md)** — BotBrowser is for authorized fingerprint-consistency testing and research only.
+**📋 [Legal Disclaimer & Terms of Use](https://github.com/botswin/BotBrowser/blob/main/DISCLAIMER.md)** • **[Responsible Use Guidelines](https://github.com/botswin/BotBrowser/blob/main/RESPONSIBLE_USE.md)** — BotBrowser is for authorized fingerprint-consistency testing and research only.
