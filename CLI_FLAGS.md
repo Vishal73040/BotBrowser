@@ -6,7 +6,7 @@ This document explains BotBrowser’s CLI configuration system. These flags exte
 
 > 🌍 **Smart Auto‑Configuration:** BotBrowser derives timezone, locale, and languages from your IP/proxy. Override only when you need a specific setup.
 
-> ⚡ **Dynamic Configuration:** 20+ [`--bot-config-*` flags](#⚙️-profile-configuration-override-flags) enable runtime fingerprint control—ideal for CI/CD and multi‑instance scenarios.
+> ⚡ **Dynamic Configuration:** 28 [`--bot-config-*` flags](#⚙️-profile-configuration-override-flags) enable runtime fingerprint control—ideal for CI/CD and multi‑instance scenarios.
 
 ## 📋 Table of Contents
 

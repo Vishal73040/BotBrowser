@@ -3,7 +3,7 @@
 <h4 align="center">Professional Cross-Platform Browser with Unified Fingerprint Technology 🚀</h4>
 
 <p align="center">
-  Identical fingerprints on any OS • Cross-platform compatibility • Validated against 29+ detection systems for research benchmarking
+  Identical fingerprints on any OS • Cross-platform compatibility • Validated against 30+ detection systems for research benchmarking
 </p>
 
 <p align="center">
@@ -146,7 +146,7 @@ This map links common detection surfaces to BotBrowser capabilities and the exac
 
 - **Multi‑Layer Consistency:** Canvas/WebGL/Text metrics with low‑level Skia/HarfBuzz tuning and targeted WebGL/WebGPU controls
 - **Clean Automation:** CDP/WebDriver hardening, Chrome‑like behavior, and framework‑less early hooks via `--bot-script`
-- **Configurability:** 20+ CLI overrides, per‑context proxies with automatic geo‑detection, and session tools (cookies/bookmarks/title)
+- **Configurability:** 30+ CLI overrides, per‑context proxies with automatic geo‑detection, and session tools (cookies/bookmarks/title)
 - **Headless ↔ GUI Parity:** Stable GPU/WebGPU/media signals and consistent behavior across browser modes
 - **Performance Controls:** Precise FPS simulation, memory/storage timing, and GPU micro‑benchmarks for realistic profiles
 - **Focus & Session Control:** Always-active tab emulation, configurable WebRTC ICE servers, and expanded media decoder reporting for authentic runtime signals
@@ -226,7 +226,7 @@ Our compatibility research examines browser fingerprinting techniques across dif
 - **Android Emulation on Desktop:** Complete mobile API simulation
 - **Headless vs GUI Mode:** Identical fingerprint stability
 
-📖 **[Complete Validation Results & Research Data →](VALIDATION.md)** - 25+ anti-bot systems, 15+ fingerprinting tools, statistical analysis
+📖 **[Complete Validation Results & Research Data →](VALIDATION.md)** - 30+ anti-bot systems, 15+ fingerprinting tools, statistical analysis
 
 ---
 
@@ -237,8 +237,8 @@ Our compatibility research examines browser fingerprinting techniques across dif
 | Document | Description | Content Preview |
 |----------|-------------|-----------------|
 | **[Installation Guide](INSTALLATION.md)** | Platform-specific setup | Windows/macOS/Ubuntu guides, Docker deployment, troubleshooting |
-| **[Advanced Features](ADVANCED_FEATURES.md)** | Technical capabilities | 22+ CLI flags, noise injection, GPU micro-benchmarks |
-| **[Validation Results](VALIDATION.md)** | Research data | 25+ anti-bot systems, 50,000+ test sessions, statistical analysis |
+| **[Advanced Features](ADVANCED_FEATURES.md)** | Technical capabilities | 30+ CLI flags, noise injection, GPU micro-benchmarks |
+| **[Validation Results](VALIDATION.md)** | Research data | 30+ anti-bot systems, 50,000+ test sessions, statistical analysis |
 | **[CLI Flags Reference](CLI_FLAGS.md)** | Command-line options | `--bot-config-*` flags, proxy auth, session management |
 | **[Profile Configuration](profiles/PROFILE_CONFIGS.md)** | Profile customization | Fingerprint control, cross-platform compatibility |
 | **[BotCanvasLab](tools/botcanvas/)** | Canvas forensics tool | Canvas 2D recording, JSONL event viewer, replay roadmap |
@@ -290,4 +290,3 @@ Contact [botbrowser@bk.ru](mailto:botbrowser@bk.ru) for source code access and c
 - Contact the maintainers at [botbrowser@bk.ru](mailto:botbrowser@bk.ru) if you observe suspicious activity or need to report an abuse incident.
 
 **📋 [Legal Disclaimer & Terms of Use](https://github.com/botswin/BotBrowser/blob/main/DISCLAIMER.md)** • **[Responsible Use Guidelines](https://github.com/botswin/BotBrowser/blob/main/RESPONSIBLE_USE.md)** — BotBrowser is for authorized fingerprint-consistency testing and research only.
-

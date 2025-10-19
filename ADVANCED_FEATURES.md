@@ -18,7 +18,7 @@ BotBrowser offers multi‑layer emulation and control to keep fingerprints consi
 ## 🔧 Configuration & Control
 
 ### Advanced CLI Configuration
-**[22+ `--bot-config-*` flags](CLI_FLAGS.md#⚙️-profile-configuration-override-flags)** override key fingerprint properties at startup—no profile edits required.
+**[28 `--bot-config-*` flags](CLI_FLAGS.md#⚙️-profile-configuration-override-flags)** override key fingerprint properties at startup—no profile edits required.
 
 **Key Benefits:**
 - **Highest Priority:** CLI flags override profile settings
