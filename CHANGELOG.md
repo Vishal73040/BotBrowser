@@ -2,6 +2,40 @@
 
 > **Research scope:** Entries in this changelog describe features evaluated in authorized labs and defensive benchmarking programs. Follow the [Legal Disclaimer](DISCLAIMER.md) and [Responsible Use Guidelines](RESPONSIBLE_USE.md). We work with security vendors to investigate any misuse—report concerns to [botbrowser@bk.ru](mailto:botbrowser@bk.ru).
 
+## [2025-10-20] 
+
+### Major
+- **Chromium Core Upgrade → 141.0.7390.108**  
+  Synced to Chrome 141.0.7390.108 to stay aligned with the current stable engine for security patches, performance updates, and API parity. This reduces version‑based heuristics and keeps rendering/network/media behavior consistent with upstream Chrome.
+
+### Improvements
+- **Geo‑IP caching**  
+  The resolved proxy public IP and derived geolocation are now cached and reused across page opens, cutting repeated lookups and speeding up initial navigation.
+
+### Fixes
+- **Window Controls Overlay attribute order**  
+  Dynamic toggling of WindowControlsOverlay could reorder certain DOM attributes. The update stabilizes attribute order during toggles so the DOM signature remains consistent.
+
+- **General stability**  
+  Hardened several lifecycle and teardown paths that under specific edge conditions could lead to a crash.
+
+- **Android Date/Time Picker**  
+  Opening the native date/time picker while using Android profiles could crash in some environments. The initialization path has been corrected so the picker works reliably.
+
+- **`--proxy-ip` with auto language/locale**  
+  When a proxy IP was provided via `--proxy-ip`, automatic language and locale did not always align with the supplied region. Mapping now follows the provided proxy IP so UI language updates correctly.
+
+- **Performance jitter alignment**  
+  Modeling jitter could desynchronize timing between the main thread and Workers/SharedWorkers. Jitter seed and variance are now coordinated so threads remain time‑aligned while keeping natural variability.
+
+- **Android emoji rendering**  
+  Some Android profiles showed missing or incorrect emoji due to fallback mismatches. The emoji font availability and fallback chain have been corrected so shaping matches real Android.
+
+- **Extensions + `--bot-config-always-active=true`**  
+  Fixed a crash that could occur when loading extensions while the **always‑active** mode was enabled. Extensions now load reliably with the window kept active.
+
+---
+
 ## [2025-10-12] 
 
 ### Major
