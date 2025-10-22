@@ -5,6 +5,7 @@
  * - Uses publicly accessible signup pages (does NOT complete registration)
  * - Submits ONLY synthetic/invalid test data
  * - For fingerprint consistency research purposes
+ * DEMO USE ONLY: For demonstration and learning purposes. Never use to violate any website Terms of Service.
  *
  * PROHIBITED: Real account creation, ToS violations, or unauthorized automation.
  *

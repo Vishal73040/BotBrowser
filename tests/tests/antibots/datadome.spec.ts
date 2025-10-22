@@ -8,6 +8,7 @@
  * - Submits ONLY synthetic/invalid test data
  * - Does NOT attempt real purchases or payment processing
  * - For academic fingerprint consistency research
+ * DEMO USE ONLY: For demonstration and learning purposes. Never use to violate any website Terms of Service.
  *
  * PROHIBITED: Production testing, real transactions, or unauthorized account access.
  *

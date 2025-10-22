@@ -5,6 +5,7 @@
  * - Uses publicly accessible registration pages with FunCaptcha
  * - Submits ONLY synthetic/invalid test data
  * - For CAPTCHA accessibility and fingerprint research
+ * DEMO USE ONLY: For demonstration and learning purposes. Never use to violate any website Terms of Service.
  *
  * See https://github.com/botswin/BotBrowser/blob/main/tests/README.md
  * and https://github.com/botswin/BotBrowser/blob/main/DISCLAIMER.md
