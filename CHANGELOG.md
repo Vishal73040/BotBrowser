@@ -2,6 +2,14 @@
 
 > **Research scope:** Entries in this changelog describe features evaluated in authorized labs and defensive benchmarking programs. Follow the [Legal Disclaimer](DISCLAIMER.md) and [Responsible Use Guidelines](RESPONSIBLE_USE.md). We work with security vendors to investigate any misuse—report concerns to [botbrowser@bk.ru](mailto:botbrowser@bk.ru).
 
+## [2025-10-23] 
+
+### Major
+- **Chromium Core Upgrade → 142 (Early Stable)**  
+  BotBrowser is now aligned with **Chromium 142** (Chrome Early Stable). This keeps Web Platform/DevTools semantics and browser surfaces consistent with upstream Chrome, reduces version‑based heuristics some detectors rely on, and includes the latest security and performance updates.
+
+---
+
 ## [2025-10-20] 
 
 ### Major
